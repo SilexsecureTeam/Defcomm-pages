@@ -19,7 +19,7 @@ const BackToTopButton = () => {
   };
 
   return (
-    <p onClick={scrollToTop} className="fixed bottom-[10%] right-[10%] cursor-pointer">
+    <p onClick={scrollToTop} className="fixed bottom-[10%] right-[10%] cursor-pointer z-[100000]">
       <img
         src={top}
         alt="Back_to_top"

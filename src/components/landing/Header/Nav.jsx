@@ -93,13 +93,13 @@ function Nav() {
             {item}
           </motion.li>
         ))}
-        <motion.button
-          onClick={() => { scrollTo(0, 0); navigate('/login'); }}
+        <motion.a
+         href="https://defcomm.vercel.app/"
           whileHover={{ scale: 1.1, boxShadow: "0px 0px 8px rgb(255,255,255)" }}
           className="mx-4 bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
         >
           Login
-        </motion.button>
+        </motion.a>
       </motion.ul>
     </motion.nav>
   );
