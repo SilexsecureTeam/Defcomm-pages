@@ -7,8 +7,6 @@ import product3 from "../../../assets/landing/product3.png"
 import productTags from "../../../assets/landing/product-tags.png"
 
 function OurProduct() {
-  const [deleteText, setDeleteText] = useState(false);
-
 
   const scrollRef = useRef(null);
 
@@ -61,7 +59,7 @@ function OurProduct() {
             Security Beyond Encryption
           </h1>
           <p className="max-w-[600px] mx-auto text-center text-sm md:text-[16px] md:mt-2 text-white leading-6 z-10">
-            AI Defcomm, we develop and implement advanced encryption solutions that safeguard communications across all defense channels.
+            At Defcomm, we develop and implement advanced encryption solutions that safeguard communications across all defense channels.
           </p>
         </motion.div>
 
@@ -101,7 +99,7 @@ function OurProduct() {
               whileInView="slidevisible"
               viewport={{ once: true }}
             >
-              <img src={product?.image} alt="" className="h-full mx-auto" />
+              <img src={product?.image} alt="" className="h-full w-auto mx-auto object-contain" />
             </motion.div>
             <div className="flex flex-col justify-center w-full p-4 md:pl-10">
               <motion.div className="text-white text-center md:text-left" variants={textVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
