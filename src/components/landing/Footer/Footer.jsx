@@ -6,8 +6,9 @@ import { LiaLongArrowAltUpSolid } from "react-icons/lia";
 import Logo from "../../../assets/logo.png";
 import { motion, useScroll, useMotionValueEvent, useTransform } from "framer-motion";
 import { useRef } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Footer() {
+  const navigate=useNavigate();
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll();
 
@@ -33,6 +34,7 @@ function Footer() {
         </p>
 
         <motion.div
+          onClick={()=>{scrollTo(0,0); navigate("/contact")}}
           className="flex items-center justify-center gap-2 mx-auto mt-6 md:mt-10 py-2 px-4 rounded-full w-max text-center bg-lime-400 border border-lime-400 cursor-pointer text-black"
           variants={btnVariants}
           whileHover="hover"
