@@ -28,23 +28,24 @@ function Nav() {
       <img src={defcommlogo} alt="DeffComm Logo" className="w-[150px] md:w-[250px]" />
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex items-center gap-6">
+      <ul className="hidden lg:flex items-center gap-6">
         {[
-  { route: '/', label: 'Home' },
-  { route: '/services', label: 'Services' },
-  { route: '/technology', label: 'Technology' },
-  { route: '/features', label: 'Features' },
-  { route: '/contact', label: 'Contact Us' }
-].map((item, index) => (
+          { route: '/', label: 'Home' },
+          { route: '/services', label: 'Services' },
+          { route: '/technology', label: 'Technology' },
+          { route: '/features', label: 'Features' },
+          { route: '/contact', label: 'Contact Us' }
+        ].map((item, index) => (
           <motion.li
             key={index}
+            className="text-sm"
             whileHover={{ scale: 1.02, fontWeight: "bold", textShadow: "0px 0px 8px rgb(255,255,255)" }}
           >
             <NavLink to={item.route}
-              className="text-white cursor-pointer">
-              
+              className="text-white cursor-pointer [&.active]:font-bold [&.active]:drop-shadow-[0px_0px_8px_rgb(255,255,255)] ">
+
               {item?.label}
-              
+
             </NavLink>
           </motion.li>
         ))}
@@ -54,13 +55,13 @@ function Nav() {
       <motion.a
         href="https://defcomm.vercel.app/"
         whileHover={{ scale: 1.1, boxShadow: "0px 0px 8px rgb(255,255,255)" }}
-        className="hidden md:block bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
+        className="hidden lg:block bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
       >
         Login
       </motion.a>
 
       {/* Mobile Menu Toggle */}
-      <div onClick={handleClick} className="md:hidden cursor-pointer text-white">
+      <div onClick={handleClick} className="lg:hidden cursor-pointer text-white">
         {dropDown ? null : <FaBarsStaggered size={24} />}
       </div>
 
@@ -69,29 +70,33 @@ function Nav() {
         initial={{ x: "100%" }}
         animate={{ x: dropDown ? 0 : "100%" }}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 right-0 h-screen w-[250px] bg-black bg-opacity-90 shadow-xl text-white flex flex-col items-start py-6 px-4 space-y-4 md:hidden"
+        className="fixed top-0 right-0 h-screen w-[250px] bg-black bg-opacity-90 shadow-xl text-white flex flex-col items-start py-6 px-4 space-y-4 lg:hidden"
       >
         <li onClick={handleClick} className=" cursor-pointer text-lg">
           <MdClose size={24} strokeWidth={2} className="text-red-500" />
         </li>
         {[
-  { route: '/', label: 'Home' },
-  { route: '/services', label: 'Services' },
-  { route: '/technology', label: 'Technology' },
-  { route: '/features', label: 'Features' },
-  { route: '/contact', label: 'Contact Us' }
-].map((item, index) => (
+          { route: '/', label: 'Home' },
+          { route: '/services', label: 'Services' },
+          { route: '/technology', label: 'Technology' },
+          { route: '/features', label: 'Features' },
+          { route: '/contact', label: 'Contact Us' }
+        ].map((item, index) => (
           <motion.li
-            onClick={()=>{navigate(item?.route); scrollTo(0,0)}}
+            onClick={() => { navigate(item?.route); scrollTo(0, 0); setDropDown(false) }}
             key={index}
             whileHover={{ scale: 1.02, textShadow: "0px 0px 8px rgb(255,255,255)" }}
-            className="w-full p-4 cursor-pointer hover:bg-lime-800 transition-all duration-200"
+            className="w-full flex"
           >
+          <NavLink to={item.route}
+              className="w-full p-4 cursor-pointer hover:bg-lime-800 transition-all duration-200 [&.active]:bg-lime-800">
+
             {item?.label}
+            </NavLink>
           </motion.li>
         ))}
         <motion.a
-         href="https://defcomm.vercel.app/"
+          href="https://defcomm.vercel.app/"
           whileHover={{ scale: 1.1, boxShadow: "0px 0px 8px rgb(255,255,255)" }}
           className="mx-4 bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
         >
