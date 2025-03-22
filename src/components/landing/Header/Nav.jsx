@@ -41,8 +41,8 @@ function Nav() {
             whileHover={{ scale: 1.02, fontWeight: "bold", textShadow: "0px 0px 8px rgb(255,255,255)" }}
           >
             <NavLink to={item.route}
-              className="text-white border-r py-2 px-3 border-stone-600 cursor-pointer">
-              {item.label === "Feature" ? (
+              className="text-white border-r py-2 px-2 border-stone-600 cursor-pointer">
+              {item.label === "Features" ? (
                 <div className="flex items-center gap-2">
                   {item.label} <PiArrowBendDownRightThin />
                 </div>
