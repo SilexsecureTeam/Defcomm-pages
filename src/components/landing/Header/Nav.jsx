@@ -30,11 +30,12 @@ function Nav() {
       {/* Desktop Navigation */}
       <ul className="hidden md:flex items-center gap-6">
         {[
-          "Home",
-          "Service",
-          "Technology",
-          "Feature",
-        ].map((item, index) => (
+  { route: '/', label: 'Home' },
+  { route: '/services', label: 'Services' },
+  { route: '/technology', label: 'Technology' },
+  { route: '/features', label: 'Features' },
+  { route: '/contact', label: 'Contact Us' },
+].map((item, index) => (
           <motion.li
             key={index}
             whileHover={{ scale: 1.02, fontWeight: "bold", textShadow: "0px 0px 8px rgb(255,255,255)" }}
@@ -78,19 +79,19 @@ function Nav() {
           <MdClose size={24} strokeWidth={2} className="text-red-500" />
         </li>
         {[
-          "Home",
-          "Service",
-          "Technology",
-          "Feature",
-          "Careers",
-          "Contact Us",
-        ].map((item, index) => (
+  { route: '/', label: 'Home' },
+  { route: '/services', label: 'Services' },
+  { route: '/technology', label: 'Technology' },
+  { route: '/features', label: 'Features' },
+  { route: '/contact', label: 'Contact Us' },
+].map((item, index) => (
           <motion.li
+            onClick={()=>{navigate(item?.route); scrollTo(0,0)}}
             key={index}
             whileHover={{ scale: 1.02, textShadow: "0px 0px 8px rgb(255,255,255)" }}
             className="w-full p-4 cursor-pointer hover:bg-lime-800 transition-all duration-200"
           >
-            {item}
+            {item?.label}
           </motion.li>
         ))}
         <motion.a
