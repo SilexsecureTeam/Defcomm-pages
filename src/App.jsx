@@ -6,6 +6,7 @@ const MainLayout = lazy(() => import("./layout/MainLayout"));
 
 const Landing = lazy(() => import("./pages/Landing"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainLayout />} >
           <Route index element={<Landing />} />
-
+          <Route path="contact" element={<Contact />} />
           {/* Catch-all redirect */}
           <Route path="*" element={<ComingSoon />} />
           </Route>
