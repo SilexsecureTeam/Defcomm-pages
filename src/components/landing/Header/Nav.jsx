@@ -34,7 +34,7 @@ function Nav() {
   { route: '/services', label: 'Services' },
   { route: '/technology', label: 'Technology' },
   { route: '/features', label: 'Features' },
-  { route: '/contact', label: 'Contact Us' },
+  { route: '/contact', label: 'Contact Us' }
 ].map((item, index) => (
           <motion.li
             key={index}
@@ -47,7 +47,7 @@ function Nav() {
                   {item.label} <PiArrowBendDownRightThin />
                 </div>
               ) : (
-                item
+                item?.label
               )}
             </NavLink>
           </motion.li>
@@ -83,7 +83,7 @@ function Nav() {
   { route: '/services', label: 'Services' },
   { route: '/technology', label: 'Technology' },
   { route: '/features', label: 'Features' },
-  { route: '/contact', label: 'Contact Us' },
+  { route: '/contact', label: 'Contact Us' }
 ].map((item, index) => (
           <motion.li
             onClick={()=>{navigate(item?.route); scrollTo(0,0)}}
