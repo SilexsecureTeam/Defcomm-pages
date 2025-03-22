@@ -42,13 +42,9 @@ function Nav() {
           >
             <NavLink to={item.route}
               className="text-white border-r py-2 px-2 border-stone-600 cursor-pointer">
-              {item.label === "Features" ? (
-                <div className="flex items-center gap-2">
-                  {item.label} <PiArrowBendDownRightThin />
-                </div>
-              ) : (
+              
                 item?.label
-              )}
+              
             </NavLink>
           </motion.li>
         ))}
