@@ -43,7 +43,7 @@ function Nav() {
             <NavLink to={item.route}
               className="text-white border-r py-2 px-2 border-stone-600 cursor-pointer">
               
-                item?.label
+              {item?.label}
               
             </NavLink>
           </motion.li>
