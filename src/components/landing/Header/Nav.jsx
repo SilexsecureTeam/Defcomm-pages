@@ -40,11 +40,11 @@ function Nav() {
             key={index}
             whileHover={{ scale: 1.02, fontWeight: "bold", textShadow: "0px 0px 8px rgb(255,255,255)" }}
           >
-            <NavLink to={index === 0 ? "/" : `/${item.toLowerCase()}`}
+            <NavLink to={item.route}
               className="text-white border-r py-2 px-3 border-stone-600 cursor-pointer">
-              {item === "Feature" ? (
+              {item.label === "Feature" ? (
                 <div className="flex items-center gap-2">
-                  {item} <PiArrowBendDownRightThin />
+                  {item.label} <PiArrowBendDownRightThin />
                 </div>
               ) : (
                 item
