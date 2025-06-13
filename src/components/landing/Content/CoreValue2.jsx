@@ -90,7 +90,7 @@ const features = [
   },
 ];
 
-function CoreValue() {
+function CoreValue2() {
   const textVariants = {
     hidden: {
       y: 100,
@@ -183,17 +183,14 @@ function CoreValue() {
           </div>
         </motion.div>
       </div>
-
-      <div className='bg_op py-10 md:py-0'>
-        <div className='text-left h-fit md:h-[500px] text-white flex flex-col justify-center space-y-5 px-8 md:px-12 items-start'>
-          <p className='text-white text-[28px] font-semibold leading-[1.3] md:-mt-20'>Your Operations <br />
-            Deserve Unbreakable Security</p>
-          <p className='text-[17px] font-light'>Our team is ready to deploy a custom solution built <br /> for your mission’s success.</p>
-          <button className='bg-[#36460A] px-8 py-2.5 font-medium'>Schedule a Consultation</button>
-        </div>
+      <div className='bg_op2 text-right py-10 md:py-0 h-fit md:h-[500px] text-black flex flex-col justify-center space-y-5 px-12 items-end'>
+        <p className='text-black text-[28px] font-semibold leading-[1.3] md:-mt-20'>Your Operations <br />
+          Deserve Unbreakable Security</p>
+        <p className='text-[18px] font-light'>Our team is ready to deploy a custom solution built <br /> for your mission’s success.</p>
+        <button className='bg-[#36460A] px-8 py-2.5 font-medium text-white'>Schedule a Consultation</button>
       </div>
     </div>
   );
 }
 
-export default CoreValue;
+export default CoreValue2;
