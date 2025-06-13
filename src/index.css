@@ -12,6 +12,25 @@
   }
 }
 
+.bg_op{
+  background-image: url('../src/assets/landing/o_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg_op1{
+  background-image: url('../src/assets/landing/o_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg_op2{
+  background-image: url('../src/assets/landing/o_2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .animate-rotate {
   animation: rotate 15s linear infinite;
   transform-origin: center;
@@ -30,11 +49,21 @@
   background-image: linear-gradient(to bottom, rgb(42, 65, 1), black, black);
   
 }
+  .bg-linear-gradient1{
+  background-image: linear-gradient(to bottom, black, black, rgb(42, 65, 1));
+  
+}
 }
 
 @layer utilities{
   .bg-linear-gradientone{
   background-image: linear-gradient(to bottom,  black, rgb(42, 65, 1));
+  
+}
+}
+@layer utilities{
+  .bg-linear-gradientthree{
+  background-image: linear-gradient(to bottom, rgb(42, 65, 1), black);
   
 }
 }
