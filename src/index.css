@@ -49,6 +49,10 @@
   background-image: linear-gradient(to bottom, rgb(42, 65, 1), black, black);
   
 }
+  .bg-linear-gradientAlt{
+  background-image: linear-gradient(to bottom, rgb(42, 65, 1), rgb(42, 65, 1),rgb(42, 65, 1), black, black, black);
+  
+}
   .bg-linear-gradient1{
   background-image: linear-gradient(to bottom, black, black, rgb(42, 65, 1));
   

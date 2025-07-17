@@ -31,10 +31,12 @@ function Nav() {
       <ul className="hidden lg:flex items-center gap-6">
         {[
           { route: '/', label: 'Home' },
-          { route: '/services', label: 'Services' },
+          { route: '/about', label: 'About Us' },
+          { route: '/products', label: 'Products' },
+          // { route: '/services', label: 'Services' },
           { route: '/technology', label: 'Technology' },
-          { route: '/features', label: 'Features' },
-          { route: '/contact', label: 'Contact Us' }
+          // { route: '/features', label: 'Features' },
+          // { route: '/contact', label: 'Contact Us' }
         ].map((item, index) => (
           <motion.li
             key={index}
@@ -77,10 +79,12 @@ function Nav() {
         </li>
         {[
           { route: '/', label: 'Home' },
-          { route: '/services', label: 'Services' },
+          { route: '/about', label: 'About Us' },
+          { route: '/products', label: 'Products' },
+          // { route: '/services', label: 'Services' },
           { route: '/technology', label: 'Technology' },
-          { route: '/features', label: 'Features' },
-          { route: '/contact', label: 'Contact Us' }
+          // { route: '/features', label: 'Features' },
+          // { route: '/contact', label: 'Contact Us' }
         ].map((item, index) => (
           <motion.li
             onClick={() => { navigate(item?.route); scrollTo(0, 0); setDropDown(false) }}
