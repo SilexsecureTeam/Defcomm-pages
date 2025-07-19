@@ -12,7 +12,7 @@ import FeaturedPartners from '../components/FeaturedPartners';
 const Products = () => {
     return (
         <div className="min-h-screen flex flex-col bg-white">
-            <Nav />
+            {/* <Nav /> */}
             {/* Hero Section */}
             <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20 md:pt-[120px] overflow-hidden">
                 <div className="max-w-6xl mx-auto px-4 flex flex-col items-center">
@@ -93,7 +93,7 @@ const Products = () => {
                 </div>
             </section>
             <FeaturedPartners />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

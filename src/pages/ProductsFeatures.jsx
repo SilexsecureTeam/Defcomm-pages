@@ -14,7 +14,7 @@ import biometrics from '../assets/landing/biometrics.png';
 const ProductsFeatures = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#111]">
-      <Nav />
+      {/* <Nav /> */}
       {/* Hero Section */}
       <section className="w-full pt-12 pb-20 px-4 md:px-0 flex flex-col items-center">
         <h1 className="text-white text-2xl md:text-4xl font-normal text-center mb-4 mt-8 md:mt-12">Designed for Operatives. Desired by <span className="text-[#C6FC2B]">Visionaries.</span></h1>
@@ -111,7 +111,7 @@ const ProductsFeatures = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
