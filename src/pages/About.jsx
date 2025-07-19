@@ -12,7 +12,7 @@ import FeaturedPartners from '../components/FeaturedPartners';
 const About = () => {
     return (
         <div className="min-h-screen flex flex-col">
-            <Nav />
+            {/* <Nav /> */}
             {/* Hero Section */}
             <section className="relative h-[480px] md:h-[560px] flex items-center bg-gradient-to-r from-[#36460A] to-[#000000] text-white overflow-hidden">
                 <img src={about} alt="Defcomm building" className="absolute inset-0 w-full h-full object-cover z-0" />
@@ -76,7 +76,7 @@ const About = () => {
                 <img src={teamImg} alt="Our Team" className="w-full max-h-[550px] object-cover shadow-lg" />
             </section>
             <FeaturedPartners />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

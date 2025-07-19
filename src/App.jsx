@@ -12,6 +12,7 @@ const Services2 = lazy(() => import("./pages/ServicesV2"));
 const About = lazy(() => import("./pages/About"));
 const Products = lazy(() => import("./pages/Products"));
 const ProductsFeatures = lazy(() => import("./pages/ProductsFeatures"));
+const LiveFire = lazy(() => import("./pages/LiveFire"));
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
           {/* Catch-all redirect */}
           <Route path="*" element={<ComingSoon />} />
           </Route>
-          
+          <Route path="/live-fire" element={<LiveFire />} />
         </Routes>
       </Router>
     </Suspense>
