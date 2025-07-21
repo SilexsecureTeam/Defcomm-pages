@@ -64,7 +64,7 @@ const LiveFire = () => {
         </div>
       </main>
       {/* Program Details Section */}
-      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#111] to-[#222]">
+      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-[#000]">
         <h2 className="text-[#C6A24B] text-2xl md:text-3xl font-semibold text-center mb-2">Program Details</h2>
         <p className="text-gray-200 text-center max-w-xl mb-8 text-base">Everything you need to know about the Defcomm Live Bug Bounty 2025 program. Get ready to test your skills against our systems.</p>
         <div className="w-full max-w-3xl mb-8">
@@ -92,7 +92,7 @@ const LiveFire = () => {
         </div>
       </section>
       {/* Reward Tiers Section */}
-      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#111] to-[#222]">
+      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-[#000]">
         <h2 className="text-[#DDF2AB] text-2xl md:text-3xl font-semibold text-center mb-2">Reward Tiers</h2>
         <p className="text-gray-200 text-center max-w-xl mb-10 text-base">Find bugs, get paid. Our bounty program rewards security researchers based on the severity of discovered vulnerabilities.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mb-8">
@@ -156,7 +156,7 @@ const LiveFire = () => {
         <p className="text-gray-300 text-center text-sm max-w-2xl mt-4">All payouts are subject to verification and validation by our security team.<br />First reporter of a unique issue receives the bounty.</p>
       </section>
       {/* Rules of Engagement Section */}
-      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#111] to-[#222]">
+      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-[#000]">
         <div className="mb-4 flex flex-col items-center">
           <span className="border border-[#C6A24B] rounded-full px-4 py-1 text-xs text-[#C6A24B] mb-3">Rules of Engagement</span>
           <h2 className="text-2xl md:text-4xl font-semibold text-center mb-2">
@@ -228,7 +228,7 @@ const LiveFire = () => {
         </div>
       </section>
       {/* Best Practices Section */}
-      <section className="w-full flex flex-col items-center justify-center py-8 px-4 bg-gradient-to-b from-[#111] to-[#222]">
+      <section className="w-full flex flex-col items-center justify-center py-8 px-4 bg-[#000]">
         <div className="w-full max-w-5xl">
           <div className="bg-[#181818] border border-[#89AF20] rounded-xl p-8">
             <div className="text-[#89AF20] font-bold text-lg mb-6">Best Practices</div>
@@ -248,7 +248,7 @@ const LiveFire = () => {
         </div>
       </section>
       {/* FAQ Section - Updated to match design */}
-      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#111] to-[#222]">
+      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-[#000]">
         <h2 className="text-[#DDF2AB] text-3xl md:text-5xl font-semibold text-center mb-2">Frequently Asked Questions</h2>
         <p className="text-white text-center max-w-2xl text-base mb-8">Find answers to common questions about the Defcomm Live Bug Bounty 2025 program. Can't find what you're looking for? Contact us directly.</p>
         <div className="w-full max-w-3xl flex flex-col gap-2">
@@ -334,7 +334,7 @@ const LiveFire = () => {
         </div>
       </section>
       {/* Contact Section - After FAQs */}
-      <section className="w-full flex flex-col items-center justify-center py-12 px-4 bg-gradient-to-b from-[#111] to-[#222]">
+      <section className="w-full flex flex-col items-center justify-center py-12 px-4 bg-[#000]">
         <div className="w-full max-w-3xl mx-auto bg-transparent border border-[#DDF2AB] rounded-xl p-8 flex flex-col items-center">
           <h2 className="text-[#DDF2AB] text-2xl md:text-3xl font-semibold text-center mb-3">Still Have Questions?</h2>
           <p className="text-white text-center mb-6 text-base">If you couldn't find the answer to your question, feel free to reach out to our team directly.</p>
