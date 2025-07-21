@@ -5,7 +5,7 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { PiArrowBendDownRightThin } from "react-icons/pi";
 import defcommlogo from "../../../assets/landing/Defcomm-03 1.png";
 import { MdClose } from "react-icons/md";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 function Nav() {
   const navigate = useNavigate();
   const [dropDown, setDropDown] = useState(false);
@@ -25,30 +25,47 @@ function Nav() {
       className="fixed z-20 w-full backdrop-blur-lg bg-transparent px-6 md:px-10 py-1 flex items-center justify-between"
     >
       {/* Logo */}
-      <img src={defcommlogo} alt="DeffComm Logo" className="w-[150px] md:w-[250px]" />
+      <img
+        src={defcommlogo}
+        alt="DeffComm Logo"
+        className="w-[150px] md:w-[250px]"
+      />
 
       {/* Desktop Navigation */}
       <ul className="hidden lg:flex items-center gap-6">
         {[
-          { route: '/', label: 'Home' },
-          { route: '/about', label: 'About Us' },
-          { route: '/products', label: 'Products' },
-          // { route: '/services', label: 'Services' },
-          { route: '/technology', label: 'Technology' },
-          // { route: '/features', label: 'Features' },
-          // { route: '/contact', label: 'Contact Us' }
+          { route: "/", label: "Home" },
+          { route: "/about", label: "About Us" },
+          { route: "/products", label: "Products" },
+          {
+            route: "https://defcomm-store.vercel.app/",
+            label: "Store",
+            external: true,
+          },
+          { route: "/technology", label: "Technology" },
         ].map((item, index) => (
           <motion.li
             key={index}
             className="text-sm"
-            whileHover={{ scale: 1.02, fontWeight: "bold", textShadow: "0px 0px 8px rgb(255,255,255)" }}
+            whileHover={{ scale: 1.04 }}
           >
-            <NavLink to={item.route}
-              className="text-white cursor-pointer [&.active]:font-bold [&.active]:drop-shadow-[0px_0px_8px_rgb(255,255,255)] ">
-
-              {item?.label}
-
-            </NavLink>
+            {item.external ? (
+              <a
+                href={item.route}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white cursor-pointer"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <NavLink
+                to={item.route}
+                className="text-white cursor-pointer [&.active]:font-bold"
+              >
+                {item.label}
+              </NavLink>
+            )}
           </motion.li>
         ))}
       </ul>
@@ -63,7 +80,10 @@ function Nav() {
       </motion.a>
 
       {/* Mobile Menu Toggle */}
-      <div onClick={handleClick} className="lg:hidden cursor-pointer text-white">
+      <div
+        onClick={handleClick}
+        className="lg:hidden cursor-pointer text-white"
+      >
         {dropDown ? null : <FaBarsStaggered size={24} />}
       </div>
 
@@ -78,24 +98,32 @@ function Nav() {
           <MdClose size={24} strokeWidth={2} className="text-red-500" />
         </li>
         {[
-          { route: '/', label: 'Home' },
-          { route: '/about', label: 'About Us' },
-          { route: '/products', label: 'Products' },
+          { route: "/", label: "Home" },
+          { route: "/about", label: "About Us" },
+          { route: "/products", label: "Products" },
           // { route: '/services', label: 'Services' },
-          { route: '/technology', label: 'Technology' },
+          { route: "/technology", label: "Technology" },
           // { route: '/features', label: 'Features' },
           // { route: '/contact', label: 'Contact Us' }
         ].map((item, index) => (
           <motion.li
-            onClick={() => { navigate(item?.route); scrollTo(0, 0); setDropDown(false) }}
+            onClick={() => {
+              navigate(item?.route);
+              scrollTo(0, 0);
+              setDropDown(false);
+            }}
             key={index}
-            whileHover={{ scale: 1.02, textShadow: "0px 0px 8px rgb(255,255,255)" }}
+            whileHover={{
+              scale: 1.02,
+              textShadow: "0px 0px 8px rgb(255,255,255)",
+            }}
             className="w-full flex"
           >
-          <NavLink to={item.route}
-              className="w-full p-4 cursor-pointer hover:bg-lime-800 transition-all duration-200 [&.active]:bg-lime-800">
-
-            {item?.label}
+            <NavLink
+              to={item.route}
+              className="w-full p-4 cursor-pointer hover:bg-lime-800 transition-all duration-200 [&.active]:bg-lime-800"
+            >
+              {item?.label}
             </NavLink>
           </motion.li>
         ))}
