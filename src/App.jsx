@@ -32,10 +32,11 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products-features" element={<ProductsFeatures />} />
+
+            <Route path="/bounty" element={<LiveFire />} />
             {/* Catch-all redirect */}
             <Route path="*" element={<ComingSoon />} />
           </Route>
-          <Route path="/live-fire" element={<LiveFire />} />
         </Routes>
       </Router>
     </Suspense>

@@ -11,7 +11,7 @@ export default function TopNav() {
   return (
     <header className="w-full z-50 my-4 bg-transparent">
       {/* Top banner */}
-      <div className="relative bg-[#2d3f14] text-white text-sm md:text-base px-4 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full mx-4 md:mx-[2%]">
+      <div className="relative w-[90%] max-w-peak mx-auto bg-[#2d3f14] text-white text-sm md:text-base px-4 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full">
         <IoClose
           size={20}
           className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
@@ -32,7 +32,7 @@ export default function TopNav() {
           mobileMenuOpen ? "bg-white lg:bg-transparent" : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-peak mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img

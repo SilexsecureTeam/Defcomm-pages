@@ -7,7 +7,7 @@ const ProductSolution = () => {
   return (
     <section className="py-16 px-6 bg-white">
       {/* Top Section */}
-      <div className="max-w-6xl mx-auto mb-12">
+      <div className="max-w-peak mx-auto mb-12">
         <p className="text-sm text-gray-700 mb-1 uppercase tracking-wide">
           Products and solutions
         </p>
@@ -22,7 +22,7 @@ const ProductSolution = () => {
       </div>
 
       {/* Card Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-peak mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cards.map((card, index) => (
           <motion.div
             key={index}

@@ -14,7 +14,7 @@ const Products = () => {
     <div className="min-h-screen flex flex-col bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20 md:pt-[120px] overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col items-center">
+        <div className="max-w-peak mx-auto px-4 flex flex-col items-center">
           <div className="flex justify-center gap-4 mb-10">
             <img
               src={phoneProduct}
@@ -44,93 +44,101 @@ const Products = () => {
         </div>
       </section>
       {/* Security, Privacy Section */}
-      <section className="w-full bg-[#000] mx-auto px-6 md:px-20 !pr-0 flex flex-col md:flex-row items-center gap-10">
-        <div className="flex-1">
-          <h2 className="text-[#DDF2AB] text-4xl md:min-w-[120%] font-normal mb-4">
-            Security, Privacy And Confidentiality
-          </h2>
-          <p className="text-gray-200 md:text-lg md:min-w-[120%]">
-            Explore our range of advanced products—from encrypted communication
-            devices to tactical surveillance systems and mission-ready
-            protective gear.
-          </p>
-        </div>
-        <div className="flex-1 flex justify-center !min-w-[60%]">
-          <img src={girlHoldingPhone} alt="Product" className="w-full" />
+      <section className="w-full bg-[#000] mx-auto px-6 md:px-20 !pr-0 ">
+        <div className="max-w-peak mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div className="flex-1">
+            <h2 className="text-[#DDF2AB] text-4xl md:min-w-[120%] font-normal mb-4">
+              Security, Privacy And Confidentiality
+            </h2>
+            <p className="text-gray-200 md:text-lg md:min-w-[120%]">
+              Explore our range of advanced products—from encrypted
+              communication devices to tactical surveillance systems and
+              mission-ready protective gear.
+            </p>
+          </div>
+          <div className="flex-1 flex justify-center !min-w-[60%]">
+            <img src={girlHoldingPhone} alt="Product" className="w-full" />
+          </div>
         </div>
       </section>
       {/* Security Beyond Encryption Section */}
       <section className="w-full bg-[#F7F8F6] py-20 px-6 md:px-20">
-        <h2 className="text-[#36460A] text-4xl font-semibold mb-20 text-center">
-          Security Beyond Encryption
-        </h2>
-        <div className="flex flex-col md:flex-row items-center gap-[120px]">
-          <div className="flex-1 flex justify-center items-center">
-            <img src={phoneIllustration} alt="" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm text-[#36460A] mb-6 text-center md:text-left">
-              Military | Government | INTEL Agency
-            </p>
-            <h3 className="text-[#36460A] text-3xl font-semibold mb-6 text-center md:text-left">
-              Security-First Hardware
-            </h3>
-            <p className="text-[#121417] mb-8 text-center md:text-left leading-[1.8] md:max-w-[90%]">
-              In an era where cyber threats are constantly evolving, having a
-              secure foundation is more critical than ever. Our security-first
-              hardware is engineered to provide uncompromising protection,
-              ensuring the highest level of data integrity, privacy, and
-              resilience against potential threats. From military operations to
-              critical infrastructure and government agencies, our
-              security-first hardware is trusted to deliver unmatched protection
-              where it matters most.
-            </p>
-            <button className="bg-[#36460A] text-white px-12 py-3 rounded-full font-semibold">
-              Buy Now
-            </button>
+        <div className="max-w-peak mx-auto">
+          <h2 className="text-[#36460A] text-4xl font-semibold mb-20 text-center">
+            Security Beyond Encryption
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-[120px]">
+            <div className="flex-1 flex justify-center items-center">
+              <img src={phoneIllustration} alt="" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm text-[#36460A] mb-6 text-center md:text-left">
+                Military | Government | INTEL Agency
+              </p>
+              <h3 className="text-[#36460A] text-3xl font-semibold mb-6 text-center md:text-left">
+                Security-First Hardware
+              </h3>
+              <p className="text-[#121417] mb-8 text-center md:text-left leading-[1.8] md:max-w-[90%]">
+                In an era where cyber threats are constantly evolving, having a
+                secure foundation is more critical than ever. Our security-first
+                hardware is engineered to provide uncompromising protection,
+                ensuring the highest level of data integrity, privacy, and
+                resilience against potential threats. From military operations
+                to critical infrastructure and government agencies, our
+                security-first hardware is trusted to deliver unmatched
+                protection where it matters most.
+              </p>
+              <button className="bg-[#36460A] text-white px-12 py-3 rounded-full font-semibold">
+                Buy Now
+              </button>
+            </div>
           </div>
         </div>
       </section>
       {/* Ultra-Secure Laptop Section */}
-      <section className="w-full bg-[#E6F6C7] py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
-        <div className="flex-1">
-          <p className="text-sm text-[#36460A] mb-2">
-            Military | Government | INTEL Agency
-          </p>
-          <h2 className="text-[#36460A] text-3xl font-semibold mb-4">
-            Ultra-Secure Laptop
-          </h2>
-          <p className="text-[#121417] mb-6 leading-[1.8]">
-            Engineered with advanced encryption, biometric access, and onboard
-            threat isolation, the SecureBook Pro is built for professionals who
-            demand top-tier security without compromising speed or
-            functionality. Whether you're in the office, on the field, or in
-            transit, this device ensures seamless communication with
-            uncompromising protection.
-          </p>
-          <div className="mb-8">
-            <h4 className="text-[#36460A] font-semibold mb-2">Key Features</h4>
-            <ul className="list-disc pl-5 text-[#36460A]">
-              <li>End-to-end encrypted OS</li>
-              <li>Secure bootloader and biometric lock</li>
-              <li>Offline emergency protocols</li>
-              <li>Real-time system threat monitoring</li>
-            </ul>
+      <section className="w-full bg-[#E6F6C7] py-20 px-6 md:px-20">
+        <div className="max-w-peak mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div className="flex-1">
+            <p className="text-sm text-[#36460A] mb-2">
+              Military | Government | INTEL Agency
+            </p>
+            <h2 className="text-[#36460A] text-3xl font-semibold mb-4">
+              Ultra-Secure Laptop
+            </h2>
+            <p className="text-[#121417] mb-6 leading-[1.8]">
+              Engineered with advanced encryption, biometric access, and onboard
+              threat isolation, the SecureBook Pro is built for professionals
+              who demand top-tier security without compromising speed or
+              functionality. Whether you're in the office, on the field, or in
+              transit, this device ensures seamless communication with
+              uncompromising protection.
+            </p>
+            <div className="mb-8">
+              <h4 className="text-[#36460A] font-semibold mb-2">
+                Key Features
+              </h4>
+              <ul className="list-disc pl-5 text-[#36460A]">
+                <li>End-to-end encrypted OS</li>
+                <li>Secure bootloader and biometric lock</li>
+                <li>Offline emergency protocols</li>
+                <li>Real-time system threat monitoring</li>
+              </ul>
+            </div>
+            <button className="bg-[#000000] text-white px-8 py-3 rounded-full font-semibold">
+              Buy Now
+            </button>
           </div>
-          <button className="bg-[#000000] text-white px-8 py-3 rounded-full font-semibold">
-            Buy Now
-          </button>
-        </div>
-        <div className="flex-1 flex justify-center items-center">
-          <img
-            src={ultraLaptop}
-            alt="Ultra-Secure Laptop"
-            className="w-full object-contain"
-          />
+          <div className="flex-1 flex justify-center items-center">
+            <img
+              src={ultraLaptop}
+              alt="Ultra-Secure Laptop"
+              className="w-full object-contain"
+            />
+          </div>
         </div>
       </section>
       {/* Portable Security Section */}
-      <section className="w-full bg-[#fff] py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
+      <section className="max-w-peak mx-auto w-full bg-[#fff] py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
         <div className="flex-1 flex justify-center items-center">
           <img
             src={portableSecurity}

@@ -11,36 +11,39 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[480px] md:h-[560px] flex items-center bg-gradient-to-r from-[#36460A] to-[#000000] text-white overflow-hidden">
-        <img
-          src={about}
-          alt="Defcomm building"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#36460A] to-[#000000] opacity-80 z-10" />
-        <div className="relative z-20 w-full mx-auto px-6 md:px-14">
-          <div className="pt-8 pb-12">
-            <h1 className="text-2xl md:text-5xl font-normal mb-6 leading-tight">
-              Securing What Matters Most&nbsp; With
-              <br className="hidden md:block" /> Intelligence, Tech &amp; Trust
-            </h1>
-            <p className="text-base md:text-lg mb-8 max-w-xl">
-              DefComm is redefining modern protection across corporate,
-              tactical, and emergency sectors.
-            </p>
-            <div className="flex gap-4">
-              <button className="bg-[#89AF20] hover:bg-green-600 text-white px-6 py-2 rounded font-semibold">
-                Explore Solutions
-              </button>
-              <button className="bg-white text-green-700 border border-green-700 px-6 py-2 rounded font-semibold">
-                Get In Touch
-              </button>
+      <section className="relative h-[480px] md:h-[560px] bg-gradient-to-r from-[#36460A] to-[#000000] text-white overflow-hidden">
+        <div className="max-w-peak mx-auto flex items-center h-full">
+          <img
+            src={about}
+            alt="Defcomm building"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#36460A] to-[#000000] opacity-80 z-10" />
+          <div className="relative z-20 w-full mx-auto px-6 md:px-14">
+            <div className="pt-8 pb-12">
+              <h1 className="text-2xl md:text-5xl font-normal mb-6 leading-tight">
+                Securing What Matters Most&nbsp; With
+                <br className="hidden md:block" /> Intelligence, Tech &amp;
+                Trust
+              </h1>
+              <p className="text-base md:text-lg mb-8 max-w-xl">
+                DefComm is redefining modern protection across corporate,
+                tactical, and emergency sectors.
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-[#89AF20] hover:bg-green-600 text-white px-6 py-2 rounded font-semibold">
+                  Explore Solutions
+                </button>
+                <button className="bg-white text-green-700 border border-green-700 px-6 py-2 rounded font-semibold">
+                  Get In Touch
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
       {/* Identity Section */}
-      <section className=" px-6 md:px-14 py-16 flex flex-col md:flex-row gap-10 items-center">
+      <section className="max-w-peak mx-auto px-6 md:px-14 py-16 flex flex-col md:flex-row gap-10 items-center">
         <div className="flex-1 flex flex-col justify-center">
           <h2 className="text-[#36460A] text-xl font-semibold mb-4">
             Our Identity
@@ -81,7 +84,7 @@ const About = () => {
         </div>
       </section>
       {/* Who We Serve Section */}
-      <section className="mx-auto px-6 md:px-14 py-12">
+      <section className="max-w-peak mx-auto px-6 md:px-14 py-12">
         <h2 className="text-[#36460A] text-xl font-semibold mb-2">
           Who We Serve
         </h2>
@@ -143,7 +146,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-12">
+      <section className="max-w-peak mx-auto w-full py-12">
         <h2 className="text-[#36460A] px-6 md:px-14 text-xl font-semibold mb-16">
           Meet the Team
         </h2>
@@ -154,7 +157,6 @@ const About = () => {
         />
       </section>
       <FeaturedPartners />
-      {/* <Footer /> */}
     </div>
   );
 };
