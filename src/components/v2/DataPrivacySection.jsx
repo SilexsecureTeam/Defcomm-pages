@@ -9,12 +9,11 @@ import "swiper/css/pagination";
 import "../../components/v2/privacy-slide.css";
 
 import data_img from "../../assets/data-img.png";
-import bg2 from "../../assets/slide1.png";
-import bg3 from "../../assets/slide2.png";
-import bg4 from "../../assets/slide3.png";
 import bg1 from "../../assets/data-banner.png";
+import bg2 from "../../assets/landing/about.jpg";
+import bg3 from "../../assets/landing/bg_op.jpg";
 
-const backgroundImages = [bg1, bg2, bg3, bg4];
+const backgroundImages = [bg1, bg2, bg3];
 
 const DataPrivacySection = () => {
   return (
