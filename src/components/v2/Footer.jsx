@@ -51,7 +51,7 @@ const Footer = () => {
         {/* Bottom Grid */}
         <div className="max-w-5xl grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8">
           {/* Left Column - Description */}
-          <div className="text-[#EEEEEE] leading-normal max-w-sm text-[18px]">
+          <div className="text-[#EEEEEE] leading-normal max-w-sm text-[16px]">
             <p>
               Military-grade security for the digital age. Protecting your most
               sensitive communications with enterprise-level encryption and
