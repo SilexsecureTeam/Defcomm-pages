@@ -1,15 +1,15 @@
 import Nav from "../../components/landing/Header/Nav";
 import Footer from "../../components/landing/Footer/Footer";
-import tripple from "../assets/landing/tripple.png";
-import fingerprint from "../assets/landing/fingerprint.png";
-import vault from "../assets/landing/vault.png";
-import grade1 from "../assets/landing/grade1.png";
-import grade2 from "../assets/landing/grade2.png";
-import grade3 from "../assets/landing/grade3.png";
-import grade4 from "../assets/landing/grade4.png";
-import grade5 from "../assets/landing/grade5.png";
-import grade6 from "../assets/landing/grade6.png";
-import biometrics from "../assets/landing/biometrics.png";
+import tripple from "../../assets/landing/tripple.png";
+import fingerprint from "../../assets/landing/fingerprint.png";
+import vault from "../../assets/landing/vault.png";
+import grade1 from "../../assets/landing/grade1.png";
+import grade2 from "../../assets/landing/grade2.png";
+import grade3 from "../../assets/landing/grade3.png";
+import grade4 from "../../assets/landing/grade4.png";
+import grade5 from "../../assets/landing/grade5.png";
+import grade6 from "../../assets/landing/grade6.png";
+import biometrics from "../../assets/landing/biometrics.png";
 
 const ProductsFeatures = () => {
   return (
