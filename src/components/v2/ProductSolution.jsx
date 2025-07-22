@@ -7,7 +7,7 @@ const ProductSolution = () => {
   return (
     <section className="py-16 px-6 bg-white">
       {/* Top Section */}
-      <div className="max-w-peak mx-auto mb-12">
+      <div className="mb-12">
         <p className="text-sm text-gray-700 mb-1 uppercase tracking-wide">
           Products and solutions
         </p>

@@ -16,7 +16,7 @@ const MainLayout = () => {
     <div className="w-screen bg-gray-50">
       {!isHomePage && (isBountyPage ? <LiveFireHeader /> : <Nav />)}
 
-      <main className="w-full mx-auto">
+      <main className="w-full mx-auto max-w-peak">
         <Outlet />
       </main>
 
