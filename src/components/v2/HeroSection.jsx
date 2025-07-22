@@ -20,7 +20,7 @@ export default function HeroSection() {
     <section className="min-h-screen bg-limeAccent text-[#1a1a1a] relative overflow-hidden">
       <TopNav />
 
-      <div className="px-6 py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-peak mx-auto pt-20 grid lg:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <motion.div
           variants={textVariants}
@@ -91,8 +91,6 @@ export default function HeroSection() {
             src={heroHand}
             alt="Defcomm phone"
             className="max-h-[600px] object-contain drop-shadow-2xl"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           />
         </motion.div>
       </div>
