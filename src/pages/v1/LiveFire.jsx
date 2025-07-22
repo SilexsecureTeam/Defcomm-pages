@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import defcommlogo from "../assets/landing/Defcomm-03 1.png";
+import defcommlogo from "../../assets/landing/Defcomm-03 1.png";
 import Footer from "../../components/landing/Footer/Footer";
 
 const LiveFireHeader = () => (
