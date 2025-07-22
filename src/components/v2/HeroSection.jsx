@@ -20,7 +20,7 @@ export default function HeroSection() {
     <section className="min-h-screen bg-limeAccent text-[#1a1a1a] relative overflow-hidden">
       <TopNav />
 
-      <div className="max-w-peak mx-auto px-6 py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div className="px-6 py-20 grid lg:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <motion.div
           variants={textVariants}
