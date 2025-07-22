@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import top from "../assets/top.png";
 
 const BackToTopButton = () => {
@@ -9,21 +9,29 @@ const BackToTopButton = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: isAtTop ? document.body.scrollHeight : 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: isAtTop ? document.body.scrollHeight : 0,
+      behavior: "smooth",
+    });
     setIsAtTop(!isAtTop);
   };
 
   return (
-    <p onClick={scrollToTop} className="fixed bottom-[10%] right-[10%] cursor-pointer z-[100000000]">
+    <p
+      onClick={scrollToTop}
+      className="fixed bottom-[10%] right-[10%]  cursor-pointer z-[100000000]"
+    >
       <img
         src={top}
         alt="Back_to_top"
-        className={`w-16 rounded-full transition-transform duration-500 ${!isAtTop ? 'rotate-0' : 'rotate-180'} hover:scale-110`}
+        className={`w-16 rounded-full transition-transform duration-500 ${
+          !isAtTop ? "rotate-0" : "rotate-180"
+        } hover:scale-110`}
       />
     </p>
   );

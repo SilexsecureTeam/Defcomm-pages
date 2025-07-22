@@ -4,11 +4,16 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      gridTemplateColumns:{
-        'responsive': 'repeat(auto-fill, minmax(200px, 1fr))',
-        'responsive-sm': 'repeat(auto-fill, minmax(180px, 1fr))'
+      gridTemplateColumns: {
+        responsive: "repeat(auto-fill, minmax(200px, 1fr))",
+        "responsive-sm": "repeat(auto-fill, minmax(180px, 1fr))",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
       colors: {
+        darkGreen: "#1f2e12",
+        limeAccent: "#e8f0d9",
         oliveLight: "#36460A",
         oliveDark: "#101500",
         olive: "#759719",
