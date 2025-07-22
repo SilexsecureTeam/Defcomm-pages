@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaBarsStaggered } from "react-icons/fa6";
-import { PiArrowBendDownRightThin } from "react-icons/pi";
-import defcommlogo from "../../../assets/landing/Defcomm-03 1.png";
 import { MdClose } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import defcommlogo from "../../../assets/landing/Defcomm-03 1.png";
+import { navItems } from "../../../utils/constants";
+
 function Nav() {
   const navigate = useNavigate();
   const [dropDown, setDropDown] = useState(false);
@@ -18,124 +18,131 @@ function Nav() {
   };
 
   return (
-    <motion.nav
-      variants={initialVariant}
-      initial="hidden"
-      animate="visible"
-      className="fixed z-20 w-full backdrop-blur-lg bg-transparent px-6 md:px-10 py-1 flex items-center justify-between"
-    >
-      {/* Logo */}
-      <img
-        src={defcommlogo}
-        alt="DeffComm Logo"
-        className="w-[150px] md:w-[250px]"
-      />
-
-      {/* Desktop Navigation */}
-      <ul className="hidden lg:flex items-center gap-6">
-        {[
-          { route: "/", label: "Home" },
-          { route: "/about", label: "About Us" },
-          { route: "/products", label: "Products" },
-          {
-            route: "https://defcomm-store.vercel.app/",
-            label: "Store",
-            external: true,
-          },
-          { route: "/technology", label: "Technology" },
-        ].map((item, index) => (
-          <motion.li
-            key={index}
-            className="text-sm"
-            whileHover={{ scale: 1.04 }}
-          >
-            {item.external ? (
-              <a
-                href={item.route}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white cursor-pointer"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <NavLink
-                to={item.route}
-                className="text-white cursor-pointer [&.active]:font-bold"
-              >
-                {item.label}
-              </NavLink>
-            )}
-          </motion.li>
-        ))}
-      </ul>
-
-      {/* Login Button */}
-      <motion.a
-        href="https://defcomm.vercel.app/"
-        whileHover={{ scale: 1.1, boxShadow: "0px 0px 8px rgb(255,255,255)" }}
-        className="hidden lg:block bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
+    <>
+      <motion.nav
+        variants={initialVariant}
+        initial="hidden"
+        animate="visible"
+        className="fixed top-0 z-50 w-full backdrop-blur-lg bg-transparent px-6 md:px-10 py-2 flex items-center justify-between"
       >
-        Login
-      </motion.a>
+        {/* Logo with NavLink */}
+        <NavLink
+          to="/"
+          onClick={() => setDropDown(false)}
+          className="cursor-pointer"
+        >
+          <img src={defcommlogo} alt="Defcomm Logo" className="w-32 md:w-48" />
+        </NavLink>
 
-      {/* Mobile Menu Toggle */}
-      <div
-        onClick={handleClick}
-        className="lg:hidden cursor-pointer text-white"
-      >
-        {dropDown ? null : <FaBarsStaggered size={24} />}
-      </div>
-
-      {/* Mobile Navigation */}
-      <motion.ul
-        initial={{ x: "100%" }}
-        animate={{ x: dropDown ? 0 : "100%" }}
-        transition={{ duration: 0.3 }}
-        className="fixed top-0 right-0 h-screen w-[250px] bg-black bg-opacity-90 shadow-xl text-white flex flex-col items-start py-6 px-4 space-y-4 lg:hidden"
-      >
-        <li onClick={handleClick} className=" cursor-pointer text-lg">
-          <MdClose size={24} strokeWidth={2} className="text-red-500" />
-        </li>
-        {[
-          { route: "/", label: "Home" },
-          { route: "/about", label: "About Us" },
-          { route: "/products", label: "Products" },
-          // { route: '/services', label: 'Services' },
-          { route: "/technology", label: "Technology" },
-          // { route: '/features', label: 'Features' },
-          // { route: '/contact', label: 'Contact Us' }
-        ].map((item, index) => (
-          <motion.li
-            onClick={() => {
-              navigate(item?.route);
-              scrollTo(0, 0);
-              setDropDown(false);
-            }}
-            key={index}
-            whileHover={{
-              scale: 1.02,
-              textShadow: "0px 0px 8px rgb(255,255,255)",
-            }}
-            className="w-full flex"
-          >
-            <NavLink
-              to={item.route}
-              className="w-full p-4 cursor-pointer hover:bg-lime-800 transition-all duration-200 [&.active]:bg-lime-800"
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex items-center gap-6">
+          {navItems.map(({ path, name, external }, index) => (
+            <motion.li
+              key={index}
+              className="text-sm"
+              whileHover={{ scale: 1.04 }}
             >
-              {item?.label}
-            </NavLink>
-          </motion.li>
-        ))}
+              {external ? (
+                <a
+                  href={path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white cursor-pointer"
+                >
+                  {name}
+                </a>
+              ) : (
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    `text-white cursor-pointer ${isActive ? "font-bold" : ""}`
+                  }
+                >
+                  {name}
+                </NavLink>
+              )}
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* Login Button (Desktop only) */}
         <motion.a
           href="https://defcomm.vercel.app/"
           whileHover={{ scale: 1.1, boxShadow: "0px 0px 8px rgb(255,255,255)" }}
-          className="mx-4 bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
+          className="hidden lg:block bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium"
         >
           Login
         </motion.a>
+
+        {/* Mobile Menu Toggle */}
+        <div
+          onClick={handleClick}
+          className="lg:hidden cursor-pointer text-white"
+          aria-label="Toggle menu"
+        >
+          {dropDown ? <MdClose size={24} /> : <FaBarsStaggered size={24} />}
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu - vertical dropdown below nav */}
+      <motion.ul
+        initial={{ height: 0, opacity: 0 }}
+        animate={
+          dropDown ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
+        }
+        transition={{ duration: 0.3 }}
+        className="lg:hidden overflow-hidden bg-black bg-opacity-90 text-white flex flex-col items-start py-4 px-6 space-y-4"
+      >
+        {navItems.map(({ path, name, external }, index) =>
+          external ? (
+            <li key={index} className="w-full">
+              <a
+                href={path}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setDropDown(false)}
+                className="block w-full cursor-pointer hover:bg-lime-800 p-3 rounded transition"
+              >
+                {name}
+              </a>
+            </li>
+          ) : (
+            <li key={index} className="w-full">
+              <NavLink
+                to={path}
+                onClick={() => {
+                  navigate(path);
+                  window.scrollTo(0, 0);
+                  setDropDown(false);
+                }}
+                className={({ isActive }) =>
+                  `block w-full cursor-pointer p-3 rounded transition hover:bg-lime-800 ${
+                    isActive ? "bg-lime-800 font-semibold" : ""
+                  }`
+                }
+              >
+                {name}
+              </NavLink>
+            </li>
+          )
+        )}
+
+        {/* Login Button in mobile menu */}
+        <li className="w-full">
+          <motion.a
+            href="https://defcomm.vercel.app/"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 0px 8px rgb(255,255,255)",
+            }}
+            className="block bg-white text-gray-700 px-6 py-2 rounded-full shadow-md font-medium text-center"
+            onClick={() => setDropDown(false)}
+          >
+            Login
+          </motion.a>
+        </li>
       </motion.ul>
-    </motion.nav>
+    </>
   );
 }
 
