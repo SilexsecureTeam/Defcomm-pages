@@ -62,7 +62,7 @@ export default {
         },
       },
       maxWidth: {
-        peak: "1200px",
+        peak: "1400px",
       },
       borderRadius: {
         lg: "var(--radius)",
