@@ -73,7 +73,7 @@ export default function TopNav() {
           </ul>
 
           {/* Book Demo Button */}
-          <button className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm md:text-base ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all">
+          <button className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all">
             BOOK DEMO <ArrowRight className="w-4 h-4" />
           </button>
 
