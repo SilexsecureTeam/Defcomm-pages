@@ -8,7 +8,7 @@ export const navItems = [
   },
   { name: "Products", path: "/products" },
   { name: "Technology", path: "/technology" },
-  { name: "Shop", path: "/shop" },
+  { name: "Services", path: "/services" },
   { name: "Bounty", path: "/bounty" },
 ];
 

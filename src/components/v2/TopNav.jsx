@@ -1,21 +1,41 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo-black.png";
 import { navItems } from "../../utils/constants";
 
 export default function TopNav() {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [bannerDisabled, setBannerDisabled] = useState(false);
 
   return (
-    <header className="w-full z-50 my-4 bg-transparent">
+    <header className="w-full z-50 pt-4 bg-limeAccent">
       {/* Top banner */}
-      <div className="relative w-[90%] max-w-peak mx-auto bg-[#2d3f14] text-white text-sm md:text-base px-4 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full">
+      <div
+        className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-4 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
+    ${
+      bannerDisabled
+        ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
+        : "bg-[#2d3f14]"
+    }`}
+        // So hover works even when banner is disabled
+        onMouseEnter={() => {
+          if (bannerDisabled) {
+            // Optional: if you want to "temporarily" show normal color on hover
+            // You can handle this with CSS alone, no JS needed
+          }
+        }}
+        onMouseLeave={() => {
+          // no action needed here
+        }}
+      >
         <IoClose
           size={20}
           className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
-          onClick={() => alert("Close banner")} // Add close logic as needed
+          onClick={() => setBannerDisabled(!bannerDisabled)}
+          title={bannerDisabled ? "Enable banner" : "Disable banner"}
         />
         <span className="text-lime-400 font-semibold whitespace-nowrap text-xs md:text-sm">
           NEW
@@ -73,7 +93,10 @@ export default function TopNav() {
           </ul>
 
           {/* Book Demo Button */}
-          <button className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all">
+          <button
+            onClick={() => navigate("/contact")}
+            className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
+          >
             BOOK DEMO <ArrowRight className="w-4 h-4" />
           </button>
 

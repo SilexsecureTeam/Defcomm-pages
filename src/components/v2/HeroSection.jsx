@@ -17,10 +17,8 @@ const textVariants = {
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[600px] bg-limeAccent text-[#1a1a1a] relative overflow-hidden">
-      <TopNav />
-
-      <div className="max-w-peak mx-auto px-6 md:px-0 pt-0 grid lg:grid-cols-2 gap-10 items-center">
+    <section className="min-h-[600px] bg-limeAccent text-[#1a1a1a] relative overflow-hidden px-6">
+      <div className="w-full max-w-peak mx-auto pt-32 grid lg:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <motion.div
           variants={textVariants}
