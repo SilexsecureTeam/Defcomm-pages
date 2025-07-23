@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Right Group - Solutions, Company, Login */}
-          <div className="flex justify-center gap-12">
+          <div className="flex flex-wrap justify-center gap-12">
             {/* Solutions */}
             <div className="flex flex-col items-start w-full max-w-sm">
               <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
