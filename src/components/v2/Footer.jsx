@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import logoIcon from "../../assets/logo-icon.png";
+import { FaSignInAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -49,7 +50,7 @@ const Footer = () => {
         <hr className="border-gray-500 mb-10" />
 
         {/* Bottom Grid */}
-        <div className="max-w-5xl grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8">
+        <div className="max-w-5xl grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8">
           {/* Left Column - Description */}
           <div className="text-[#EEEEEE] leading-normal max-w-sm text-[16px]">
             <p>
@@ -59,43 +60,58 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Middle Column - Solutions */}
-          <div className="flex flex-col items-center">
-            <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
-              Solutions
-            </h4>
-            <ul className="space-y-2 list-disc">
-              {[
-                "Secure Messaging",
-                "File Encryption",
-                "Video Conferencing",
-                "Enterprise Suite",
-              ].map((item, idx) => (
-                <li key={idx}>
-                  <a href="#" className="hover:underline transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right Column - Company */}
-          <div className="flex flex-col items-center">
-            <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
-              Company
-            </h4>
-            <ul className="space-y-2 list-disc">
-              {["About Us", "Careers", "Security Blog", "Contact"].map(
-                (item, idx) => (
+          {/* Right Group - Solutions, Company, Login */}
+          <div className="flex justify-center gap-12">
+            {/* Solutions */}
+            <div className="flex flex-col items-start w-full max-w-sm">
+              <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
+                Solutions
+              </h4>
+              <ul className="space-y-2 list-disc pl-5 text-left">
+                {[
+                  "Secure Messaging",
+                  "File Encryption",
+                  "Video Conferencing",
+                  "Enterprise Suite",
+                ].map((item, idx) => (
                   <li key={idx}>
                     <a href="#" className="hover:underline transition-colors">
                       {item}
                     </a>
                   </li>
-                )
-              )}
-            </ul>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div className="flex flex-col items-start w-full max-w-sm">
+              <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
+                Company
+              </h4>
+              <ul className="space-y-2 list-disc pl-5 text-left">
+                {["About Us", "Careers", "Security Blog", "Contact"].map(
+                  (item, idx) => (
+                    <li key={idx}>
+                      <a href="#" className="hover:underline transition-colors">
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* Login Button with Icon */}
+            <div className="flex flex-col items-start justify-center">
+              <a
+                href="https://cloud.defcomm.ng/"
+                target="_blank"
+                className="flex items-center gap-2 bg-[#89AF20] hover:bg-[#7ea91a] text-black font-semibold py-2 px-6 rounded transition"
+              >
+                <FaSignInAlt size={20} />
+                Login
+              </a>
+            </div>
           </div>
         </div>
       </div>

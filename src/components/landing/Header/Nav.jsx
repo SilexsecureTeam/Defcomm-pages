@@ -31,7 +31,7 @@ function Nav() {
           onClick={() => setDropDown(false)}
           className="cursor-pointer"
         >
-          <img src={defcommlogo} alt="Defcomm Logo" className="w-32 md:w-48" />
+          <img src={defcommlogo} alt="Defcomm Logo" className="w-32 md:w-40" />
         </NavLink>
 
         {/* Desktop Navigation */}

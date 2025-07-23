@@ -27,11 +27,11 @@ const App = () => {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services2" element={<Services2 />} />
+            {/* <Route path="/services" element={<Services />} /> */}
+            <Route path="/services" element={<Services2 />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products-features" element={<ProductsFeatures />} />
+            <Route path="/technology" element={<ProductsFeatures />} />
 
             <Route path="/bounty" element={<LiveFire />} />
             {/* Catch-all redirect */}
