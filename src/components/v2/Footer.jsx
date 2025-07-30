@@ -51,7 +51,7 @@ const Footer = () => {
         <hr className="border-gray-500 mb-10" />
 
         {/* Bottom Grid */}
-        <div className="max-w-7xl grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8">
+        <div className="max-w-5xl grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8">
           {/* Left Column - Description */}
           <div className="text-[#EEEEEE] leading-normal max-w-sm text-[16px]">
             <p>
@@ -62,9 +62,9 @@ const Footer = () => {
           </div>
 
           {/* Right Group - Solutions, Company, Login */}
-          <div className="flex flex-wrap justify-center w-full gap-12">
+          <div className="flex flex-wrap justify-center gap-12">
             {/* Solutions */}
-            <div className="flex flex-col items-start w-full max-w-sm md:max-w-[240px]">
+            <div className="flex flex-col items-start w-full max-w-sm">
               <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
                 Solutions
               </h4>
@@ -85,7 +85,7 @@ const Footer = () => {
             </div>
 
             {/* Company */}
-            <div className="flex flex-col items-start w-full max-w-sm md:max-w-[240px]">
+            <div className="flex flex-col items-start w-full max-w-sm">
               <h4 className="text-[#89AF20] font-semibold mb-2 text-xl">
                 Company
               </h4>
@@ -103,17 +103,15 @@ const Footer = () => {
             </div>
 
             {/* Login Button with Icon */}
-            <div className="hidden">
-              <div className="flex flex-col items-start justify-center ">
-                <a
-                  href="https://cloud.defcomm.ng/"
-                  target="_blank"
-                  className="flex items-center gap-2 bg-[#89AF20] hover:bg-[#7ea91a] text-black font-semibold py-2 px-6 rounded transition"
-                >
-                  <FaSignInAlt size={20} />
-                  Login
-                </a>
-              </div>
+            <div className="flex flex-col items-start justify-center">
+              <a
+                href="https://cloud.defcomm.ng/"
+                target="_blank"
+                className="flex items-center gap-2 bg-[#89AF20] hover:bg-[#7ea91a] text-black font-semibold py-2 px-6 rounded transition"
+              >
+                <FaSignInAlt size={20} />
+                Login
+              </a>
             </div>
           </div>
         </div>
