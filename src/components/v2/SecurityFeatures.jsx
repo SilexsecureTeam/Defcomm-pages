@@ -32,27 +32,34 @@ export default function SecurityFeatures() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
               }}
-              className={`rounded-xl p-6 flex flex-col justify-around gap-3 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
+              className={`rounded-xl p-6 flex flex-col gap-4 min-h-[300px] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
                 feature.dark
                   ? "bg-oliveLight text-white"
                   : "bg-[#FEFEFE] text-gray-800"
               }`}
             >
+              {/* Icon */}
               <div
-                className={`w-12 h-12 rounded-md flex items-center justify-center text-xl ${
+                className={`w-12 h-12 rounded-md flex mb-2 items-center justify-center text-xl flex-shrink-0 ${
                   feature.dark ? "bg-white text-[#2d3f14]" : "bg-[#E8E8E8]"
                 }`}
               >
                 {<feature.icon />}
               </div>
+
+              {/* Title */}
               <h3
-                className={`text-base md:text-lg font-bold ${
+                className={`text-base md:text-lg font-bold min-h-[3.5rem] flex items-start ${
                   feature.dark ? "text-white" : "text-[#2d3f14]"
                 }`}
               >
                 {feature.title}
               </h3>
-              <p className="text-sm leading-relaxed">{feature.description}</p>
+
+              {/* Description */}
+              <p className="text-sm leading-relaxed flex-1">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>

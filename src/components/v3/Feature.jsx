@@ -4,6 +4,7 @@ import fea1 from "../../assets/fea1.png";
 import fea2 from "../../assets/fea2.png";
 import fea3 from "../../assets/fea3.png";
 import fea4 from "../../assets/fea4.png";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const features = [
@@ -53,7 +54,7 @@ const Feature = () => {
           <motion.img
             src={about}
             alt="About"
-            className="w-[80%] mt-8 rounded-lg"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md mt-8 rounded-lg mx-auto"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -64,7 +65,7 @@ const Feature = () => {
         {/* Right: Features grid */}
         <div className="flex flex-col space-y-6">
           <motion.h2
-            className="mb-7 text-2xl sm:text-4xl font-medium w-[449px] text-gray-800 leading-snug"
+            className="mb-7 text-2xl sm:text-4xl font-medium max-w-[449px] text-gray-800 leading-snug"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -85,7 +86,7 @@ const Feature = () => {
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
                 viewport={{ once: false, amount: 0.2 }}
-                className="bg-white hover:bg-gray-50 transition p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md"
+                className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition duration-200 space-y-2"
               >
                 <img
                   src={item.img}
@@ -93,7 +94,7 @@ const Feature = () => {
                   className="h-12 w-12 mb-4"
                 />
                 <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <p className="text-sm font-normal">{item.text}</p>
+                <p className="text-sm leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>

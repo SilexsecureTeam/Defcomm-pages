@@ -1,31 +1,34 @@
 import { AiOutlineTeam } from "react-icons/ai";
 import { CiLock } from "react-icons/ci";
 import { IoFlashOutline, IoShieldOutline } from "react-icons/io5";
+import sampleImage from "../assets/solution.jpg";
+import sampleImage1 from "../assets/solution.png";
+import sampleImage2 from "../assets/solution1.png";
 
 export const features = [
   {
-    title: "End-to-End Encryption",
+    title: "Embedded Technology",
     description:
-      "All communications are encrypted from sender to recipient, ensuring that only intended parties can access the information.",
+      "Every Defcomm Phone is not just a device it’s a mobile command centre secured by Defcomm’s embedded encryption stack, ready for government, defence, and high-security enterprise use.",
     icon: IoShieldOutline,
     dark: true,
   },
   {
     title: "Zero-Knowledge Architecture",
     description:
-      "Our systems are designed so that even we cannot access your encrypted data, providing maximum privacy and security.",
+      "Our architecture eliminates insider threats, surveillance risks, and platform-level compromise. It positions Defcomm as a trusted solution for high-security communications, offering the privacy assurances needed for national defence, intelligence, and enterprise resilience. Defcomm is built on a strict Zero-Knowledge Architecture.",
     icon: CiLock,
   },
   {
-    title: "Signal Intelligence",
+    title: "⁠Signal Intelligence",
     description:
-      "Defcomm offers secure messaging platforms and signal protection solutions for classified communications. Our systems provide real-time threat detection, intrusion resistance, and secure channel management to prevent interception, spoofing.",
+      "Defcomm offers secure messaging platforms and signal protection solutions for classified communications. Our systems provide real-time threat detection, intrusion resistance, and secure channel management to prevent interception, spoofing,  Defcomm doesn’t store your secrets—because it never knows them in the first place.",
     icon: IoFlashOutline,
   },
   {
-    title: "Team Collaboration",
+    title: "Tamper-Proof Communication",
     description:
-      "Secure group messaging, file sharing, and collaboration tools designed for teams that need to protect sensitive information.",
+      "Defcomm delivers tamper-proof communication capabilities, embedded directly into its secure devices, ensuring every message, call, and data exchange is protected against interception, manipulation, or unauthorised access. designed for those who can’t afford uncertainty.",
     icon: AiOutlineTeam,
   },
 ];
@@ -51,22 +54,25 @@ export const stats = [
 
 export const cards = [
   {
-    title: "Experience AI",
+    title: "Air-Gap & Offline Mode",
+    description:
+      "Defcomm is built for environments where maximum isolation and security are critical. With Air-Gap and Offline Mode, it delivers uncompromising protection—even without internet connectivity.",
+    bgColor: "bg-[#131312] text-white",
+    image: sampleImage,
+  },
+  {
+    title: "Defcomm Chat",
+    description:
+      "Whether you're coordinating across agencies or communicating sensitive corporate intel, Defcomm Chat keeps your conversations safe, confidential, and fully controlled",
+    bgColor: "bg-[#131312] text-white",
+    image: sampleImage1,
+  },
+  {
+    title: "End-to-End Encryption",
     description:
       "Control the digital exhaust with a secure closed-loop private network that keeps data transmission and processing on-base without sacrificing functionality.",
     bgColor: "bg-[#131312] text-white",
-  },
-  {
-    title: "Experience AI",
-    description:
-      "Control the digital exhaust with a secure closed-loop private network that keeps data transmission and processing on-base without sacrificing functionality.",
-    bgColor: "bg-oliveLight text-white",
-  },
-  {
-    title: "Encryption",
-    description:
-      "Control the digital exhaust with a secure closed-loop private network that keeps data transmission and processing on-base without sacrificing functionality.",
-    bgColor: "bg-[#131312] text-white",
+    image: sampleImage2,
   },
 ];
 
