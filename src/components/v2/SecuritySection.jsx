@@ -34,7 +34,7 @@ const SecuritySection = () => {
             Trusted By The Armed Forces
           </div>
 
-          <h2 className="text-4xl font-bold leading-tight mb-4">
+          <h2 className="text-4xl font-bold leading-tight mb-4 w-[300px]">
             Security You Can <span className="text-lime-400">Trust</span>
           </h2>
 

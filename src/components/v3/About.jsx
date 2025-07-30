@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion"; // ✅ Add Framer Motion
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -14,16 +15,16 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white flex items-center justify-center gap-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white flex flex-wrap sm:items-center sm:justify-center gap-2 sm:text-center ">
               {/* Left bracket */}
-              <span className="relative">
+              <span className="relative hidden sm:block">
                 <span className="text-[#C6FC2B] text-5xl md:text-7xl font-extrabold">
                   「
                 </span>
               </span>
 
               {/* Main text */}
-              <span className="flex items-baseline font-extrabold">
+              <span className="flex flex-wrap items-baseline leading-relaxed font-extrabold">
                 <span className="text-white">
                   3<span className="text-[#36460A]">6</span>0-Degree
                 </span>
@@ -31,7 +32,7 @@ const About = () => {
               </span>
 
               {/* Right bracket */}
-              <span className="relative">
+              <span className="relative hidden sm:block">
                 <span className="text-[#C6FC2B] text-5xl md:text-7xl font-extrabold">
                   」
                 </span>
