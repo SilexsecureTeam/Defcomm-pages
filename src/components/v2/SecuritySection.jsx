@@ -1,5 +1,6 @@
 import React from "react";
 import { BsShieldFillCheck } from "react-icons/bs";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { stats } from "../../utils/dummies";
 
