@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import heroHand from "../../assets/hero-hand.png";
@@ -18,7 +19,7 @@ const textVariants = {
 export default function HeroSection() {
   return (
     <section className="min-h-[600px] bg-limeAccent text-[#1a1a1a] relative overflow-hidden px-6">
-      <div className="w-full max-w-peak mx-auto pt-32 grid lg:grid-cols-2 gap-10 items-center">
+      <div className="w-full max-w-peak mx-auto pt-4 grid lg:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <motion.div
           variants={textVariants}
