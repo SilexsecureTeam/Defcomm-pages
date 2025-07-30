@@ -14,7 +14,7 @@ const ComingSoon = lazy(() => import("./pages/v1/ComingSoon"));
 const Contact = lazy(() => import("./pages/v1/Contact"));
 const Services = lazy(() => import("./pages/v1/Services"));
 const Services2 = lazy(() => import("./pages/v1/ServicesV2"));
-const About = lazy(() => import("./pages/v1/About"));
+const AboutPage = lazy(() => import("./pages/v3/AboutPage"));
 const Products = lazy(() => import("./pages/v1/Products"));
 const ProductsFeatures = lazy(() => import("./pages/v1/ProductsFeatures"));
 const LiveFire = lazy(() => import("./pages/v1/LiveFire"));
@@ -29,7 +29,7 @@ const App = () => {
             <Route path="contact" element={<Contact />} />
             {/* <Route path="/services" element={<Services />} /> */}
             <Route path="/services" element={<Services2 />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/technology" element={<ProductsFeatures />} />
 
