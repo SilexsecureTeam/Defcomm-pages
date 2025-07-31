@@ -11,7 +11,7 @@ const MainLayout = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
-  const isAboutPage = location.pathname === "/about";
+  // const isAboutPage = location.pathname === "/about";
   const isBountyPage = location.pathname.startsWith("/bounty"); // Adjust as needed
 
   return (
@@ -19,7 +19,7 @@ const MainLayout = () => {
       {/* Show TopNav only on home page */}
       {isHomePage && <TopNav />}
       {/* Show TopNav only on about page */}
-      {isAboutPage && <TopNav />}
+      {/* {isAboutPage && <TopNav />} */}
 
       {/* On other pages, show LiveFireHeader or Nav */}
       {!isHomePage && (isBountyPage ? <LiveFireHeader /> : <Nav />)}

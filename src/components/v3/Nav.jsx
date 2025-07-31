@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
-import logo from "../../assets/def.png";
+import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 
 export default function Nav() {
