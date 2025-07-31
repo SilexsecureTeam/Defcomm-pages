@@ -125,7 +125,7 @@ const Use = () => {
                 transition={{ duration: 0.4, delay: index * 0.15 }}
               >
                 <div
-                  className={`group relative cursor-pointer h-[630px] overflow-hidden shadow-xl border border-gray-700/30 flex flex-col transition-all duration-300 ${
+                  className={`group relative cursor-pointer h-[550px] overflow-hidden shadow-xl border border-gray-700/30 flex flex-col transition-all duration-300 ${
                     isActive ? "bg-black text-white" : "bg-[#2F2F2F] text-white"
                   }`}
                 >
@@ -156,7 +156,7 @@ const Use = () => {
                   {/* Bottom Half */}
                   <div className="flex flex-col justify-start border-t-white border-t p-4 space-y-3 overflow-auto">
                     <motion.p
-                      className="text-sm font-normal h-[160px] leading-relaxed"
+                      className="text-[12px] font-normal h-[120px] leading-relaxed"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 0.4, delay: 0.2 }}
@@ -168,14 +168,16 @@ const Use = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: 0.3 }}
                     >
-                      <h4 className="text-base font-semibold mb-3">
+                      <h4 className="text-sm font-semibold mb-3">
                         {container.subtitle}
                       </h4>
                       {container.id === 1 ? (
-                        <p className="text-sm">{container.subtitleContent}</p>
+                        <p className="text-[12px]">
+                          {container.subtitleContent}
+                        </p>
                       ) : (
                         <motion.ul
-                          className="list-disc list-inside space-y-1 text-sm"
+                          className="list-disc list-inside space-y-1 text-[12px]"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           transition={{ duration: 0.4, delay: 0.4 }}
