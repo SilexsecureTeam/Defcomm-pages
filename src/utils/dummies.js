@@ -51,6 +51,24 @@ export const stats = [
     label: "Rated Our Gear As Durable Under Extreme Conditions",
   },
 ];
+export const stat = [
+  {
+    value: "99.9%",
+    label: "Future-Proof Technology",
+  },
+  {
+    value: "97%",
+    label: "Trusted by Defense Agencies",
+  },
+  {
+    value: "95%",
+    label: "Tamper-Resistant Encryption Protocols Deployed",
+  },
+  {
+    value: "100%",
+    label: "Customizable & Adaptable",
+  },
+];
 
 export const cards = [
   {

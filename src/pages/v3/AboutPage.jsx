@@ -3,7 +3,8 @@ import About from "../../components/v3/About";
 import Feature from "../../components/v3/Feature";
 import Use from "../../components/v3/Use";
 import Team from "../../components/v3/Team";
-// import NewsEventsSection from "../../components/v3/NewsEventsSection";
+import NewsEventsSection from "../../components/v3/NewsEventsSection";
+import Security from "../../components/v3/Security";
 
 const AboutPage = () => {
   return (
@@ -12,7 +13,8 @@ const AboutPage = () => {
       <Feature />
       <Use />
       <Team />
-      {/* <NewsEventsSection /> */}
+      <NewsEventsSection />
+      <Security />
     </div>
   );
 };
