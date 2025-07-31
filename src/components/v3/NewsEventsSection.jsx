@@ -58,7 +58,7 @@ export default function NewsEventsSection() {
           viewport={{ once: false, amount: 0.3 }}
         />
 
-        <motion.p
+        {/* <motion.p
           className="text-white text-xl font-medium leading-tight max-w-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export default function NewsEventsSection() {
         >
           Defcomm Unveils Innovative End-to-End Encryption System to Nigerian
           Army Signal Corps
-        </motion.p>
+        </motion.p> */}
 
         <Swiper
           loop={true}
