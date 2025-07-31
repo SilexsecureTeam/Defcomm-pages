@@ -4,16 +4,15 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="bg-[#141413] inter pt-14">
+    <div className="bg-[#141413]">
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Main heading with bracket borders */}
           <motion.div
             className="relative mb-8 w-full"
             initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.3 }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white flex flex-wrap sm:items-center sm:justify-center gap-2 sm:text-center ">
               {/* Left bracket */}
@@ -44,9 +43,8 @@ const About = () => {
           <motion.h3
             className="text-xl text-start font-bold text-white poppins mb-2 max-w-3xl mx-auto"
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.3 }}
           >
             The Defcomm Solutions stands as the epitome of secure connectivity
             for defence operational communication.
@@ -56,9 +54,8 @@ const About = () => {
           <motion.div
             className="text-white leading-relaxed font-normal poppins max-w-3xl mx-auto space-y-4"
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.3 }}
           >
             <p>
               Safeguarding military communication is paramount, ensuring the
