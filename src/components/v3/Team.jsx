@@ -16,7 +16,7 @@ const fadeUp = {
 const teamMembers = [
   { id: 1, name: "Nsikak Joseph Nelson", position: "CEO", img: team1 },
   { id: 2, name: "Nuno Seidi", position: "COO", img: team2 },
-  { id: 3, name: "Nuno Seidi", position: "COO", img: team3 },
+  { id: 3, name: "Opeyemi T Obayan", position: "CO]TO", img: team3 },
   { id: 4, name: "Nike Nsikak Nelson", position: "CFO", img: team4 },
   {
     id: 5,
