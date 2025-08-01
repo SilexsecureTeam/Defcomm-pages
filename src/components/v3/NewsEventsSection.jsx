@@ -58,19 +58,19 @@ export default function NewsEventsSection() {
           viewport={{ once: false, amount: 0.3 }}
         />
 
-        {/* <motion.p
+        <motion.p
           className="text-white text-xl font-medium leading-tight max-w-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          WebexOne is the only AI event that provides complete solutions and
-          training for best-in-class employee and customer experiences.
+          Stay informed about our latest developments and get updates on current
+          news and events related to Defcomm activities.
         </motion.p>
 
         <motion.p
-          className="text-white text-base mb-20 mt-1 font-normal"
+          className="text-white text-base mb-20 hidden mt-1 font-normal"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -78,7 +78,7 @@ export default function NewsEventsSection() {
         >
           Defcomm Unveils Innovative End-to-End Encryption System to Nigerian
           Army Signal Corps
-        </motion.p> */}
+        </motion.p>
 
         <Swiper
           loop={true}
