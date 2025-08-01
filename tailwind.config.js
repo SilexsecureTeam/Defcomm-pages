@@ -13,7 +13,7 @@ export default {
       },
       colors: {
         darkGreen: "#1f2e12",
-        limeAccent: "#e8f0d9",
+        limeAccent: "#DBEACA",
         oliveLight: "#36460A",
         oliveDark: "#101500",
         olive: "#759719",
