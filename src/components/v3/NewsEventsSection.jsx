@@ -4,7 +4,7 @@ import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -18,18 +18,21 @@ const uniqueNewsItems = [
     description:
       "Defcomm officially presented its groundbreaking end-to-end Encryption System to the Nigerian Army Signal Corps, marking a major step forward in secure military communications.",
     image: new1,
+    link: "/defcomm-unveil",
   },
   {
     title: "Defcomm Attends AWS Summit in LONDON",
     description:
       "Africa has a chance to build a digital future rooted in freedom, not surveillance capitalism. Every step toward secure communication and away from Big Tech surveillance sets a precedent.",
     image: new2,
+    link: "/defcomm-attend",
   },
   {
     title: "Defcomm Launches POC End-to-End Encryption Devices",
     description:
       "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
     image: new3,
+    link: "/launches-defcomm",
   },
 ];
 
@@ -39,7 +42,7 @@ export default function NewsEventsSection() {
   SwiperCore.use([Autoplay]);
   return (
     <div className="bg-gradient-to-r from-[#36460A] to-[#000000] min-h-screen p-4 md:p-8 lg:p-16">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-peak mx-auto">
         <motion.h1
           className="text-white text-4xl font-bold"
           initial={{ opacity: 0, y: -30 }}
@@ -59,7 +62,7 @@ export default function NewsEventsSection() {
         />
 
         <motion.p
-          className="text-white text-xl font-medium mb-16 leading-tight max-w-2xl"
+          className="text-white text-lg font-medium mb-16 leading-tight max-w-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -101,25 +104,27 @@ export default function NewsEventsSection() {
         >
           {swiperItems.map((item, index) => (
             <SwiperSlide key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                viewport={{ once: false, amount: 0.2 }}
-                className="border border-white rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
-              >
-                <h3 className="text-white text-xl px-4 font-bold mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-white text-sm px-4 h-[100px] mb-4">
-                  {item.description}
-                </p>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-52 px-1 pb-2 object-cover rounded-lg"
-                />
-              </motion.div>
+              <Link to={item.link}>
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  className="border border-white rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
+                >
+                  <h3 className="text-white text-xl px-4 font-bold mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-white text-sm px-4 h-[100px] mb-4">
+                    {item.description}
+                  </p>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-52 px-1 pb-2 object-cover rounded-lg"
+                  />
+                </motion.div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
