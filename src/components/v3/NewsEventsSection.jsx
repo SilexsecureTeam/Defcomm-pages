@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -36,7 +36,7 @@ const uniqueNewsItems = [
 const swiperItems = [...uniqueNewsItems, ...uniqueNewsItems];
 
 export default function NewsEventsSection() {
-  SwiperCore.use([Autoplay, Pagination]);
+  SwiperCore.use([Autoplay]);
   return (
     <div className="bg-gradient-to-r from-[#36460A] to-[#000000] min-h-screen p-4 md:p-8 lg:p-16">
       <div className="max-w-6xl mx-auto">
@@ -85,15 +85,15 @@ export default function NewsEventsSection() {
           spaceBetween={20}
           slidesPerView={1}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          pagination={{
-            clickable: false,
-            renderBullet: (index, className) => {
-              if (index < uniqueNewsItems.length) {
-                return `<span class="${className} bg-green-500 hidden"></span>`;
-              }
-              return "";
-            },
-          }}
+          // pagination={{
+          //   clickable: false,
+          //   renderBullet: (index, className) => {
+          //     if (index < uniqueNewsItems.length) {
+          //       return `<span class="${className} bg-green-500 hidden"></span>`;
+          //     }
+          //     return "";
+          //   },
+          // }}
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -124,27 +124,12 @@ export default function NewsEventsSection() {
           ))}
         </Swiper>
 
-        <div className="absolute bottom-4 right-4 hidden">
+        {/* <div className="absolute bottom-4 right-4 hidden">
           <div className="swiper-pagination hidden" />
-        </div>
+        </div> */}
       </div>
 
-      <style>{`
-        .custom-bullet {
-          width: 40px;
-          height: 10px;
-          background: white;
-          border-radius: 10%;
-          display: none;
-          margin: 0 4px;
-          opacity: 0.5;
-          transition: opacity 0.3s ease;
-        }
-        .custom-bullet-active {
-          background: #a3e635; /* lime-400 */
-          opacity: 1;
-        }
-      `}</style>
+      {/* <style */}
     </div>
   );
 }
