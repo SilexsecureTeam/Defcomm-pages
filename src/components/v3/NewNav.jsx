@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
-import logo from "../../assets/logo-black.png";
+import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 
-export default function TopNav() {
+export default function NewNav() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerDisabled, setBannerDisabled] = useState(false);
 
   return (
-    <header className="w-full z-50 pt-4 bg-limeAccent">
+    <header className="w-full z-50 pt-4 bg-[#36460A]">
       {/* Top banner */}
       <div
         className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-4 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
     ${
       bannerDisabled
         ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
-        : "bg-[#2d3f14]"
+        : "bg-[#090D00]"
     }`}
         // So hover works even when banner is disabled
         onMouseEnter={() => {
@@ -66,7 +66,7 @@ export default function TopNav() {
           </div>
 
           {/* Desktop Nav Links */}
-          <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-gray-700 font-medium text-sm md:text-base">
+          <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-white font-medium text-sm md:text-base">
             {navItems.map(({ name, path, external }) => (
               <li key={name}>
                 {external ? (
@@ -74,7 +74,7 @@ export default function TopNav() {
                     href={path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-black transition-colors"
+                    className="hover:text-lime-400 transition-colors"
                   >
                     {name}
                   </a>
@@ -83,8 +83,8 @@ export default function TopNav() {
                     to={path}
                     className={({ isActive }) =>
                       isActive
-                        ? "text-black font-semibold"
-                        : "hover:text-black transition-colors"
+                        ? "text-lime-400 font-semibold"
+                        : "hover:text-lime-400 transition-colors"
                     }
                   >
                     {name}
@@ -97,14 +97,14 @@ export default function TopNav() {
           {/* Book Demo Button */}
           <button
             onClick={() => navigate("/contact")}
-            className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
+            className="bg-[#C6FC2B] hover:bg-[#C6FC2B]/70 text-black px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
           >
             BOOK DEMO <ArrowRight className="w-4 h-4" />
           </button>
 
           {/* Mobile Menu Icon */}
           <button
-            className="lg:hidden text-gray-700 ml-4"
+            className="lg:hidden text-white ml-4"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -114,7 +114,7 @@ export default function TopNav() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <ul className="lg:hidden mt-4 space-y-4 px-4 text-gray-700 font-medium text-base">
+          <ul className="lg:hidden mt-4 space-y-4 px-4 text-white font-medium text-base">
             {navItems.map(({ name, path, external }) => (
               <li key={name}>
                 {external ? (
