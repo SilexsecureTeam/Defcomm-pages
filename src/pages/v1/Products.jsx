@@ -1,5 +1,5 @@
-import Nav from "../../components/landing/Header/Nav";
-import Footer from "../../components/landing/Footer/Footer";
+// import Nav from "../../components/landing/Header/Nav";
+// import Footer from "../../components/landing/Footer/Footer";
 import phoneProduct from "../../assets/landing/phoneProduct.png";
 import computerProduct from "../../assets/landing/computerProduct.png";
 import tabProduct from "../../assets/landing/tabProduct.png";
@@ -8,6 +8,7 @@ import phoneIllustration from "../../assets/Phone.png";
 import ultraLaptop from "../../assets/laptop.png";
 import portableSecurity from "../../assets/portable.png";
 import FeaturedPartners from "../../components/FeaturedPartners";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   return (
@@ -88,9 +89,11 @@ const Products = () => {
                 security-first hardware is trusted to deliver unmatched
                 protection where it matters most.
               </p>
-              <button className="bg-[#36460A] text-white px-12 py-3 rounded-full font-semibold">
-                Buy Now
-              </button>
+              <Link to="/hardware">
+                <button className="bg-[#36460A] text-white px-12 py-3 rounded-full font-semibold">
+                  Buy Now
+                </button>{" "}
+              </Link>
             </div>
           </div>
         </div>
