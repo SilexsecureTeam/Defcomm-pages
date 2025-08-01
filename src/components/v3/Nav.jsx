@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
@@ -55,12 +55,14 @@ export default function Nav() {
         <div className="max-w-peak mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img
-              src={logo}
-              alt="Defcomm Logo"
-              className="w-28 md:w-40 cursor-pointer"
-              onClick={() => setMobileMenuOpen(false)}
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Defcomm Logo"
+                className="w-28 md:w-40 cursor-pointer"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+            </Link>
           </div>
 
           {/* Desktop Nav Links */}

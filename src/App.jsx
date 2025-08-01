@@ -16,7 +16,7 @@ const MainLayout = lazy(() => import("./layout/MainLayout"));
 const HomePage = lazy(() => import("./pages/v2/HomePage"));
 const ComingSoon = lazy(() => import("./pages/v1/ComingSoon"));
 const Contact = lazy(() => import("./pages/v1/Contact"));
-const Services = lazy(() => import("./pages/v1/Services"));
+// const Services = lazy(() => import("./pages/v1/Services"));
 const Services2 = lazy(() => import("./pages/v1/ServicesV2"));
 const AboutPage = lazy(() => import("./pages/v3/AboutPage"));
 const Products = lazy(() => import("./pages/v1/Products"));

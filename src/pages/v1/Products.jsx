@@ -4,16 +4,16 @@ import phoneProduct from "../../assets/landing/phoneProduct.png";
 import computerProduct from "../../assets/landing/computerProduct.png";
 import tabProduct from "../../assets/landing/tabProduct.png";
 import girlHoldingPhone from "../../assets/landing/girlholdingphone.png";
-import phoneIllustration from "../../assets/landing/labelledPhone.png";
-import ultraLaptop from "../../assets/landing/ultra-laptop.png";
-import portableSecurity from "../../assets/landing/portable-security.png";
+import phoneIllustration from "../../assets/Phone.png";
+import ultraLaptop from "../../assets/laptop.png";
+import portableSecurity from "../../assets/portable.png";
 import FeaturedPartners from "../../components/FeaturedPartners";
 
 const Products = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className=" flex flex-col bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20 md:pt-[120px] overflow-hidden">
+      <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20  overflow-hidden">
         <div className="max-w-peak mx-auto px-4 flex flex-col items-center">
           <div className="flex justify-center gap-4 mb-10">
             <img
@@ -96,36 +96,33 @@ const Products = () => {
         </div>
       </section>
       {/* Ultra-Secure Laptop Section */}
-      <section className="w-full bg-[#E6F6C7] py-20 px-6 md:px-20">
+      <section className="w-full bg-[#1A2203] py-20 px-6 md:px-20">
         <div className="max-w-peak mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1">
-            <p className="text-sm text-[#36460A] mb-2">
+            <p className="text-sm text-[#DDF2AB] mb-2">
               Military | Government | INTEL Agency
             </p>
-            <h2 className="text-[#36460A] text-3xl font-semibold mb-4">
-              Ultra-Secure Laptop
+            <h2 className="text-[#DDF2AB] text-3xl font-semibold mb-4">
+              Defcomm BlackVault
             </h2>
-            <p className="text-[#121417] mb-6 leading-[1.8]">
-              Engineered with advanced encryption, biometric access, and onboard
-              threat isolation, the SecureBook Pro is built for professionals
-              who demand top-tier security without compromising speed or
-              functionality. Whether you're in the office, on the field, or in
-              transit, this device ensures seamless communication with
-              uncompromising protection.
+            <p className="text-white mb-6 leading-[1.8]">
+              Built for professionals operating in high-risk environments, the
+              Defcomm BlackVault combines elite security with uncompromised
+              performance. Featuring advanced encryption, biometric access, and
+              real-time threat isolation, it’s mission-ready whether you’re in
+              the office, on the move, or deployed in the field.
             </p>
             <div className="mb-8">
-              <h4 className="text-[#36460A] font-semibold mb-2">
-                Key Features
-              </h4>
-              <ul className="list-disc pl-5 text-[#36460A]">
-                <li>End-to-end encrypted OS</li>
-                <li>Secure bootloader and biometric lock</li>
-                <li>Offline emergency protocols</li>
-                <li>Real-time system threat monitoring</li>
+              <h4 className="text-white font-semibold mb-2">Key Features</h4>
+              <ul className="list-disc pl-5 text-white">
+                <li>Full end-to-end OS encryption</li>
+                <li>Biometric access with secure bootloader</li>
+                <li>Offline emergency lockdown protocols</li>
+                <li>Live system threat detection and isolatio</li>
               </ul>
             </div>
-            <button className="bg-[#000000] text-white px-8 py-3 rounded-full font-semibold">
-              Buy Now
+            <button className="text-[#000000] bg-[#C6FC2B] px-8 py-3 rounded-full font-semibold">
+              Explore Software
             </button>
           </div>
           <div className="flex-1 flex justify-center items-center">
@@ -151,27 +148,35 @@ const Products = () => {
             Military | Government | INTEL Agency
           </p>
           <h2 className="text-[#36460A] text-3xl font-semibold mb-4">
-            Portable Security.
+            Portable security.
             <br />
-            Always Within Reach.
+            Always within reach.
           </h2>
           <p className="text-[#121417] mb-6 leading-[1.8]">
-            The VaultTab S1 is your lightweight, secure command center — ideal
-            for on-the-go operations, VVIP monitoring, remote incident logging,
-            or secure document handling. It integrates smoothly with other
-            DefComm devices, offering encrypted cloud sync, tamper alerts, and a
-            user-friendly interface.
+            The Defcomm ShieldPad is your ultra-light, hardened command
+            terminal—built for field mobility, VVIP oversight, incident capture,
+            and secure data handling. Engineered for seamless integration with
+            the DefComm ecosystem, it offers encrypted cloud sync, real-time
+            tamper detection, and a clean, intuitive interface.
           </p>
           <div className="mb-8">
-            <h4 className="text-[#36460A] font-semibold mb-2">Key Features</h4>
-            <ul className="list-disc pl-5 text-[#36460A]">
-              <li>AES-256 encrypted OS & app layer</li>
-              <li>Biometric + physical kill-switch protection</li>
-              <li>Device lockdown mode for emergency use</li>
-              <li>Up to 18hr battery life with solar assist</li>
+            <h4 className="text-[#121417] font-semibold mb-2">
+              Core Capabilities:
+            </h4>
+            <ul className="list-disc pl-5 text-[#121417]">
+              <li>AES-256 full-stack encryption (OS + apps)</li>
+              <li>
+                Dual-layer protection: biometric auth + physical kill-switch
+              </li>
+              <li>Rapid lockdown mode for emergency scenarios</li>
+              <li>18-hour battery life with solar-assist charging</li>
             </ul>
+            <p className="text-[#121417] mb-6 mt-3 leading-[1.8]">
+              When security can't fail and mobility is mission-critical, the
+              Defcomm ShieldPad delivers.
+            </p>
           </div>
-          <button className="bg-[#36460A] text-white px-8 py-3 rounded-full font-semibold">
+          <button className="bg-[#36460A] text-white  px-8 py-3 rounded-full font-semibold">
             Buy Now
           </button>
         </div>

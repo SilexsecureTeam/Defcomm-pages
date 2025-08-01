@@ -50,19 +50,6 @@ const Blog3Page = () => {
     <div>
       <section className="bg-limeAccent w-full">
         <div className="max-w-peak mx-auto py-10 md:py-20">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex items-center space-x-2 bg-[#54622D] rounded-full w-fit py-2 px-4 mb-16 cursor-pointer"
-            onClick={handleBack}
-          >
-            <LockKeyhole className="w-6 h-6 text-white" />
-            <h1 className="text-sm text-[#F0F2F5] uppercase tracking-wide cursor-pointer">
-              Back to News
-            </h1>
-          </motion.div>
           <div className="w-full px-4 sm:px-6 md:px-10 lg:px-14">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -74,6 +61,19 @@ const Blog3Page = () => {
               Defcomm Unveils Advanced Military Encryption System to Nigerian
               Army Signal Corps.
             </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex items-center space-x-2 bg-[#54622D] rounded-full mx-auto w-fit py-2 px-4 mb-16 cursor-pointer"
+              onClick={handleBack}
+            >
+              <LockKeyhole className="w-6 h-6 text-white" />
+              <h1 className="text-sm text-[#F0F2F5] uppercase tracking-wide cursor-pointer">
+                Back to News
+              </h1>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -106,7 +106,7 @@ const Blog3Page = () => {
         </div>
       </section>
       <section className="bg-white">
-        <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-xl md:text-xl px-4 sm:px-6 md:px-10 lg:px-14 py-10">
+        <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -149,42 +149,44 @@ const Blog3Page = () => {
           >
             Related news
           </motion.p>
-          <Swiper
-            loop={true}
-            spaceBetween={20}
-            slidesPerView={1}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 2 },
-            }}
-          >
-            {swiperItems.map((item, index) => (
-              <SwiperSlide key={index}>
-                <Link to={item.link}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    className="border border-white bg-gradient-to-b from-[#36460A] to-[#000000] rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
-                  >
-                    <h3 className="text-white text-xl h-[50px] px-4 font-bold mb-4">
-                      {item.title}
-                    </h3>
-                    <p className="text-white text-sm px-4 h-[100px] mb-4">
-                      {item.description}
-                    </p>
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-52 px-1 pb-2 object-cover rounded-lg"
-                    />
-                  </motion.div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="max-w-4xl mx-auto">
+            <Swiper
+              loop={true}
+              spaceBetween={20}
+              slidesPerView={1}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2 },
+              }}
+            >
+              {swiperItems.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <Link to={item.link}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                      className="border border-white bg-gradient-to-b from-[#36460A] to-[#000000] rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
+                    >
+                      <h3 className="text-white text-xl h-[50px] px-4 font-bold mb-4">
+                        {item.title}
+                      </h3>
+                      <p className="text-white text-sm px-4 h-[100px] mb-4">
+                        {item.description}
+                      </p>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-52 px-1 pb-2 object-cover rounded-lg"
+                      />
+                    </motion.div>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </section>
     </div>
