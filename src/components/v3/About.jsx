@@ -41,7 +41,7 @@ const About = () => {
 
           {/* Subheading */}
           <motion.h3
-            className="text-xl text-start font-bold text-white poppins mb-2 max-w-3xl mx-auto"
+            className="text-xl text-start font-bold text-[#BAB9B9] poppins mb-2 max-w-3xl mx-auto"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}

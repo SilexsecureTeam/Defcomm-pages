@@ -31,7 +31,7 @@ export default function HeroSection() {
           <motion.span
             variants={textVariants}
             custom={0}
-            className="inline-flex items-center gap-2 text-sm px-4 py-1 rounded-full bg-[#36460A] text-white font-medium"
+            className="sm:inline-flex items-center gap-2 text-sm px-4 py-2 hidden rounded-full bg-[#36460A] text-white font-medium "
           >
             <LockIcon className="w-4 h-4" />
             Military-Grade Security
@@ -45,7 +45,14 @@ export default function HeroSection() {
             Secure Your <br />
             <span className="text-[#5a6834]">Digital Future</span>
           </motion.h1>
-
+          <motion.span
+            variants={textVariants}
+            custom={0}
+            className="inline-flex sm:hidden items-center gap-2 text-sm px-4 py-2 rounded-full bg-[#36460A] text-white font-medium"
+          >
+            <LockIcon className="w-4 h-4" />
+            Military-Grade Security
+          </motion.span>
           <motion.p
             variants={textVariants}
             custom={2}

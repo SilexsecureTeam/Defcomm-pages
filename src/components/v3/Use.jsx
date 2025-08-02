@@ -13,7 +13,7 @@ const fadeUp = {
 const containers = [
   {
     id: 1,
-    title: "DEFENCE AND NATIONAL SECURITY",
+    title: "DEFENCE NATIONAL SECURITY",
     paragraph:
       "Defcomm is purpose built to meet the uncompromising demands of defence operations and national security agencies, providing a hardened, end-to-end encrypted communication platform for mission-critical environments.",
     subtitle: "Strategic Impact:",
