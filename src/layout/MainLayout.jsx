@@ -7,7 +7,7 @@ import Footer from "../components/v2/Footer";
 import BackToTopButton from "../components/BackToTopButton";
 import { Outlet } from "react-router-dom";
 import TopNav from "../components/v2/TopNav";
-import ScrollToTop from "../components/ScrollToTop"; // 👈 Import it
+import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -19,6 +19,7 @@ const MainLayout = () => {
   const isProduct = location.pathname === "/products";
   const isSoftware = location.pathname === "/software";
   const isBountyPage = location.pathname.startsWith("/bounty");
+  const isServices = location.pathname === "/services"; // Added to check for /services
 
   return (
     <div className="w-screen bg-gray-50">
@@ -29,6 +30,7 @@ const MainLayout = () => {
         isBlogPage3 ||
         isSoftware) && <TopNav />}
       {!isHomePage &&
+        !isServices && // Exclude header for /services
         !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 

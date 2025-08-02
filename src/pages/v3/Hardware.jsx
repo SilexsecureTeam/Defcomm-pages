@@ -75,7 +75,7 @@ const Hardware = () => {
         <div className="max-w-peak mx-auto">
           {/* Header */}
           <motion.header
-            className="md:text-4xl text-3xl max-w-[450px] font-bold text-white mb-6"
+            className="md:text-4xl text-3xl max-w-[450px] font-bold text-white mt-10 mb-6"
             variants={fadeVariants}
           >
             Core Hardware Features{" "}
@@ -91,12 +91,12 @@ const Hardware = () => {
           >
             {/* First Container */}
             <motion.div
-              className="flex flex-col justify-between flex-1 p-4 rounded"
+              className="flex flex-col justify-between max-w-[320px] py-4 rounded"
               variants={fadeVariants}
             >
               {/* Subcontainer 1 */}
               <motion.div
-                className="p-4 rounded text-sm text-[#B8B8B8] mb-4"
+                className="py-4 rounded text-sm text-[#B8B8B8] mb-4"
                 variants={fadeVariants}
               >
                 <div className="bg-[#89AF20] w-8 h-8"></div>
@@ -225,7 +225,7 @@ const Hardware = () => {
               <motion.img
                 src={about}
                 alt="About"
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md mt-8 rounded-lg mx-auto"
+                className="w-full max-w-[300px] md:max-w-[340px] mt-8 rounded-lg mx-auto"
                 variants={fadeVariants}
               />
             </motion.div>

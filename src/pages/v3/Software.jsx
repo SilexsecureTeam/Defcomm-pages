@@ -77,7 +77,7 @@ const Software = () => {
             <div className="">
               <div className="md:text-5xl text-3xl max-w-[590px] font-bold text-[#393D1C] ">
                 Core Softwares Features{" "}
-                <span className="text-[#99A34A] font-semibold">
+                <span className="text-[#b8ca2e] font-semibold">
                   On Defcomm Apps
                 </span>
               </div>
@@ -108,11 +108,11 @@ const Software = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-[420px] md:w-1/2">
+          <div className="w-full md:w-1/2">
             <img
               src={software}
               alt="software"
-              className="w-full md:w-[90%] mx-auto h-full object-cover"
+              className="w-full md:w-auto max-h-[450px] mx-auto object-contain"
             />
           </div>
         </div>

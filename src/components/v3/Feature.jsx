@@ -54,7 +54,7 @@ const Feature = () => {
           <motion.img
             src={about}
             alt="About"
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md mt-8 rounded-lg mx-auto"
+            className="w-full h-[420px] max-w-[300px] sm:max-w-xs md:max-w-[340px] mt-8 rounded-lg mx-auto"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}

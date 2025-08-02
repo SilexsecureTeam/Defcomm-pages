@@ -14,7 +14,7 @@ export default function TopNav() {
     <header className="w-full z-50 pt-4 bg-limeAccent">
       {/* Top banner */}
       <div
-        className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-4 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
+        className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-6 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
     ${
       bannerDisabled
         ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
@@ -33,7 +33,7 @@ export default function TopNav() {
       >
         <IoClose
           size={20}
-          className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
+          className="absolute md:right-4 right-1 top-1/2 -translate-y-1/2 cursor-pointer"
           onClick={() => setBannerDisabled(!bannerDisabled)}
           title={bannerDisabled ? "Enable banner" : "Disable banner"}
         />

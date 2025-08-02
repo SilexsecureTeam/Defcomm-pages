@@ -3,7 +3,7 @@ export const navItems = [
   { name: "About Us", path: "/about" },
   {
     name: "Defcomm Store",
-    path: "https://defcomm-store.vercel.app/",
+    path: "https://appstore.defcomm.ng/",
     external: true,
   },
   { name: "Products", path: "/products" },

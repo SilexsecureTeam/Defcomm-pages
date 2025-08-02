@@ -7,7 +7,7 @@ import girlHoldingPhone from "../../assets/landing/girlholdingphone.png";
 import phoneIllustration from "../../assets/phone.png";
 import ultraLaptop from "../../assets/laptop.png";
 import portableSecurity from "../../assets/portable.png";
-import FeaturedPartners from "../../components/FeaturedPartners";
+// import FeaturedPartners from "../../components/FeaturedPartners";
 import { Link } from "react-router-dom";
 
 const Products = () => {
@@ -16,11 +16,11 @@ const Products = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20  overflow-hidden">
         <div className="max-w-peak mx-auto px-4 flex flex-col items-center">
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="flex justify-center items-end gap-4 mb-10">
             <img
               src={phoneProduct}
               alt="Phone Product"
-              className="h-28 md:h-36 object-contain"
+              className="h-24 md:h-34 object-contain"
             />
             <img
               src={computerProduct}
@@ -91,7 +91,7 @@ const Products = () => {
               </p>
               <Link to="/hardware">
                 <button className="bg-[#36460A] text-white px-12 py-3 rounded-full font-semibold">
-                  Buy Now
+                  Explore Hardware
                 </button>{" "}
               </Link>
             </div>
@@ -145,7 +145,7 @@ const Products = () => {
           <img
             src={portableSecurity}
             alt="Portable Security Device"
-            className="w-full object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
         <div className="flex-1">
@@ -186,7 +186,7 @@ const Products = () => {
           </button>
         </div>
       </section>
-      <FeaturedPartners />
+      {/* <FeaturedPartners /> */}
       {/* <Footer /> */}
     </div>
   );
