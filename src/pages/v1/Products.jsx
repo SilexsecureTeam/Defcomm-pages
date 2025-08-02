@@ -4,7 +4,7 @@ import phoneProduct from "../../assets/landing/phoneProduct.png";
 import computerProduct from "../../assets/landing/computerProduct.png";
 import tabProduct from "../../assets/landing/tabProduct.png";
 import girlHoldingPhone from "../../assets/landing/girlholdingphone.png";
-import phoneIllustration from "../../assets/Phone.png";
+import phoneIllustration from "../../assets/phone.png";
 import ultraLaptop from "../../assets/laptop.png";
 import portableSecurity from "../../assets/portable.png";
 import FeaturedPartners from "../../components/FeaturedPartners";

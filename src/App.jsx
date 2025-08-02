@@ -10,6 +10,7 @@ import Blog1Page from "./pages/v3/Blog1Page";
 import Blog2Page from "./pages/v3/Blog2Page";
 import Blog3Page from "./pages/v3/Blog3Page";
 import Hardware from "./pages/v3/Hardware";
+import Software from "./pages/v3/Software";
 // import ScrollToTop from "./components/ScrollToTop";
 
 const MainLayout = lazy(() => import("./layout/MainLayout"));
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/defcomm-attend" element={<Blog2Page />} />
             <Route path="/defcomm-unveil" element={<Blog3Page />} />
             <Route path="/hardware" element={<Hardware />} />
+            <Route path="/software" element={<Software />} />
 
             <Route path="/bounty" element={<LiveFire />} />
             {/* Catch-all redirect */}

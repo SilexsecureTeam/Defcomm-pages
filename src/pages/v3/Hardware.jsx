@@ -37,20 +37,20 @@ const cards = [
       "Both front and rear cameras are shut down. No image or video data can be captured, transmitted, or accessed.",
     subtitle2: "Location Services Disabled",
     subtext2: "GPS and all location-tracking functions are fully disabled. ",
-    bg: "bg-gradient-to-r from-[#36460A] to-[#000000]",
+    bg: "bg-[#121417]",
   },
   {
     id: 2,
     title: "Biometric Authentication",
     text: "Defcomm’s biometric system provides hardened identity verification using fingerprint, facial, or iris recognition secured by military-grade encryption and isolated from the main OS for tamper resistance. Designed for zero lag access and high-threat environments, it’s built to verify the right person, every time.",
-    bg: "bg-gradient-to-r from-[#36460A] to-[#000000]",
+    bg: "bg-gradient-to-r from-[#121417] to-[#36460A]",
   },
   {
     id: 3,
     title: "Secure Boot & Encrypted Storage",
     text: "Defcomm devices leverage a cryptographically verified secure boot process, ensuring only trusted firmware and operating system components can initialise. From the moment the device powers on, a layered trust chain authenticates each stage preventing boot-kits, rootkits, or unauthorized OS modifications",
     List: "Hardware-anchored root of trust \nTamper-evident bootloader with fail-safe rollback\nRuntime integrity checks to detect injection or manipulation",
-    bg: "bg-gradient-to-r from-[#36460A] to-[#000000]",
+    bg: "bg-[#36460A]",
   },
 ];
 
@@ -69,7 +69,7 @@ const Hardware = () => {
         className="min-h-screen bg-[#141413] p-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={fadeVariants}
       >
         <div className="max-w-peak mx-auto">
@@ -197,7 +197,7 @@ const Hardware = () => {
         className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 bg-white"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={fadeVariants}
       >
         <div className="max-w-peak mx-auto grid lg:grid-cols-2 gap-12 lg:items-start">
@@ -278,7 +278,7 @@ const Hardware = () => {
         className="bg-white py-6"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={fadeVariants}
       >
         <div className="p-6 bg-screen min-h-screen">
@@ -346,7 +346,7 @@ const Hardware = () => {
               variants={fadeVariants}
             >
               <motion.div
-                className="flex-1 text-[#f5f4f4] px-6 py-12 rounded-lg shadow-md bg-gradient-to-r from-[#36460A] to-[#000000]"
+                className="flex-1 text-[#f5f4f4] px-6 py-12 rounded-lg shadow-md bg-gradient-to-l from-[#102735] to-[#B87944]"
                 variants={fadeVariants}
               >
                 <h2 className="text-2xl font-bold mb-2">
@@ -365,7 +365,7 @@ const Hardware = () => {
                 </p>
               </motion.div>
               <motion.div
-                className="flex-1 text-[#f5f4f4] px-6 py-12 rounded-lg shadow-md bg-gradient-to-r from-[#36460A] to-[#000000]"
+                className="flex-1 text-[#f5f4f4] px-6 py-12 rounded-lg shadow-md bg-gradient-to-r from-[#102735] to-[#B87944]"
                 variants={fadeVariants}
               >
                 <h2 className="text-2xl font-bold mb-2">
@@ -387,7 +387,7 @@ const Hardware = () => {
 
             {/* Bottom Full Width Card */}
             <motion.div
-              className="p-6 text-[#f5f4f4] px-6 py-12 rounded-lg shadow-md bg-gradient-to-r from-[#36460A] to-[#000000]"
+              className="p-6 text-[#f5f4f4] px-6 py-12 rounded-lg shadow-md bg-gradient-to-r from-[#121417] to-[#00313A]"
               variants={fadeVariants}
             >
               <h2 className="text-2xl font-bold mb-2">
