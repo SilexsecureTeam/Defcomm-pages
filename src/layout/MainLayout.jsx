@@ -17,14 +17,19 @@ const MainLayout = () => {
   const isBlogPage2 = location.pathname === "/defcomm-attend";
   const isBlogPage3 = location.pathname === "/defcomm-unveil";
   const isProduct = location.pathname === "/products";
+  const isSoftware = location.pathname === "/software";
   const isBountyPage = location.pathname.startsWith("/bounty");
 
   return (
     <div className="w-screen bg-gray-50">
       <ScrollToTop />
-      {(isHomePage || isBlogPage1 || isBlogPage2 || isBlogPage3) && <TopNav />}
+      {(isHomePage ||
+        isBlogPage1 ||
+        isBlogPage2 ||
+        isBlogPage3 ||
+        isSoftware) && <TopNav />}
       {!isHomePage &&
-        !(isBlogPage1 || isBlogPage2 || isBlogPage3) &&
+        !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 
       <main className="w-full mx-auto">
