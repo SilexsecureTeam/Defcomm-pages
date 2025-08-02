@@ -124,9 +124,11 @@ const Products = () => {
                 <li>Live system threat detection and isolatio</li>
               </ul>
             </div>
-            <button className="text-[#000000] bg-[#C6FC2B] px-8 py-3 rounded-full font-semibold">
-              Explore Software
-            </button>
+            <Link to="/software">
+              <button className="text-[#000000] bg-[#C6FC2B] px-8 py-3 rounded-full font-semibold">
+                Explore Software
+              </button>
+            </Link>
           </div>
           <div className="flex-1 flex justify-center items-center">
             <img
