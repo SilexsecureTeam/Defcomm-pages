@@ -114,7 +114,7 @@ export default function NewNav() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <ul className="lg:hidden mt-4 space-y-4 px-4 text-white font-medium text-base">
+          <ul className="lg:hidden mt-4 space-y-4 px-4 text-black font-medium text-base">
             {navItems.map(({ name, path, external }) => (
               <li key={name}>
                 {external ? (
@@ -122,7 +122,7 @@ export default function NewNav() {
                     href={path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-black block"
+                    className="hover:text-black text-black block"
                     onClick={() => setMobileMenuOpen(false)} // close menu on click
                   >
                     {name}

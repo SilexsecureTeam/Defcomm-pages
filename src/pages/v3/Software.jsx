@@ -44,7 +44,7 @@ const cards = [
   {
     id: 3,
     title: "Screenshot Protection",
-    text: "Ever DefComm’s screenshot protection gives admins the ability to block screenshots for enhanced internal security. If a screenshot is attempted, the user is immediately notified. Screen recording is disabled by default. If an external device is used to capture the screen, the system’s AI automatically activates a dynamic watermark overlay, making the content unreadable and deterring unauthorised capture.",
+    text: "DefComm’s screenshot protection gives admins the ability to block screenshots for enhanced internal security. If a screenshot is attempted, the user is immediately notified. Screen recording is disabled by default. If an external device is used to capture the screen, the system’s AI automatically activates a dynamic watermark overlay, making the content unreadable and deterring unauthorised capture.",
     List: "Hardware-anchored root of trust \nTamper-evident bootloader with fail-safe rollback\nRuntime integrity checks to detect injection or manipulation",
     bg: "bg-[#36460A]",
   },
@@ -68,7 +68,7 @@ const Software = () => {
       <div className="bg-limeAccent w-full">
         <div className="max-w-peak mx-auto py-10 flex justify-between flex-col md:flex-row ">
           <div className="flex flex-col justify-between w-full md:w-1/2">
-            <div className="flex space-x-2 bg-[#54622D] rounded-full w-fit  py-2 px-4 mb-16 cursor-pointer">
+            <div className="flex space-x-2 bg-[#36460A] rounded-full w-fit  py-2 px-4 mb-16 cursor-pointer">
               <LockKeyhole className="w-4 h-4 text-white" />
               <h1 className="text-sm text-[#F0F2F5] uppercase tracking-wide cursor-pointer">
                 Military-Grade Security
@@ -77,7 +77,7 @@ const Software = () => {
             <div className="">
               <div className="md:text-5xl text-3xl max-w-[590px] font-bold text-[#393D1C] ">
                 Core Softwares Features{" "}
-                <span className="text-[#b8ca2e] font-semibold">
+                <span className="text-[#5a6834] font-semibold">
                   On Defcomm Apps
                 </span>
               </div>
@@ -217,8 +217,12 @@ const Software = () => {
                 <p className="mb-1 text-[15px]">
                   Every shared document or image is stamped with a unique,
                   user-specific watermark. This includes identifiers like
-                  usernames, timestamps, and session IDs making leaks
-                  traceable...
+                  usernames, timestamps, and session IDs making leaks traceable.
+                  The watermark adjusts in size and position based on screen
+                  size, zoom level, or attempted capture maintaining visibility
+                  under all conditions.Every document shared with watermark
+                  protection is logged with full tracking of who accessed,
+                  viewed, or attempted to capture it.
                 </p>
               </motion.div>
               <motion.div
@@ -230,7 +234,11 @@ const Software = () => {
                 </h2>
                 <p className="mb-1 text-[15px]">
                   DefComm allows fully encrypted file sharing with total user
-                  control. The original sender retains ownership...
+                  control. The original sender retains ownership and can grant
+                  or revoke access at any time. Files are protected under the
+                  sender’s keychain, and an advanced logging system tracks every
+                  share action—ensuring transparency and security with every
+                  transfer.
                 </p>
               </motion.div>
             </motion.div>
@@ -243,7 +251,13 @@ const Software = () => {
                 Operating System Development & Secure Computing
               </h2>
               <p className="mb-2 text-[15px]">
-                End-to-end encrypted to keep conversations private...
+                End-to-end encrypted to keep conversations private.All calls are
+                end-to-end encrypted to ensure privacy. When a user initiates a
+                call, DefComm’s encryption protocol instantly verifies the
+                identity of both parties. If authentication is successful, a
+                unique activation key is exchanged before the call
+                begins—ensuring that only verified users can connect and
+                communicate securely.
               </p>
             </motion.div>
           </div>

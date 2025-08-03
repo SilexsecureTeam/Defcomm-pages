@@ -23,7 +23,7 @@ const ContactSection = () => {
           href="mailto:security@defcomm.com"
           className="bg-[#89AF20] text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium text-base md:text-lg shadow hover:bg-[#6e8e1a] transition text-center"
         >
-          Contact Us at security@defcomm.com
+          Contact Us at business@defcomm.ng
         </motion.a>
       </motion.div>
     </section>

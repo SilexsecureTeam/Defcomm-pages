@@ -16,7 +16,7 @@ const Products = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20  overflow-hidden">
         <div className="max-w-peak mx-auto px-4 flex flex-col items-center">
-          <div className="flex justify-center items-end gap-4 mb-10">
+          <div className="flex justify-center items-center gap-4 mb-10">
             <img
               src={phoneProduct}
               alt="Phone Product"

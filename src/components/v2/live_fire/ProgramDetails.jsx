@@ -10,12 +10,12 @@ const tabData = {
       <div className="mb-6">
         <span className="text-white font-bold">Start Date</span>
         <br />
-        <span className="text-gray-200">Coming soon – March 2025</span>
+        <span className="text-gray-200">Coming soon </span>
       </div>
       <div className="mb-6">
         <span className="text-white font-bold">End Date</span>
         <br />
-        <span className="text-gray-200">Coming soon – March 2025</span>
+        <span className="text-gray-200">Coming soon </span>
         <br />
         <span className="text-[#C6A24B] text-sm">
           Submissions accepted throughout the month — first come, first

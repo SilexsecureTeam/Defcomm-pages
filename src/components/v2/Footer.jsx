@@ -3,6 +3,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import logoIcon from "../../assets/logo-icon.png";
 import { FaSignInAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+const navItems = [
+  { name: "About Us", route: "/about" },
+  { name: "Careers" },
+  { name: "Security Blog" },
+  { name: "Contact" },
+];
+
+const featureLinks = [
+  { name: "Secure Messaging" },
+  { name: "File Encryption" },
+  { name: "Video Conferencing" },
+  { name: "Enterprise Suite" },
+];
 
 const Footer = () => {
   return (
@@ -69,16 +84,14 @@ const Footer = () => {
                 Solutions
               </h4>
               <ul className="space-y-2 list-disc pl-5 text-left">
-                {[
-                  "Secure Messaging",
-                  "File Encryption",
-                  "Video Conferencing",
-                  "Enterprise Suite",
-                ].map((item, idx) => (
+                {featureLinks.map((item, idx) => (
                   <li key={idx}>
-                    <a href="#" className="hover:underline transition-colors">
-                      {item}
-                    </a>
+                    <Link
+                      to={item.route}
+                      className="hover:underline transition-colors"
+                    >
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -90,15 +103,16 @@ const Footer = () => {
                 Company
               </h4>
               <ul className="space-y-2 list-disc pl-5 text-left">
-                {["About Us", "Careers", "Security Blog", "Contact"].map(
-                  (item, idx) => (
-                    <li key={idx}>
-                      <a href="#" className="hover:underline transition-colors">
-                        {item}
-                      </a>
-                    </li>
-                  )
-                )}
+                {navItems.map((item, idx) => (
+                  <li key={idx}>
+                    <Link
+                      to={item.route}
+                      className="hover:underline transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

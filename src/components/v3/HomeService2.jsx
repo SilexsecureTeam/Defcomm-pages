@@ -133,7 +133,7 @@ const HomeService2 = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 onClick={() => navigate("/contact")}
-                className="bg-[#C6FC2B] hover:bg-[#C6FC2B]/70 text-black px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
+                className="bg-gradient-to-r from-[#9BA54B] to-[#3E432B] hover:bg-[#C6FC2B]/70 text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
               >
                 BOOK DEMO <ArrowRight className="w-4 h-4" />
               </motion.button>
@@ -158,7 +158,7 @@ const HomeService2 = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="lg:hidden mt-4 space-y-4 px-4 text-white font-medium text-base"
+                className="lg:hidden mt-4 space-y-4 px-4 text-black font-medium text-base"
               >
                 {navItems.map(({ name, path, external }, index) => (
                   <motion.li
@@ -173,7 +173,7 @@ const HomeService2 = () => {
                         href={path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-black block"
+                        className="hover:text-black text-black block"
                       >
                         {name}
                       </a>
@@ -196,13 +196,13 @@ const HomeService2 = () => {
           </motion.nav>
         </header>
         <div className="max-w-peak mx-auto py-16">
-          <div className="relative flex flex-col justify-center items-start px-8 md:px-12 text-[#D9D9E9] lg:ml-[0px] h-fit pb-10 lg:h-[450px] space-y-5">
+          <div className="relative flex flex-col justify-start pt-8 items-start px-8 md:px-12 text-[#D9D9E9] lg:ml-[0px] h-fit pb-10 lg:h-[450px] space-y-2">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
-              className="text-[35px] font-semibold md:max-w-[40%] leading-[1.4]"
+              className="text-[35px] font-semibold md:max-w-[500px] leading-[1.4]"
             >
               Technology-Driven Security.{" "}
               <span className="text-[#C6FC2B]">
@@ -214,7 +214,7 @@ const HomeService2 = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
-              className="text-[#D1D5DB] md:max-w-[45%]"
+              className="text-[#D1D5DB] md:max-w-[460px]"
             >
               Our services are engineered to deliver resilient, encrypted, and
               intelligent communication infrastructure — where failure is not an
@@ -226,13 +226,13 @@ const HomeService2 = () => {
 
       {/* Key Services Overview */}
       <section className="bg-white w-full">
-        <div className="max-w-peak mx-auto py-16">
+        <div className="max-w-peak mx-auto py-16 px-4 md:px-0">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-bold mb-12 text-black"
+            className="text-2xl font-bold mb-12 text-black "
           >
             Defcomm Solutions – Key Services Overview
           </motion.h2>
@@ -257,7 +257,7 @@ const HomeService2 = () => {
 
       {/* Secure Mobile Devices */}
       <section className="bg-[#F5F5F5] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12">
+        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -289,7 +289,7 @@ const HomeService2 = () => {
 
       {/* End-to-End Encrypted Communication Platforms */}
       <section className="bg-[#EFEFEF] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12">
+        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
           <motion.img
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -323,7 +323,7 @@ const HomeService2 = () => {
 
       {/* Embedded Communication Systems */}
       <section className="bg-[#F5F5F5] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12">
+        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -355,7 +355,7 @@ const HomeService2 = () => {
 
       {/* Additional Services */}
       <section className="bg-[#E8EEE1] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12">
+        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12 px-4 md:px-0">
           <motion.img
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -373,7 +373,7 @@ const HomeService2 = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4 }}
-                className="p-6 text-[#3D3D3D] space-y-3"
+                className="py-6 text-[#3D3D3D] space-y-3"
               >
                 <h3 className="text-xl font-semibold">{item.title}</h3>
                 <p className="text-base">{item.text}</p>
