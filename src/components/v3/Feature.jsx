@@ -1,8 +1,8 @@
 import React from "react";
 import about from "../../assets/about.png";
 import fea1 from "../../assets/fea1.png";
-import fea2 from "../../assets/fea2.png";
-import fea3 from "../../assets/fea3.png";
+import fea2 from "../../assets/abt2.svg";
+import fea3 from "../../assets/abt1.svg";
 import fea4 from "../../assets/fea4.png";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";

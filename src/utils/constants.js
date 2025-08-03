@@ -14,10 +14,10 @@ export const navItems = [
 
 export const navList = [
   { route: "/", label: "Home" },
-  { route: "/program-details", label: "Program Details" },
-  { route: "/rewards", label: "Rewards" },
-  { route: "/rules", label: "Rules" },
-  { route: "/faqs", label: "FAQs" },
+  {  label: "Program Details" },
+  {  label: "Rewards" },
+  {  label: "Rules" },
+  {  label: "FAQs" },
 ];
 
 export const faqs = [

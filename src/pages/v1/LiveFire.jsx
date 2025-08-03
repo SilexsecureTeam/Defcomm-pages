@@ -8,11 +8,11 @@ import FAQSection from "../../components/v2/live_fire/FAQSection";
 import ContactSection from "../../components/v2/live_fire/ContactSection";
 import Footer from "../../components/landing/Footer/Footer";
 
-const targetDate = new Date("2025-07-31T12:00:00").getTime();
+const targetDate = new Date("2025-11-01T12:00:00").getTime();
 const LiveFire = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#111] to-[#222] flex flex-col">
-      <main className="flex flex-col items-center justify-center flex-1 pt-28 pb-10 px-4 max-w-5xl mx-auto">
+      <main className="flex flex-col items-center justify-center flex-1 pt-36 pb-10 px-4 max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-semibold text-center mb-4 text-[#AC7C2E] drop-shadow-lg">
           Think you can break us?
           <br />
