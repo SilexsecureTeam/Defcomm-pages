@@ -104,7 +104,7 @@ export default function Nav() {
 
           {/* Mobile Menu Icon */}
           <button
-            className="lg:hidden text-white ml-4"
+            className="lg:hidden text-gray-400 ml-4"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
