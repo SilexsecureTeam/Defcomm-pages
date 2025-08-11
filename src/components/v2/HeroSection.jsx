@@ -19,6 +19,9 @@ import {
   FolderOpen,
   Grid3X3,
   ToggleLeft,
+  MessageSquare,
+  FileText,
+  User,
 } from "lucide-react"; // Added icons for tabs
 import scan from "../../assets/scan.png";
 import sec1 from "../../assets/sec1.png";
@@ -46,10 +49,27 @@ const textVariants = {
   }),
 };
 
+const slideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => ({
+    x: direction < 0 ? 100 : -100,
+    opacity: 0,
+  }),
+};
+
 export default function HeroSection() {
   const [currentTime, setCurrentTime] = useState("21:00"); // Set to 09:00 PM WAT initially
   const [currentDate, setCurrentDate] = useState("Sun, 10 August 2025"); // Set to today's date
   const [activeTab, setActiveTab] = useState("default"); // Tracks clicked tab
+  const [slideIndex, setSlideIndex] = useState(0); // Tracks current slide for the slider
+  const [direction, setDirection] = useState(0); // Tracks slide direction for animation
 
   // Real-time date/time update
   useEffect(() => {
@@ -76,10 +96,47 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Sample slides data (3 example meeting notices)
+  const slides = [
+    {
+      title: "Defcomm Meet Defence Signal",
+      description:
+        "The Defcomm team is scheduled to meet with the Army Signal Intelligence Corps on April 22, 2025, at the Signal Office in Lagos.",
+    },
+    {
+      title: "Defcomm Strategy Session",
+      description:
+        "Join the strategy session with the Defence HQ on May 15, 2025, at the Main Conference Room in Abuja.",
+    },
+    {
+      title: "Defcomm Tech Review",
+      description:
+        "Technical review meeting with the Signal Corps on June 5, 2025, at the Tech Lab in Kaduna.",
+    },
+  ];
+
+  const handleDotClick = (index) => {
+    setDirection(index > slideIndex ? 1 : -1);
+    setSlideIndex(index);
+  };
+
+  // Recent calls data
+  const recentCalls = [
+    { name: "Boženka Maxxxxx", time: "11:47 PM", avatar: "bg-gray-400" },
+    { name: "Odeusz Piotrowski", time: "11:47 PM", avatar: "bg-blue-300" },
+    { name: "Krysia Eurydyka", time: "11:47 PM", avatar: "bg-purple-300" },
+    { name: "Jarosław Kowalski", time: "Yesterday", avatar: "bg-gray-600" },
+    { name: "Boženka Malina", time: "11:47 PM", avatar: "bg-gray-400" },
+    { name: "Odeusz Piotrowski", time: "11:47 PM", avatar: "bg-blue-300" },
+    { name: "Krysia Eurydyka", time: "11:47 PM", avatar: "bg-purple-300" },
+    { name: "Jarosław Kowalski", time: "01 Feb", avatar: "bg-gray-600" },
+  ];
+
   // Tab content renderer
   const renderTabContent = () => {
     switch (activeTab) {
       case "messages":
+      case "default":
         return (
           <motion.div
             initial={{ opacity: 0 }}
@@ -90,52 +147,60 @@ export default function HeroSection() {
             {/* Category Section */}
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center space-x-2">
-                <img src={cat} alt="vategory" className="w-3 h-3" />
-                <span className="text-white text-sm">Category</span>
+                <img src={cat} alt="category" className="w-2.5 h-2.5" />
+                <span className="text-white text-xs">Category</span>
               </div>
-              <button className="text-white text-sm underline">Show All</button>
+              <button className="text-white text-xs underline">Show All</button>
             </div>
 
             {/* Category Grid */}
-            <div className="grid grid-cols-4 gap-3 mb-6">
-              <div className="bg-[#C6FC2B] rounded-lg p-2.5 flex items-center justify-center">
+            <div className="grid grid-cols-4 gap-3 mb-4">
+              <div className="bg-[#C6FC2B] rounded-lg px-2.5 py-2 flex items-center justify-center">
                 <img src={cat1} alt="icon" className="w-6 h-6 text-black" />
-                {/* <Settings /> */}
               </div>
               <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
                 <img src={cat2} alt="icon" className="w-6 h-6 text-black" />
-                {/* <Radio className="w-8 h-8 text-black" /> */}
               </div>
               <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
                 <img src={cat3} alt="icon" className="w-6 h-6 text-black" />
-                {/* <div className="flex flex-col items-center">
-                  <Folder className="w-6 h-6 text-black" />
-                  <FolderOpen className="w-4 h-4 text-black -mt-1" />
-                </div> */}
               </div>
               <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
                 <img src={cat4} alt="icon" className="w-6 h-6 text-black" />
-                {/* <Shield className="w-8 h-8 text-black" /> */}
               </div>
             </div>
 
-            {/* Meeting Notice */}
-            <div className="bg-[#DDF2AB] rounded-lg p-4 mb-6">
-              <h3 className="text-black text-sm font-semibold mb-2">
-                Defcomm Meet Defence Signal
-              </h3>
-              <p className="text-[#484A4B] text-xs">
-                The Defcomm team is scheduled to meet with the Army Signal
-                Intelligence Corps on April 22, 2025, at the Signal Office in
-                Lagos.
-              </p>
+            {/* Slider for Meeting Notices */}
+            <div className="relative overflow-hidden mb-6">
+              <motion.div
+                key={slideIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="bg-[#DDF2AB] rounded-lg p-4"
+              >
+                <h3 className="text-black text-xs font-semibold mb-2">
+                  {slides[slideIndex].title}
+                </h3>
+                <p className="text-[#484A4B] text-xs">
+                  {slides[slideIndex].description}
+                </p>
+              </motion.div>
             </div>
 
-            {/* Page Indicator */}
+            {/* Page Indicator (Dots) */}
             <div className="flex justify-center space-x-2 mb-6">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`w-2 h-2 rounded-full ${
+                    slideIndex === index ? "bg-green-500" : "bg-gray-600"
+                  }`}
+                />
+              ))}
             </div>
           </motion.div>
         );
@@ -145,14 +210,32 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="calls-section"
+            className="space-y-4 text-white"
           >
-            {/* Recreate Figma calls page */}
-            <p className="text-lime-300">Recent Secure Calls</p>
-            <ul>
-              <li>Call to HQ - 10:45 AM</li>
-              <li>Missed call from Intelligence</li>
-            </ul>
+            {/* Recent Calls Section */}
+            <div className="mt-4">
+              <h2 className="text-white text-base font-medium mb-3">
+                Recent Calls
+              </h2>
+              <div className="space-y-3">
+                {recentCalls.map((call, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div
+                        className={`w-6 h-6 ${call.avatar} rounded-full flex items-center justify-center`}
+                      >
+                        <User className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-white text-sm">{call.name}</span>
+                    </div>
+                    <span className="text-gray-300 text-sm">{call.time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         );
       case "emails":
@@ -163,7 +246,6 @@ export default function HeroSection() {
             transition={{ duration: 0.3 }}
             className="emails-section"
           >
-            {/* Recreate Figma emails page */}
             <p className="text-lime-300">Encrypted Emails Inbox</p>
             <ul>
               <li>Subject: Mission Update</li>
@@ -179,7 +261,6 @@ export default function HeroSection() {
             transition={{ duration: 0.3 }}
             className="files-section"
           >
-            {/* Recreate Figma files page */}
             <p className="text-lime-300">Secure File Storage</p>
             <ul>
               <li>Report.pdf - 2MB</li>
@@ -188,65 +269,7 @@ export default function HeroSection() {
           </motion.div>
         );
       default:
-        return (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="space-y-4"
-          >
-            {/* Category Section */}
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-2">
-                <img src={cat} alt="vategory" className="w-3 h-3" />
-                <span className="text-white text-sm">Category</span>
-              </div>
-              <button className="text-white text-sm underline">Show All</button>
-            </div>
-
-            {/* Category Grid */}
-            <div className="grid grid-cols-4 gap-3 mb-6">
-              <div className="bg-[#C6FC2B] rounded-lg p-2.5 flex items-center justify-center">
-                <img src={cat1} alt="icon" className="w-6 h-6 text-black" />
-                {/* <Settings /> */}
-              </div>
-              <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
-                <img src={cat2} alt="icon" className="w-6 h-6 text-black" />
-                {/* <Radio className="w-8 h-8 text-black" /> */}
-              </div>
-              <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
-                <img src={cat3} alt="icon" className="w-6 h-6 text-black" />
-                {/* <div className="flex flex-col items-center">
-                  <Folder className="w-6 h-6 text-black" />
-                  <FolderOpen className="w-4 h-4 text-black -mt-1" />
-                </div> */}
-              </div>
-              <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
-                <img src={cat4} alt="icon" className="w-6 h-6 text-black" />
-                {/* <Shield className="w-8 h-8 text-black" /> */}
-              </div>
-            </div>
-
-            {/* Meeting Notice */}
-            <div className="bg-[#DDF2AB] rounded-lg p-4 mb-6">
-              <h3 className="text-black text-sm font-semibold mb-2">
-                Defcomm Meet Defence Signal
-              </h3>
-              <p className="text-[#484A4B] text-xs">
-                The Defcomm team is scheduled to meet with the Army Signal
-                Intelligence Corps on April 22, 2025, at the Signal Office in
-                Lagos.
-              </p>
-            </div>
-
-            {/* Page Indicator */}
-            <div className="flex justify-center space-x-2 mb-6">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-            </div>
-          </motion.div>
-        );
+        return null;
     }
   };
 
@@ -326,8 +349,8 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex justify-center lg:justify-end"
         >
-          <div className="phone-frame relative max-w-[320px] max-h-[550px] bg-black rounded-[2.5rem] p-2 shadow-2xl">
-            <div className="screen bg-gradient-to-t from-[#36460A] to-black text-white rounded-[2rem] h-full overflow-hidden flex flex-col">
+          <div className="phone-frame relative max-w-[290px] max-h-[510px] bg-black rounded-[25px] p-2 shadow-2xl">
+            <div className="screen bg-gradient-to-t from-[#36460A] to-black text-white rounded-[20px] h-full overflow-hidden flex flex-col">
               {/* Status Bar */}
               <div className="flex justify-between items-center px-4 py-2 text-sm">
                 <span className="font-medium">{currentTime}</span>
@@ -349,59 +372,83 @@ export default function HeroSection() {
               </div>
 
               {/* Main Content */}
-              <div className="px-4 pt-4 flex-1 overflow-y-auto">
-                {/* Top Section */}
-                <div className="flex space-x-3 mb-4">
-                  {/* Secure Mode Widget */}
-                  <div className="bg-[#36460A] rounded-lg p-4 flex-1">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <img src={scan} alt="scan-img" />
-                      <span className="text-[#89AF20] text-[10px] uppercase tracking-wide">
-                        SECURE MODE ACTIVE
-                      </span>
-                    </div>
-                    <div className="text-white text-3xl font-light mb-1">
-                      {currentTime}
-                    </div>
-                    <div className="text-white text-xs">{currentDate}</div>
-                  </div>
-
-                  {/* Right Column */}
-                  <div className="flex flex-col space-y-3">
-                    {/* Icon Grid */}
-                    <div className="bg-[#36460A] rounded-lg p-3 grid grid-cols-2 gap-2">
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                        <div className="text-white text-xs">⋯</div>
+              <div className="px-4 pt-4 flex-1 overflow-y-auto relative">
+                {/* Top Section (Widgets) - Only for default and messages */}
+                {(activeTab === "default" || activeTab === "messages") && (
+                  <div className="flex space-x-3 mb-4">
+                    {/* Secure Mode Widget */}
+                    <div className="bg-[#36460A] rounded-lg py-4 px-2 flex-1">
+                      <div className="flex items-center space-x-1 mb-2">
+                        <img src={scan} alt="scan-img" />
+                        <span className="text-[#89AF20] text-[9px] uppercase tracking-wide">
+                          SECURE MODE ACTIVE
+                        </span>
                       </div>
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                        <Bluetooth className="w-3 h-3 text-white" />
+                      <div className="text-white text-3xl font-light mb-1">
+                        {currentTime}
                       </div>
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                        <Shuffle className="w-3 h-3 text-white" />
-                      </div>
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                        <RotateCcw className="w-3 h-3 text-white" />
-                      </div>
+                      <div className="text-white text-xs">{currentDate}</div>
                     </div>
 
-                    {/* SecureGroup Widget */}
-                    <div className="bg-white rounded-lg py-2 px-1 flex items-center space-x-1">
-                      <Users className="w-3 h-3 text-black" />
-                      <span className="text-black text-[10px] font-medium">
-                        SecureGroup
-                      </span>
+                    {/* Right Column */}
+                    <div className="flex flex-col space-y-1.5">
+                      {/* Icon Grid */}
+                      <div className="bg-[#36460A] rounded-lg px-3 py-2 grid grid-cols-2 gap-2">
+                        <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                          <div className="text-white text-xs">⋯</div>
+                        </div>
+                        <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                          <Bluetooth className="w-3 h-3 text-white" />
+                        </div>
+                        <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                          <Shuffle className="w-3 h-3 text-white" />
+                        </div>
+                        <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                          <RotateCcw className="w-3 h-3 text-white" />
+                        </div>
+                      </div>
+
+                      {/* SecureGroup Widget */}
+                      <div className="bg-white rounded-lg py-2 px-[1px] flex items-center space-x-1">
+                        <Users className="w-3 h-3 text-black" />
+                        <span className="text-black text-[10px] font-normal">
+                          SecureGroup
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
+
+                {/* Calls Header - Only for calls */}
+                {activeTab === "calls" && (
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="grid grid-cols-3 gap-1 w-4 h-4">
+                        {Array.from({ length: 9 }).map((_, i) => (
+                          <div
+                            key={i}
+                            className="bg-white rounded-full w-1 h-1"
+                          ></div>
+                        ))}
+                      </div>
+                      <div>
+                        <h1 className="text-sm font-medium">Col Adamu j</h1>
+                        <p className="text-gray-400 text-xs">Class OPS</p>
+                      </div>
+                    </div>
+                    <button className="px-3 py-1 bg-[#36460A] rounded-lg flex items-center justify-center">
+                      <span className="text-white text-lg font-light">+</span>
+                    </button>
+                  </div>
+                )}
 
                 {/* Secure Communications Section */}
-                <div className="mb-6">
-                  <h2 className="text-white text-xs font-medium mb-3">
+                <div className="mb-4">
+                  <h2 className="text-white text-xs font-medium mb-2">
                     SECURE COMMUNICATIONS
                   </h2>
-                  <div className="flex space-x-3 py-2 items-center overflow-x-auto bg-black border-l-4 border-l-[#759719]">
-                    {/* <div className="w-2 h-16 bg-green-500 rounded-full"></div> */}
-                    <div className="flex space-x-3">
+                  <div className="flex space-x-6 py-2 items-center overflow-x-auto bg-black border-l-4 border-l-[#759719]">
+                    <div className="flex space-x-2 overflow-x-auto">
                       <button
                         onClick={() => setActiveTab("messages")}
                         className={` flex items-center justify-center ${
@@ -413,7 +460,6 @@ export default function HeroSection() {
                           alt="sec"
                           className="w-10 h-10 ml-2.5 text-white"
                         />
-                        {/* <MessageCircle  /> */}
                       </button>
                       <button
                         onClick={() => setActiveTab("calls")}
@@ -426,7 +472,6 @@ export default function HeroSection() {
                           alt="sec"
                           className="w-10 h-10 text-white"
                         />
-                        {/* <Phone className="w-6 h-6 text-white" /> */}
                       </button>
                       <button
                         onClick={() => setActiveTab("emails")}
@@ -439,7 +484,6 @@ export default function HeroSection() {
                           alt="sec"
                           className="w-10 h-10 text-white"
                         />
-                        {/* <Triangle className="w-6 h-6 text-white" /> */}
                       </button>
                       <button
                         onClick={() => setActiveTab("files")}
@@ -452,16 +496,12 @@ export default function HeroSection() {
                           alt="sec"
                           className="w-10 h-10 text-white"
                         />
-                        {/* <Mail className="w-6 h-6 text-white" /> */}
                       </button>
                       <img
                         src={sec5}
                         alt="sec"
                         className="w-10 h-10 text-white"
                       />
-                      {/* <div className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center">
-                        <div className="w-6 h-6 bg-white rounded opacity-50"></div>
-                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -469,19 +509,74 @@ export default function HeroSection() {
                 {/* Tab Content */}
                 {renderTabContent()}
 
-                {/* Bottom Navigation */}
-                <div className=" pb-4 flex space-x-3 mt-4">
-                  <div className="bg-gray-900 rounded-lg p-2 flex items-center space-x-2 flex-1">
-                    <span className="text-white text-[9px]">SECURE MODE</span>
-                    <ToggleLeft className="w-6 h-6 text-green-500" />
+                {/* Conditional Bottom Navigation */}
+                {activeTab === "default" || activeTab === "messages" ? (
+                  <div className="pb-4 flex space-x-3 mt-4">
+                    <div className="bg-gray-900 rounded-lg p-2 flex items-center space-x-1 w-fit">
+                      <span className="text-white text-[9px]">SECURE MODE</span>
+                      <ToggleLeft className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-2 flex items-center space-x-1 flex-1">
+                      <Grid3X3 className="w-4 h-4 text-white" />
+                      <span className="text-white text-[9px]">
+                        ALL APPLICATIONS
+                      </span>
+                    </div>
                   </div>
-                  <div className="bg-gray-800 rounded-lg p-2 flex items-center space-x-2 flex-1">
-                    <Grid3X3 className="w-5 h-5 text-white" />
-                    <span className="text-white text-[9px]">
-                      ALL APPLICATIONS
-                    </span>
+                ) : activeTab === "calls" ? (
+                  <div className="sticky -mx-4 bottom-0 left-0 right-0 bg-black border-t border-gray-800">
+                    <div className="">
+                      <div className="flex justify-around py-2">
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <div className="w-6 h-6 relative">
+                            {/* Globe/crosshair icon */}
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="w-4 h-4 text-white"
+                            >
+                              <circle
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                fill="none"
+                              />
+                              <line
+                                x1="2"
+                                y1="12"
+                                x2="22"
+                                y2="12"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                              />
+                              <line
+                                x1="12"
+                                y1="2"
+                                x2="12"
+                                y2="22"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <FileText className="w-4 h4 text-white" />
+                        </div>
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <Phone className="w-4 h4 text-white" />
+                        </div>
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <User className="w-4 h4 text-white" />
+                        </div>
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <Settings className="w-4 h4 text-white" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
             </div>
           </div>
