@@ -24,6 +24,7 @@ const AboutPage = lazy(() => import("./pages/v3/AboutPage"));
 const Products = lazy(() => import("./pages/v1/Products"));
 const ProductsFeatures = lazy(() => import("./pages/v1/ProductsFeatures"));
 const LiveFire = lazy(() => import("./pages/v1/LiveFire"));
+const VideoPage = lazy(() => import("./pages/v1/VideoPage"));
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/defcomm-unveil" element={<Blog3Page />} />
             <Route path="/hardware" element={<Hardware />} />
             <Route path="/software" element={<Software />} />
+            <Route path="/watch" element={<VideoPage />} />
 
             <Route path="/bounty" element={<LiveFire />} />
             {/* Catch-all redirect */}
