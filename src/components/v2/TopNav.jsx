@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
@@ -9,27 +9,31 @@ export default function TopNav() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerDisabled, setBannerDisabled] = useState(false);
+  const [productDropdownOpen, setProductDropdownOpen] = useState(false);
+  const [mobileProductOpen, setMobileProductOpen] = useState(false);
+  const hoverTimeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    setProductDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setProductDropdownOpen(false);
+    }, 200); // delay before closing
+  };
 
   return (
     <header className="w-full z-50 pt-4 bg-limeAccent">
       {/* Top banner */}
       <div
         className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-6 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
-    ${
-      bannerDisabled
-        ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
-        : "bg-[#2d3f14]"
-    }`}
-        // So hover works even when banner is disabled
-        onMouseEnter={() => {
-          if (bannerDisabled) {
-            // Optional: if you want to "temporarily" show normal color on hover
-            // You can handle this with CSS alone, no JS needed
-          }
-        }}
-        onMouseLeave={() => {
-          // no action needed here
-        }}
+        ${
+          bannerDisabled
+            ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
+            : "bg-[#2d3f14]"
+        }`}
       >
         <IoClose
           size={20}
@@ -67,18 +71,14 @@ export default function TopNav() {
 
           {/* Desktop Nav Links */}
           <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-gray-700 font-medium text-sm md:text-base">
-            {navItems.map(({ name, path, external }) => (
-              <li key={name}>
-                {external ? (
-                  <a
-                    href={path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-black transition-colors"
-                  >
-                    {name}
-                  </a>
-                ) : (
+            {navItems.map(({ name, path, external }) =>
+              name === "Products" ? (
+                <li
+                  key={name}
+                  className="relative"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <NavLink
                     to={path}
                     className={({ isActive }) =>
@@ -89,9 +89,139 @@ export default function TopNav() {
                   >
                     {name}
                   </NavLink>
-                )}
-              </li>
-            ))}
+
+                  {/* Desktop Dropdown */}
+                  {productDropdownOpen && (
+                    <div className="absolute -left-[280px] mt-2 w-[600px]  bg-white shadow-lg rounded-md py-4 z-50">
+                      <div className="grid grid-cols-3 gap-4 px-4">
+                        {/* PRODUCTS Column */}
+                        <div>
+                          <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                            PRODUCTS
+                          </h3>
+                          <ul className="space-y-2">
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Device
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Apps
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Operating System
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* APPS Column */}
+                        <div>
+                          <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                            APPS
+                          </h3>
+                          <ul className="space-y-2">
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                iSurvive
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                PPT
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Defcomm Messenger
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* DEVICES Column */}
+                        <div>
+                          <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                            DEVICES
+                          </h3>
+                          <ul className="space-y-2">
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Defcomm ShieldPad
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Defcomm SecureEdge
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                              >
+                                Defcomm TrustOS
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </li>
+              ) : (
+                <li key={name}>
+                  {external ? (
+                    <a
+                      href={path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-black transition-colors"
+                    >
+                      {name}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={path}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-black font-semibold"
+                          : "hover:text-black transition-colors"
+                      }
+                    >
+                      {name}
+                    </NavLink>
+                  )}
+                </li>
+              )
+            )}
           </ul>
 
           {/* Book Demo Button */}
@@ -115,33 +245,156 @@ export default function TopNav() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <ul className="lg:hidden mt-4 space-y-4 px-4 text-gray-700 font-medium text-base">
-            {navItems.map(({ name, path, external }) => (
-              <li key={name}>
-                {external ? (
-                  <a
-                    href={path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-black block"
-                    onClick={() => setMobileMenuOpen(false)} // close menu on click
+            {navItems.map(({ name, path, external }) =>
+              name === "Products" ? (
+                <li key={name}>
+                  <button
+                    className="w-full flex justify-between items-center text-left"
+                    onClick={() => setMobileProductOpen(!mobileProductOpen)}
                   >
-                    {name}
-                  </a>
-                ) : (
-                  <NavLink
-                    to={path}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-black font-semibold block"
-                        : "hover:text-black block"
-                    }
-                    onClick={() => setMobileMenuOpen(false)} // close menu on click
-                  >
-                    {name}
-                  </NavLink>
-                )}
-              </li>
-            ))}
+                    <span>{name}</span>
+                    <span>{mobileProductOpen ? "-" : "+"}</span>
+                  </button>
+                  {mobileProductOpen && (
+                    <div className="pl-4 mt-2 space-y-4">
+                      {/* PRODUCTS Section */}
+                      <div>
+                        <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                          PRODUCTS
+                        </h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Device
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Apps
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Operating System
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* APPS Section */}
+                      <div>
+                        <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                          APPS
+                        </h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              iSurvive
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              PPT
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Defcomm Messenger
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* DEVICES Section */}
+                      <div>
+                        <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                          DEVICES
+                        </h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Defcomm ShieldPad
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Defcomm SecureEdge
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="#"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-sm text-gray-600 hover:text-black transition-colors block"
+                            >
+                              Defcomm TrustOS
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </li>
+              ) : (
+                <li key={name}>
+                  {external ? (
+                    <a
+                      href={path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-black block"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {name}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={path}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-black font-semibold block"
+                          : "hover:text-black block"
+                      }
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {name}
+                    </NavLink>
+                  )}
+                </li>
+              )
+            )}
           </ul>
         )}
       </nav>

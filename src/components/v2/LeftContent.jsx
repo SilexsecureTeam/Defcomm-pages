@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -81,13 +82,15 @@ export default function LeftContent() {
         >
           Get Started <ArrowRight className="w-4 h-4" />
         </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          className="bg-white border border-gray-300 hover:border-black text-[#1a1a1a] font-medium px-6 py-3 rounded-xl"
-        >
-          Watch Video
-        </motion.button>
+        <Link to="/watch">
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-white border border-gray-300 hover:border-black text-[#1a1a1a] font-medium px-6 py-3 rounded-xl"
+          >
+            Watch Video
+          </motion.button>{" "}
+        </Link>
       </motion.div>
     </motion.div>
   );
