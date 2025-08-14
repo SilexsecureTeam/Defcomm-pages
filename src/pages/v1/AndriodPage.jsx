@@ -7,31 +7,184 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 import newImage from "../../assets/new.jpg";
-import serve from "../../assets/serve.png";
-import serve1 from "../../assets/serve1.png";
-import serve2 from "../../assets/serve2.png";
-import serve3 from "../../assets/serve3.png";
 
-const items = [
-  {
-    title: "Secure Cloud & Mission Control Integration",
-    text: "We offer defense-grade private cloud platforms for secure file exchange, classified data storage, and encrypted communication across multiple channels. Our mission control systems provide encrypted dashboards for coordination, decision-making, and real-time intelligence sharing.",
-  },
-  {
-    title: "Ground Station & Satellite Infrastructure Security",
-    text: "Defcomm secures ground station communications and integrates with satellite uplink/downlink systems to ensure encrypted satellite-to-earth data transfer. We support layered security models for remote mission control centers and satellite-based reconnaissance operations.",
-  },
-  {
-    title: "Strategic Advisory, Training & Deployment",
-    text: "We provide expert consulting on the deployment of secure communication infrastructure, including training for defense personnel, technical support, and policy-level advisory for governments and security institutions. Our teams handle full lifecycle deployment and on-site integration of secure systems.",
-  },
-  {
-    title: "Signal Intelligence and Cyber Defense Systems",
-    text: "Defcomm offers secure messaging platforms and signal protection solutions for classified communications. Our systems provide real-time threat detection, intrusion resistance, and secure channel management to prevent interception, spoofing, and other cyber threats.",
-  },
-];
+const JobPosting = () => {
+  return (
+    <div className="bg-[#E8EEE1] py-10">
+      <div className="max-w-peak mx-auto  ">
+        <div className="  p-4 ">
+          {/* About Us Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <h2 className="text-2xl font-bold text-[#89AF20] mb-4">About Us</h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-center mb-4"
+            >
+              <div className="flex space-x-2">
+                <div className="w-12 h-2 bg-black rounded"></div>
+                <div className="w-4 h-2 bg-[#89AF20] rounded"></div>
+                <div className="w-2 h-2 bg-black rounded"></div>
+              </div>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-[#3D3D3D] text-lg leading-relaxed"
+            >
+              Defcomm, we design military-grade encrypted devices and secure
+              communication platforms used by defense, government, and
+              high-security enterprises. We're seeking a talented Android
+              Developer to help us build the next generation of secure mobile
+              applications.
+            </motion.p>
+          </motion.div>
 
-const HomeService2 = () => {
+          {/* Your Role Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mb-8"
+          >
+            <h2 className="text-2xl font-bold text-[#89AF20] mb-4">
+              Your Role:
+            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex items-center mb-4"
+            >
+              <div className="flex space-x-2">
+                <div className="w-12 h-2 bg-black rounded"></div>
+                <div className="w-4 h-2 bg-[#89AF20] rounded"></div>
+                <div className="w-2 h-2 bg-black rounded"></div>
+              </div>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-[#3D3D3D] text-lg leading-relaxed"
+            >
+              You'll work closely with our cybersecurity and hardware teams to
+              develop high-performance, end-to-end encrypted Android apps that
+              integrate seamlessly with Defcomm devices and backend systems.
+            </motion.p>
+          </motion.div>
+
+          {/* Requirements Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="mb-8"
+          >
+            <h2 className="text-2xl font-bold text-[#89AF20] mb-4">
+              Requirements:
+            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="flex items-center mb-4"
+            >
+              <div className="flex space-x-2">
+                <div className="w-12 h-2 bg-black rounded"></div>
+                <div className="w-4 h-2 bg-[#89AF20] rounded"></div>
+                <div className="w-2 h-2 bg-black rounded"></div>
+              </div>
+            </motion.div>
+            <ul className="space-y-3 text-[#3D3D3D] text-lg">
+              {[
+                "Proven experience in Android development (Kotlin/Java).",
+                "Strong understanding of secure coding practices.",
+                "Experience with API integration, offline storage, and cloud sync.",
+                "Knowledge of encryption protocols (AES-256, RSA, E2EE) is a plus.",
+                "Familiarity with biometric APIs and device security features.",
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                  className="flex items-start"
+                >
+                  <div className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Why Join Defcomm Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+          >
+            <h2 className="text-2xl font-bold text-[#89AF20] mb-4">
+              Why Join Defcomm:
+            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+              className="flex items-center mb-4"
+            >
+              <div className="flex space-x-2">
+                <div className="w-12 h-2 bg-black rounded"></div>
+                <div className="w-4 h-2 bg-[#89AF20] rounded"></div>
+                <div className="w-2 h-2 bg-black rounded"></div>
+              </div>
+            </motion.div>
+            <ul className="space-y-3 text-[#3D3D3D] text-lg">
+              {[
+                "Work on mission-critical security projects that protect lives and information.",
+                "Collaborate with experts in defense, cybersecurity, and secure hardware.",
+                "Competitive salary, benefits, and career growth opportunities.",
+                "Be part of a company shaping the future of secure communications",
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
+                  className="flex items-start"
+                >
+                  <div className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AndriodPage = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerDisabled, setBannerDisabled] = useState(false);
@@ -51,10 +204,10 @@ const HomeService2 = () => {
   };
 
   return (
-    <div>
+    <div className="">
       {/* Hero Section */}
       <div
-        className="bg-cover bg-center w-full h-[80%]"
+        className="bg-cover bg-center w-full h-[80%] px-4"
         style={{ backgroundImage: `url(${newImage})` }}
       >
         {/* Header */}
@@ -455,194 +608,88 @@ const HomeService2 = () => {
           </motion.nav>
         </header>
         <div className="max-w-peak mx-auto py-16">
-          <div className="relative flex flex-col justify-start pt-8 items-start px-8 md:px-12 text-[#D9D9E9] lg:ml-[0px] h-fit pb-10 lg:h-[450px] space-y-2">
+          <div className="relative flex flex-col justify-start pt-8 items-start px-8 md:px-12 text-white lg:ml-[0px] h-fit pb-10 lg:h-[450px] space-y-2">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
-              className="text-[35px] font-semibold md:max-w-[500px] leading-[1.4]"
+              className="text-[40px] font-semibold md:max-w-[500px] leading-[1.4]"
             >
-              Technology-Driven Security.{" "}
-              <span className="text-[#C6FC2B]">
-                Built for What Matters Most.
-              </span>
+              Android Mobile
+              <br />
+              <span className="text-[#C6FC2B]">Developer.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
-              className="text-[#D1D5DB] md:max-w-[460px]"
+              className="text-white text-xl md:max-w-[460px]"
             >
-              Our services are engineered to deliver resilient, encrypted, and
-              intelligent communication infrastructure — where failure is not an
-              option.
+              Employment Type: Paid Intent
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              className="text-white text-xl md:max-w-[460px]"
+            >
+              Job Location: Abuja
             </motion.p>
           </div>
         </div>
       </div>
 
-      {/* Key Services Overview */}
-      <section className="bg-white w-full">
-        <div className="max-w-peak mx-auto py-16 px-4 md:px-0">
+      {/* Job Posting Section */}
+      <JobPosting />
+
+      {/* Why Work With Us */}
+      <section className="bg-[#36460A] w-full py-10 ">
+        <div className="mx-auto max-w-peak px-4">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-bold mb-12 text-black "
+            className="text-[#D9D9D9] text-xl font-semibold"
           >
-            Defcomm Solutions – Key Services Overview
+            How to Apply
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5 }}
-            className="text-black"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-[#D9D9D9] mt-2 mb-10 max-w-[840px] text-lg"
           >
-            Defcomm Solutions is a cutting-edge technology company specializing
-            in end-to-end encrypted communication, embedded systems, and
-            mobile-satellite communication infrastructure. We deliver highly
-            secure, mission-critical solutions designed to meet the demanding
-            needs of defense, intelligence, emergency response, and national
-            security operations. Our core services are designed to enable
-            confidentiality, integrity, and resilience across terrestrial,
-            mobile, and satellite communication networks.
+            Please submit your resume and a cover letter detailing your relevant
+            experience and passion for the Cybersecurity industry to:{" "}
+            <b>businesss@defcomm.ng</b>
           </motion.p>
-        </div>
-      </section>
-
-      {/* Secure Mobile Devices */}
-      <section className="bg-[#F5F5F5] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#F2FADE] text-[#3D3D3D] p-6 w-full md:w-1/2 h-fit"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-[#D9D9D9] mt-2 font-light text-lg max-w-[590px]"
           >
-            <p className="font-bold mb-6">Secure Mobile Devices</p>
-            <p className="text-lg">
-              We develop and supply military-grade secure mobile phones and
-              tablets, hardened with custom operating systems and encrypted
-              communication apps. These devices are equipped with secure boot,
-              tamper detection, and remote wipe functionalities. Designed for
-              field operatives, they offer encrypted voice, video, messaging,
-              and satellite fallback communication for uninterrupted security.
-            </p>
-          </motion.div>
-          <motion.img
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            Applications close on September 15, 2025
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve}
-            alt="Defcomm secure mobile phone"
-            className="w-full md:w-1/2"
-          />
-        </div>
-      </section>
-
-      {/* End-to-End Encrypted Communication Platforms */}
-      <section className="bg-[#EFEFEF] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
-          <motion.img
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve1}
-            alt="Defcomm encrypted communication platform"
-            className="w-full md:w-1/2"
-          />
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#F2FADE] text-[#3D3D3D] border-b-8 border-b-[#36460A] p-6 w-full md:w-1/2 h-fit"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-[#D9D9D9] font-light text-lg max-w-[590px]"
           >
-            <p className="font-bold mb-6">
-              End-to-End Encrypted Communication Platforms
-            </p>
-            <p className="text-lg">
-              Our flagship secure communication platform delivers end-to-end
-              encryption for real-time voice, video, messaging, and data
-              transmission. Built on zero-trust architecture, it is designed for
-              high-assurance communication between command centers, field units,
-              and intelligence networks. It integrates with mobile, desktop, and
-              embedded systems.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Embedded Communication Systems */}
-      <section className="bg-[#F5F5F5] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#F2FADE] text-[#3D3D3D] p-6 w-full md:w-1/2 h-fit"
-          >
-            <p className="font-bold mb-6">Embedded Communication Systems</p>
-            <p className="text-lg">
-              We engineer embedded secure communication modules for tactical
-              equipment, drones (UAVs), autonomous systems, and mission-critical
-              hardware. Our embedded solutions ensure encrypted data
-              transmission within military hardware and field-deployable
-              systems, with full resistance against jamming, spoofing, and cyber
-              threats.
-            </p>
-          </motion.div>
-          <motion.img
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve2}
-            alt="Defcomm embedded communication module"
-            className="w-full md:w-1/2"
-          />
-        </div>
-      </section>
-
-      {/* Additional Services */}
-      <section className="bg-[#E8EEE1] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12 px-4 md:px-0">
-          <motion.img
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve3}
-            alt="Defcomm secure infrastructure overview"
-            className="w-full md:w-1/3 h-96 pt-6"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:w-2/3 gap-8">
-            {items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4 }}
-                className="py-6 text-[#3D3D3D] space-y-3"
-              >
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="text-base">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
+            Only shortlisted candidates will be contacted.
+          </motion.p>
         </div>
       </section>
     </div>
   );
 };
 
-export default HomeService2;
+export default AndriodPage;

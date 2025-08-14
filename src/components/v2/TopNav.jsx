@@ -92,11 +92,11 @@ export default function TopNav() {
 
                   {/* Desktop Dropdown */}
                   {productDropdownOpen && (
-                    <div className="absolute -left-[280px] mt-2 w-[600px]  bg-white shadow-lg rounded-md py-4 z-50">
+                    <div className="absolute -left-[280px] mt-2 w-[600px]  bg-white shadow-lg rounded-md py-5 z-50">
                       <div className="grid grid-cols-3 gap-4 px-4">
                         {/* PRODUCTS Column */}
                         <div>
-                          <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                          <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
                             PRODUCTS
                           </h3>
                           <ul className="space-y-2">
@@ -129,7 +129,7 @@ export default function TopNav() {
 
                         {/* APPS Column */}
                         <div>
-                          <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                          <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
                             APPS
                           </h3>
                           <ul className="space-y-2">
@@ -162,7 +162,7 @@ export default function TopNav() {
 
                         {/* DEVICES Column */}
                         <div>
-                          <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
+                          <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
                             DEVICES
                           </h3>
                           <ul className="space-y-2">
