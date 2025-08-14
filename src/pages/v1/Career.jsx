@@ -7,9 +7,6 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 import newImage from "../../assets/new.jpg";
-import serve from "../../assets/serve.png";
-import serve1 from "../../assets/serve1.png";
-import serve2 from "../../assets/serve2.png";
 import serve3 from "../../assets/serve3.png";
 
 const items = [
@@ -31,7 +28,152 @@ const items = [
   },
 ];
 
-const HomeService2 = () => {
+const cards = [
+  {
+    title: "Purpose-Driven Work",
+    description:
+      "Every project you touch directly safeguards lives, data, and national security",
+  },
+  {
+    title: "Innovation at the Core",
+    description:
+      "Develop encryption systems using military-grade and quantum-resilient protocols.",
+  },
+  {
+    title: "Elite Team Environment",
+    description:
+      "Collaborate with experts in cybersecurity, cryptography, and defense technology.",
+  },
+  {
+    title: "Impact You Can See",
+    description:
+      "Your work will be deployed in critical missions, secure communications, and high-stakes environments.",
+  },
+];
+
+const JobOpenings = () => {
+  const jobs = [
+    {
+      role: "Android Developer",
+      location: "Abuja",
+      type: "Full Time",
+      path: "andriod-dev",
+    },
+    {
+      role: "Product Manager",
+      location: "Hybrid",
+      type: "Full Time",
+      path: "product-manager",
+    },
+    {
+      role: "Operating System Engineer",
+      location: "Abuja",
+      type: "Full Time",
+      path: "operating-system",
+    },
+  ];
+
+  return (
+    <div className="bg-[#F5F5F5] pt-10 pb-20 px-4 ">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-peak mx-auto "
+      >
+        <div className="">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">
+              Our Current Openings
+            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex space-x-3 mt-4 mb-6"
+            >
+              <div className="bg-[#759719] rounded-full h-2 w-16"></div>
+              <div className="bg-[#D9D9D9] rounded-full h-2 w-12"></div>
+              <div className="bg-[#D9D9D9] rounded-full h-2 w-6"></div>
+            </motion.div>
+          </motion.div>
+
+          {/* Table Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="hidden sm:grid sm:grid-cols-4 gap-4 mb-4 pb-3 px-4"
+          >
+            <div className="text-base font-medium text-[#36460A]">Role</div>
+            <div className="text-base font-medium text-[#36460A]">Location</div>
+            <div className="text-base font-medium text-[#36460A]">Type</div>
+            <div></div>
+          </motion.div>
+
+          {/* Job Listings */}
+          <div className="space-y-4">
+            {jobs.map((job, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                className="   bg-[#F9F9F9] px-4 "
+              >
+                {/* Desktop Layout */}
+                <div className="hidden sm:grid sm:grid-cols-4 gap-4 items-center py-4">
+                  <div className="text-[#36460A] font-medium">{job.role}</div>
+                  <div className="text-[#100E0E]">{job.location}</div>
+                  <div className="text-[#100E0E]">{job.type}</div>
+                  <div className="flex justify-end">
+                    <Link to={job.path}>
+                      <button className="bg-black text-white px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">
+                        View Details
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Mobile Layout */}
+                <div className="sm:hidden space-y-3 py-4">
+                  <div className="font-medium text-[#36460A] text-lg">
+                    {job.role}
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="text-sm text-[#100E0E]">
+                      <span className="font-medium">Location:</span>{" "}
+                      {job.location}
+                    </div>
+                    <div className="text-sm text-[#100E0E]">
+                      <span className="font-medium">Type:</span> {job.type}
+                    </div>
+                  </div>
+                  <button className="w-full bg-black text-white px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">
+                    View Details
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+const Career = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerDisabled, setBannerDisabled] = useState(false);
@@ -51,10 +193,10 @@ const HomeService2 = () => {
   };
 
   return (
-    <div>
+    <div className="">
       {/* Hero Section */}
       <div
-        className="bg-cover bg-center w-full h-[80%]"
+        className="bg-cover bg-center w-full h-[80%] px-4"
         style={{ backgroundImage: `url(${newImage})` }}
       >
         {/* Header */}
@@ -461,12 +603,10 @@ const HomeService2 = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
-              className="text-[35px] font-semibold md:max-w-[500px] leading-[1.4]"
+              className="text-[40px] font-semibold md:max-w-[500px] leading-[1.4]"
             >
-              Technology-Driven Security.{" "}
-              <span className="text-[#C6FC2B]">
-                Built for What Matters Most.
-              </span>
+              Carrer <br />
+              <span className="text-[#C6FC2B]">Opportunities.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 40 }}
@@ -475,146 +615,93 @@ const HomeService2 = () => {
               transition={{ duration: 0.5 }}
               className="text-[#D1D5DB] md:max-w-[460px]"
             >
-              Our services are engineered to deliver resilient, encrypted, and
-              intelligent communication infrastructure — where failure is not an
-              option.
+              We’re looking for talented, driven professionals who want to work
+              at the forefront of cybersecurity, defense technology, and secure
+              communications
             </motion.p>
           </div>
         </div>
       </div>
 
-      {/* Key Services Overview */}
-      <section className="bg-white w-full">
-        <div className="max-w-peak mx-auto py-16 px-4 md:px-0">
+      {/* Why Work With Us */}
+      <section className="bg-[#36460A] w-full py-10 px-4">
+        <div className="mx-auto max-w-peak">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-bold mb-12 text-black "
+            className="text-white text-2xl font-semibold"
           >
-            Defcomm Solutions – Key Services Overview
+            Why Work With Us?
           </motion.h2>
-          <motion.p
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex space-x-3 mt-4 mb-6"
+          >
+            <div className="bg-white rounded-full h-2 w-6"></div>
+            <div className="bg-white rounded-full h-2 w-12"></div>
+            <div className="bg-[#C6FC2B] rounded-full h-2 w-16"></div>
+          </motion.div>
+          <div className="flex flex-col md:flex-row gap-6">
+            {cards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                className="flex-1 py-6"
+              >
+                <h3 className="text-lg font-semibold mb-2 text-white">
+                  {card.title}
+                </h3>
+                <p className="text-[#D9D9D9] text-base">{card.description}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="text-black"
+            className="text-white text-3xl mt-5 font-semibold"
           >
-            Defcomm Solutions is a cutting-edge technology company specializing
-            in end-to-end encrypted communication, embedded systems, and
-            mobile-satellite communication infrastructure. We deliver highly
-            secure, mission-critical solutions designed to meet the demanding
-            needs of defense, intelligence, emergency response, and national
-            security operations. Our core services are designed to enable
-            confidentiality, integrity, and resilience across terrestrial,
-            mobile, and satellite communication networks.
+            Stay in the Loop
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-white mt-1"
+          >
+            Never miss a deal.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-[#D9D9D9] mt-2 font-light text-base max-w-[590px]"
+          >
+            Join Defcomm and help shape the future of secure communication where
+            privacy is absolute and protection is guaranteed.
           </motion.p>
         </div>
       </section>
 
-      {/* Secure Mobile Devices */}
-      <section className="bg-[#F5F5F5] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#F2FADE] text-[#3D3D3D] p-6 w-full md:w-1/2 h-fit"
-          >
-            <p className="font-bold mb-6">Secure Mobile Devices</p>
-            <p className="text-lg">
-              We develop and supply military-grade secure mobile phones and
-              tablets, hardened with custom operating systems and encrypted
-              communication apps. These devices are equipped with secure boot,
-              tamper detection, and remote wipe functionalities. Designed for
-              field operatives, they offer encrypted voice, video, messaging,
-              and satellite fallback communication for uninterrupted security.
-            </p>
-          </motion.div>
-          <motion.img
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve}
-            alt="Defcomm secure mobile phone"
-            className="w-full md:w-1/2"
-          />
-        </div>
-      </section>
-
-      {/* End-to-End Encrypted Communication Platforms */}
-      <section className="bg-[#EFEFEF] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
-          <motion.img
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve1}
-            alt="Defcomm encrypted communication platform"
-            className="w-full md:w-1/2"
-          />
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#F2FADE] text-[#3D3D3D] border-b-8 border-b-[#36460A] p-6 w-full md:w-1/2 h-fit"
-          >
-            <p className="font-bold mb-6">
-              End-to-End Encrypted Communication Platforms
-            </p>
-            <p className="text-lg">
-              Our flagship secure communication platform delivers end-to-end
-              encryption for real-time voice, video, messaging, and data
-              transmission. Built on zero-trust architecture, it is designed for
-              high-assurance communication between command centers, field units,
-              and intelligence networks. It integrates with mobile, desktop, and
-              embedded systems.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Embedded Communication Systems */}
-      <section className="bg-[#F5F5F5] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 px-4 md:px-0">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#F2FADE] text-[#3D3D3D] p-6 w-full md:w-1/2 h-fit"
-          >
-            <p className="font-bold mb-6">Embedded Communication Systems</p>
-            <p className="text-lg">
-              We engineer embedded secure communication modules for tactical
-              equipment, drones (UAVs), autonomous systems, and mission-critical
-              hardware. Our embedded solutions ensure encrypted data
-              transmission within military hardware and field-deployable
-              systems, with full resistance against jamming, spoofing, and cyber
-              threats.
-            </p>
-          </motion.div>
-          <motion.img
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            src={serve2}
-            alt="Defcomm embedded communication module"
-            className="w-full md:w-1/2"
-          />
-        </div>
+      {/* Job Openings */}
+      <section>
+        <JobOpenings />
       </section>
 
       {/* Additional Services */}
       <section className="bg-[#E8EEE1] w-full">
-        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12 px-4 md:px-0">
+        <div className="max-w-peak mx-auto py-16 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12 px-4 ">
           <motion.img
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -645,4 +732,4 @@ const HomeService2 = () => {
   );
 };
 
-export default HomeService2;
+export default Career;

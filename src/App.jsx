@@ -25,6 +25,10 @@ const Products = lazy(() => import("./pages/v1/Products"));
 const ProductsFeatures = lazy(() => import("./pages/v1/ProductsFeatures"));
 const LiveFire = lazy(() => import("./pages/v1/LiveFire"));
 const VideoPage = lazy(() => import("./pages/v1/VideoPage"));
+const AndriodPage = lazy(() => import("./pages/v1/AndriodPage"));
+const ManagerPage = lazy(() => import("./pages/v1/ManagerPage"));
+const OperatingPage = lazy(() => import("./pages/v1/OperatingPage"));
+const Career = lazy(() => import("./pages/v1/Career"));
 
 const App = () => {
   return (
@@ -39,6 +43,13 @@ const App = () => {
             <Route path="/services" element={<Services2 />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/career/andriod-dev" element={<AndriodPage />} />
+            <Route path="/career/product-manager" element={<ManagerPage />} />
+            <Route
+              path="/career/operating-system"
+              element={<OperatingPage />}
+            />
             <Route path="/technology" element={<ProductsFeatures />} />
             <Route path="/launches-defcomm" element={<Blog1Page />} />
             <Route path="/defcomm-attend" element={<Blog2Page />} />

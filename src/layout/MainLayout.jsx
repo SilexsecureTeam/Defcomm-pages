@@ -19,7 +19,12 @@ const MainLayout = () => {
   const isProduct = location.pathname === "/products";
   const isSoftware = location.pathname === "/software";
   const isBountyPage = location.pathname.startsWith("/bounty");
-  const isServices = location.pathname === "/services"; // Added to check for /services
+  const isServices = location.pathname === "/services";
+  const isCareer = location.pathname === "/career";
+  const isAndriod = location.pathname === "/career/andriod-dev";
+  const isManager = location.pathname === "/career/product-manager";
+  const isOperating = location.pathname === "/career/operating-system";
+  // const isVideo = location.pathname === "/watch";
 
   return (
     <div className="w-screen bg-gray-50">
@@ -30,7 +35,12 @@ const MainLayout = () => {
         isBlogPage3 ||
         isSoftware) && <TopNav />}
       {!isHomePage &&
-        !isServices && // Exclude header for /services
+        !isServices &&
+        !isCareer &&
+        !isAndriod &&
+        !isManager &&
+        !isOperating &&
+        // !isVideo &&
         !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 

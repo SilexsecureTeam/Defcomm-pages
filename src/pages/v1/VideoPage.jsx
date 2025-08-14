@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react"; // Removed ArrowRight
 import nxt from "../../assets/nxt.png";
 import SecurityFeatures from "../../components/v2/SecurityFeatures";
 import Feature from "../../components/v3/Feature";
@@ -112,11 +112,11 @@ export default function VideoPage() {
     },
     {
       id: 2,
-      title: "Test Video",
+      title: "Defcomm's latest innovation in military technology",
       duration: "3:33",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      embedId: "dQw4w9WgXcQ",
+      thumbnail: "https://img.youtube.com/vi/aAljC9JNVlE/hqdefault.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=aAljC9JNVlE",
+      embedId: "aAljC9JNVlE",
     },
     {
       id: 3,
@@ -145,6 +145,7 @@ export default function VideoPage() {
   ];
 
   useEffect(() => {
+    // Load YouTube API only once
     if (!window.YT) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
@@ -155,15 +156,19 @@ export default function VideoPage() {
       document.body.appendChild(tag);
     }
 
+    // Initialize hero player when API is ready
     window.onYouTubeIframeAPIReady = () => {
+      if (heroPlayerRef.current) return; // Prevent reinitialization
       heroPlayerRef.current = new window.YT.Player("hero-iframe", {
         events: {
           onReady: () => {
             console.log("Hero Player Ready");
             heroPlayerRef.current.setVolume(heroVolume * 100);
+            heroPlayerRef.current.playVideo();
           },
           onError: (e) => {
             console.error("Hero Player Error:", e);
+            setModalError("Failed to load hero video. Please try again.");
           },
           onStateChange: (event) => {
             setIsHeroPlaying(event.data === window.YT.PlayerState.PLAYING);
@@ -175,50 +180,68 @@ export default function VideoPage() {
     return () => {
       delete window.onYouTubeIframeAPIReady;
     };
-  }, []);
+  }, [heroVolume]);
 
   useEffect(() => {
+    // Initialize modal player when modalVideo changes
     if (modalVideo && !modalPlayerRef.current) {
       setModalError(null);
-      modalPlayerRef.current = new window.YT.Player("modal-iframe", {
-        events: {
-          onReady: () => {
-            console.log("Modal Player Ready");
-            modalPlayerRef.current.setVolume(modalVolume * 100);
-            modalPlayerRef.current.playVideo();
-            setIsModalLoading(false);
-            if (heroPlayerRef.current) {
-              heroPlayerRef.current.pauseVideo();
-              setIsHeroPlaying(false);
-            }
-          },
-          onError: (e) => {
-            console.error("Modal Player Error:", e);
-            setModalError(
-              "This video cannot be played. It may be restricted or unavailable."
-            );
-            setIsModalLoading(false);
-          },
-          onStateChange: (event) => {
-            if (event.data === window.YT.PlayerState.BUFFERING) {
-              setIsModalLoading(true);
-            } else if (
-              event.data === window.YT.PlayerState.PLAYING ||
-              event.data === window.YT.PlayerState.PAUSED
-            ) {
+      setIsModalLoading(true);
+      const initializeModalPlayer = () => {
+        modalPlayerRef.current = new window.YT.Player("modal-iframe", {
+          events: {
+            onReady: () => {
+              console.log("Modal Player Ready");
+              modalPlayerRef.current.setVolume(modalVolume * 100);
+              modalPlayerRef.current.playVideo();
               setIsModalLoading(false);
-            }
+              if (heroPlayerRef.current) {
+                heroPlayerRef.current.pauseVideo();
+                setIsHeroPlaying(false);
+              }
+            },
+            onError: (e) => {
+              console.error("Modal Player Error:", e);
+              setModalError(
+                "This video cannot be played. It may be restricted or unavailable."
+              );
+              setIsModalLoading(false);
+            },
+            onStateChange: (event) => {
+              if (event.data === window.YT.PlayerState.BUFFERING) {
+                setIsModalLoading(true);
+              } else if (
+                event.data === window.YT.PlayerState.PLAYING ||
+                event.data === window.YT.PlayerState.PAUSED
+              ) {
+                setIsModalLoading(false);
+              }
+            },
           },
-        },
-      });
+        });
+      };
+
+      // Ensure YouTube API is loaded before initializing modal player
+      if (window.YT && window.YT.Player) {
+        initializeModalPlayer();
+      } else {
+        const interval = setInterval(() => {
+          if (window.YT && window.YT.Player) {
+            clearInterval(interval);
+            initializeModalPlayer();
+          }
+        }, 100);
+        return () => clearInterval(interval);
+      }
     }
+
     return () => {
       if (modalPlayerRef.current) {
         modalPlayerRef.current.destroy();
         modalPlayerRef.current = null;
       }
     };
-  }, [modalVideo]);
+  }, [modalVideo, modalVolume]);
 
   const handleVideoPlay = (videoId) => {
     const video = videos.find((v) => v.id === videoId);
@@ -331,7 +354,7 @@ export default function VideoPage() {
   const heroVideo = videos[0];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black">
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <iframe
@@ -392,7 +415,7 @@ export default function VideoPage() {
       </div>
 
       <div className="bg-[#232E05] py-16">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-peak mx-auto px-8">
           <h2 className="text-3xl font-bold text-white mb-4">
             Why Work With Us?
           </h2>
