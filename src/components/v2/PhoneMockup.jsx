@@ -160,37 +160,37 @@ export default function PhoneMockup({
                 <div className="flex space-x-3 mb-4">
                   <div className="bg-[#36460A] rounded-lg py-4 px-2 flex-1">
                     <div className="flex items-center space-x-1 mb-2">
-                      <img src={scan} alt="scan-img" />
-                      <span className="text-[#89AF20] text-[9px] uppercase tracking-wide">
+                      <img src={scan} alt="scan-img" className='w-[9px]' />
+                      <span className="text-[#89AF20] text-[8px] uppercase tracking-wide">
                         SECURE MODE ACTIVE
                       </span>
                     </div>
-                    <div className="text-white text-3xl font-light mb-1">
+                    <div className="text-white text-xl text-center font-light mb-1">
                       {currentTime}
                     </div>
-                    <div className="text-white text-xs">{currentDate}</div>
+                    <div className="text-white text-[10px] text-center">{currentDate}</div>
                   </div>
                   <div className="flex flex-col space-y-1.5">
                     <div className="bg-[#36460A] rounded-lg px-3 py-2 grid grid-cols-2 gap-2">
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
                         <div className="text-white text-xs">⋯</div>
                       </div>
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
                         <Bluetooth className="w-3 h-3 text-white" />
                       </div>
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
                         <Shuffle className="w-3 h-3 text-white" />
                       </div>
-                      <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
                         <RotateCcw className="w-3 h-3 text-white" />
                       </div>
                     </div>
                     <button
                       onClick={() => setActiveTab("securegroup")}
-                      className="bg-white rounded-lg py-2 px-[1px] flex items-center space-x-1"
+                      className="bg-white rounded-lg py-2 px-2  flex items-center space-x-1"
                     >
                       <Users className="w-3 h-3 text-black" />
-                      <span className="text-black text-[10px] font-normal">
+                      <span className="text-black text-[9px] font-normal">
                         SecureGroup
                       </span>
                     </button>
@@ -244,7 +244,7 @@ export default function PhoneMockup({
                         <img
                           src={sec1}
                           alt="sec"
-                          className="w-10 h-10 ml-2.5 text-white"
+                          className="w-10 h-8 ml-2.5 text-white"
                         />
                       </button>
                       <button
@@ -256,7 +256,7 @@ export default function PhoneMockup({
                         <img
                           src={sec2}
                           alt="sec"
-                          className="w-10 h-10 text-white"
+                          className="w-10 h-8 text-white"
                         />
                       </button>
                       <button
@@ -268,7 +268,7 @@ export default function PhoneMockup({
                         <img
                           src={sec3}
                           alt="sec"
-                          className="w-10 h-10 text-white"
+                          className="w-10 h-8 text-white"
                         />
                       </button>
                       <button
@@ -280,13 +280,13 @@ export default function PhoneMockup({
                         <img
                           src={sec4}
                           alt="sec"
-                          className="w-10 h-10 text-white"
+                          className="w-10 h-8 text-white"
                         />
                       </button>
                       <img
                         src={sec5}
                         alt="sec"
-                        className="w-10 h-10 text-white"
+                        className="w-10 h-8 text-white"
                       />
                     </div>
                   </div>
@@ -297,10 +297,10 @@ export default function PhoneMockup({
                 <div className="pb-4 flex space-x-3 mt-4">
                   <div className="bg-gray-900 rounded-lg p-2 flex items-center space-x-1 w-fit">
                     <span className="text-white text-[9px]">SECURE MODE</span>
-                    <ToggleLeft className="w-4 h-4 text-green-500" />
+                    <ToggleLeft className="w-2.5 h-2.5 text-green-500" />
                   </div>
                   <div className="bg-gray-800 rounded-lg p-2 flex items-center space-x-1 flex-1">
-                    <Grid3X3 className="w-4 h-4 text-white" />
+                    <Grid3X3 className="w-2.5 h-2.5 text-white" />
                     <span className="text-white text-[9px]">
                       ALL APPLICATIONS
                     </span>

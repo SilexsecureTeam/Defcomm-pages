@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/dlogo.png";
 import { navItems } from "../../utils/constants";
 
-export default function NewNav() {
+export default function HeadNav() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerDisabled, setBannerDisabled] = useState(false);
@@ -21,21 +21,19 @@ export default function NewNav() {
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setProductDropdownOpen(false);
-    }, 200);
+    }, 200); // delay before closing
   };
 
   return (
-    <header className="w-full z-50 pt-4 bg-[#36460A]">
+    <header className="w-full z-50 pt-4 bg-black">
       {/* Top banner */}
       <div
         className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-6 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
-    ${
-      bannerDisabled
-        ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
-        : "bg-[#090D00]"
-    }`}
-        onMouseEnter={() => {}}
-        onMouseLeave={() => {}}
+        ${
+          bannerDisabled
+            ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
+            : "bg-[#2d3f14]"
+        }`}
       >
         <IoClose
           size={20}
@@ -84,13 +82,13 @@ export default function NewNav() {
                   <NavLink
                     to={path}
                     className={({ isActive }) =>
-                      isActive
-                        ? "text-lime-400 font-semibold"
-                        : "hover:text-lime-400 transition-colors"
+                      isActive ? " font-semibold" : " transition-colors"
                     }
                   >
                     {name}
                   </NavLink>
+
+                  {/* Desktop Dropdown */}
                   {productDropdownOpen && (
                     <div className="absolute -left-[280px] mt-2 w-[620px]  bg-gradient-to-r from-[#1f2e12] to-[#3d5d1c] shadow-lg rounded-md py-5 z-50">
                       <div className="grid grid-cols-3 gap-8 px-4">
@@ -203,7 +201,7 @@ export default function NewNav() {
                       href={path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-lime-400 transition-colors"
+                      className=" transition-colors"
                     >
                       {name}
                     </a>
@@ -211,9 +209,7 @@ export default function NewNav() {
                     <NavLink
                       to={path}
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-lime-400 font-semibold"
-                          : "hover:text-lime-400 transition-colors"
+                        isActive ? " font-semibold" : " transition-colors"
                       }
                     >
                       {name}
@@ -227,14 +223,14 @@ export default function NewNav() {
           {/* Book Demo Button */}
           <button
             onClick={() => navigate("/book")}
-            className="bg-[#C6FC2B] hover:bg-[#C6FC2B]/70 text-black px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
+            className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
           >
             BOOK DEMO <ArrowRight className="w-4 h-4" />
           </button>
 
           {/* Mobile Menu Icon */}
           <button
-            className="lg:hidden text-gray-400 ml-4"
+            className="lg:hidden text-gray-700 ml-4"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -244,7 +240,7 @@ export default function NewNav() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <ul className="lg:hidden mt-4 space-y-4 px-4 text-black font-medium text-base">
+          <ul className="lg:hidden mt-4 space-y-4 px-4 text-gray-700 font-medium text-base">
             {navItems.map(({ name, path, external }) =>
               name === "Products" ? (
                 <li key={name}>
@@ -257,6 +253,7 @@ export default function NewNav() {
                   </button>
                   {mobileProductOpen && (
                     <div className="pl-4 mt-2 space-y-4">
+                      {/* PRODUCTS Section */}
                       <div>
                         <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
                           PRODUCTS
@@ -291,6 +288,8 @@ export default function NewNav() {
                           </li>
                         </ul>
                       </div>
+
+                      {/* APPS Section */}
                       <div>
                         <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
                           APPS
@@ -325,6 +324,8 @@ export default function NewNav() {
                           </li>
                         </ul>
                       </div>
+
+                      {/* DEVICES Section */}
                       <div>
                         <h3 className="text-sm font-medium mb-2 tracking-wider text-gray-800">
                           DEVICES
@@ -369,7 +370,7 @@ export default function NewNav() {
                       href={path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-black text-black block"
+                      className="hover:text-black block"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {name}

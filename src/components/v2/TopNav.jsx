@@ -92,18 +92,18 @@ export default function TopNav() {
 
                   {/* Desktop Dropdown */}
                   {productDropdownOpen && (
-                    <div className="absolute -left-[280px] mt-2 w-[600px]  bg-white shadow-lg rounded-md py-5 z-50">
-                      <div className="grid grid-cols-3 gap-4 px-4">
+                    <div className="absolute -left-[280px] mt-2 w-[620px]  bg-gradient-to-r from-[#1f2e12] to-[#3d5d1c] shadow-lg rounded-md py-5 z-50">
+                      <div className="grid grid-cols-3 gap-8 px-4">
                         {/* PRODUCTS Column */}
                         <div>
-                          <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
+                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
                             PRODUCTS
                           </h3>
-                          <ul className="space-y-2">
+                          <ul className="space-y-2 font-medium">
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Device
                               </NavLink>
@@ -111,7 +111,7 @@ export default function TopNav() {
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Apps
                               </NavLink>
@@ -119,7 +119,7 @@ export default function TopNav() {
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Operating System
                               </NavLink>
@@ -129,14 +129,14 @@ export default function TopNav() {
 
                         {/* APPS Column */}
                         <div>
-                          <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
+                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
                             APPS
                           </h3>
-                          <ul className="space-y-2">
+                          <ul className="space-y-2 font-medium">
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 iSurvive
                               </NavLink>
@@ -144,7 +144,7 @@ export default function TopNav() {
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 PPT
                               </NavLink>
@@ -152,7 +152,7 @@ export default function TopNav() {
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Defcomm Messenger
                               </NavLink>
@@ -162,14 +162,14 @@ export default function TopNav() {
 
                         {/* DEVICES Column */}
                         <div>
-                          <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
+                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
                             DEVICES
                           </h3>
-                          <ul className="space-y-2">
+                          <ul className="space-y-2 font-medium">
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Defcomm ShieldPad
                               </NavLink>
@@ -177,7 +177,7 @@ export default function TopNav() {
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Defcomm SecureEdge
                               </NavLink>
@@ -185,7 +185,7 @@ export default function TopNav() {
                             <li>
                               <NavLink
                                 to="#"
-                                className="text-sm text-gray-600 hover:text-black transition-colors block"
+                                className="text-sm text-white transition-colors block"
                               >
                                 Defcomm TrustOS
                               </NavLink>
@@ -226,7 +226,7 @@ export default function TopNav() {
 
           {/* Book Demo Button */}
           <button
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/book")}
             className="bg-[#2d3f14] hover:bg-[#3e5720] text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
           >
             BOOK DEMO <ArrowRight className="w-4 h-4" />

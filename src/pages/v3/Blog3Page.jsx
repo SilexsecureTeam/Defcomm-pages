@@ -9,6 +9,12 @@ import blog from "../../assets/blog2.png";
 // import new1 from "../../assets/new1.png";
 import new2 from "../../assets/new2.png";
 import new3 from "../../assets/new3.png";
+import gal1 from "../../assets/gal1.png";
+import gal2 from "../../assets/gal2.png";
+import gal3 from "../../assets/gal3.png";
+import gal4 from "../../assets/gal4.png";
+import gal5 from "../../assets/gal5.png";
+import gal6 from "../../assets/gal6.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useNavigate, Link } from "react-router-dom";
@@ -44,6 +50,13 @@ const Blog3Page = () => {
 
   const handleBack = () => {
     navigate(-1);
+  };
+
+  // Animation variants for gallery images
+  const galleryVariants = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 },
   };
 
   return (
@@ -136,6 +149,30 @@ const Blog3Page = () => {
             equipping military forces with the tools to operate securely in an
             increasingly digital battle space.
           </motion.p>
+        </div>
+      </section>
+      <section className="bg-white py-10">
+        <div className="max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[gal1, gal2, gal3, gal4, gal5, gal6].map((image, index) => (
+              <motion.div
+                key={index}
+                variants={galleryVariants}
+                initial="initial"
+                whileInView="whileInView"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                className="w-full"
+              >
+                <img
+                  src={image}
+                  alt={`Gallery image ${index + 1}`}
+                  className="w-full h-64 object-cover rounded-lg shadow-md"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="bg-white pb-16 py-6">

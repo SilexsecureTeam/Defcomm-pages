@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
-import newImage from "../../assets/new.jpg";
+import newImage from "../../assets/andriod.jpg";
 
 const JobPosting = () => {
   return (
@@ -284,104 +284,109 @@ const AndriodPage = () => {
                         {name}
                       </NavLink>
                       {productDropdownOpen && (
-                        <div className="absolute -left-[280px] mt-2 w-[600px] bg-white shadow-lg rounded-md py-5 z-50">
-                          <div className="grid grid-cols-3 gap-4 px-4">
-                            <div>
-                              <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
-                                PRODUCTS
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Device
-                                  </NavLink>
-                                </li>
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Apps
-                                  </NavLink>
-                                </li>
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Operating System
-                                  </NavLink>
-                                </li>
-                              </ul>
-                            </div>
-                            <div>
-                              <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
-                                APPS
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    iSurvive
-                                  </NavLink>
-                                </li>
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    PPT
-                                  </NavLink>
-                                </li>
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Defcomm Messenger
-                                  </NavLink>
-                                </li>
-                              </ul>
-                            </div>
-                            <div>
-                              <h3 className="text-sm font-semibold mb-2 tracking-wider text-gray-800">
-                                DEVICES
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Defcomm ShieldPad
-                                  </NavLink>
-                                </li>
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Defcomm SecureEdge
-                                  </NavLink>
-                                </li>
-                                <li>
-                                  <NavLink
-                                    to="#"
-                                    className="text-sm text-gray-600 hover:text-black transition-colors block"
-                                  >
-                                    Defcomm TrustOS
-                                  </NavLink>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
+                    <div className="absolute -left-[280px] mt-2 w-[620px]  bg-gradient-to-r from-[#1f2e12] to-[#3d5d1c] shadow-lg rounded-md py-5 z-50">
+                      <div className="grid grid-cols-3 gap-8 px-4">
+                        {/* PRODUCTS Column */}
+                        <div>
+                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
+                            PRODUCTS
+                          </h3>
+                          <ul className="space-y-2 font-medium">
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Device
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Apps
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Operating System
+                              </NavLink>
+                            </li>
+                          </ul>
                         </div>
-                      )}
+
+                        {/* APPS Column */}
+                        <div>
+                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
+                            APPS
+                          </h3>
+                          <ul className="space-y-2 font-medium">
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                iSurvive
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                PPT
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Defcomm Messenger
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* DEVICES Column */}
+                        <div>
+                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
+                            DEVICES
+                          </h3>
+                          <ul className="space-y-2 font-medium">
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Defcomm ShieldPad
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Defcomm SecureEdge
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                                to="#"
+                                className="text-sm text-white transition-colors block"
+                              >
+                                Defcomm TrustOS
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                     </motion.li>
                   ) : (
                     <motion.li
@@ -607,8 +612,8 @@ const AndriodPage = () => {
             )}
           </motion.nav>
         </header>
-        <div className="max-w-peak mx-auto py-16">
-          <div className="relative flex flex-col justify-start pt-8 items-start px-8 md:px-12 text-white lg:ml-[0px] h-fit pb-10 lg:h-[450px] space-y-2">
+        <div className="max-w-peak mx-auto pt-12">
+          <div className="relative flex flex-col justify-start pt-8 items-start px-8 md:px-12 text-white lg:ml-[0px] h-fit pb-10 lg:h-[360px] space-y-2">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}

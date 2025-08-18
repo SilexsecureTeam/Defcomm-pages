@@ -1,7 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react"; // Removed ArrowRight
+import React, { useState, useRef } from "react";
+import YouTube from "react-youtube";
+import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react";
 import nxt from "../../assets/nxt.png";
 import SecurityFeatures from "../../components/v2/SecurityFeatures";
+import HeadNav from "../../components/v2/HeadNav";
 import Feature from "../../components/v3/Feature";
 
 const VideoCard = ({
@@ -104,150 +106,50 @@ export default function VideoPage() {
   const videos = [
     {
       id: 1,
-      title: "Nigeria’s First End-to-End Secure Communication Platform & .....",
-      duration: "2:30 | 1:45:42",
+      title: "Nigeria’s First End-to-End Secure Communication Platform & Privacy ......",
+      duration: "43:50",
       thumbnail: "https://img.youtube.com/vi/RgTOwZRsRRE/hqdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=RgTOwZRsRRE",
       embedId: "RgTOwZRsRRE",
     },
     {
       id: 2,
       title: "Defcomm's latest innovation in military technology",
-      duration: "3:33",
+      duration: "2:57",
       thumbnail: "https://img.youtube.com/vi/aAljC9JNVlE/hqdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=aAljC9JNVlE",
       embedId: "aAljC9JNVlE",
     },
     {
       id: 3,
-      title: "Because privacy isn’t a privilege—it’s your right .....",
-      duration: "3:15 | 1:22:30",
+      title: "Because privacy isn’t a privilege—it’s your right, we don’t store or track a single byte.",
+      duration: "1:41",
       thumbnail: "https://img.youtube.com/vi/RfaZMz_u5O8/hqdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=RfaZMz_u5O8",
       embedId: "RfaZMz_u5O8",
     },
     {
       id: 4,
-      title: "DefComm: Privacy. Security. Freedom. Take back control ....",
-      duration: "2:50 | 1:15:20",
+      title: "DefComm: Privacy. Security. Freedom. Take back control today",
+      duration: "1:44",
       thumbnail: "https://img.youtube.com/vi/HrJgQTLG5Pw/hqdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=HrJgQTLG5Pw",
       embedId: "HrJgQTLG5Pw",
     },
     {
       id: 5,
-      title: "In an era where communication defines success and security ....",
-      duration: "5:20 | 2:45:30",
+      title: "In an era where communication defines success and security, one name stands .....",
+      duration: "1:00",
       thumbnail: "https://img.youtube.com/vi/Cdk2dfkOmWw/hqdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=Cdk2dfkOmWw",
       embedId: "Cdk2dfkOmWw",
     },
   ];
-
-  useEffect(() => {
-    // Load YouTube API only once
-    if (!window.YT) {
-      const tag = document.createElement("script");
-      tag.src = "https://www.youtube.com/iframe_api";
-      tag.onerror = () => {
-        console.error("Failed to load YouTube Player API");
-        setModalError("Failed to load YouTube API. Please check your network.");
-      };
-      document.body.appendChild(tag);
-    }
-
-    // Initialize hero player when API is ready
-    window.onYouTubeIframeAPIReady = () => {
-      if (heroPlayerRef.current) return; // Prevent reinitialization
-      heroPlayerRef.current = new window.YT.Player("hero-iframe", {
-        events: {
-          onReady: () => {
-            console.log("Hero Player Ready");
-            heroPlayerRef.current.setVolume(heroVolume * 100);
-            heroPlayerRef.current.playVideo();
-          },
-          onError: (e) => {
-            console.error("Hero Player Error:", e);
-            setModalError("Failed to load hero video. Please try again.");
-          },
-          onStateChange: (event) => {
-            setIsHeroPlaying(event.data === window.YT.PlayerState.PLAYING);
-          },
-        },
-      });
-    };
-
-    return () => {
-      delete window.onYouTubeIframeAPIReady;
-    };
-  }, [heroVolume]);
-
-  useEffect(() => {
-    // Initialize modal player when modalVideo changes
-    if (modalVideo && !modalPlayerRef.current) {
-      setModalError(null);
-      setIsModalLoading(true);
-      const initializeModalPlayer = () => {
-        modalPlayerRef.current = new window.YT.Player("modal-iframe", {
-          events: {
-            onReady: () => {
-              console.log("Modal Player Ready");
-              modalPlayerRef.current.setVolume(modalVolume * 100);
-              modalPlayerRef.current.playVideo();
-              setIsModalLoading(false);
-              if (heroPlayerRef.current) {
-                heroPlayerRef.current.pauseVideo();
-                setIsHeroPlaying(false);
-              }
-            },
-            onError: (e) => {
-              console.error("Modal Player Error:", e);
-              setModalError(
-                "This video cannot be played. It may be restricted or unavailable."
-              );
-              setIsModalLoading(false);
-            },
-            onStateChange: (event) => {
-              if (event.data === window.YT.PlayerState.BUFFERING) {
-                setIsModalLoading(true);
-              } else if (
-                event.data === window.YT.PlayerState.PLAYING ||
-                event.data === window.YT.PlayerState.PAUSED
-              ) {
-                setIsModalLoading(false);
-              }
-            },
-          },
-        });
-      };
-
-      // Ensure YouTube API is loaded before initializing modal player
-      if (window.YT && window.YT.Player) {
-        initializeModalPlayer();
-      } else {
-        const interval = setInterval(() => {
-          if (window.YT && window.YT.Player) {
-            clearInterval(interval);
-            initializeModalPlayer();
-          }
-        }, 100);
-        return () => clearInterval(interval);
-      }
-    }
-
-    return () => {
-      if (modalPlayerRef.current) {
-        modalPlayerRef.current.destroy();
-        modalPlayerRef.current = null;
-      }
-    };
-  }, [modalVideo, modalVolume]);
 
   const handleVideoPlay = (videoId) => {
     const video = videos.find((v) => v.id === videoId);
     if (video) {
       setModalVideo(video);
       setIsModalLoading(true);
+      if (heroPlayerRef.current) {
+        heroPlayerRef.current.pauseVideo();
+        setIsHeroPlaying(false);
+      }
     }
   };
 
@@ -334,36 +236,71 @@ export default function VideoPage() {
     }
   };
 
-  const getIframeSrc = (video) => {
-    const baseUrl = `https://www.youtube.com/embed/${video.embedId}`;
-    const params = new URLSearchParams({
-      autoplay: "1",
-      controls: modalVideo ? "1" : "0",
-      loop: modalVideo ? "0" : "1",
-      playlist: modalVideo ? "" : video.embedId,
-      modestbranding: "1",
-      showinfo: "0",
-      rel: "0",
-      iv_load_policy: "3",
-      playsinline: "1",
-      enablejsapi: "1",
-    });
-    return `${baseUrl}?${params.toString()}`;
+  const onHeroPlayerReady = (event) => {
+    console.log("Hero Player Ready");
+    heroPlayerRef.current = event.target;
+    event.target.setVolume(heroVolume * 100);
+    event.target.playVideo();
+  };
+
+  const onModalPlayerReady = (event) => {
+    console.log("Modal Player Ready");
+    modalPlayerRef.current = event.target;
+    event.target.setVolume(modalVolume * 100);
+    event.target.playVideo();
+    setIsModalLoading(false);
+  };
+
+  const onModalPlayerError = (event) => {
+    console.error("Modal Player Error:", event.data);
+    setModalError("This video cannot be played. It may be restricted or unavailable.");
+    setIsModalLoading(false);
+  };
+
+  const onModalPlayerStateChange = (event) => {
+    if (event.data === YouTube.PlayerState.BUFFERING) {
+      setIsModalLoading(true);
+    } else if (
+      event.data === YouTube.PlayerState.PLAYING ||
+      event.data === YouTube.PlayerState.PAUSED
+    ) {
+      setIsModalLoading(false);
+    }
   };
 
   const heroVideo = videos[0];
 
   return (
     <div className="min-h-screen bg-black">
+      <HeadNav />
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
-          <iframe
-            id="hero-iframe"
-            key={heroVideo.id}
-            src={getIframeSrc(heroVideo)}
+          <YouTube
+            videoId={heroVideo.embedId}
+            opts={{
+              width: "100%",
+              height: "100%",
+              playerVars: {
+                autoplay: 1,
+                controls: 0,
+                loop: 1,
+                playlist: heroVideo.embedId,
+                modestbranding: 1,
+                showinfo: 0,
+                rel: 0,
+                iv_load_policy: 3,
+                playsinline: 1,
+              },
+            }}
             className="w-full h-full object-cover"
-            allow="autoplay; encrypted-media; fullscreen"
-            title={heroVideo.title}
+            onReady={onHeroPlayerReady}
+            onStateChange={(event) =>
+              setIsHeroPlaying(event.data === YouTube.PlayerState.PLAYING)
+            }
+            onError={(e) => {
+              console.error("Hero Player Error:", e);
+              setModalError("Failed to load hero video. Please try again.");
+            }}
           />
         </div>
         <div className="absolute inset-0 bg-black/20"></div>
@@ -469,47 +406,28 @@ export default function VideoPage() {
                 {modalError}
               </div>
             ) : (
-              <iframe
-                id="modal-iframe"
-                src={getIframeSrc(modalVideo)}
+              <YouTube
+                videoId={modalVideo.embedId}
+                opts={{
+                  width: "100%",
+                  height: "100%",
+                  playerVars: {
+                    autoplay: 1,
+                    controls: 1,
+                    modestbranding: 1,
+                    showinfo: 0,
+                    rel: 0,
+                    iv_load_policy: 3,
+                    playsinline: 1,
+                  },
+                }}
                 className="w-full aspect-video"
-                allow="autoplay; encrypted-media; fullscreen"
-                title={modalVideo.title}
+                onReady={onModalPlayerReady}
+                onError={onModalPlayerError}
+                onStateChange={onModalPlayerStateChange}
               />
             )}
-            <div className="flex items-center space-x-3 mt-2">
-              <button aria-label="Play modal video" onClick={handleModalPlay}>
-                <Play className="w-5 h-5 text-white cursor-pointer" />
-              </button>
-              <button aria-label="Pause modal video" onClick={handleModalPause}>
-                <Pause className="w-5 h-5 text-white cursor-pointer" />
-              </button>
-              <button
-                aria-label="Skip backward 15 seconds"
-                onClick={handleModalSkipBackward}
-              >
-                <SkipBack className="w-4 h-4 text-white cursor-pointer" />
-              </button>
-              <button
-                aria-label="Skip forward 15 seconds"
-                onClick={handleModalSkipForward}
-              >
-                <SkipForward className="w-4 h-4 text-white cursor-pointer" />
-              </button>
-              <div className="flex items-center space-x-1">
-                <Volume2 className="w-4 h-4 text-white" />
-                <input
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value={modalVolume}
-                  onChange={handleModalVolumeChange}
-                  className="max-w-20 h-2"
-                  aria-label="Modal video volume"
-                />
-              </div>
-            </div>
+           
             <button
               className="absolute top-4 right-4 text-white text-2xl"
               aria-label="Close video modal"

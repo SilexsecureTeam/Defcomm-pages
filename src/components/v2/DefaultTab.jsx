@@ -17,7 +17,7 @@ export default function DefaultTab({ setActiveTab }) {
     {
       title: "Defcomm Meet Defence Signal",
       description:
-        "The Defcomm team is scheduled to meet with the Army Signal Intelligence Corps on April 22, 2025, at the Signal Office in Lagos.",
+        "The Defcomm team is scheduled to meet with the Army Signal.....",
     },
     {
       title: "Defcomm Strategy Session",
@@ -47,18 +47,18 @@ export default function DefaultTab({ setActiveTab }) {
       </div>
       <div className="grid grid-cols-4 gap-3 mb-4">
         <div
-          className="bg-[#C6FC2B] rounded-lg px-2.5 py-2 flex items-center justify-center cursor-pointer"
+          className="bg-[#C6FC2B] rounded-lg px-2.5 py-1.5 flex items-center justify-center cursor-pointer"
           onClick={() => setActiveTab("category1-first")}
         >
           <img src={cat1} alt="icon" className="w-6 h-6 text-black" />
         </div>
-        <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
+        <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
           <img src={cat2} alt="icon" className="w-6 h-6 text-black" />
         </div>
-        <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
+        <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
           <img src={cat3} alt="icon" className="w-6 h-6 text-black" />
         </div>
-        <div className="bg-white rounded-lg p-2.5 flex items-center justify-center">
+        <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
           <img src={cat4} alt="icon" className="w-6 h-6 text-black" />
         </div>
       </div>
@@ -78,7 +78,7 @@ export default function DefaultTab({ setActiveTab }) {
           <p className="text-[#484A4B] text-xs">{slides[0].description}</p>
         </motion.div>
       </div>
-      <div className="flex justify-center space-x-2 mb-6">
+      <div className="flex justify-center hidden space-x-2 mb-6">
         {slides.map((_, index) => (
           <button
             key={index}

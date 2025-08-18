@@ -8,7 +8,7 @@ import call2 from "../../assets/call2.png";
 import acall from "../../assets/acall.png";
 
 const CallHeader = () => (
-  <div className="mb-4">
+  <div className="">
     <div className="flex items-center justify-between bg-[#89AF20] rounded-full px-3 py-1.5">
       <div className="flex items-center gap-1.5">
         <img src={call1} alt="call" className="w-4 h-4 text-black" />
@@ -37,7 +37,7 @@ export default function CategorySecondTab({ setActiveTab }) {
       className="space-y-4 text-white flex-1 flex flex-col"
     >
       <CallHeader />
-      <div className="mt-4">
+      <div className="">
         <div className="bg-[#36460A] mx-auto w-fit rounded-lg px-3 py-2 flex items-center gap-2">
           <img src={wifi} alt="wifi-image" />
           <span className="text-white text-xs font-medium">
@@ -46,7 +46,7 @@ export default function CategorySecondTab({ setActiveTab }) {
         </div>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center">
-        <div className="grid grid-cols-2 gap-3 mb-4">
+        <div className="grid grid-cols-2 gap-3 ">
           <button className="bg-white rounded-lg p-3 flex flex-col items-center justify-center space-y-1 w-16 h-16">
             <Phone className="w-4 h-4 text-black" />
             <span className="text-black text-xs font-medium">Receiver</span>
@@ -65,7 +65,7 @@ export default function CategorySecondTab({ setActiveTab }) {
           </button>
         </div>
       </div>
-      <div className="flex flex-col items-center pb-4 pt-8">
+      <div className="flex flex-col items-center ">
         <p className="text-white text-xs">Secured by</p>
         <img src={de} alt="defcomm-logo" className="mx-auto" />
       </div>
