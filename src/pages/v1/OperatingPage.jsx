@@ -336,109 +336,109 @@ const OperatingPage = () => {
                         {name}
                       </NavLink>
                       {productDropdownOpen && (
-                    <div className="absolute -left-[280px] mt-2 w-[620px]  bg-gradient-to-r from-[#1f2e12] to-[#3d5d1c] shadow-lg rounded-md py-5 z-50">
-                      <div className="grid grid-cols-3 gap-8 px-4">
-                        {/* PRODUCTS Column */}
-                        <div>
-                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
-                            PRODUCTS
-                          </h3>
-                          <ul className="space-y-2 font-medium">
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Device
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Apps
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Operating System
-                              </NavLink>
-                            </li>
-                          </ul>
-                        </div>
+                        <div className="absolute -left-[280px] mt-2 w-[620px]  bg-gradient-to-r from-[#1f2e12] to-[#3d5d1c] shadow-lg rounded-md py-5 z-50">
+                          <div className="grid grid-cols-3 gap-8 px-4">
+                            {/* PRODUCTS Column */}
+                            <div>
+                              <h3 className="text-xs font-light mb-2 tracking-wider text-white">
+                                PRODUCTS
+                              </h3>
+                              <ul className="space-y-2 font-medium">
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Device
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Apps
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Operating System
+                                  </NavLink>
+                                </li>
+                              </ul>
+                            </div>
 
-                        {/* APPS Column */}
-                        <div>
-                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
-                            APPS
-                          </h3>
-                          <ul className="space-y-2 font-medium">
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                iSurvive
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                PPT
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Defcomm Messenger
-                              </NavLink>
-                            </li>
-                          </ul>
-                        </div>
+                            {/* APPS Column */}
+                            <div>
+                              <h3 className="text-xs font-light mb-2 tracking-wider text-white">
+                                APPS
+                              </h3>
+                              <ul className="space-y-2 font-medium">
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    iSurvive
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    PPT
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Defcomm Messenger
+                                  </NavLink>
+                                </li>
+                              </ul>
+                            </div>
 
-                        {/* DEVICES Column */}
-                        <div>
-                          <h3 className="text-xs font-light mb-2 tracking-wider text-white">
-                            DEVICES
-                          </h3>
-                          <ul className="space-y-2 font-medium">
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Defcomm ShieldPad
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Defcomm SecureEdge
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                to="#"
-                                className="text-sm text-white transition-colors block"
-                              >
-                                Defcomm TrustOS
-                              </NavLink>
-                            </li>
-                          </ul>
+                            {/* DEVICES Column */}
+                            <div>
+                              <h3 className="text-xs font-light mb-2 tracking-wider text-white">
+                                DEVICES
+                              </h3>
+                              <ul className="space-y-2 font-medium">
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Defcomm ShieldPad
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Defcomm SecureEdge
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink
+                                    to="#"
+                                    className="text-sm text-white transition-colors block"
+                                  >
+                                    Defcomm TrustOS
+                                  </NavLink>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  )}
+                      )}
                     </motion.li>
                   ) : (
                     <motion.li
@@ -478,7 +478,7 @@ const OperatingPage = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/book")}
                 className="bg-gradient-to-r from-[#9BA54B] to-[#3E432B] hover:bg-[#C6FC2B]/70 text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
               >
                 BOOK DEMO <ArrowRight className="w-4 h-4" />
