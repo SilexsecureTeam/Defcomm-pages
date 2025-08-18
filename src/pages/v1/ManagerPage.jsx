@@ -684,7 +684,7 @@ const ManagerPage = () => {
               transition={{ duration: 0.5 }}
               className="text-white text-xl md:max-w-[460px]"
             >
-              Employment Type: Paid Intent
+              <b className="mr-2">Employment Type:</b> Paid Intent
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 40 }}
@@ -693,7 +693,7 @@ const ManagerPage = () => {
               transition={{ duration: 0.5 }}
               className="text-white text-xl md:max-w-[460px]"
             >
-              Job Location: Abuja
+              <b className="mr-2">Job Location:</b> Abuja
             </motion.p>
           </div>
         </div>
