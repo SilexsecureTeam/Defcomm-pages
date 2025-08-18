@@ -426,7 +426,7 @@ const AndriodPage = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/book")}
                 className="bg-gradient-to-r from-[#9BA54B] to-[#3E432B] hover:bg-[#C6FC2B]/70 text-white px-4 md:px-5 py-2.5 text-sm ml-auto lg:ml-0 rounded-md font-semibold flex items-center gap-2 transition-all"
               >
                 BOOK DEMO <ArrowRight className="w-4 h-4" />
