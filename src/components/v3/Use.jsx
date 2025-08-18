@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import vector from "../../assets/vector1.png";
 import use from "../../assets/use.png";
+import defense1 from "../../assets/defense1.jpg";
+import defense3 from "../../assets/defense3.jpg";
+import defense4 from "../../assets/defense4.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -19,7 +22,7 @@ const containers = [
     subtitle: "Strategic Impact:",
     subtitleContent:
       "Whether in the field, at command centres, or across inter-agency networks, Defcomm enables secure, coordinated, and uninterrupted communication in real time ensuring national interests remain protected and operations uncompromised.",
-    img: use,
+    img: defense1,
   },
   {
     id: 2,
@@ -39,7 +42,7 @@ const containers = [
     subtitle: "Use Cases:",
     subtitleContent:
       "Confidential ambassadorial or consular communication\nSecure briefing between embassies and home ministries\nProtected handling of international agreements, visas, and negotiations",
-    img: use,
+    img: defense3,
   },
   {
     id: 4,
@@ -49,7 +52,7 @@ const containers = [
     subtitle: "Use Cases:",
     subtitleContent:
       "M&A discussions\nStrategic planning and financial reporting\nInvestor communications\nLegal or regulatory-sensitive conversations",
-    img: use,
+    img: defense4,
   },
 ];
 

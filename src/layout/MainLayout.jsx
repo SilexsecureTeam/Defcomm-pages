@@ -24,7 +24,9 @@ const MainLayout = () => {
   const isAndriod = location.pathname === "/career/andriod-dev";
   const isManager = location.pathname === "/career/product-manager";
   const isOperating = location.pathname === "/career/operating-system";
-  // const isVideo = location.pathname === "/watch";
+  const isVideo = location.pathname === "/watch";
+  const isForm = location.pathname === "/form";
+  const isBook = location.pathname === "/book";
 
   return (
     <div className="w-screen bg-gray-50">
@@ -40,7 +42,9 @@ const MainLayout = () => {
         !isAndriod &&
         !isManager &&
         !isOperating &&
-        // !isVideo &&
+        !isVideo &&
+        !isForm &&
+        !isBook &&
         !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 

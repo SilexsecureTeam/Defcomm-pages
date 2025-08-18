@@ -29,6 +29,8 @@ const AndriodPage = lazy(() => import("./pages/v1/AndriodPage"));
 const ManagerPage = lazy(() => import("./pages/v1/ManagerPage"));
 const OperatingPage = lazy(() => import("./pages/v1/OperatingPage"));
 const Career = lazy(() => import("./pages/v1/Career"));
+const MultiStepForm = lazy(() => import("./pages/v1/MultiStepForm"));
+const BookingWorkflow = lazy(() => import("./pages/v1/BookingWorkflow"));  
 
 const App = () => {
   return (
@@ -57,6 +59,8 @@ const App = () => {
             <Route path="/hardware" element={<Hardware />} />
             <Route path="/software" element={<Software />} />
             <Route path="/watch" element={<VideoPage />} />
+            <Route path="/form" element={<MultiStepForm />} />
+            <Route path="/book" element={<BookingWorkflow />} />
 
             <Route path="/bounty" element={<LiveFire />} />
             {/* Catch-all redirect */}

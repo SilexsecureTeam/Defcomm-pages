@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.23.6",
     "lodash": "^4.17.21",
     "lottie-react": "^2.4.1",
@@ -22,6 +23,8 @@
     "react-joyride": "^3.0.0-7",
     "react-player": "^3.3.1",
     "react-router-dom": "^7.3.0",
+    "react-tooltip": "^5.29.1",
+    "react-youtube": "^10.1.0",
     "swiper": "^11.2.5",
     "tailwindcss-animate": "^1.0.7"
   },

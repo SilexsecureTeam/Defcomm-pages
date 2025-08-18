@@ -9,7 +9,7 @@ const navItems = [
   { name: "About Us", route: "/about" },
   { name: "Careers", route: "/career" },
   { name: "Security Blog" },
-  { name: "Contact" },
+  { name: "Contact", route: "/form" },
 ];
 
 const featureLinks = [
