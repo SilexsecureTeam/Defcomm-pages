@@ -610,7 +610,7 @@ const Career = () => {
               transition={{ duration: 0.5 }}
               className="text-[40px] font-semibold md:max-w-[500px] leading-[1.4]"
             >
-              Carrer <br />
+              Career <br />
               <span className="text-[#C6FC2B]">Opportunities.</span>
             </motion.h2>
             <motion.p
