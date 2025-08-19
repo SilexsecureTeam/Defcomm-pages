@@ -78,7 +78,7 @@ export default function DefaultTab({ setActiveTab }) {
           <p className="text-[#484A4B] text-xs">{slides[0].description}</p>
         </motion.div>
       </div>
-      <div className="flex justify-center hidden space-x-2 mb-6">
+      <div className=" justify-center hidden space-x-2 mb-6">
         {slides.map((_, index) => (
           <button
             key={index}
