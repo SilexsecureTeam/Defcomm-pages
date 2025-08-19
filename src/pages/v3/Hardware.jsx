@@ -4,6 +4,7 @@ import about from "../../assets/make.png";
 import arrow from "../../assets/arrow.png";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const features = [
   {
@@ -62,7 +63,14 @@ const Hardware = () => {
   };
 
   return (
-    // Wrapper to counteract potential browser margins without changing styling
+    <div>
+     <Helmet>
+        <title>Defcomm® Core Hardware Features | Encrypted Devices & Secure Systems</title>
+        <meta
+          name="description"
+          content="Discover the core hardware features of Defcomm® devices end-to-end encryption, biometric authentication, secure boot, signal blocking, and air-gapped architecture. Built for military, enterprise, and government-grade security"
+        />
+         </Helmet>
     <div className="Hardware-wrapper">
       {/* First Section */}
       <motion.div
@@ -407,6 +415,7 @@ const Hardware = () => {
           </div>
         </div>
       </motion.section>
+    </div>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 import newImage from "../../assets/andriod.jpg";
+import { Helmet } from "react-helmet";
 
 const JobPosting = () => {
   return (
@@ -205,6 +206,13 @@ const AndriodPage = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Android Mobile Developer Careers at Defcomm® | Secure App Development</title>
+        <meta
+          name="description"
+          content="Join Defcomm® as an Android Mobile Developer and help build next-gen encrypted apps and secure communication tools. Work on cutting-edge mobile security, AI-driven privacy, and defense-grade software for global impact."
+        />
+         </Helmet>
       {/* Hero Section */}
       <div
         className="bg-cover bg-center w-full h-[80%] px-4"

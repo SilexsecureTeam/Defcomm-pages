@@ -7,6 +7,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 import newImage from "../../assets/project.jpg";
+import { Helmet } from "react-helmet";
 
 const JobPosting = () => {
   return (
@@ -257,6 +258,13 @@ const ManagerPage = () => {
 
   return (
     <div className="">
+       <Helmet>
+        <title>Product Manager Careers at Defcomm® | Lead Secure Tech Innovation</title>
+        <meta
+          name="description"
+          content="Defcomm® is hiring a Product Manager to drive strategy and execution of secure communication products. Join us to shape end-to-end encryption, encrypted hardware, and privacy-first apps built for global defense, enterprise, and government use."
+        />
+         </Helmet>
       {/* Hero Section */}
       <div
         className="bg-cover bg-center w-full h-[80%] px-4"

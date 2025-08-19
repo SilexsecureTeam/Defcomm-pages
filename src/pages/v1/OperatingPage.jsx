@@ -7,6 +7,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 import newImage from "../../assets/operating.jpg";
+import { Helmet } from "react-helmet";
 
 const JobPosting = () => {
   return (
@@ -257,6 +258,13 @@ const OperatingPage = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Operating System Engineer Careers at Defcomm® | Build Secure OS Platforms</title>
+        <meta
+          name="description"
+          content="Defcomm® is hiring an Operating System Engineer to design and optimize defense-grade secure OS platforms. Work on end-to-end encryption, biometric access, and air-gapped architecture powering the future of private communication and cybersecurity."
+        />
+         </Helmet>
       {/* Hero Section */}
       <div
         className="bg-cover bg-center w-full h-[80%] px-4"

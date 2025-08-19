@@ -8,6 +8,7 @@ import logo from "../../assets/logo.png";
 import { navItems } from "../../utils/constants";
 import newImage from "../../assets/new.jpg";
 import serve3 from "../../assets/serve3.png";
+import { Helmet } from "react-helmet";
 
 const items = [
   {
@@ -194,6 +195,13 @@ const Career = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Careers at Defcomm® | Join Our Cybersecurity & Encryption Team</title>
+        <meta
+          name="description"
+          content="Explore career opportunities at Defcomm®. We’re building the future of cybersecurity with end-to-end encryption, secure communication, and privacy-first technologies. Join our mission to protect governments, enterprises, and individuals worldwide."
+        />
+         </Helmet>
       {/* Hero Section */}
       <div
         className="bg-cover bg-center w-full h-[80%] px-4"

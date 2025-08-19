@@ -6,6 +6,7 @@ import team3 from "../../assets/team3.png";
 import team1 from "../../assets/team1.png";
 import team4 from "../../assets/team4.png";
 import team5 from "../../assets/team5.png";
+import team6 from "../../assets/team6.png";
 
 // Define the fadeUp animation variant
 const fadeUp = {
@@ -15,14 +16,22 @@ const fadeUp = {
 
 const teamMembers = [
   { id: 1, name: "Nsikak Joseph Nelson", position: "CEO", img: team1 },
-  { id: 2, name: "Nuno Seidi", position: "COO", img: team2 },
-  { id: 3, name: "Opeyemi T Obayan", position: "CTO", img: team3 },
-  { id: 4, name: "Nike Nsikak Nelson", position: "CFO", img: team4 },
+    { id: 2, name: "Nike Nsikak Nelson", position: "Co-founder /CIO", img: team4 },
+  { id: 3, name: "Nuno Seidi", position: "COO", img: team2 },
+  { id: 4, name: "Opeyemi T Obayan", position: "CBO", img: team3 },
+
   {
     id: 5,
+
     name: "Dr. Moses Enokela",
     position: "Head - Digital Health Strategy and Innovation",
     img: team5,
+  },
+  {
+    id: 6,
+    name: "Maurice Idorenyin",
+    position: "CFO",
+    img: team6,
   },
 ];
 

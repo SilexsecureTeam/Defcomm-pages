@@ -1,5 +1,5 @@
-import { LockKeyhole } from "lucide-react";
-import React from "react";
+import { LockKeyhole, ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
@@ -40,8 +40,39 @@ const Blog1Page = () => {
   const navigate = useNavigate();
   SwiperCore.use([Autoplay]);
 
+  // State for modal and selected image
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const galleryImages = [gal1, gal2, gal3, gal4, gal5, gal6];
+
   const handleBack = () => {
     navigate(-1);
+  };
+
+  // Open modal with selected image
+  const openModal = (index) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // Navigate to next image
+  const nextImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Navigate to previous image
+  const prevImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
+    );
   };
 
   // Animation variants for gallery images
@@ -49,6 +80,13 @@ const Blog1Page = () => {
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.5 },
+  };
+
+  // Animation for modal
+  const modalVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } },
   };
 
   return (
@@ -275,9 +313,8 @@ const Blog1Page = () => {
 
       <section className="bg-white py-10">
         <div className="max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[gal1, gal2, gal3, gal4, gal5, gal6].map((image, index) => (
+            {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
                 variants={galleryVariants}
@@ -285,7 +322,8 @@ const Blog1Page = () => {
                 whileInView="whileInView"
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: false, amount: 0.2 }}
-                className="w-full"
+                className="w-full cursor-pointer"
+                onClick={() => openModal(index)}
               >
                 <img
                   src={image}
@@ -297,6 +335,49 @@ const Blog1Page = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal for large image view */}
+      {isModalOpen && (
+        <motion.div
+          variants={modalVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div
+            className="relative bg-white rounded-lg p-4 max-w-4xl w-full mx-4"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+          >
+            <button
+              className="absolute top-2 right-2 text-black text-2xl"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <div className="flex items-center justify-between">
+              <button
+                onClick={prevImage}
+                className="text-white bg-[#54622D] p-2 rounded-full"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <img
+                src={galleryImages[selectedImageIndex]}
+                alt={`Gallery image ${selectedImageIndex + 1}`}
+                className="w-full max-h-[80vh] object-contain"
+              />
+              <button
+                onClick={nextImage}
+                className="text-white bg-[#54622D] p-2 rounded-full"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
 
       <section className="bg-white pb-16 py-6">
         <div className="max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">

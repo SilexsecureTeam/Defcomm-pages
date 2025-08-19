@@ -9,9 +9,18 @@ import ultraLaptop from "../../assets/laptop.png";
 import portableSecurity from "../../assets/portable.png";
 // import FeaturedPartners from "../../components/FeaturedPartners";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Products = () => {
   return (
+    <div>
+      <Helmet>
+        <title>Defcomm® Products | Encrypted Devices, Secure Platforms & BlackVault</title>
+        <meta
+          name="description"
+          content="Discover Defcomm® products designed for absolute security ranging from the BlackVault ultra-secure Phone to encrypted devices, DefTab S1, and privacy-focused communication platforms. Built to protect data, identity, and national security."
+        />
+      </Helmet>
     <div className=" flex flex-col bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#36460A] to-black text-white pb-10 pt-20  overflow-hidden">
@@ -188,6 +197,7 @@ const Products = () => {
       </section>
       {/* <FeaturedPartners /> */}
       {/* <Footer /> */}
+    </div>
     </div>
   );
 };

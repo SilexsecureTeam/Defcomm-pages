@@ -13,6 +13,7 @@ import grade5 from "../../assets/landing/grade5.png";
 import grade6 from "../../assets/landing/grade6.png";
 import biometrics from "../../assets/landing/biometrics.png";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const ProductsFeatures = () => {
   const fullText = "Designed for Operatives. Desired by Visionaries.";
@@ -59,6 +60,14 @@ const ProductsFeatures = () => {
   }, [index, isTyping, fullText]);
 
   return (
+    <div>
+       <Helmet>
+        <title>Defcomm® Technology | End-to-End Encryption, Secure Systems & Privacy</title>
+        <meta
+          name="description"
+          content="Explore Defcomm® technology powering next-gen security end-to-end encryption, secure boot, air-gapped architecture, and cryptographic communication protocols. Built for military, enterprise, and government use."
+        />
+      </Helmet>
     <div className="min-h-screen flex flex-col bg-[#141413]">
       {/* <Nav /> */}
       {/* Hero Section */}
@@ -358,6 +367,7 @@ const ProductsFeatures = () => {
         </motion.div>
       </section>
       {/* <Footer /> */}
+    </div>
     </div>
   );
 };
