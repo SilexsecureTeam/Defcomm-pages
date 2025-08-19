@@ -7,10 +7,19 @@ import BestPractices from "../../components/v2/live_fire/BestPractices";
 import FAQSection from "../../components/v2/live_fire/FAQSection";
 import ContactSection from "../../components/v2/live_fire/ContactSection";
 import Footer from "../../components/landing/Footer/Footer";
+import { Helmet } from "react-helmet";
 
 const targetDate = new Date("2025-11-01T12:00:00").getTime();
 const LiveFire = () => {
   return (
+    <div>
+       <Helmet>
+        <title>Defcomm® Bug Bounty Program | Report Vulnerabilities & Earn Rewards</title>
+        <meta
+          name="description"
+          content="Join the Defcomm® Bug Bounty Program where security researchers in Africa  and ethical hackers help strengthen our encrypted systems. Report vulnerabilities, protect critical data, and earn rewards for advancing cybersecurity."
+        />
+         </Helmet>
     <div className="min-h-screen bg-gradient-to-b from-[#111] to-[#222] flex flex-col">
       <main className="flex flex-col items-center justify-center flex-1 pt-36 pb-10 px-4 max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-semibold text-center mb-4 text-[#AC7C2E] drop-shadow-lg">
@@ -51,6 +60,7 @@ const LiveFire = () => {
       <BestPractices />
       <FAQSection />
       <ContactSection />
+    </div>
     </div>
   );
 };

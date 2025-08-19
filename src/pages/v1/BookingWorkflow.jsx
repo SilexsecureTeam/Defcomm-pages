@@ -12,6 +12,7 @@ import { Tooltip } from "react-tooltip";
 import TopNav from "../../components/v2/TopNav";
 import { Calendar, FileText, CheckCircle, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const BookingWorkflow = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -132,6 +133,13 @@ const BookingWorkflow = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Book a Demo | Defcomm® Secure Communication & Encryption Solutions</title>
+        <meta
+          name="description"
+          content="Experience Defcomm® in action. Book a demo to explore our end-to-end encrypted devices, secure communication platforms, and privacy-first technologies built for government, enterprise, and defense."
+        />
+         </Helmet>
       <TopNav />
       <div className="min-h-screen flex items-center justify-center bg-limeAccent p-4 sm:p-6 md:p-8 lg:p-10 font-sans">
         <motion.div

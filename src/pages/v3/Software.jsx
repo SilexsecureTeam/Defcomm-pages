@@ -6,6 +6,7 @@ import soft1 from "../../assets/soft1.png";
 import soft2 from "../../assets/soft2.png";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const data = [
   {
@@ -64,6 +65,14 @@ const fadeVariants = {
 
 const Software = () => {
   return (
+    <div>
+       <Helmet>
+        <title>Defcomm® Core Software Features | Shield Messaging, Encrypted Sharing & Security Controls</title>
+        <meta
+          name="description"
+          content="Discover Defcomm® software features designed for maximum privacy—Shield Messaging, screenshot protection, dynamic watermark security, encrypted file sharing, and peripheral lockdown. Secure, intelligent, and built for absolute confidentiality."
+        />
+         </Helmet>
     <div className="w-full">
       <div className="bg-limeAccent w-full">
         <div className="max-w-peak mx-auto py-10 flex justify-between flex-col md:flex-row ">
@@ -263,6 +272,7 @@ const Software = () => {
           </div>
         </div>
       </motion.section>
+    </div>
     </div>
   );
 };

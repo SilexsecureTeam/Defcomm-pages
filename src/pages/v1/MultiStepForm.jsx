@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HeadNav from "../../components/v2/HeadNav";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -75,6 +76,13 @@ const MultiStepForm = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Contact Us | Defcomm® Secure Communication & Encryption Experts</title>
+        <meta
+          name="description"
+          content="Get in touch with Defcomm® for inquiries on encrypted devices, secure communication platforms, partnerships, or support. Our team is here to help governments, enterprises, and organizations stay protected with end-to-end encryption."
+        />
+         </Helmet>
       <HeadNav />
       <div className="min-h-[80%] py-20 px-4 md:px-12 flex items-center justify-center bg-black">
         <div className="w-full max-w-peak mx-auto">
