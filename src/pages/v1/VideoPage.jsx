@@ -268,7 +268,7 @@ export default function VideoPage() {
     }
   };
 
-  const heroVideo = videos[0];
+  const heroVideo = videos[1];
 
   return (
     <div className="min-h-screen bg-black">

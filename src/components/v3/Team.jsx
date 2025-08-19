@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import team2 from "../../assets/team2.png";
 import team3 from "../../assets/team3.png";
 import team1 from "../../assets/team1.png";
-import team4 from "../../assets/team4.png";
+import team4 from "../../assets/team4.jpg";
 import team5 from "../../assets/team5.png";
 import team6 from "../../assets/team6.png";
 

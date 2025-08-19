@@ -34,7 +34,7 @@ export default function CategorySecondTab({ setActiveTab }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="space-y-4 text-white flex-1 flex flex-col"
+      className="space-y-4 text-white w-full flex flex-col"
     >
       <CallHeader />
       <div className="">
