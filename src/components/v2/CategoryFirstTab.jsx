@@ -9,21 +9,24 @@ import acall from "../../assets/acall.png";
 
 const CallHeader = () => (
   <div className="mb-4">
-    <div className="flex items-center justify-between bg-[#89AF20] rounded-full px-3 py-1.5">
+    <div className="flex items-center justify-between bg-[#89AF20] rounded-full px-3 py-2">
       <div className="flex items-center gap-1.5">
         <img src={call1} alt="call" className="w-4 h-4 text-black" />
         <span className="text-black text-xs font-medium">
-          Secure Calling....
+          Secure Calling...
         </span>
       </div>
       <div className="flex items-center gap-1.5">
-        <span className="text-black text-xs font-medium">0.00</span>
+        <span className="text-black text-xs font-medium">0:00</span>
         <img src={call2} alt="call" className="w-4 h-4 text-black" />
       </div>
     </div>
     <div className="flex items-center mt-3">
       <img src={acall} alt="call" className="w-12 h-12" />
-      <span className="text-white text-sm font-medium">Col Adamu John</span>
+      <div>
+        <span className="text-white text-sm font-medium">Col Adamu John</span>
+        <p className="text-gray-400 text-xs">Secure Call Active</p>
+      </div>
     </div>
   </div>
 );
@@ -34,31 +37,32 @@ export default function CategoryFirstTab() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="space-y-4 text-white w-full flex flex-col"
+      className="space-y-4 text-white w-full flex flex-col px-4 py-6"
     >
       <CallHeader />
-      <div className="mt-4">
-        <div className="bg-[#36460A] mx-auto w-fit rounded-lg px-3 py-2 flex items-center gap-2">
-          <img src={wifi} alt="wifi-image" />
-          <span className="text-white text-xs font-medium">
+      <div className="bg-[#36460A]/50 rounded-lg p-4 flex flex-col items-center gap-4">
+        <div className="flex items-center gap-2">
+          <img src={wifi} alt="wifi-image" className="w-6 h-6" />
+          <span className="text-white text-sm font-medium">
             Checking call...
           </span>
         </div>
-      </div>
-      <div className="flex-1 flex flex-col items-center justify-center">
+        <div className="text-gray-300 text-xs text-center">
+          Initiating End-to-End Encryption
+        </div>
         <img
           src={load}
           alt="load-image"
-          className="animate-spin"
+          className="animate-spin w-12 h-12"
           style={{ animation: "spin 2s linear infinite" }}
         />
-        <p className="text-gray-300 text-xs text-center">
-          Initiating End to end Encryption
-        </p>
+        <div className="text-gray-400 text-xs text-center">
+          Encryption Strength: AES-256
+        </div>
       </div>
-      <div className="flex flex-col items-center pb-4 pt-8">
+      <div className="flex flex-col items-center mt-auto pt-4">
         <p className="text-white text-xs">Secured by</p>
-        <img src={de} alt="defcomm-logo" className="mx-auto" />
+        <img src={de} alt="defcomm-logo" className="w-24 mt-2" />
       </div>
     </motion.div>
   );
