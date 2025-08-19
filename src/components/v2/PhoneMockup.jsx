@@ -9,7 +9,7 @@ import {
   Phone,
   User,
   Settings,
-  ToggleLeft,
+  ToggleLeft, // Added ToggleLeft import
   Grid3X3,
 } from "lucide-react";
 import scan from "../../assets/scan.png";
@@ -36,6 +36,17 @@ export default function PhoneMockup({
   messageInput,
   setMessageInput,
 }) {
+  const tabs = [
+    { id: "default", icon: sec5, label: "Home" },
+    { id: "messages", icon: sec1, label: "Messages" },
+      { id: "category1-first", icon: sec5, label: "Dial" },
+    { id: "calls", icon: sec2, label: "Calls" },
+    { id: "emails", icon: sec3, label: "Emails" },
+    { id: "files", icon: sec4, label: "Files" },
+    { id: "securegroup", icon: sec5, label: "Secure Group" },
+  
+  ];
+
   const renderTabContent = () => {
     switch (activeTab) {
       case "default":
@@ -70,7 +81,7 @@ export default function PhoneMockup({
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.3 }}
-      className="flex justify-center lg:justify-end"
+      className="flex justify-center lg:justify-start relative"
     >
       <div className="phone-container relative">
         <div className="phone-frame relative max-w-[270px] h-[528px] bg-gray-900 rounded-[35px] p-1 shadow-2xl border-2 border-gray-800">
@@ -98,32 +109,16 @@ export default function PhoneMockup({
                 <span>{currentTime}</span>
               </div>
               <div className="flex items-center space-x-1 text-white">
-                <svg
-                  className="w-2.5 h-2.5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
-                <svg
-                  className="w-2.5 h-2.5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M16.48 2.52c3.27 1.55 5.61 4.72 5.97 8.48h1.5C23.44 4.84 18.29 0 12 0l-.66.03 3.81 3.81 1.33-1.32zm-6.25-.77c-.59-.59-1.54-.59-2.12 0L1.75 8.11c-.59.59-.59 1.54 0 2.12l12.02 12.02c.59.59 1.54.59 2.12 0l6.36-6.36c.59-.59.59-1.54 0-2.12L10.23 1.75z" />
                 </svg>
-                <svg
-                  className="w-2.5 h-2.5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.34 2.02C6.59 1.82 2 6.42 2 12c0 5.52 4.48 10 10 10 3.71 0 6.93-2.02 8.66-5.02-7.51-.25-13.54-6.93-8.32-14.96z" />
                 </svg>
-                <svg
-                  className="w-2.5 h-2.5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
                 </svg>
                 <div className="flex space-x-0.5">
@@ -132,11 +127,7 @@ export default function PhoneMockup({
                   <div className="w-0.5 h-3 bg-white rounded-full"></div>
                   <div className="w-0.5 h-3.5 bg-white rounded-full"></div>
                 </div>
-                <svg
-                  className="w-3 h-3"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M1 9 Exemplar2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.07 2.93 1 9zm8 8l3 3 3-3c-1.65-1.65-4.34-1.65-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" />
                 </svg>
                 <span className="text-xs font-semibold">87%</span>
@@ -160,7 +151,7 @@ export default function PhoneMockup({
                 <div className="flex space-x-3 mb-4">
                   <div className="bg-[#36460A] rounded-lg py-4 px-2 flex-1">
                     <div className="flex items-center space-x-1 mb-2">
-                      <img src={scan} alt="scan-img" className='w-[9px]' />
+                      <img src={scan} alt="scan-img" className="w-[9px]" />
                       <span className="text-[#89AF20] text-[8px] uppercase tracking-wide">
                         SECURE MODE ACTIVE
                       </span>
@@ -187,7 +178,7 @@ export default function PhoneMockup({
                     </div>
                     <button
                       onClick={() => setActiveTab("securegroup")}
-                      className="bg-white rounded-lg py-2 px-2  flex items-center space-x-1"
+                      className="bg-white rounded-lg py-2 px-2 flex items-center space-x-1"
                     >
                       <Users className="w-3 h-3 text-black" />
                       <span className="text-black text-[9px] font-normal">
@@ -235,59 +226,23 @@ export default function PhoneMockup({
                   </h2>
                   <div className="flex space-x-6 py-2 items-center overflow-x-auto bg-black border-l-4 border-l-[#759719]">
                     <div className="flex space-x-2 overflow-x-auto">
-                      <button
-                        onClick={() => setActiveTab("messages")}
-                        className={`flex items-center justify-center ${
-                          activeTab === "messages" ? "ring-0 ring-lime-400" : ""
-                        }`}
-                      >
-                        <img
-                          src={sec1}
-                          alt="sec"
-                          className="w-10 h-8 ml-2.5 text-white"
-                        />
-                      </button>
-                      <button
-                        onClick={() => setActiveTab("calls")}
-                        className={`flex items-center justify-center ${
-                          activeTab === "calls" ? "ring-0 ring-lime-400" : ""
-                        }`}
-                      >
-                        <img
-                          src={sec2}
-                          alt="sec"
-                          className="w-10 h-8 text-white"
-                        />
-                      </button>
-                      <button
-                        onClick={() => setActiveTab("emails")}
-                        className={`flex items-center justify-center ${
-                          activeTab === "emails" ? "ring-0 ring-lime-400" : ""
-                        }`}
-                      >
-                        <img
-                          src={sec3}
-                          alt="sec"
-                          className="w-10 h-8 text-white"
-                        />
-                      </button>
-                      <button
-                        onClick={() => setActiveTab("files")}
-                        className={`flex items-center justify-center ${
-                          activeTab === "files" ? "ring-0 ring-lime-400" : ""
-                        }`}
-                      >
-                        <img
-                          src={sec4}
-                          alt="sec"
-                          className="w-10 h-8 text-white"
-                        />
-                      </button>
-                      <img
-                        src={sec5}
-                        alt="sec"
-                        className="w-10 h-8 text-white"
-                      />
+                      {tabs
+                        .filter((tab) => tab.id !== "default")
+                        .map((tab) => (
+                          <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`flex items-center justify-center ${
+                              activeTab === tab.id ? "ring-0 ring-lime-400" : ""
+                            }`}
+                          >
+                            <img
+                              src={tab.icon}
+                              alt={tab.label}
+                              className="w-10 h-8 ml-2.5 text-white"
+                            />
+                          </button>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -360,6 +315,28 @@ export default function PhoneMockup({
             </div>
           </div>
         </div>
+        {activeTab !== "default" && (
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute left-[280px] top-16 transform -translate-y-1/2 flex flex-col space-y-4 bg-gray-900 rounded-lg p-2 shadow-lg"
+          >
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center justify-center w-12 h-12 rounded-md ${
+                  activeTab === tab.id ? "bg-[#759719]" : "bg-gray-800"
+                } hover:bg-[#89AF20] transition-colors`}
+                title={tab.label}
+              >
+                <img src={tab.icon} alt={tab.label} className="w-8 h-8" />
+              </button>
+            ))}
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );

@@ -21,52 +21,51 @@ export default function MessagesTab({
     >
       <div className="flex items-center justify-between p-4 border-b border-gray-800">
         <div className="flex items-center justify-between space-x-3">
-          <div className="w-7 h-7 rounded-full bg-gray-600 flex items-center justify-center">
+          <div className="w-4 h-4 rounded-full bg-gray-600 flex items-center justify-center">
             <img src={group} alt="avatar" className="w-full h-full" />
           </div>
           <div>
-            <h2 className="text-white text-sm font-medium">Col Adamu j</h2>
-            <p className="text-gray-400 text-sm">Class OPS</p>
+            <h2 className="text-white text-[9px] font-medium">Col Adamu j</h2>
+            <p className="text-gray-400 text-[9px]">Class OPS</p>
           </div>
         </div>
-        <img src={call} alt="avatar" className="w-6 h-6" />
+        <img src={call} alt="avatar" className="w-4 h-4" />
       </div>
       <div className="flex items-center justify-between px-4 py-2 bg-black border-l-4 border-l-[#759719]">
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setActiveTab("default")}
-            className="text-white text-sm"
+            className="text-white text-[12px]"
           >
             SECURE MESSAGING
           </button>
         </div>
         <MoreVertical className="w-4 h-4 text-[#759719]" />
       </div>
-      <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+      <div className="flex-1 p-2 space-y-2 overflow-y-auto">
         <div className="space-y-3">
           <div className="flex items-center space-x-1">
-            <img src={acall} alt="avatar" className="w-12 h-12 rounded-full" />
-            <span className="text-gray-300 text-sm">Capt Amos SA</span>
+            <img src={acall} alt="avatar" className="w-8 h-8 rounded-full" />
+            <span className="text-gray-300 text-[12px]">Capt Amos SA</span>
           </div>
           <div className="flex justify-start">
-            <div className="bg-[#36460A] rounded-2xl rounded-tl-md px-4 py-3 max-w-xs">
-              <div className="text-white text-[12px] leading-relaxed">
-                Defcomm App secures all communications with military-grade
-                encryption, ensuring your messages stay private.
+            <div className="bg-[#36460A] rounded-2xl rounded-tl-md px-4 py-2 max-w-xs">
+              <div className="text-white text-[10px] leading-relaxed">
+                Defcomm App securexxx xxxxxx xxxxxx xxxxxxxxx xxxxxxxxx xxxxxx
               </div>
               <div className="flex items-center justify-end mt-1 space-x-1">
-                <span className="text-green-300 text-xs">19:58</span>
+                <span className="text-green-300 text-[10px]">19:58</span>
                 <img src={check1} alt="avatar" className="w-4 h-4" />
               </div>
             </div>
           </div>
           <div className="flex justify-start">
             <div className="bg-[#36460A] rounded-2xl rounded-tl-md px-4 py-3 max-w-xs">
-              <div className="text-white text-[12px] leading-relaxed">
-                Trusted by defense teams for seamless, secure collaboration.
+              <div className="text-white text-[10px] leading-relaxed">
+                Trusted by defxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxx
               </div>
               <div className="flex items-center justify-end mt-1 space-x-1">
-                <span className="text-green-300 text-xs">19:58</span>
+                <span className="text-green-300 text-[10px]">19:58</span>
                 <img src={check1} alt="avatar" className="w-4 h-4" />
               </div>
             </div>
@@ -74,40 +73,40 @@ export default function MessagesTab({
         </div>
         <div className="space-y-3 mt-8">
           <div className="flex items-center justify-end space-x-2 mb-2">
-            <div className="w-8 h-8 rounded-full overflow-hidden">
+            <div className="w-[14px] h-[14px] rounded-full overflow-hidden">
               <img src={group} alt="avatar" className="w-full h-full" />
             </div>
-            <span className="text-gray-300 text-sm">Odeusz Pxs</span>
+            <span className="text-gray-300 text-[12px]">Odeusz Pxs</span>
           </div>
           <div className="flex justify-end">
             <div className="bg-white rounded-2xl rounded-tr-md px-4 py-3 max-w-xs">
-              <div className="text-black text-[12px] leading-relaxed">
-                This app is a game-changer for secure comms!
+              <div className="text-black text-[10px] leading-relaxed">
+                This app ixxx xxxxx xxxxxxxx xxxxx xxxxx
               </div>
               <div className="flex items-center justify-end mt-1 space-x-1">
-                <span className="text-gray-600 text-xs">19:59</span>
+                <span className="text-gray-600 text-[10px]">19:59</span>
                 <img src={check2} alt="avatar" className="w-4 h-4" />
               </div>
             </div>
           </div>
           <div className="flex justify-end">
             <div className="bg-white rounded-2xl rounded-tr-md px-4 py-3 max-w-xs">
-              <div className="text-black text-[12px] leading-relaxed">
-                Just tested the file sharing feature.
+              <div className="text-black text-[10px] leading-relaxed">
+                Just tesxx xxxxx xxxxx xxxxxx xxxxxx xxxxx
               </div>
               <div className="flex items-center justify-end mt-1 space-x-1">
-                <span className="text-gray-600 text-xs">19:59</span>
+                <span className="text-gray-600 text-[10px]">19:59</span>
                 <img src={check2} alt="avatar" className="w-4 h-4" />
               </div>
             </div>
           </div>
           <div className="flex justify-end">
             <div className="bg-white rounded-2xl rounded-tr-md px-4 py-3 max-w-xs">
-              <div className="text-black text-[12px] leading-relaxed">
-                Super fast and secure—perfect for our field ops.
+              <div className="text-black text-[10px] leading-relaxed">
+                Super fasxx xxxxx xxxxxxx xxxxx xxxxxx xxxxxx
               </div>
               <div className="flex items-center justify-end mt-1 space-x-1">
-                <span className="text-gray-600 text-xs">19:59</span>
+                <span className="text-gray-600 text-[10px]">19:59</span>
                 <img src={check2} alt="avatar" className="w-4 h-4" />
               </div>
             </div>

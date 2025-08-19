@@ -28,6 +28,7 @@ const MainLayout = () => {
   const isVideo = location.pathname === "/watch";
   const isForm = location.pathname === "/form";
   const isBook = location.pathname === "/book";
+  const isBlogs = location.pathname === "/blogs";
 
   return (
     <div className="w-screen bg-gray-50">
@@ -43,6 +44,7 @@ const MainLayout = () => {
         isBlogPage1 ||
         isBlogPage2 ||
         isBlogPage3 ||
+        isBlogs ||
         isSoftware) && <TopNav />}
       {!isHomePage &&
         !isServices &&
@@ -53,7 +55,7 @@ const MainLayout = () => {
         !isVideo &&
         !isForm &&
         !isBook &&
-        !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware) &&
+        !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware || isBlogs) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 
       <main className="w-full mx-auto">

@@ -59,6 +59,7 @@ export default function HeroSection() {
       </style>
       <div className="w-full max-w-peak mx-auto pt-4 grid lg:grid-cols-2 gap-10 items-center">
         <LeftContent />
+        <div className='w-full flex justify-start md:justify-center items-center'>
         <PhoneMockup
           activeTab={activeTab}
           setActiveTab={setActiveTab}
@@ -67,6 +68,7 @@ export default function HeroSection() {
           messageInput={messageInput}
           setMessageInput={setMessageInput}
         />
+        </div>
       </div>
     </section>
   );
