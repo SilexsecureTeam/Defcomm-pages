@@ -350,7 +350,6 @@ export default function PhoneMockup({
                     {(activeTab === "default" ||
                       activeTab === "calls" ||
                       activeTab === "emails" ||
-                      activeTab === "files" ||
                       activeTab === "securegroup") && (
                       <div className="mb-4">
                         <h2 className="text-white text-xs font-medium mb-2">
