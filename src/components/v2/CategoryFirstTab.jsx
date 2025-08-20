@@ -40,23 +40,23 @@ export default function CategoryFirstTab() {
       className="space-y-4 text-white w-full flex flex-col px-4 py-6"
     >
       <CallHeader />
-      <div className="bg-[#36460A]/50 rounded-lg p-4 flex flex-col items-center gap-4">
+      <div className="  p-4 flex flex-col items-center gap-4">
         <div className="flex items-center gap-2">
           <img src={wifi} alt="wifi-image" className="w-6 h-6" />
           <span className="text-white text-sm font-medium">
             Checking call...
           </span>
         </div>
-        <div className="text-gray-300 text-xs text-center">
+        {/* <div className="text-gray-300 text-xs text-center">
           Initiating End-to-End Encryption
-        </div>
+        </div> */}
         <img
           src={load}
           alt="load-image"
-          className="animate-spin w-12 h-12"
+          className="animate-spin w-10 h-10"
           style={{ animation: "spin 2s linear infinite" }}
         />
-        <div className="text-gray-400 text-xs text-center">
+        <div className="text-gray-400 text-[9px] text-center">
           Encryption Strength: AES-256
         </div>
       </div>
