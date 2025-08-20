@@ -7,7 +7,7 @@ export default function FilesTab() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="files-section"
+      className="files-section inter"
     >
       <p className="text-lime-300">Secure File Storage</p>
       <ul>

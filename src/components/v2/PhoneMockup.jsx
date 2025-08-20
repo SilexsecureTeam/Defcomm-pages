@@ -43,8 +43,8 @@ export default function PhoneMockup({
     { id: "default", icon: sec7, label: "Home" },
     { id: "messages", icon: sec1, label: "Messages" },
     { id: "calls", icon: sec2, label: "Calls" },
-    { id: "category1-first", icon: sec6, label: "Dial" },
     { id: "securegroup", icon: sec5, label: "Secure Group" },
+    { id: "category1-first", icon: sec6, label: "Dial" },
     { id: "files", icon: sec4, label: "Files" },
     { id: "emails", icon: sec3, label: "Emails" },
   ];
@@ -83,7 +83,7 @@ export default function PhoneMockup({
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.3 }}
-      className="flex justify-center lg:justify-start relative"
+      className="flex justify-center lg:justify-start relative inter"
     >
       <div className="phone-container relative">
         <div className="phone-frame relative max-w-[270px] h-[528px] bg-gray-900 rounded-[35px] p-1 shadow-2xl border-2 border-gray-800">
@@ -249,21 +249,21 @@ export default function PhoneMockup({
                     SECURE COMMUNICATIONS
                   </h2>
                   <div className="flex space-x-6 py-2 items-center overflow-x-auto bg-black border-l-4 border-l-[#759719]">
-                    <div className="flex space-x-2 overflow-x-auto">
+                    <div className="flex ">
                       {tabs
                         .filter((tab) => tab.id !== "default")
                         .map((tab) => (
                           <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`flex items-center justify-center ${
+                            className={`flex items-center justify-center w-12 ${
                               activeTab === tab.id ? "ring-0 ring-lime-400" : ""
                             }`}
                           >
                             <img
                               src={tab.icon}
                               alt={tab.label}
-                              className="w-10 h-8 ml-2.5 text-white"
+                              className="w-20 h-8 ml-2.5 text-white"
                             />
                           </button>
                         ))}
@@ -339,7 +339,7 @@ export default function PhoneMockup({
             </div>
           </div>
         </div>
-        {activeTab !== "default" && (
+        {activeTab && (
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

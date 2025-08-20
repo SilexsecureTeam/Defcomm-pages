@@ -7,7 +7,7 @@ export default function EmailsTab() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="emails-section"
+      className="emails-section inter"
     >
       <p className="text-lime-300">Encrypted Emails Inbox</p>
       <ul>

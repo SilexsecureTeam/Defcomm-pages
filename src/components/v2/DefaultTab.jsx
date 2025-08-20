@@ -38,7 +38,7 @@ export default function DefaultTab({ setActiveTab }) {
       transition={{ duration: 0.3 }}
       className="space-y-4"
     >
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 inter">
         <div className="flex items-center space-x-2">
           <img src={cat} alt="category" className="w-2.5 h-2.5" />
           <span className="text-white text-xs">Category</span>

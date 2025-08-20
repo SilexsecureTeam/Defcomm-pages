@@ -8,7 +8,7 @@ export default function SecureGroupTab() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="space-y-4 text-white"
+      className="space-y-4 text-white inter"
     >
       <div className="space-y-3">
         <div className="bg-gray-700/80 rounded-lg p-3 border border-gray-600/50">

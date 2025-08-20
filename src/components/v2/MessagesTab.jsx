@@ -17,7 +17,7 @@ export default function MessagesTab({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="flex-1 flex flex-col text-white"
+      className="flex-1 flex flex-col text-white inter"
     >
       <div className="flex items-center justify-between p-4 border-b border-gray-800">
         <div className="flex items-center justify-between space-x-3">
