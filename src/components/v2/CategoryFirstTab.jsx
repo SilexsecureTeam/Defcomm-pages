@@ -9,7 +9,7 @@ import acall from "../../assets/acall.png";
 
 const CallHeader = () => (
   <div className="mb-4">
-    <div className="flex items-center justify-between bg-[#89AF20] rounded-full px-3 py-2">
+    <div className="flex items-center justify-between bg-[#89AF20] rounded-full px-3 py-2 inter">
       <div className="flex items-center gap-1.5">
         <img src={call1} alt="call" className="w-4 h-4 text-black" />
         <span className="text-black text-xs font-medium">
