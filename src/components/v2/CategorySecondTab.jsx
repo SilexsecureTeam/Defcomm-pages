@@ -45,16 +45,16 @@ export default function CategorySecondTab({ setActiveTab }) {
         <span className="text-white text-sx font-medium">Call Connected</span>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center">
-        <div className="grid grid-cols-2 gap-4">
-          <button className="bg-white rounded-lg px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+        <div className="grid grid-cols-2 gap-[4px]">
+          <button className="bg-white rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <Phone className="w-4 h-4 text-black" />
             <span className="text-black text-[10px] font-medium">Receiver</span>
           </button>
-          <button className="bg-[#36460A] rounded-lg px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+          <button className="bg-[#36460A] rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <Volume2 className="w-4 h-4 text-white" />
             <span className="text-white text-[10px] font-medium">Speaker</span>
           </button>
-          <button className="bg-[#36460A] rounded-lg px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+          <button className="bg-[#36460A] rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <MicOff className="w-4 h-4 text-white" />
             <span className="text-white text-[10px] font-medium">Mute</span>
           </button>
@@ -62,7 +62,7 @@ export default function CategorySecondTab({ setActiveTab }) {
             <UserPlus className="w-6 h-6 text-white" />
             <span className="text-white text-xs font-medium">New Call</span>
           </button> */}
-          <button className="bg-[#36460A] rounded-lg px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+          <button className="bg-[#36460A] rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <Pause className="w-4 h-4 text-white" />
             <span className="text-white text-[px] font-medium">Hold</span>
           </button>

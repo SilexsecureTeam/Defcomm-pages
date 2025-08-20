@@ -22,18 +22,14 @@ export default function CallsTab() {
       transition={{ duration: 0.3 }}
       className="space-y-4 text-white inter"
     >
-      <div className="mt-4">
+      <div className="mt-4 pb-10">
         <h2 className="text-white text-sm font-medium mb-3">Recent Calls</h2>
         <div className="space-y-3">
           {recentCalls.map((call, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div>
-                  <img
-                    src={icon}
-                    alt="image"
-                    className="w-5.5 h-5.5 text-black"
-                  />
+                  <img src={icon} alt="image" className="w-5 h-5 text-black" />
                 </div>
                 <span className={`${call.avatar} text-xs `}>{call.name}</span>
               </div>
