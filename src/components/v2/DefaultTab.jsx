@@ -12,7 +12,7 @@ const slideVariants = {
   exit: { x: -100, opacity: 0 },
 };
 
-export default function DefaultTab({ setActiveTab }) {
+export default function DefaultTab({ setActiveTab, activeTab }) {
   const slides = [
     {
       title: "Defcomm Meet Defence Signal",
@@ -47,12 +47,19 @@ export default function DefaultTab({ setActiveTab }) {
       </div>
       <div className="grid grid-cols-4 gap-3 mb-4">
         <div
-          className="bg-[#C6FC2B] rounded-lg px-2.5 py-1.5 flex items-center justify-center cursor-pointer"
+          className={`rounded-lg px-2.5 py-1.5 flex items-center justify-center cursor-pointer ${
+            activeTab === "category1-first" ? "bg-[#C6FC2B]" : "bg-white"
+          }`}
           onClick={() => setActiveTab("category1-first")}
         >
           <img src={cat1} alt="icon" className="w-6 h-6 text-black" />
         </div>
-        <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
+        <div
+          className={`rounded-lg px-2.5 py-1.5 flex items-center justify-center cursor-pointer ${
+            activeTab === "voicechat" ? "bg-[#C6FC2B]" : "bg-white"
+          }`}
+          onClick={() => setActiveTab("voicechat")} // Link cat2 to VoiceChatInterface
+        >
           <img src={cat2} alt="icon" className="w-6 h-6 text-black" />
         </div>
         <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
@@ -78,7 +85,7 @@ export default function DefaultTab({ setActiveTab }) {
           <p className="text-[#484A4B] text-xs">{slides[0].description}</p>
         </motion.div>
       </div>
-      <div className=" justify-center hidden space-x-2 mb-6">
+      <div className="justify-center hidden space-x-2 mb-6">
         {slides.map((_, index) => (
           <button
             key={index}

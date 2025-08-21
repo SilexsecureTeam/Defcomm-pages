@@ -23,6 +23,7 @@ import sec4 from "../../assets/sec4.png";
 import sec5 from "../../assets/sec5.png";
 import sec6 from "../../assets/sec6.png";
 import sec7 from "../../assets/sec7.png";
+import cat2 from "../../assets/tab.png";
 import DefaultTab from "./DefaultTab";
 import MessagesTab from "./MessagesTab";
 import CallsTab from "./CallsTab";
@@ -31,7 +32,8 @@ import FilesTab from "./FilesTab";
 import SecureGroupTab from "./SecureGroupTab";
 import CategoryFirstTab from "./CategoryFirstTab";
 import CategorySecondTab from "./CategorySecondTab";
-import Loader from "./Loader"; // Import the Loader component
+import VoiceChatInterface from "./VoiceChatInterface";
+import Loader from "./Loader";
 
 export default function PhoneMockup({
   activeTab,
@@ -42,15 +44,13 @@ export default function PhoneMockup({
   setMessageInput,
 }) {
   const [runTour, setRunTour] = useState(true);
-  const [isLoading, setIsLoading] = useState(true); // State to control loader visibility
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Control the 5-second loader duration
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); // Hide loader after 5 seconds
-    }, 5000); // 5000ms = 5 seconds
-
-    return () => clearTimeout(timer); // Cleanup on unmount
+      setIsLoading(false);
+    }, 5000);
+    return () => clearTimeout(timer);
   }, []);
 
   const tabs = [
@@ -96,9 +96,14 @@ export default function PhoneMockup({
       label: "Emails",
       description: "Access secure email communications",
     },
+    {
+      id: "voicechat",
+      icon: cat2,
+      label: "Voice Chat",
+      description: "Access secure voice chat interface",
+    },
   ];
 
-  // Joyride steps with compact and aligned tooltips
   const steps = tabs.map((tab, index) => ({
     target: `#tab-${tab.id}`,
     content: (
@@ -107,9 +112,9 @@ export default function PhoneMockup({
         <p className="text-xs">{tab.description}</p>
       </div>
     ),
-    disableBeacon: index === 0, // Beacon on first step
-    placement: "right-start", // Align tooltip top with button
-    offset: 6, // Tighter alignment to button
+    disableBeacon: index === 0,
+    placement: "right-start",
+    offset: 6,
     styles: {
       tooltipContainer: {
         textAlign: "left",
@@ -117,7 +122,6 @@ export default function PhoneMockup({
     },
   }));
 
-  // Handle Joyride callback
   const handleJoyrideCallback = (data) => {
     const { status } = data;
     if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
@@ -128,7 +132,7 @@ export default function PhoneMockup({
   const renderTabContent = () => {
     switch (activeTab) {
       case "default":
-        return <DefaultTab setActiveTab={setActiveTab} />;
+        return <DefaultTab setActiveTab={setActiveTab} activeTab={activeTab} />;
       case "messages":
         return (
           <MessagesTab
@@ -149,6 +153,8 @@ export default function PhoneMockup({
         return <CategoryFirstTab />;
       case "category1-second":
         return <CategorySecondTab setActiveTab={setActiveTab} />;
+      case "voicechat":
+        return <VoiceChatInterface setActiveTab={setActiveTab} />;
       default:
         return null;
     }
@@ -158,34 +164,34 @@ export default function PhoneMockup({
     <>
       <Joyride
         steps={steps}
-        run={runTour && !isLoading} // Only run tour after loader is done
+        run={runTour && !isLoading}
         continuous
         showSkipButton
         showProgress
         styles={{
           options: {
-            primaryColor: "#89AF20", // Green accent
-            backgroundColor: "#1F2A44", // Dark theme
+            primaryColor: "#89AF20",
+            backgroundColor: "#1F2A44",
             textColor: "#FFFFFF",
             arrowColor: "#1F2A44",
-            zIndex: 1000, // Above other elements
+            zIndex: 1000,
           },
           tooltip: {
-            fontFamily: "'Poppins', sans-serif", // Use Poppins
-            padding: "8px 12px", // Smaller padding
-            borderRadius: "6px", // Slightly rounded
-            maxWidth: "290px", // Compact width
-            fontSize: "12px", // Smaller base font size
+            fontFamily: "'Poppins', sans-serif",
+            padding: "8px 12px",
+            borderRadius: "6px",
+            maxWidth: "290px",
+            fontSize: "12px",
           },
           tooltipContainer: {
-            marginLeft: "8px", // Slight offset for alignment
+            marginLeft: "8px",
           },
           buttonNext: {
             backgroundColor: "#89AF20",
             fontFamily: "'Poppins', sans-serif",
-            padding: "6px 12px", // Smaller button
+            padding: "6px 12px",
             borderRadius: "4px",
-            fontSize: "12px", // Smaller text
+            fontSize: "12px",
           },
           buttonBack: {
             color: "#FFFFFF",
@@ -230,7 +236,7 @@ export default function PhoneMockup({
             </div>
             <div className="screen bg-gradient-to-t from-[#36460A] to-black text-white rounded-[30px] h-full overflow-hidden flex flex-col relative">
               {isLoading ? (
-                <Loader /> // Show loader when isLoading is true
+                <Loader />
               ) : (
                 <>
                   <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-28 h-7 bg-black rounded-full z-10 flex items-center justify-center">
@@ -361,7 +367,9 @@ export default function PhoneMockup({
                               .filter(
                                 (tab) =>
                                   tab.id !== "default" &&
-                                  tab.id !== "category1-first"
+                                  tab.id !== "category1-first" &&
+                                  tab.id !== "category1-second" &&
+                                  tab.id !== "voicechat" // Exclude voicechat
                               )
                               .map((tab) => (
                                 <button
@@ -472,7 +480,7 @@ export default function PhoneMockup({
                   key={tab.id}
                   id={`tab-${tab.id}`}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center justify-center w-12 h-12 rounded-md ${
+                  className={`flex items-center justify-center w-12 h-10 rounded-md ${
                     activeTab === tab.id ? "bg-[#759719]" : "bg-gray-800"
                   } hover:bg-[#89AF20] transition-colors`}
                   title={tab.label}
