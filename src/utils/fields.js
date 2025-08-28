@@ -35,8 +35,8 @@ export const tabs = [
   {
     id: "calls",
     icon: contact,
-    label: "Calls",
-    description: "Make and view secure calls",
+    label: "Contact",
+    description: "Make and view call histories",
   },
   {
     id: "securegroup",
@@ -101,16 +101,15 @@ export const joyRideStyles = {
     fontSize: "12px",
   },
 };
-
 export const recentCalls = [
-  { name: "Boženka Maxx***", time: "11:47 PM", avatar: "text-white" },
-  { name: "Odeusz Pio*****", time: "11:47 PM", avatar: "text-white" },
-  { name: "Krysia Eu*****", time: "11:47 PM", avatar: "text-[#DDF2AB]" },
-  { name: "Jarosław Kox*****", time: "Yesterday", avatar: "text-white" },
-  { name: "Odeusz Pio*****", time: "11:47 PM", avatar: "text-[#DDF2AB]" },
-  { name: "Boženka Mas*****", time: "11:47 PM", avatar: "text-white" },
-  { name: "Krysia Eu*****", time: "11:47 PM", avatar: "text-white" },
-  { name: "Jarosław Kow*****", time: "01 Feb", avatar: "text-white" },
+  { name: "Chinonso Maxx***", time: "11:47 PM", avatar: "text-white" },
+  { name: "Tosin Pio*****", time: "11:47 PM", avatar: "text-white" },
+  { name: "Ifunanya Eu*****", time: "11:47 PM", avatar: "text-[#DDF2AB]" },
+  { name: "Chukwuemeka Kox*****", time: "Yesterday", avatar: "text-white" },
+  { name: "Tosin Pio*****", time: "11:47 PM", avatar: "text-[#DDF2AB]" },
+  { name: "Chinonso Mas*****", time: "11:47 PM", avatar: "text-white" },
+  { name: "Ifunanya Eu*****", time: "11:47 PM", avatar: "text-white" },
+  { name: "Chukwuemeka Kow*****", time: "01 Feb", avatar: "text-white" },
 ];
 
 export const chatImages = [
