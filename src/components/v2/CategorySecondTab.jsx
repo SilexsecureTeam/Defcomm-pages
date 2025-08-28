@@ -6,6 +6,7 @@ import de from "../../assets/de.png";
 import call1 from "../../assets/call1.png";
 import call2 from "../../assets/call2.png";
 import acall from "../../assets/acall.png";
+import { UserPlus } from "lucide-react";
 
 const CallHeader = () => (
   <div className="mb-1">
@@ -24,8 +25,10 @@ const CallHeader = () => (
     <div className="flex items-center mt-3">
       <img src={acall} alt="call" className="w-12 h-12" />
       <div>
-        <span className="text-white text-sm font-medium">Col Adamu John</span>
-        <p className="text-gray-400 text-xs">Secure Call Active</p>
+        <span className="text-white text-[10px] font-medium">
+          Col Adamu John
+        </span>
+        <p className="text-gray-400 text-[10px]">Secure Call Active</p>
       </div>
     </div>
   </div>
@@ -40,31 +43,28 @@ export default function CategorySecondTab({ setActiveTab }) {
       className="space-y-4 text-white w-full flex flex-col px-4 py-2"
     >
       <CallHeader />
-      <div className="bg-[#36460A]/50 rounded-lg p-2 flex items-center justify-center gap-2">
-        <img src={wifi} alt="wifi-image" className="w-4 h-4" />
-        <span className="text-white text-sx font-medium">Call Connected</span>
+      <div className="bg-[#36460A]/50 w-max mx-auto p-2 flex items-center justify-center gap-2">
+        <img src={wifi} alt="wifi-image" className="w-3" />
+        <span className="text-white text-xs font-medium">Call Connected</span>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center">
         <div className="grid grid-cols-2 gap-[4px]">
-          <button className="bg-white rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+          <button className="bg-white rounded-sm rounded-r-none px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <Phone className="w-4 h-4 text-black" />
-            <span className="text-black text-[10px] font-medium">Receiver</span>
+            <span className="text-black text-[8px] font-medium">Receiver</span>
           </button>
-          <button className="bg-[#36460A] rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+          <button className="bg-[#36460A] hover:bg-white/20 rounded-sm rounded-l-none px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <Volume2 className="w-4 h-4 text-white" />
-            <span className="text-white text-[10px] font-medium">Speaker</span>
+            <span className="text-white text-[8px] font-medium">Speaker</span>
           </button>
-          <button className="bg-[#36460A] rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+          <button className="bg-[#36460A] hover:bg-white/20 rounded-sm rounded-r-none px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
             <MicOff className="w-4 h-4 text-white" />
-            <span className="text-white text-[10px] font-medium">Mute</span>
+            <span className="text-white text-[8px] font-medium">Mute</span>
           </button>
-          {/* <button className="bg-[#36460A] rounded-lg p-4 flex flex-col items-center justify-center space-y-1 w-20 h-20">
-            <UserPlus className="w-6 h-6 text-white" />
-            <span className="text-white text-xs font-medium">New Call</span>
-          </button> */}
-          <button className="bg-[#36460A] rounded-sm px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
-            <Pause className="w-4 h-4 text-white" />
-            <span className="text-white text-[px] font-medium">Hold</span>
+
+          <button className="bg-[#36460A] hover:bg-white/20 rounded-sm rounded-l-none px-4 py-2 flex flex-col items-center justify-center space-y-1 w-14 h-14">
+            <UserPlus className="w-4 h-4 text-white flex-shrink-0" />
+            <span className="text-white text-[8px] font-medium">New Call</span>
           </button>
         </div>
       </div>

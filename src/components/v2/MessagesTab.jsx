@@ -5,10 +5,14 @@ import group from "../../assets/group.png";
 import acall from "../../assets/acall.png";
 import check1 from "../../assets/check1.png";
 import check2 from "../../assets/check2.png";
+import icon from "../../assets/logo-icon.png";
 import call from "../../assets/call.svg";
+import PhoneTabs from "./PhoneTabs";
+import { chatImages, recentCalls } from "../../utils/fields";
 
 export default function MessagesTab({
   setActiveTab,
+  activeTab,
   messageInput,
   setMessageInput,
 }) {
@@ -19,7 +23,7 @@ export default function MessagesTab({
       transition={{ duration: 0.3 }}
       className="flex-1 flex flex-col text-white inter"
     >
-      <div className="flex items-center justify-between p-4 border-b border-gray-800">
+      <div className="flex items-center justify-between p-4">
         <div className="flex items-center justify-between space-x-3">
           <div className="w-4 h-4 rounded-full bg-gray-600 flex items-center justify-center">
             <img src={group} alt="avatar" className="w-full h-full" />
@@ -31,18 +35,57 @@ export default function MessagesTab({
         </div>
         <img src={call} alt="avatar" className="w-4 h-4" />
       </div>
-      <div className="flex items-center justify-between px-4 py-2 bg-black border-l-4 border-l-[#759719]">
+      <div className="flex items-center justify-between px-4 py-2 bg-black/20">
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setActiveTab("default")}
-            className="text-white text-[12px]"
+            className="text-white text-[10px]"
           >
             SECURE MESSAGING
           </button>
         </div>
         <MoreVertical className="w-4 h-4 text-[#759719]" />
       </div>
-      <div className="flex-1 p-2 space-y-2 overflow-y-auto">
+      <PhoneTabs setActiveTab={setActiveTab} activeTab={activeTab} />
+      {/* user slide */}
+      <div className="flex items-center w-full gap-2 overflow-x-auto my-3">
+        {chatImages?.map((user) => (
+          <section
+            style={{
+              backgroundImage: `linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(${user?.img})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="flex-shrink-0 w-16 h-20 p-2 rounded-2xl bg-gray-500 flex justify-center items-end"
+          >
+            <h2 className="text-[10px] line-clamp-2 text-gray-300 mb-1">
+              {user?.name}
+            </h2>
+          </section>
+        ))}
+      </div>
+      <div className="flex flex-col gap-2">
+        {recentCalls.map((call, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-between gap-2 py-1"
+          >
+            <div className="flex items-center space-x-3">
+              <div className="bg-gray-200 rounded-full">
+                <img src={icon} alt="image" className="h-8 text-black" />
+              </div>
+              <span className={`${call.avatar} text-xs truncate`}>
+                {call.name}
+              </span>
+            </div>
+            <span className="text-gray-300 text-xs flex-shrink-0">
+              {call.time}
+            </span>
+          </div>
+        ))}
+      </div>
+      {/* <div className="flex-1 p-2 space-y-2 overflow-y-auto">
         <div className="space-y-3">
           <div className="flex items-center space-x-1">
             <img src={acall} alt="avatar" className="w-8 h-8 rounded-full" />
@@ -112,7 +155,7 @@ export default function MessagesTab({
             </div>
           </div>
         </div>
-      </div>
+      </div> 
       <div className="sticky bottom-1 px-4">
         <div className="flex items-center justify-center space-x-0">
           <div className="max-w-[210px] mx-auto flex items-center bg-gray-800 rounded-l-full px-4 py-2">
@@ -132,7 +175,7 @@ export default function MessagesTab({
             <Send className="w-3 h-3 text-white" />
           </button>
         </div>
-      </div>
+      </div>*/}
     </motion.div>
   );
 }
