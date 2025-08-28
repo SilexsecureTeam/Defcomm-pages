@@ -2,9 +2,10 @@
 import { motion } from "framer-motion";
 import cat from "../../assets/category.png";
 import cat1 from "../../assets/cat1.svg";
-import cat2 from "../../assets/cat2.svg";
-import cat3 from "../../assets/cat3.svg";
-import cat4 from "../../assets/cat4.png";
+import connect from "../../assets/connect.png";
+import cat4 from "../../assets/logo-icon.png";
+
+import comm from "../../assets/walkie-talkie.png";
 
 const slideVariants = {
   enter: { x: 100, opacity: 0 },
@@ -47,7 +48,7 @@ export default function DefaultTab({ setActiveTab, activeTab }) {
       </div>
       <div className="grid grid-cols-4 gap-3 mb-4">
         <div
-          className={`rounded-lg px-2.5 py-1.5 flex items-center justify-center cursor-pointer ${
+          className={`py-2 flex items-center justify-center cursor-pointer hover:bg-[#C6FC2B] ${
             activeTab === "category1-first" ? "bg-[#C6FC2B]" : "bg-white"
           }`}
           onClick={() => setActiveTab("category1-first")}
@@ -55,18 +56,30 @@ export default function DefaultTab({ setActiveTab, activeTab }) {
           <img src={cat1} alt="icon" className="w-6 h-6 text-black" />
         </div>
         <div
-          className={`rounded-lg px-2.5 py-1.5 flex items-center justify-center cursor-pointer ${
+          className={`px-2.5 py-1.5 flex items-center justify-center cursor-pointer hover:bg-[#C6FC2B] ${
             activeTab === "voicechat" ? "bg-[#C6FC2B]" : "bg-white"
           }`}
           onClick={() => setActiveTab("voicechat")} // Link cat2 to VoiceChatInterface
         >
-          <img src={cat2} alt="icon" className="w-6 h-6 text-black" />
+          <img
+            src={comm}
+            alt="icon"
+            className="w-6 h-6 text-black brightness-0"
+          />
         </div>
-        <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
-          <img src={cat3} alt="icon" className="w-6 h-6 text-black" />
+        <div className="bg-white px-2.5 py-1.5 flex items-center justify-center hover:bg-[#C6FC2B] cursor-pointer">
+          <img
+            src={connect}
+            alt="icon"
+            className="w-6 h-6 text-black brightness-0"
+          />
         </div>
-        <div className="bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center">
-          <img src={cat4} alt="icon" className="w-6 h-6 text-black" />
+        <div className="bg-white px-2.5 py-1.5 flex items-center justify-center hover:bg-[#C6FC2B] cursor-pointer">
+          <img
+            src={cat4}
+            alt="icon"
+            className="w-6 h-6 text-black brightness-0"
+          />
         </div>
       </div>
       <div className="relative overflow-hidden mb-6">
@@ -77,7 +90,7 @@ export default function DefaultTab({ setActiveTab, activeTab }) {
           animate="center"
           exit="exit"
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="bg-[#DDF2AB] rounded-lg p-4"
+          className="bg-[#DDF2AB] p-4"
         >
           <h3 className="text-black text-xs font-semibold mb-2">
             {slides[0].title}

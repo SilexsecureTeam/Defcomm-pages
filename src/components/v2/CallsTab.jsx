@@ -1,20 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
-import icon from "../../assets/call.png";
+import icon from "../../assets/logo-icon.png";
+import { recentCalls } from "../../utils/fields";
 
 export default function CallsTab() {
-  const recentCalls = [
-    { name: "Boženka Maxx***", time: "11:47 PM", avatar: "text-white" },
-    { name: "Odeusz Pio*****", time: "11:47 PM", avatar: "text-white" },
-    { name: "Krysia Eu*****", time: "11:47 PM", avatar: "text-[#DDF2AB]" },
-    { name: "Jarosław Kox*****", time: "Yesterday", avatar: "text-white" },
-    { name: "Odeusz Pio*****", time: "11:47 PM", avatar: "text-[#DDF2AB]" },
-    { name: "Boženka Mas*****", time: "11:47 PM", avatar: "text-white" },
-    { name: "Krysia Eu*****", time: "11:47 PM", avatar: "text-white" },
-    { name: "Jarosław Kow*****", time: "01 Feb", avatar: "text-white" },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,16 +13,23 @@ export default function CallsTab() {
     >
       <div className="mt-4 pb-10">
         <h2 className="text-white text-sm font-medium mb-3">Recent Calls</h2>
-        <div className="space-y-3">
+        <div className="flex flex-col gap-2">
           {recentCalls.map((call, index) => (
-            <div key={index} className="flex items-center justify-between">
+            <div
+              key={index}
+              className="flex items-center justify-between gap-2 py-1"
+            >
               <div className="flex items-center space-x-3">
-                <div>
-                  <img src={icon} alt="image" className="w-5 h-5 text-black" />
+                <div className="bg-gray-200 rounded-full">
+                  <img src={icon} alt="image" className="h-8 text-black" />
                 </div>
-                <span className={`${call.avatar} text-xs `}>{call.name}</span>
+                <span className={`${call.avatar} text-xs truncate`}>
+                  {call.name}
+                </span>
               </div>
-              <span className="text-gray-300 text-xs">{call.time}</span>
+              <span className="text-gray-300 text-xs flex-shrink-0">
+                {call.time}
+              </span>
             </div>
           ))}
         </div>

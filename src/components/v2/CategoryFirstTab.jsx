@@ -41,9 +41,9 @@ export default function CategoryFirstTab() {
     >
       <CallHeader />
       <div className="  p-4 flex flex-col items-center gap-4">
-        <div className="flex items-center gap-2">
-          <img src={wifi} alt="wifi-image" className="w-6 h-6" />
-          <span className="text-white text-sm font-medium">
+        <div className="flex items-center gap-2 bg-[#36460A]/50 p-2">
+          <img src={wifi} alt="wifi-image" className="w-3" />
+          <span className="text-white text-xs font-medium">
             Checking call...
           </span>
         </div>
