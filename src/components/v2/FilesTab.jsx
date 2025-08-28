@@ -20,11 +20,11 @@ export default function FilesTab() {
         {/* Header */}
         <div className="flex items-center justify-between ">
           <div className="flex">
-            <div className="bg-black w-12 h-8 flex justify-center items-center">
-              <img src={file1} className="text-white w-6 h-6" />
+            <div className="bg-black w-12 h-10 flex justify-center items-center">
+              <img src={file1} className="text-white h-6" />
             </div>
-            <div className="bg-[#89AF20] w-12 h-8 flex justify-center items-center">
-              <img src={file2} className="text-white w-6 h-6" />
+            <div className="bg-[#89AF20] w-12 h-10 flex justify-center items-center">
+              <img src={file2} className="text-white h-6" />
             </div>
           </div>
 
@@ -32,7 +32,7 @@ export default function FilesTab() {
         </div>
 
         {/* Title */}
-        <div className="px-4 py-2">
+        <div className="px-4 py-4 min-h-20 flex flex-col justify-center items-center">
           <h1 className="text-[#89AF20] text-sm text-start font-medium">
             Signal Encrypted Messages
           </h1>
@@ -42,17 +42,15 @@ export default function FilesTab() {
         </div>
 
         {/* Messages */}
-        <div className=" space-y-6">
+        <div className=" space-y-6 mb-2">
           {/* Monday Message */}
           <div className="space-y-2">
             <div className="flex items-center justify-between space-x-2">
               <div className="">
-                <h2 className="text-white text-xs font-semibold">
+                <h2 className="text-white text-[10px] font-semibold">
                   Monday at 03:32
                 </h2>
-                <h2 className="text-[#89AF20] text-[10px]">
-                  Mar 30 - C4A2B646
-                </h2>
+                <h2 className="text-[#89AF20] text-[9px]">Mar 30 - C4A2B646</h2>
               </div>
 
               <Lock className="text-green-400 w-4 h-4" />
@@ -66,7 +64,7 @@ export default function FilesTab() {
               <div className="bg-white flex-[1]"></div>
             </div>
 
-            <div className="text-gray-300 text-[10px] leading-relaxed mt-2">
+            <div className="text-gray-300 text-[9px] leading-relaxed mt-2">
               QmFsZTVqGvuY29kZWQgWVzc2FnZ5B3a
               <br />
               QmN9GvZcHt8k2wFuY3VmZ
@@ -89,12 +87,10 @@ export default function FilesTab() {
           <div className="space-y-2">
             <div className="flex items-center justify-between space-x-2">
               <div className="">
-                <h2 className="text-white text-xs font-semibold">
+                <h2 className="text-white text-[10px] font-semibold">
                   Wednesday at 06:00
                 </h2>
-                <h2 className="text-[#89AF20] text-[10px]">
-                  Mar 30 - C4A2B646
-                </h2>
+                <h2 className="text-[#89AF20] text-[9px]">Mar 30 - C4A2B646</h2>
               </div>
 
               <Lock className="text-green-400 w-4 h-4" />
@@ -108,7 +104,7 @@ export default function FilesTab() {
               <div className="bg-white flex-[1]"></div>
             </div>
 
-            <div className="text-gray-300 text-[10px] leading-relaxed mt-2">
+            <div className="text-gray-300 text-[9px] leading-relaxed mt-2">
               QmFsZTVqGvuY29kZWQgWVzc2FnZ5B3a
               <br />
               QmN9GvZcHt8k2wFuY3VmZ

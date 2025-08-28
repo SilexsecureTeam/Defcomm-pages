@@ -19,8 +19,8 @@ export default function CallsTab() {
               key={index}
               className="flex items-center justify-between gap-2 py-1"
             >
-              <div className="flex items-center space-x-3">
-                <div className="bg-gray-200 rounded-full">
+              <div className="flex-shrink-0 flex items-center space-x-3">
+                <div className="bg-gray-600/50 rounded-full">
                   <img src={icon} alt="image" className="h-8 text-black" />
                 </div>
                 <span className={`${call.avatar} text-xs truncate`}>
