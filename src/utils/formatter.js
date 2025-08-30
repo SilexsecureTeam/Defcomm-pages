@@ -16,3 +16,25 @@ export const getTimeLeft = (targetDate) => {
     seconds: String(seconds).padStart(2, "0"),
   };
 };
+
+// Format time like "5:30 PM - 5:55 PM" (assuming 25 minute meetings)
+export const formatTimeRange = (time) => {
+  if (!time) return "";
+
+  // Parse the time (e.g., "5:30 PM")
+  const [timePart, modifier] = time.split(" ");
+  let [hours, minutes] = timePart.split(":");
+
+  // Calculate end time (25 minutes later)
+  let endHours = parseInt(hours);
+  let endMinutes = parseInt(minutes) + 60;
+
+  if (endMinutes >= 60) {
+    endHours += 1;
+    endMinutes -= 60;
+  }
+  const formattedEndTime = `${endHours}:${endMinutes
+    .toString()
+    .padStart(2, "0")} ${modifier}`;
+  return `${time} - ${formattedEndTime}`;
+};

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "axios": "^1.11.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.23.6",
     "lodash": "^4.17.21",

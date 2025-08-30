@@ -1,20 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import HeadNav from "../../components/v2/HeadNav";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import axios from "axios";
+import { FaSpinner } from "react-icons/fa6";
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
+    phone: "",
     email: "",
     company: "",
-    helpText: "",
+    detail: "",
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const formRef = useRef(null);
+
+  // Scroll to top on step change
+  useEffect(() => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentStep]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,21 +43,25 @@ const MultiStepForm = () => {
 
   const validateStep1 = () => {
     const newErrors = {};
-    if (!formData.firstName.trim())
-      newErrors.firstName = "First name is required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!formData.first_name.trim())
+      newErrors.first_name = "First name is required";
+    if (!formData.last_name.trim())
+      newErrors.last_name = "Last name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Email is invalid";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    else if (!/^\+?[0-9]{7,15}$/.test(formData.phone))
+      newErrors.phone = "Enter a valid phone number";
     if (!formData.company.trim()) newErrors.company = "Company is required";
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const validateStep2 = () => {
     const newErrors = {};
-    if (!formData.helpText.trim())
-      newErrors.helpText = "This field is required";
+    if (!formData.detail.trim()) newErrors.detail = "This field is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -59,12 +76,22 @@ const MultiStepForm = () => {
     setCurrentStep(1);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateStep2()) {
-      // Handle form submission logic here, e.g., send data to API
-      console.log("Form submitted:", formData);
-      setSubmitted(true);
+      try {
+        setLoading(true);
+        await axios.post(
+          "https://backend.defcomm.ng/api/web/contact",
+          formData
+        );
+        setSubmitted(true);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setErrors({ api: "Failed to submit form. Please try again." });
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -77,12 +104,14 @@ const MultiStepForm = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Contact Us | Defcomm® Secure Communication & Encryption Experts</title>
+        <title>
+          Contact Us | Defcomm® Secure Communication & Encryption Experts
+        </title>
         <meta
           name="description"
           content="Get in touch with Defcomm® for inquiries on encrypted devices, secure communication platforms, partnerships, or support. Our team is here to help governments, enterprises, and organizations stay protected with end-to-end encryption."
         />
-         </Helmet>
+      </Helmet>
       <HeadNav />
       <div className="min-h-[80%] py-20 px-4 md:px-12 flex items-center justify-center bg-black">
         <div className="w-full max-w-peak mx-auto">
@@ -102,7 +131,7 @@ const MultiStepForm = () => {
             </motion.div>
           ) : (
             <motion.div
-              key={currentStep}
+              ref={formRef}
               initial="initial"
               animate="animate"
               exit="exit"
@@ -130,48 +159,54 @@ const MultiStepForm = () => {
               <form onSubmit={handleSubmit}>
                 {currentStep === 1 ? (
                   <div className="space-y-8 max-w-[1000px]">
+                    {/* Step 1 fields */}
+                    {/* First Name */}
                     <div>
                       <label
-                        htmlFor="firstName"
+                        htmlFor="first_name"
                         className="block text-sm font-medium text-white"
                       >
                         First Name *
                       </label>
                       <input
                         type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
+                        id="first_name"
+                        name="first_name"
+                        placeholder="e.g Mubarak"
+                        value={formData.first_name}
                         onChange={handleChange}
                         className="mt-1 block w-full bg-transparent text-white px-3 py-2 border-b border-b-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#2d3f14] focus:border-[#2d3f14] sm:text-sm"
                       />
-                      {errors.firstName && (
+                      {errors.first_name && (
                         <p className="mt-1 text-sm text-red-600">
-                          {errors.firstName}
+                          {errors.first_name}
                         </p>
                       )}
                     </div>
+                    {/* Last Name */}
                     <div>
                       <label
-                        htmlFor="lastName"
+                        htmlFor="last_name"
                         className="block text-sm font-medium text-white"
                       >
                         Last Name *
                       </label>
                       <input
                         type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
+                        id="last_name"
+                        name="last_name"
+                        placeholder="e.g Afolabi"
+                        value={formData.last_name}
                         onChange={handleChange}
                         className="mt-1 block w-full bg-transparent text-white px-3 py-2 border-b border-b-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#2d3f14] focus:border-[#2d3f14] sm:text-sm"
                       />
-                      {errors.lastName && (
+                      {errors.last_name && (
                         <p className="mt-1 text-sm text-red-600">
-                          {errors.lastName}
+                          {errors.last_name}
                         </p>
                       )}
                     </div>
+                    {/* Email */}
                     <div>
                       <label
                         htmlFor="email"
@@ -185,6 +220,7 @@ const MultiStepForm = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        placeholder="e.g afowebdev@gmail.com"
                         className="mt-1 block w-full bg-transparent text-white px-3 py-2 border-b border-b-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#2d3f14] focus:border-[#2d3f14] sm:text-sm"
                       />
                       {errors.email && (
@@ -193,6 +229,35 @@ const MultiStepForm = () => {
                         </p>
                       )}
                     </div>
+
+                    {/* Phone */}
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-white"
+                      >
+                        Phone *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="e.g +2348106244890"
+                        className="mt-1 block w-full bg-transparent text-white px-3 py-2 
+               border-b border-b-gray-300 rounded-md shadow-sm 
+               focus:outline-none focus:ring-[#2d3f14] 
+               focus:border-[#2d3f14] sm:text-sm"
+                      />
+                      {errors.phone && (
+                        <p className="mt-1 text-sm text-red-600">
+                          {errors.phone}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Company */}
                     <div>
                       <label
                         htmlFor="company"
@@ -204,6 +269,7 @@ const MultiStepForm = () => {
                         type="text"
                         id="company"
                         name="company"
+                        placeholder="e.g Silexsecure"
                         value={formData.company}
                         onChange={handleChange}
                         className="mt-1 block w-full bg-transparent text-white px-3 py-2 border-b border-b-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#2d3f14] focus:border-[#2d3f14] sm:text-sm"
@@ -224,22 +290,26 @@ const MultiStepForm = () => {
                   </div>
                 ) : (
                   <div className="space-y-8 max-w-[1000px]">
+                    {/* Step 2 fields */}
                     <div>
                       <textarea
-                        id="helpText"
-                        name="helpText"
-                        value={formData.helpText}
+                        id="detail"
+                        name="detail"
+                        value={formData.detail}
                         onChange={handleChange}
                         rows="4"
                         placeholder="type your answer here"
                         className="mt-1 block w-full bg-transparent text-white px-3 py-2 border-b border-b-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#2d3f14] focus:border-[#2d3f14] sm:text-sm"
                       />
-                      {errors.helpText && (
+                      {errors.detail && (
                         <p className="mt-1 text-sm text-red-600">
-                          {errors.helpText}
+                          {errors.detail}
                         </p>
                       )}
                     </div>
+                    {errors.api && (
+                      <p className="text-sm text-red-600">{errors.api}</p>
+                    )}
                     <div className="flex justify-between">
                       <button
                         type="button"
@@ -250,9 +320,20 @@ const MultiStepForm = () => {
                       </button>
                       <button
                         type="submit"
-                        className="py-2 px-4 bg-[#89AF20] text-black font-semibold rounded-md shadow-sm hover:bg-[#89AF20]/70 focus:outline-none focus:ring-2 focus:ring-[#89AF20]"
+                        disabled={loading}
+                        className={`py-2 px-4 flex items-center justify-center gap-2 bg-[#89AF20] text-black font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#89AF20] ${
+                          loading
+                            ? "opacity-70 cursor-not-allowed"
+                            : "hover:bg-[#89AF20]/70"
+                        }`}
                       >
-                        Submit
+                        {loading ? (
+                          <>
+                            <FaSpinner className="animate-spin" /> Submitting...
+                          </>
+                        ) : (
+                          "Submit"
+                        )}
                       </button>
                     </div>
                   </div>

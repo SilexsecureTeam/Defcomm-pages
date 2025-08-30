@@ -1,25 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import top from "../assets/top.png";
 
 const BackToTopButton = () => {
-  const [isAtTop, setIsAtTop] = useState(true);
-
-  const handleScroll = () => {
-    setIsAtTop(window.scrollY < 50);
-  };
+  const [isVisible, setIsVisible] = useState(false);
+  const scrollableContainerRef = useRef(null);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Try to find the scrollable container
+    scrollableContainerRef.current =
+      document.querySelector("#scrollable-container") || window;
+
+    const handleScroll = () => {
+      const scrollTop =
+        scrollableContainerRef.current === window
+          ? window.scrollY
+          : scrollableContainerRef.current.scrollTop;
+
+      setIsVisible(scrollTop > 300);
+    };
+
+    const currentContainer = scrollableContainerRef.current;
+    currentContainer.addEventListener("scroll", handleScroll);
+
+    return () => currentContainer.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: isAtTop ? document.body.scrollHeight : 0,
-      behavior: "smooth",
-    });
-    setIsAtTop(!isAtTop);
+    if (scrollableContainerRef.current) {
+      scrollableContainerRef.current.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
+
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <p
@@ -29,9 +46,7 @@ const BackToTopButton = () => {
       <img
         src={top}
         alt="Back_to_top"
-        className={`w-16 rounded-full transition-transform duration-500 ${
-          !isAtTop ? "rotate-0" : "rotate-180"
-        } hover:scale-110`}
+        className={`w-16 rounded-full transition-transform duration-500 hue-rotate-100 hover:scale-110`}
       />
     </p>
   );
