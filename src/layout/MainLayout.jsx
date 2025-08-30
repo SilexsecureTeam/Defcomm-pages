@@ -7,7 +7,6 @@ import Footer from "../components/v2/Footer";
 import BackToTopButton from "../components/BackToTopButton";
 import { Outlet } from "react-router-dom";
 import TopNav from "../components/v2/TopNav";
-import ScrollToTop from "../components/ScrollToTop";
 import { Helmet } from "react-helmet";
 
 const MainLayout = () => {
@@ -31,10 +30,14 @@ const MainLayout = () => {
   const isBlogs = location.pathname === "/blogs";
 
   return (
-    <div className="w-screen bg-gray-50">
-      <ScrollToTop />
-       <Helmet>
-        <title>Defcomm® | End-to-End Encryption & Secure Communication Solutions</title>
+    <div
+      id="scrollable-container"
+      className="w-screen bg-gray-50 h-screen overflow-y-auto"
+    >
+      <Helmet>
+        <title>
+          Defcomm® | End-to-End Encryption & Secure Communication Solutions
+        </title>
         <meta
           name="description"
           content="Defcomm provides military-grade end-to-end encryption, secure hardware, and privacy-focused communication platforms designed to protect data, prevent leaks, and safeguard digital identity. Stay connected without ever being exposed."

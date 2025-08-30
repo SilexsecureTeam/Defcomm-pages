@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const navItems = [
   { name: "About Us", route: "/about" },
   { name: "Careers", route: "/career" },
-  { name: "Security Blog", route: "/blogs" },
+  { name: "Blogs", route: "/blogs" },
   { name: "Contact", route: "/form" },
 ];
 

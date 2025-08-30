@@ -13,6 +13,11 @@ import img1 from "../assets/chat-img-1.png";
 import img2 from "../assets/chat-img-2.jpg";
 import img3 from "../assets/chat-img-3.jpg";
 
+import use from "../assets/use.png";
+import defense1 from "../assets/defense1.jpg";
+import defense3 from "../assets/defense3.jpg";
+import defense4 from "../assets/defense4.jpg";
+
 export const tabs = [
   {
     id: "default",
@@ -23,7 +28,7 @@ export const tabs = [
   {
     id: "category1-first",
     icon: call,
-    label: "Emails",
+    label: "Call",
     description: "Initiate a new secure call",
   },
   {
@@ -128,5 +133,85 @@ export const chatImages = [
   {
     img: img1,
     name: "Joel Nelson",
+  },
+];
+
+// Animation variants for step transitions
+export const stepVariants = {
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  exit: { opacity: 0, x: -50, transition: { duration: 0.5 } },
+};
+
+// Animation variants for progress bar icons
+export const iconVariants = {
+  inactive: { scale: 0.8, opacity: 0.7 },
+  active: { scale: 1, opacity: 1, transition: { duration: 0.4 } },
+};
+
+// Animation variants for buttons
+export const buttonVariants = {
+  hover: { scale: 1.05 },
+  tap: { scale: 0.95 },
+};
+
+// Animation variants for form fields
+export const fieldVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
+};
+
+// Animation variants for confirmation
+export const confirmationVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+export const times = ["5:30 PM", "6:30 PM", "7:30 PM", "8:30 PM", "9:30 PM"];
+
+export const containers = [
+  {
+    id: 1,
+    title: "DEFENCE & NATIONAL SECURITY",
+    paragraph:
+      "Defcomm is purpose built to meet the uncompromising demands of defence operations and national security agencies, providing a hardened, end-to-end encrypted communication platform for mission-critical environments.",
+    subtitle: "Strategic Impact:",
+    subtitleContent:
+      "Whether in the field, at command centres, or across inter-agency networks, Defcomm enables secure, coordinated, and uninterrupted communication in real time ensuring national interests remain protected and operations uncompromised.",
+    img: defense1,
+  },
+  {
+    id: 2,
+    title: "LAW ENFORCEMENT AGENCY",
+    paragraph:
+      "Defcomm equips law enforcement agencies with a secure, reliable, and tamper-proof communication platform designed to handle sensitive operations, investigations, and inter-agency coordination.",
+    subtitle: "Operational Benefits:",
+    subtitleContent:
+      "Secure case coordination across departments and regions\nProtected exchange of warrants, intelligence, and witness statements\nCompliance with chain-of-custody and data protection standards",
+    img: use,
+  },
+  {
+    id: 3,
+    title: "DIPLOMATIC COMMS",
+    paragraph:
+      "Defcomm provides diplomats and foreign service personnel with a secure, discreet, and resilient communication platform designed for sensitive international engagement.",
+    subtitle: "Use Cases:",
+    subtitleContent:
+      "Confidential ambassadorial or consular communication\nSecure briefing between embassies and home ministries\nProtected handling of international agreements, visas, and negotiations",
+    img: defense3,
+  },
+  {
+    id: 4,
+    title: "TOP BUSINESS EXECUTIVE",
+    paragraph:
+      "Defcomm delivers uncompromising communication security tailored for CEOs, board members, and high-level executives who handle sensitive corporate strategy, financial data, and confidential negotiations.",
+    subtitle: "Use Cases:",
+    subtitleContent:
+      "M&A discussions\nStrategic planning and financial reporting\nInvestor communications\nLegal or regulatory-sensitive conversations",
+    img: defense4,
   },
 ];

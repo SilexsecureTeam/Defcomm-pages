@@ -1,60 +1,13 @@
 import React, { useState } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import vector from "../../assets/vector1.png";
-import use from "../../assets/use.png";
-import defense1 from "../../assets/defense1.jpg";
-import defense3 from "../../assets/defense3.jpg";
-import defense4 from "../../assets/defense4.jpg";
+import { containers } from "../../utils/fields";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
 };
-
-const containers = [
-  {
-    id: 1,
-    title: "DEFENCE & NATIONAL SECURITY",
-    paragraph:
-      "Defcomm is purpose built to meet the uncompromising demands of defence operations and national security agencies, providing a hardened, end-to-end encrypted communication platform for mission-critical environments.",
-    subtitle: "Strategic Impact:",
-    subtitleContent:
-      "Whether in the field, at command centres, or across inter-agency networks, Defcomm enables secure, coordinated, and uninterrupted communication in real time ensuring national interests remain protected and operations uncompromised.",
-    img: defense1,
-  },
-  {
-    id: 2,
-    title: "LAW ENFORCEMENT AGENCY",
-    paragraph:
-      "Defcomm equips law enforcement agencies with a secure, reliable, and tamper-proof communication platform designed to handle sensitive operations, investigations, and inter-agency coordination.",
-    subtitle: "Operational Benefits:",
-    subtitleContent:
-      "Secure case coordination across departments and regions\nProtected exchange of warrants, intelligence, and witness statements\nCompliance with chain-of-custody and data protection standards",
-    img: use,
-  },
-  {
-    id: 3,
-    title: "DIPLOMATIC COMMS",
-    paragraph:
-      "Defcomm provides diplomats and foreign service personnel with a secure, discreet, and resilient communication platform designed for sensitive international engagement.",
-    subtitle: "Use Cases:",
-    subtitleContent:
-      "Confidential ambassadorial or consular communication\nSecure briefing between embassies and home ministries\nProtected handling of international agreements, visas, and negotiations",
-    img: defense3,
-  },
-  {
-    id: 4,
-    title: "TOP BUSINESS EXECUTIVE",
-    paragraph:
-      "Defcomm delivers uncompromising communication security tailored for CEOs, board members, and high-level executives who handle sensitive corporate strategy, financial data, and confidential negotiations.",
-    subtitle: "Use Cases:",
-    subtitleContent:
-      "M&A discussions\nStrategic planning and financial reporting\nInvestor communications\nLegal or regulatory-sensitive conversations",
-    img: defense4,
-  },
-];
 
 const Use = () => {
   const [activeId, setActiveId] = useState(null);

@@ -11,7 +11,7 @@ import Blog2Page from "./pages/v3/Blog2Page";
 import Blog3Page from "./pages/v3/Blog3Page";
 import Hardware from "./pages/v3/Hardware";
 import Software from "./pages/v3/Software";
-// import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 const MainLayout = lazy(() => import("./layout/MainLayout"));
 
@@ -30,14 +30,14 @@ const ManagerPage = lazy(() => import("./pages/v1/ManagerPage"));
 const OperatingPage = lazy(() => import("./pages/v1/OperatingPage"));
 const Career = lazy(() => import("./pages/v1/Career"));
 const MultiStepForm = lazy(() => import("./pages/v1/MultiStepForm"));
-const BookingWorkflow = lazy(() => import("./pages/v1/BookingWorkflow"));  
-const SecurityPage = lazy(() => import("./pages/v3/SecurityPage"));  
+const BookingWorkflow = lazy(() => import("./pages/v1/BookingWorkflow"));
+const SecurityPage = lazy(() => import("./pages/v3/SecurityPage"));
 
 const App = () => {
   return (
     <Suspense fallback={<FallBack />}>
       <Router>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
