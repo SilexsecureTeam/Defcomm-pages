@@ -6,7 +6,6 @@ import file2 from "../../assets/file2.png";
 import file3 from "../../assets/file3.png";
 import icon from "../../assets/icon.png";
 import icon1 from "../../assets/icon1.png";
-
 export default function FilesTab() {
   // Control the 5-second loader duration
   return (
