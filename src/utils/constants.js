@@ -107,19 +107,20 @@ export const teamMembers = [
 export const videos = [
   {
     id: 1,
+    title: "Defcomm's latest innovation in military technology",
+    duration: "2:57",
+    thumbnail: "https://img.youtube.com/vi/aAljC9JNVlE/hqdefault.jpg",
+    embedId: "aAljC9JNVlE",
+  },
+  {
+    id: 2,
     title:
       "Nigeria's First End-to-End Secure Communication Platform & Privacy Solution",
     duration: "43:50",
     thumbnail: "https://img.youtube.com/vi/RgTOwZRsRRE/hqdefault.jpg",
     embedId: "RgTOwZRsRRE",
   },
-  {
-    id: 2,
-    title: "Defcomm's latest innovation in military technology",
-    duration: "2:57",
-    thumbnail: "https://img.youtube.com/vi/aAljC9JNVlE/hqdefault.jpg",
-    embedId: "aAljC9JNVlE",
-  },
+
   {
     id: 3,
     title:
