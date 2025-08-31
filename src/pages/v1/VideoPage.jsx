@@ -180,12 +180,12 @@ export default function VideoPage() {
   const currentVideoData = videos.find((v) => v.id === currentVideo);
 
   return (
-    <div className="h-[90vh] bg-black">
+    <div className="min-h-screen bg-black">
       <HeadNav />
 
       {/* Hero Video Section */}
       <div
-        className="relative w-screen h-screen overflow-hidden"
+        className="relative w-screen h-[80vh] overflow-hidden"
         onClick={handleUserInteraction}
       >
         {isLoading && (
