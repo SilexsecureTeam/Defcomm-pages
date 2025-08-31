@@ -218,7 +218,11 @@ export default function VideoPage() {
           />
         </div>
 
-<div className="absolute h-[20%] w-full bottom-0 inset-0 bg-gradient-to-b from-black/60 to-black/80"></div>
+<div
+  className="absolute bottom-0 left-0 w-full h-[20%] 
+             bg-gradient-to-b from-transparent to-black/90 
+             z-10 pointer-events-none"
+/>
 
         {/* Video Controls */}
         <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 z-20 w-full px-4">
