@@ -185,7 +185,7 @@ export default function VideoPage() {
 
       {/* Hero Video Section */}
       <div
-        className="relative w-screen h-screen overflow-hidden"
+        className="relative w-screen h-[80vh] overflow-hidden"
         onClick={handleUserInteraction}
       >
         {isLoading && (
@@ -218,7 +218,11 @@ export default function VideoPage() {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+<div
+  className="absolute bottom-0 left-0 w-full h-[20%] 
+             bg-gradient-to-b from-transparent to-black/90 
+             z-10 pointer-events-none"
+/>
 
         {/* Video Controls */}
         <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 z-20 w-full px-4">
