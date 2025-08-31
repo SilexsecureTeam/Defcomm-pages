@@ -180,7 +180,7 @@ export default function VideoPage() {
   const currentVideoData = videos.find((v) => v.id === currentVideo);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="h-[90vh] bg-black">
       <HeadNav />
 
       {/* Hero Video Section */}
@@ -218,7 +218,7 @@ export default function VideoPage() {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+{/*<div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>*/}
 
         {/* Video Controls */}
         <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 z-20 w-full px-4">
