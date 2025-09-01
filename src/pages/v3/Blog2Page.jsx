@@ -16,26 +16,7 @@ import gal6 from "../../assets/gal6.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useNavigate, Link } from "react-router-dom";
-
-const uniqueNewsItems = [
-  {
-    title: "Defcomm Unveils Innovative End-to-End Encryption System",
-    description:
-      "Defcomm officially presented its groundbreaking end-to-end Encryption System to the Nigerian Army Signal Corps, marking a major step forward in secure military communications.",
-    image: new1,
-    link: "/defcomm-unveil",
-  },
-  {
-    title: "Defcomm Launches POC End-to-End Encryption Devices",
-    description:
-      "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
-    image: new3,
-    link: "/launches-defcomm",
-  },
-];
-
-const swiperItems = [...uniqueNewsItems, ...uniqueNewsItems];
-
+import { uniqueNewsItems } from "../../utils/dummies";
 const Blog2Page = () => {
   const navigate = useNavigate();
   SwiperCore.use([Autoplay]);
@@ -98,8 +79,8 @@ const Blog2Page = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="font-extrabold text-5xl text-start w-full mb-14"
+              viewport={{ once: false, amount: 0.1 }}
+              className="font-extrabold text-xl md:text-4xl text-start w-full mb-14"
             >
               Defcomm Attend’s AWS Summit in LONDON.
             </motion.h2>
@@ -107,7 +88,7 @@ const Blog2Page = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
               className="flex items-center space-x-2 bg-[#54622D] rounded-full mx-auto w-fit py-2 px-4 mb-16 cursor-pointer"
               onClick={handleBack}
             >
@@ -120,7 +101,7 @@ const Blog2Page = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
               className="w-full flex justify-end"
             >
               <h1 className="text-sm text-[#3D3D3D] uppercase tracking-wide">
@@ -136,7 +117,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="w-full flex justify-center mb-10"
           >
             <img
@@ -148,12 +129,12 @@ const Blog2Page = () => {
         </div>
       </section>
       <section className="bg-white">
-        <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
+        <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-sm md:text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             Defcomm, the cutting-edge end-to-end encryption platform , made its
             mark at the AWS Summit London, joining global leaders in cloud
@@ -170,7 +151,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             Why Defcomm Stood Out
@@ -179,7 +160,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             As governments, defense sectors, and enterprises race to modernize
             their infrastructure, secure communication remains a top concern, By
@@ -192,7 +173,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             Who Is It For?
@@ -201,7 +182,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-semibold"
           >
             “AWS Summit London gave us the perfect stage to show how encryption
@@ -213,7 +194,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             With ransomware attacks and digital espionage on the rise, the need
             for secure, scalable, and adaptable communication platforms has
@@ -297,7 +278,7 @@ const Blog2Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold mb-16 text-3xl"
           >
             Related news
@@ -313,7 +294,7 @@ const Blog2Page = () => {
                 1024: { slidesPerView: 2 },
               }}
             >
-              {swiperItems.map((item, index) => (
+              {uniqueNewsItems?.map((item, index) => (
                 <SwiperSlide key={index}>
                   <Link to={item.link}>
                     <motion.div
@@ -323,7 +304,7 @@ const Blog2Page = () => {
                       viewport={{ once: false, amount: 0.2 }}
                       className="border border-white bg-gradient-to-b from-[#36460A] to-[#000000] rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
                     >
-                      <h3 className="text-white text-xl h-[50px] px-4 font-bold mb-4">
+                      <h3 className="text-white text-xl h-[50px] px-4 font-bold mb-4 line-clamp-2">
                         {item.title}
                       </h3>
                       <p className="text-white text-sm px-4 h-[100px] mb-4">

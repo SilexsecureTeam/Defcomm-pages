@@ -7,45 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
-
-import new1 from "../../assets/new1.png";
-import new2 from "../../assets/new2.png";
-import new3 from "../../assets/new3.png";
-import new4 from "../../assets/blog4.png";
-
-const uniqueNewsItems = [
-  {
-    title: "Defcomm Unveils Innovative End-to-End Encryption System",
-    description:
-      "Defcomm officially presented its groundbreaking end-to-end Encryption System to the Nigerian Army Signal Corps, marking a major step forward in secure military communications.",
-    image: new1,
-    link: "/defcomm-unveil",
-  },
-  {
-    title: "Defcomm Attends AWS Summit in LONDON",
-    description:
-      "Africa has a chance to build a digital future rooted in freedom, not surveillance capitalism. Every step toward secure communication and away from Big Tech surveillance sets a precedent.",
-    image: new2,
-    link: "/defcomm-attend",
-  },
-  {
-    title: "Defcomm Launches POC End-to-End Encryption Devices",
-    description:
-      "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
-    image: new3,
-    link: "/launches-defcomm",
-  },
-  {
-    title:
-      "Defcomm Solution Champions African Cybersecurity  and Secure Defence Communications",
-    description:
-      "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
-    image: new4,
-    link: "/defcomm-solution",
-  },
-];
-
-const swiperItems = [...uniqueNewsItems, ...uniqueNewsItems];
+import { uniqueNewsItems } from "../../utils/dummies";
 
 export default function NewsEventsSection() {
   SwiperCore.use([Autoplay]);
@@ -97,21 +59,12 @@ export default function NewsEventsSection() {
           spaceBetween={20}
           slidesPerView={1}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          // pagination={{
-          //   clickable: false,
-          //   renderBullet: (index, className) => {
-          //     if (index < uniqueNewsItems.length) {
-          //       return `<span class="${className} bg-green-500 hidden"></span>`;
-          //     }
-          //     return "";
-          //   },
-          // }}
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
         >
-          {swiperItems.map((item, index) => (
+          {uniqueNewsItems?.map((item, index) => (
             <SwiperSlide key={index}>
               <Link to={item.link}>
                 <motion.div
@@ -121,7 +74,7 @@ export default function NewsEventsSection() {
                   viewport={{ once: false, amount: 0.2 }}
                   className="border border-white rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
                 >
-                  <h3 className="text-white text-xl px-4 font-bold mb-4">
+                  <h3 className="text-white text-xl px-4 font-bold mb-4 line-clamp-2">
                     {item.title}
                   </h3>
                   <p className="text-white text-sm px-4 h-[100px] mb-4">
@@ -137,13 +90,7 @@ export default function NewsEventsSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* <div className="absolute bottom-4 right-4 hidden">
-          <div className="swiper-pagination hidden" />
-        </div> */}
       </div>
-
-      {/* <style */}
     </div>
   );
 }

@@ -16,25 +16,11 @@ import gal6 from "../../assets/gal6.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useNavigate, Link } from "react-router-dom";
-
-const uniqueNewsItems = [
-  {
-    title: "Defcomm Unveils Innovative End-to-End Encryption System",
-    description:
-      "Defcomm officially presented its groundbreaking end-to-end Encryption System to the Nigerian Army Signal Corps, marking a major step forward in secure military communications.",
-    image: new1,
-    link: "/defcomm-unveil",
-  },
-  {
-    title: "Defcomm Attends AWS Summit in LONDON",
-    description:
-      "Africa has a chance to build a digital future rooted in freedom, not surveillance capitalism. Every step toward secure communication and away from Big Tech surveillance sets a precedent.",
-    image: new2,
-    link: "/defcomm-attend",
-  },
-];
-
-const swiperItems = [...uniqueNewsItems, ...uniqueNewsItems];
+import {
+  galleryVariants,
+  modalVariants,
+  uniqueNewsItems,
+} from "../../utils/dummies";
 
 const Blog1Page = () => {
   const navigate = useNavigate();
@@ -75,20 +61,6 @@ const Blog1Page = () => {
     );
   };
 
-  // Animation variants for gallery images
-  const galleryVariants = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 },
-  };
-
-  // Animation for modal
-  const modalVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
-    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } },
-  };
-
   return (
     <div>
       <section className="bg-limeAccent w-full">
@@ -98,8 +70,8 @@ const Blog1Page = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="font-extrabold text-5xl text-start w-full mb-14"
+              viewport={{ once: false, amount: 0.1 }}
+              className="font-extrabold text-xl md:text-4xl text-start w-full mb-14"
             >
               Launches Defcomm: End-to-End Encryption Solution For Government
               and Defence.
@@ -108,7 +80,7 @@ const Blog1Page = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
               className="flex items-center space-x-2 bg-[#54622D] rounded-full w-fit mx-auto py-2 px-4 mb-16 cursor-pointer"
               onClick={handleBack}
             >
@@ -121,7 +93,7 @@ const Blog1Page = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
               className="w-full flex justify-end"
             >
               <h1 className="text-sm text-[#3D3D3D] uppercase tracking-wide">
@@ -137,7 +109,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="w-full flex justify-center mb-10"
           >
             <img
@@ -149,12 +121,12 @@ const Blog1Page = () => {
         </div>
       </section>
       <section className="bg-white">
-        <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
+        <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-sm md:text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             In an age where digital threats are rising and sensitive data is a
             constant target, one thing is clear—secure communication is not
@@ -168,7 +140,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             What Is Defcomm?
@@ -177,7 +149,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             Defcomm is not just another encryption app. It’s a secure
             communication platform developed over seven years to meet the unique
@@ -189,7 +161,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             Key Features:
@@ -217,7 +189,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             Who Is It For?
@@ -226,7 +198,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             Defcomm is tailored specifically for:
           </motion.p>
@@ -252,7 +224,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             Whether it’s coordinating a military mission, transmitting
             intelligence, or securing policy-level communications, Defcomm
@@ -263,7 +235,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             💬 What the Team Says
@@ -272,7 +244,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-semibold"
           >
             “This is more than software—it’s a security shield for national
@@ -283,7 +255,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold"
           >
             Why Now?
@@ -292,7 +264,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             Recent events—ranging from ransomware surges to high-profile data
             breaches—have made it clear: traditional communication tools are no
@@ -303,7 +275,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             Defcomm fills that gap with a robust, scalable, and secure
             alternative designed from the ground up for high-trust environments.
@@ -385,7 +357,7 @@ const Blog1Page = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             className="font-bold mb-16 text-3xl"
           >
             Related News
@@ -401,7 +373,7 @@ const Blog1Page = () => {
                 1024: { slidesPerView: 2 },
               }}
             >
-              {swiperItems.map((item, index) => (
+              {uniqueNewsItems.map((item, index) => (
                 <SwiperSlide key={index}>
                   <Link to={item.link}>
                     <motion.div
@@ -411,7 +383,7 @@ const Blog1Page = () => {
                       viewport={{ once: false, amount: 0.2 }}
                       className="border border-white bg-gradient-to-b from-[#36460A] to-[#000000] rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
                     >
-                      <h3 className="text-white text-xl h-[50px] px-4 font-bold mb-4">
+                      <h3 className="text-white text-xl h-[50px] px-4 font-bold mb-4 line-clamp-2">
                         {item.title}
                       </h3>
                       <p className="text-white text-sm px-4 h-[100px] mb-4">

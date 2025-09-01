@@ -5,6 +5,11 @@ import sampleImage from "../assets/solution.jpg";
 import sampleImage1 from "../assets/solution.png";
 import sampleImage2 from "../assets/solution1.png";
 
+import new1 from "../assets/new1.png";
+import new2 from "../assets/new2.png";
+import new3 from "../assets/new3.png";
+import new4 from "../assets/blog4.png";
+
 export const features = [
   {
     title: "Embedded Technology",
@@ -185,3 +190,49 @@ export const PRACTICES = [
   "One vulnerability per report",
   "Maintain confidentiality of all findings",
 ];
+
+export const uniqueNewsItems = [
+  {
+    title: "Defcomm Unveils Innovative End-to-End Encryption System",
+    description:
+      "Defcomm officially presented its groundbreaking end-to-end Encryption System to the Nigerian Army Signal Corps, marking a major step forward in secure military communications.",
+    image: new1,
+    link: "/defcomm-unveil",
+  },
+  {
+    title: "Defcomm Attends AWS Summit in LONDON",
+    description:
+      "Africa has a chance to build a digital future rooted in freedom, not surveillance capitalism. Every step toward secure communication and away from Big Tech surveillance sets a precedent.",
+    image: new2,
+    link: "/defcomm-attend",
+  },
+  {
+    title: "Defcomm Launches POC End-to-End Encryption Devices",
+    description:
+      "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
+    image: new3,
+    link: "/launches-defcomm",
+  },
+  {
+    title:
+      "Defcomm Solution Champions African Cybersecurity and Secure Defence Communications",
+    description:
+      "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
+    image: new4,
+    link: "/defcomm-solution",
+  },
+];
+
+export // Animation variants for gallery images
+const galleryVariants = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
+
+// Animation for modal
+export const modalVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  exit: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } },
+};
