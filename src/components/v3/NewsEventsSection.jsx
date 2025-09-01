@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import new1 from "../../assets/new1.png";
 import new2 from "../../assets/new2.png";
 import new3 from "../../assets/new3.png";
+import new4 from "../../assets/blog4.png";
 
 const uniqueNewsItems = [
   {
@@ -33,6 +34,14 @@ const uniqueNewsItems = [
       "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
     image: new3,
     link: "/launches-defcomm",
+  },
+  {
+    title:
+      "Defcomm Solution Champions African Cybersecurity  and Secure Defence Communications",
+    description:
+      "Defcomm embodies the company’s commitment to safeguarding digital communications with unparalleled encryption protocols.",
+    image: new4,
+    link: "/defcomm-solution",
   },
 ];
 

@@ -9,6 +9,7 @@ import FallBack from "./components/Fallback";
 import Blog1Page from "./pages/v3/Blog1Page";
 import Blog2Page from "./pages/v3/Blog2Page";
 import Blog3Page from "./pages/v3/Blog3Page";
+import Blog4Page from "./pages/v3/Blog4Page";
 import Hardware from "./pages/v3/Hardware";
 import Software from "./pages/v3/Software";
 import ScrollToTop from "./components/ScrollToTop";
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/launches-defcomm" element={<Blog1Page />} />
             <Route path="/defcomm-attend" element={<Blog2Page />} />
             <Route path="/defcomm-unveil" element={<Blog3Page />} />
+            <Route path="/defcomm-solution" element={<Blog4Page />} />
             <Route path="/hardware" element={<Hardware />} />
             <Route path="/software" element={<Software />} />
             <Route path="/watch" element={<VideoPage />} />
