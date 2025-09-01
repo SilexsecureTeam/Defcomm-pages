@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { IoMdArrowDropupCircle, IoMdArrowDropdownCircle } from "react-icons/io";
 const emails = [
   {
     id: 1,
@@ -48,11 +48,15 @@ export default function EmailsTab() {
               }
             >
               <div>
-                <p className="font-semibold">{email.subject}</p>
+                <p className="font-semibold text-sm">{email.subject}</p>
                 <p className="text-gray-400 text-sm">{email.from}</p>
               </div>
               <span className="text-gray-400">
-                {selectedEmailId === email.id ? "▲" : "▼"}
+                {selectedEmailId === email.id ? (
+                  <IoMdArrowDropdownCircle />
+                ) : (
+                  <IoMdArrowDropupCircle />
+                )}
               </span>
             </div>
 
