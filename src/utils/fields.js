@@ -171,7 +171,15 @@ export const confirmationVariants = {
   },
 };
 
-export const times = ["5:30 PM", "6:30 PM", "7:30 PM", "8:30 PM", "9:30 PM"];
+export const times = [
+  "08:30 AM",
+  "09:30 AM",
+  "10:30 AM",
+  "11:30 AM",
+  "01:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+];
 
 export const containers = [
   {
