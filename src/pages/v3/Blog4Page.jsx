@@ -107,7 +107,7 @@ const Blog4Page = () => {
             <img
               src={blog}
               alt="Blog"
-              className="w-full h-96 md:h-[410px] object-top object-cover shadow-lg"
+              className="w-full h-96 md:h-[410px] object-cover shadow-lg"
             />
           </motion.div>
         </div>
