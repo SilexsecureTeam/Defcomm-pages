@@ -79,18 +79,19 @@ export const addToGoogleCalendar = () => {
   const eventDetails = {
     title: "Defcomm Solutions - Global Engagement Day 2025",
     description:
-      "STRONG ENCRYPTION • STRONGER FUTURE - DEFENDING TRUST IN A CONNECTED WORLD",
-    location: "Hybrid Event (Physical + Virtual)",
-    startTime: "20251021T090000", // Oct 21, 2025 9:00 AM
-    endTime: "20251021T170000", // Oct 21, 2025 5:00 PM
+      "STRONG ENCRYPTION • STRONGER FUTURE — DEFENDING TRUST IN A CONNECTED WORLD",
+    location: "Virtual Event (Online)",
   };
 
-  const startDate = new Date("2025-10-21T09:00:00")
-    .toISOString()
-    .replace(/-|:|\.\d+/g, "");
-  const endDate = new Date("2025-10-21T17:00:00")
-    .toISOString()
-    .replace(/-|:|\.\d+/g, "");
+  // Define start/end times in the user's local timezone (2:00 PM to 3:45 PM)
+  const startTime = new Date(2025, 9, 21, 14, 0, 0); // Oct = month 9 (0-based)
+  const endTime = new Date(2025, 9, 21, 15, 45, 0); // 1 hr 45 mins later
+
+  // Convert to calendar format (Google expects UTC timestamps in YYYYMMDDTHHmmssZ)
+  const startDate = startTime.toISOString().replace(/-|:|\.\d+/g, "");
+  const endDate = endTime.toISOString().replace(/-|:|\.\d+/g, "");
+
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone; // e.g., "Africa/Lagos"
 
   const calendarUrl = [
     "https://www.google.com/calendar/render",
@@ -99,7 +100,7 @@ export const addToGoogleCalendar = () => {
     "&dates=" + startDate + "/" + endDate,
     "&details=" + encodeURIComponent(eventDetails.description),
     "&location=" + encodeURIComponent(eventDetails.location),
-    "&sprop=&sprop=name:",
+    "&ctz=" + encodeURIComponent(timezone), // ensures correct local time
   ].join("");
 
   window.open(calendarUrl, "_blank");

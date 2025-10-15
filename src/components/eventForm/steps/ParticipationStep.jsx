@@ -66,22 +66,6 @@ const AttendanceModeSection = ({ formData, errors, handleInputChange }) => (
     )}
     <div className="space-y-4">
       <RadioOption
-        id="physical"
-        name="attendance_mode"
-        value="Physical"
-        label="Physical Attendance"
-        description="Join us in person at our venue"
-        checked={formData.participation_details.attendance_mode === "Physical"}
-        onChange={() =>
-          handleInputChange(
-            "participation_details",
-            "attendance_mode",
-            "Physical"
-          )
-        }
-        hasError={!!errors.attendance_mode}
-      />
-      <RadioOption
         id="virtual"
         name="attendance_mode"
         value="Virtual"
@@ -93,6 +77,23 @@ const AttendanceModeSection = ({ formData, errors, handleInputChange }) => (
             "participation_details",
             "attendance_mode",
             "Virtual"
+          )
+        }
+        hasError={!!errors.attendance_mode}
+      />
+      <RadioOption
+        id="physical"
+        name="attendance_mode"
+        value="Physical"
+        label="Physical Attendance"
+        description="Join us in person at our venue"
+        checked={formData.participation_details.attendance_mode === "Physical"}
+        disabled={true}
+        onChange={() =>
+          handleInputChange(
+            "participation_details",
+            "attendance_mode",
+            "Physical"
           )
         }
         hasError={!!errors.attendance_mode}
