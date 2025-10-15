@@ -223,3 +223,14 @@ export const containers = [
     img: defense4,
   },
 ];
+
+export const professionalFields = [
+  "Cybersecurity",
+  "Technology & Innovation",
+  "Network Infrastructure",
+  "Software Development",
+  "Data Analytics",
+  "Cloud Computing",
+  "Digital Transformation",
+  "Other",
+];

@@ -38,3 +38,69 @@ export const formatTimeRange = (time) => {
     .padStart(2, "0")} ${modifier}`;
   return `${time} - ${formattedEndTime}`;
 };
+
+export const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
+
+export const formStepVariants = {
+  enter: { x: 300, opacity: 0 },
+  center: { x: 0, opacity: 1 },
+  exit: { x: -300, opacity: 0 },
+};
+
+// Progress bar steps
+export const steps = [
+  { number: 1, title: "Personal Info" },
+  { number: 2, title: "Participation" },
+  { number: 3, title: "Background" },
+  { number: 4, title: "Confirmation" },
+];
+
+export const addToGoogleCalendar = () => {
+  const eventDetails = {
+    title: "Defcomm Solutions - Global Engagement Day 2025",
+    description:
+      "STRONG ENCRYPTION • STRONGER FUTURE - DEFENDING TRUST IN A CONNECTED WORLD",
+    location: "Hybrid Event (Physical + Virtual)",
+    startTime: "20251021T090000", // Oct 21, 2025 9:00 AM
+    endTime: "20251021T170000", // Oct 21, 2025 5:00 PM
+  };
+
+  const startDate = new Date("2025-10-21T09:00:00")
+    .toISOString()
+    .replace(/-|:|\.\d+/g, "");
+  const endDate = new Date("2025-10-21T17:00:00")
+    .toISOString()
+    .replace(/-|:|\.\d+/g, "");
+
+  const calendarUrl = [
+    "https://www.google.com/calendar/render",
+    "?action=TEMPLATE",
+    "&text=" + encodeURIComponent(eventDetails.title),
+    "&dates=" + startDate + "/" + endDate,
+    "&details=" + encodeURIComponent(eventDetails.description),
+    "&location=" + encodeURIComponent(eventDetails.location),
+    "&sprop=&sprop=name:",
+  ].join("");
+
+  window.open(calendarUrl, "_blank");
+};
