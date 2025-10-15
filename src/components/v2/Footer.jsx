@@ -46,20 +46,18 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Email Subscribe Form */}
-          <div className="flex flex-col items-end gap-3 w-full md:w-auto">
-            <input
-              type="email"
-              placeholder="Enter Your Email Address"
-              className="p-4 rounded border border-[#DDF2AB] bg-transparent text-white w-full md:w-80 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#C6FC2B] transition-all"
-            />
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="text-white text-xl hover:underline mt-1 md:mt-0"
+          <div className="flex flex-col items-end gap-3 w-full md:w-auto text-white">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="text-lg md:text-xl font-semibold text-[#C6FC2B]"
             >
-              Subscribe
-            </motion.button>
+              +234 802 098 9037
+            </motion.p>
+            <p className="text-sm text-gray-300">
+              Call or WhatsApp for inquiries
+            </p>
           </div>
         </div>
 

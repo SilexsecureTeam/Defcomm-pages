@@ -321,9 +321,54 @@ const EventRegistrationForm = () => {
           className="mt-8 text-center text-gray-400 text-sm"
           variants={itemVariants}
         >
-          <p>For assistance, contact us at support@defcomm.ng</p>
+          <p>
+            For assistance, contact us at{" "}
+            <a
+              href="mailto:support@defcomm.ng"
+              className="text-green-400 hover:underline"
+            >
+              support@defcomm.ng
+            </a>
+          </p>
           <p className="mt-2">
-            Follow us: @defcomm_solutions | www.defcomm.ng/ged-2025
+            Follow us:
+            <a
+              href="https://www.instagram.com/defcomm_solution/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 hover:underline mx-1"
+            >
+              Instagram
+            </a>
+            |
+            <a
+              href="https://x.com/DefcommS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 hover:underline mx-1"
+            >
+              X (Twitter)
+            </a>
+            |
+            <a
+              href="https://www.linkedin.com/company/defcomm-solutions/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 hover:underline mx-1"
+            >
+              LinkedIn
+            </a>
+          </p>
+          <p className="mt-2">
+            Visit us:{" "}
+            <a
+              href="https://www.defcomm.ng/ged-2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 hover:underline"
+            >
+              www.defcomm.ng/ged-2025
+            </a>
           </p>
         </motion.div>
       </motion.div>

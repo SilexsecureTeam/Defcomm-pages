@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import InputField from "../InputField";
 import { professionalFields } from "../../../utils/fields";
+import { FaCheck } from "react-icons/fa";
 
 const ProfessionalBackgroundStep = ({
   formData,
@@ -92,23 +93,23 @@ const FieldCheckbox = ({ field, checked, onChange }) => {
 
   return (
     <div
-      className={`flex items-center p-3 border rounded-xl transition-colors duration-300 cursor-pointer
+      onClick={handleClick}
+      className={`flex items-center p-3 border rounded-xl transition-all duration-300 cursor-pointer select-none
         ${
           checked
-            ? "border-green-500 bg-green-50"
-            : "border-gray-200 hover:bg-green-50"
+            ? "border-green-600 bg-green-50 shadow-md"
+            : "border-gray-300 hover:bg-green-50 hover:border-green-400"
         }`}
-      onClick={handleClick}
     >
-      <input
-        type="checkbox"
-        className="h-5 w-5 text-green-600 focus:ring-green-500 rounded pointer-events-none"
-        checked={checked}
-        readOnly
-      />
-      <span className="ml-3 block text-sm font-medium text-gray-700 select-none">
-        {field}
-      </span>
+      <div
+        className={`flex items-center justify-center h-5 w-5 rounded-md border transition-all duration-300 ${
+          checked ? "bg-green-600 border-green-600" : "border-gray-300 bg-white"
+        }`}
+      >
+        {checked && <FaCheck className="text-white text-xs" />}
+      </div>
+
+      <span className="ml-3 text-sm font-medium text-gray-700">{field}</span>
     </div>
   );
 };

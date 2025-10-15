@@ -135,6 +135,7 @@ const RegistrationTypeSection = ({ formData, errors, handleInputChange }) => (
         value="Group Registration"
         label="Group Registration"
         description="Registering for multiple participants"
+        disabled={true}
         checked={
           formData.participation_details.registration_type ===
           "Group Registration"
@@ -160,6 +161,7 @@ const RadioOption = ({
   checked,
   onChange,
   hasError,
+  disabled = false,
 }) => (
   <div
     onClick={onChange}
@@ -170,7 +172,11 @@ const RadioOption = ({
           : checked
           ? "border-green-500"
           : "border-gray-200"
-      }
+      } ${
+      disabled
+        ? "opacity-50 cursor-not-allowed pointer-events-none"
+        : "hover:bg-green-50"
+    }
       hover:border-green-400`}
   >
     <div
