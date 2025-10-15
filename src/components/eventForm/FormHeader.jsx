@@ -31,7 +31,9 @@ const FormHeader = () => {
         <p className="text-white font-semibold text-lg">
           DATE: TUESDAY, 21 OCTOBER 2025
         </p>
-        <p className="text-green-200">HYBRID (PHYSICAL + VIRTUAL) FORMAT</p>
+        <p className="text-green-300 font-medium">
+          Connect with us virtually from wherever you are
+        </p>
       </div>
     </motion.div>
   );

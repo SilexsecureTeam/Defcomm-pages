@@ -92,10 +92,10 @@ const EventRegistrationForm = () => {
 
       case 4:
         if (!formData.consent.information_use) {
-          newErrors.information_use = "You must agree to this consent";
+          newErrors.information_use = "please agree to information use";
         }
         if (!formData.consent.follow_up_updates) {
-          newErrors.follow_up_updates = "You must agree to receive updates";
+          newErrors.follow_up_updates = "please agree to receive updates";
         }
         break;
     }
@@ -165,6 +165,9 @@ const EventRegistrationForm = () => {
         ...formData,
         email: formData.personal_information.email.toLowerCase(),
         name: formData.personal_information.full_name,
+        phone: phoneNumber
+          ? phoneNumber.format("E.164")
+          : formData.personal_information.phone,
         personal_information: {
           ...formData.personal_information,
           phone: phoneNumber
