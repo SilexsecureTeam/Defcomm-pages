@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo-black.png";
 import { navItems } from "../../utils/constants";
+import TopBanner from "./TopBanner";
 
 export default function TopNav() {
   const navigate = useNavigate();
@@ -27,28 +28,7 @@ export default function TopNav() {
   return (
     <header className="w-full z-50 pt-4 bg-limeAccent">
       {/* Top banner */}
-      <div
-        className={`relative w-[90%] max-w-peak mx-auto text-white text-sm md:text-base px-6 py-3 mb-2 flex justify-center items-center gap-2 md:gap-6 text-center rounded-full
-        ${
-          bannerDisabled
-            ? "backdrop-blur-lg bg-black/40 hover:bg-[#2d3f14] cursor-pointer transition-colors duration-300"
-            : "bg-[#2d3f14]"
-        }`}
-      >
-        <IoClose
-          size={20}
-          className="absolute md:right-4 right-1 top-1/2 -translate-y-1/2 cursor-pointer"
-          onClick={() => setBannerDisabled(!bannerDisabled)}
-          title={bannerDisabled ? "Enable banner" : "Disable banner"}
-        />
-        <span className="text-lime-400 font-semibold whitespace-nowrap text-xs md:text-sm">
-          NEW
-        </span>
-        <p className="text-white leading-snug text-[10px] md:text-sm max-w-xs sm:max-w-md md:max-w-3xl truncate">
-          Defcomm Unveils Secure App Stores with Military-Grade Protection for
-          End Users
-        </p>
-      </div>
+      <TopBanner />
 
       {/* Main Nav */}
       <nav
