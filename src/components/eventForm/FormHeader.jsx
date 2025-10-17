@@ -9,7 +9,7 @@ const FormHeader = () => {
       <div className="bg-gradient-to-r from-oliveGreen to-olive p-1 rounded-2xl mb-6">
         <div className="bg-gray-900 rounded-xl p-6">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
-            GLOBAL ENGAGEMENT DAY 2025
+            GLOBAL ENCRYPTION DAY 2025
           </h1>
           <div className="flex justify-center items-center space-x-4 mb-4">
             <div className="h-1 w-16 bg-green-500 rounded-full"></div>
