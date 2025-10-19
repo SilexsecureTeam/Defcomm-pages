@@ -27,6 +27,7 @@
     "react-phone-input-2": "^2.15.1",
     "react-player": "^3.3.1",
     "react-router-dom": "^7.3.0",
+    "react-select-country-list": "^2.2.3",
     "react-tooltip": "^5.29.1",
     "react-youtube": "^10.1.0",
     "swiper": "^11.2.5",

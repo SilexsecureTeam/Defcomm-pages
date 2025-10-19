@@ -1,9 +1,9 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import InputField from "../InputField";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import countryList from "react-select-country-list";
 
 const PersonalInfoStep = ({
   formData,
@@ -11,6 +11,8 @@ const PersonalInfoStep = ({
   handleInputChange,
   nextStep,
 }) => {
+  const countries = countryList().getData();
+
   return (
     <motion.div
       className="space-y-8"
@@ -28,7 +30,7 @@ const PersonalInfoStep = ({
           <InputField
             label="Full Name"
             type="text"
-            required={true}
+            required
             value={formData.personal_information.full_name}
             onChange={(e) =>
               handleInputChange(
@@ -43,18 +45,18 @@ const PersonalInfoStep = ({
           <InputField
             label="Professional Title"
             type="text"
+            required
             value={formData.personal_information.title}
-            required={true}
-            error={errors.title}
             onChange={(e) =>
               handleInputChange("personal_information", "title", e.target.value)
             }
+            error={errors.title}
           />
 
           <InputField
             label="Organization"
             type="text"
-            required={true}
+            required
             value={formData.personal_information.organization}
             onChange={(e) =>
               handleInputChange(
@@ -66,25 +68,40 @@ const PersonalInfoStep = ({
             error={errors.organization}
           />
 
-          <InputField
-            label="Country"
-            type="text"
-            required={true}
-            value={formData.personal_information.country}
-            onChange={(e) =>
-              handleInputChange(
-                "personal_information",
-                "country",
-                e.target.value
-              )
-            }
-            error={errors.country}
-          />
+          {/* ✅ Country Dropdown */}
+          <div className="w-full">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Country *
+            </label>
+            <select
+              className={`w-full h-12 px-4 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 ${
+                errors.country ? "border-red-500" : "border-gray-300"
+              }`}
+              value={formData.personal_information.country}
+              onChange={(e) =>
+                handleInputChange(
+                  "personal_information",
+                  "country",
+                  e.target.value
+                )
+              }
+            >
+              <option value="">Select your country</option>
+              {countries.map((country) => (
+                <option key={country.value} value={country.label}>
+                  {country.label}
+                </option>
+              ))}
+            </select>
+            {errors.country && (
+              <p className="text-red-500 text-sm mt-1">{errors.country}</p>
+            )}
+          </div>
 
           <InputField
             label="Email Address"
             type="email"
-            required={true}
+            required
             value={formData.personal_information.email}
             onChange={(e) =>
               handleInputChange("personal_information", "email", e.target.value)
@@ -92,7 +109,7 @@ const PersonalInfoStep = ({
             error={errors.email}
           />
 
-          {/* Phone Input */}
+          {/* ✅ Better Phone Input */}
           <div className="w-full">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Phone Number *
@@ -103,44 +120,28 @@ const PersonalInfoStep = ({
               }`}
             >
               <PhoneInput
-                country={"ng"}
-                value={formData.personal_information.phone}
-                onChange={(phone) =>
-                  handleInputChange("personal_information", "phone", phone)
+                country={
+                  formData.personal_information.country
+                    ? countryList()
+                        .getValue(formData.personal_information.country)
+                        .toLowerCase()
+                    : "ng"
                 }
+                value={formData.personal_information.phone}
+                onChange={(phone, countryData) => {
+                  const fullPhone = `+${phone}`; // ensure we store E.164-like value
+                  handleInputChange("personal_information", "phone", fullPhone);
+                  handleInputChange(
+                    "personal_information",
+                    "country_code",
+                    countryData.countryCode
+                  );
+                }}
                 containerClass="!w-full"
                 inputClass="!w-full !h-12 !px-4 !py-3 !pl-14 !border-0 !rounded-xl"
                 buttonClass="!border-0 !bg-transparent !rounded-l-xl !w-12"
                 dropdownClass="!rounded-xl !min-w-[280px]"
-                specialLabel=""
-                inputStyle={{
-                  width: "100%",
-                  height: "48px",
-                  border: "none",
-                  borderRadius: "12px",
-                  fontSize: "16px",
-                  paddingLeft: "52px",
-                }}
-                buttonStyle={{
-                  border: "none",
-                  background: "transparent",
-                  borderRadius: "12px 0 0 12px",
-                  width: "48px",
-                }}
-                containerStyle={{
-                  width: "100%",
-                }}
-                dropdownStyle={{
-                  minWidth: "280px",
-                }}
-                enableSearch={true}
-                searchStyle={{
-                  width: "90%",
-                  margin: "0px auto",
-                  padding: "5px 10px",
-                  borderRadius: "8px",
-                  border: "1px solid #d1d5db",
-                }}
+                enableSearch
               />
             </div>
             {errors.phone && (

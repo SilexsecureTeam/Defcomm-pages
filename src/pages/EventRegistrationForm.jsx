@@ -75,9 +75,10 @@ const EventRegistrationForm = () => {
 
         // Phone number validation
         const phone = formData.personal_information.phone;
-        if (!phone || !isValidPhoneNumber("+" + phone)) {
+        if (!phone || !isValidPhoneNumber(phone)) {
           newErrors.phone = "Please enter a valid phone number";
         }
+
         break;
       }
 
@@ -157,8 +158,7 @@ const EventRegistrationForm = () => {
     try {
       // Parse and format phone number
       const phoneNumber = parsePhoneNumberFromString(
-        formData.personal_information.phone,
-        "NG"
+        formData.personal_information.phone
       );
 
       const payload = {
