@@ -23,7 +23,7 @@ const TopBanner = () => {
       label: "GED 2025",
       text: "Global Engagement Day 2025: Strong Encryption • Stronger Future - Register Now!",
       color: "text-green-400",
-      link: "/ged",
+      link: "/events/ged",
     },
     {
       id: 3,
