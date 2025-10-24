@@ -30,7 +30,7 @@ const TopBanner = () => {
       label: "MEET & GREET",
       text: "Port-Harcourt Cyber Security Meet & Greet: Opportunities, Careers, and Growth Paths - Oct 25th",
       color: "text-cyan-400",
-      link: "/ph-meet-greet",
+      link: "/events/ph-cybersecurity",
     },
   ];
 
