@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -19,8 +19,25 @@ import {
   isValidPhoneNumber,
   parsePhoneNumberFromString,
 } from "libphonenumber-js";
+import EventFooter from "../components/eventForm/EventFooter";
 
-const EventRegistrationForm = () => {
+const EventRegistrationForm = ({ eventDetails = {}, apiConfig = {} }) => {
+  const {
+    title = "Event Title",
+    organizer = "Organizer Name",
+    slogan,
+    tagline,
+    date,
+    accentColor = "from-green-600 to-oliveDark",
+    socialLinks = {},
+    contact = {},
+  } = eventDetails;
+
+  const {
+    form_id = "eyJpdiI6IldEeE5rY2kreXZMNVJqbEIyVnVTbVE9PSIsInZhbHVlIjoiUHJyM3lJaTVpbWhtL0lOck1mMlM5dz09IiwibWFjIjoiZGVkMzA4MGM0Y2JjM2E2ODkxZWExZjU3MzA3ODkzNzQ1YzhlNGYxYzc0NTE5YjcyNGJhNWE3NzBjN2JjYTJmNiIsInRhZyI6IiJ9",
+    plan_id = "3SdxGT1V6fQx0z4sGVNXco",
+  } = apiConfig;
+
   const [formData, setFormData] = useState({
     personal_information: {
       full_name: "",
@@ -174,9 +191,8 @@ const EventRegistrationForm = () => {
             ? phoneNumber.format("E.164")
             : formData.personal_information.phone,
         },
-        form_id:
-          "eyJpdiI6IldEeE5rY2kreXZMNVJqbEIyVnVTbVE9PSIsInZhbHVlIjoiUHJyM3lJaTVpbWhtL0lOck1mMlM5dz09IiwibWFjIjoiZGVkMzA4MGM0Y2JjM2E2ODkxZWExZjU3MzA3ODkzNzQ1YzhlNGYxYzc0NTE5YjcyNGJhNWE3NzBjN2JjYTJmNiIsInRhZyI6IiJ9",
-        plan_id: "3SdxGT1V6fQx0z4sGVNXco",
+        form_id,
+        plan_id,
       };
 
       const response = await axios.post(
@@ -276,6 +292,8 @@ const EventRegistrationForm = () => {
         return null;
     }
   };
+  // Check if event has passed
+  const eventPassed = date ? new Date(date).getTime() < Date.now() : false;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-olive via-gray-900 to-olive py-12 px-4 sm:px-6 lg:px-8">
@@ -285,7 +303,14 @@ const EventRegistrationForm = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <FormHeader />
+        <FormHeader
+          title={title}
+          organizer={organizer}
+          slogan={slogan}
+          tagline={tagline}
+          date={date}
+          accentColor={accentColor}
+        />
         <ProgressBar currentStep={currentStep} />
 
         <motion.div
@@ -312,6 +337,13 @@ const EventRegistrationForm = () => {
                   transition={{ duration: 0.3 }}
                 >
                   {renderStep()}
+                  {eventPassed && (
+                    <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-50">
+                      <p className="text-red-600 text-xl font-bold text-center px-4">
+                        Registration for this event has closed.
+                      </p>
+                    </div>
+                  )}
                 </motion.form>
               ) : (
                 <SuccessScreen formData={formData} resetForm={resetForm} />
@@ -320,60 +352,7 @@ const EventRegistrationForm = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          className="mt-8 text-center text-gray-400 text-sm"
-          variants={itemVariants}
-        >
-          <p>
-            For assistance, contact us at{" "}
-            <a
-              href="mailto:support@defcomm.ng"
-              className="text-green-400 hover:underline"
-            >
-              support@defcomm.ng
-            </a>
-          </p>
-          <p className="mt-2">
-            Follow us:
-            <a
-              href="https://www.instagram.com/defcomm_solution/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-400 hover:underline mx-1"
-            >
-              Instagram
-            </a>
-            |
-            <a
-              href="https://x.com/DefcommS"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-400 hover:underline mx-1"
-            >
-              X (Twitter)
-            </a>
-            |
-            <a
-              href="https://www.linkedin.com/company/defcomm-solutions/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-400 hover:underline mx-1"
-            >
-              LinkedIn
-            </a>
-          </p>
-          <p className="mt-2">
-            Visit us:{" "}
-            <a
-              href="https://www.defcomm.ng/ged-2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-400 hover:underline"
-            >
-              www.defcomm.ng/ged-2025
-            </a>
-          </p>
-        </motion.div>
+        <EventFooter socialLinks={socialLinks} contact={contact} />
       </motion.div>
     </div>
   );

@@ -69,7 +69,54 @@ const App = () => {
             <Route path="/book" element={<BookingWorkflow />} />
             <Route path="/blogs" element={<SecurityPage />} />
             <Route path="/bounty" element={<LiveFire />} />
-            <Route path="/ged" element={<EventRegistrationForm />} />
+            <Route
+              path="/events/ged"
+              element={
+                <EventRegistrationForm
+                  eventDetails={{
+                    title: "GLOBAL ENCRYPTION DAY 2025",
+                    organizer: "DEFCOMM SOLUTIONS",
+                    slogan: "STRONG ENCRYPTION • STRONGER FUTURE",
+                    tagline: "DEFENDING TRUST IN A CONNECTED WORLD",
+                    date: "TUESDAY, 21 OCTOBER 2025",
+                    accentColor: "from-green-600 to-oliveDark",
+                  }}
+                  apiConfig={{}}
+                />
+              }
+            />
+
+            <Route
+              path="/events/ph-cybersecurity"
+              element={
+                <EventRegistrationForm
+                  eventDetails={{
+                    title: "PORT-HARCOURT CYBER SECURITY MEET & GREET",
+                    organizer: "DITS ACADEMY & KOCKA IT SERVICES",
+                    slogan: "Opportunities, Careers, and Growth Paths",
+                    tagline: "THE PORT-HARCOURT CYBER SECURITY LANDSCAPE",
+                    date: "SATURDAY, 25 OCTOBER 2025 | 12PM - 3PM",
+                    venue:
+                      "DITS Academy, Suite 15, DDS Shopping Mall, Rukpokwu",
+                    accentColor: "from-cyan-600 to-blue-700",
+                    socialLinks: {
+                      instagram: "https://www.instagram.com/ditsacademyph/",
+                      twitter: "https://x.com/ditsacademyph",
+                      linkedin: "https://www.linkedin.com/company/ditsacademy/",
+                    },
+                    contact: {
+                      email: "info@ditsacademy.com",
+                      website: "https://www.ditsacademy.com",
+                    },
+                  }}
+                  apiConfig={{
+                    form_id:
+                      "eyJpdiI6ImRPRTVzM3JRNzYrVFZNVGp6NGFTYUE9PSIsInZhbHVlIjoiZ1lEZ2xuYTVHc1RTSXVXV1VRWTJ3Zz09IiwibWFjIjoiOGU3MzVkY2EzODBhNzEzZGVlZGVkODdlODljYWIyZGU1MTJlYWU5NjI5MjQ3NjE0ZDdmMWJmMzFhMjE3NWZhYSIsInRhZyI6IiJ9",
+                  }}
+                />
+              }
+            />
+
             {/* Catch-all redirect */}
             <Route path="*" element={<ComingSoon />} />
           </Route>
