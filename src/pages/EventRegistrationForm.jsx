@@ -33,6 +33,19 @@ const EventRegistrationForm = ({ eventDetails = {}, apiConfig = {} }) => {
     contact = {},
   } = eventDetails;
 
+  // Get just the date part
+  const datePart = date.includes("|") ? date.split("|")[0].trim() : date.trim();
+
+  // Parse the event date
+  const eventDate = new Date(datePart);
+
+  // Get today’s date at 00:00
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Check if the event is before today
+  const eventPassed = eventDate < today;
+
   const {
     form_id = "eyJpdiI6IldEeE5rY2kreXZMNVJqbEIyVnVTbVE9PSIsInZhbHVlIjoiUHJyM3lJaTVpbWhtL0lOck1mMlM5dz09IiwibWFjIjoiZGVkMzA4MGM0Y2JjM2E2ODkxZWExZjU3MzA3ODkzNzQ1YzhlNGYxYzc0NTE5YjcyNGJhNWE3NzBjN2JjYTJmNiIsInRhZyI6IiJ9",
     plan_id = "3SdxGT1V6fQx0z4sGVNXco",
@@ -292,8 +305,6 @@ const EventRegistrationForm = ({ eventDetails = {}, apiConfig = {} }) => {
         return null;
     }
   };
-  // Check if event has passed
-  const eventPassed = date ? new Date(date).getTime() < Date.now() : false;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-olive via-gray-900 to-olive py-12 px-4 sm:px-6 lg:px-8">
