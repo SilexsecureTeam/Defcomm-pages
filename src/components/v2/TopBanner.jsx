@@ -5,34 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import notifications from "../../utils/data/notifications.json";
 
 const TopBanner = () => {
   const [bannerDisabled, setBannerDisabled] = useState(false);
   const navigate = useNavigate();
-
-  const slides = [
-    {
-      id: 1,
-      label: "NEW",
-      text: "Defcomm Unveils Secure App Stores with Military-Grade Protection for End Users",
-      color: "text-lime-400",
-      link: "/defcomm-unveil",
-    },
-    {
-      id: 2,
-      label: "GED 2025",
-      text: "Global Engagement Day 2025: Strong Encryption • Stronger Future - Register Now!",
-      color: "text-green-400",
-      link: "/events/ged",
-    },
-    {
-      id: 3,
-      label: "MEET & GREET",
-      text: "Port-Harcourt Cyber Security Meet & Greet: Opportunities, Careers, and Growth Paths - Oct 25th",
-      color: "text-cyan-400",
-      link: "/events/ph-cybersecurity",
-    },
-  ];
 
   const handleSlideClick = (slide) => {
     if (slide.link) {
@@ -74,7 +51,7 @@ const TopBanner = () => {
           speed={500}
           className="banner-swiper"
         >
-          {slides.map((slide) => (
+          {notifications.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div
                 className="text-white text-sm md:text-base px-6 py-3 flex justify-center items-center gap-2 md:gap-6 text-center cursor-pointer transition-all duration-300 hover:bg-[#3a4f1a] rounded-full"
