@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { STEPS, stepValidations } from "../utils/fields";
 import bounty from "../assets/bounty-bg.svg";
+import bountyLogo from "../assets/bounty-bg.svg";
 import {
   PersonalStep,
   ProfessionalStep,
@@ -313,7 +314,7 @@ const VolunteerRegistrationForm = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="bg-gradient-to-r from-green-800 to-green-900 rounded-2xl p-8 text-white shadow-xl border border-green-700 mb-6">
-            <div className="flex items-center justify-center space-x-4 mb-4">
+            <div className="flex flex-wrap items-center justify-center space-x-4 mb-4">
               <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20">
                 <span className="text-white font-bold text-3xl">DC</span>
               </div>
