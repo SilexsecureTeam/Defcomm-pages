@@ -230,7 +230,7 @@ const VolunteerRegistrationForm = () => {
     submitForm,
   } = useVolunteerForm();
 
-  const onFormSubmit = async (data) => {
+  const onFormSubmit = async () => {
     await submitForm();
   };
 

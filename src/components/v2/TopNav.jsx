@@ -9,7 +9,6 @@ import TopBanner from "./TopBanner";
 export default function TopNav() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [bannerDisabled, setBannerDisabled] = useState(false);
   const [productDropdownOpen, setProductDropdownOpen] = useState(false);
   const [mobileProductOpen, setMobileProductOpen] = useState(false);
   const hoverTimeoutRef = useRef(null);
