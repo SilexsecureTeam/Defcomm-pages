@@ -7,6 +7,13 @@
     "link": "/defcomm-unveil"
   },
   {
+    "id": 4,
+    "label": "BUG BOUNTY",
+    "text": "Operation Iron Shield Bug Bounty Programme - Hunt Vulnerabilities, Earn Rewards!",
+    "color": "text-amber-400",
+    "link": "/bug-bounty"
+  },
+  {
     "id": 2,
     "label": "GED 2025",
     "text": "Global Engagement Day 2025: Strong Encryption • Stronger Future - Register Now!",
@@ -19,12 +26,5 @@
     "text": "Port-Harcourt Cyber Security Meet & Greet: Opportunities, Careers, and Growth Paths - Oct 25th",
     "color": "text-cyan-400",
     "link": "/events/ph-cybersecurity"
-  },
-  {
-    "id": 4,
-    "label": "BUG BOUNTY",
-    "text": "Operation Iron Shield Bug Bounty Programme - Hunt Vulnerabilities, Earn Rewards!",
-    "color": "text-amber-400",
-    "link": "/bug-bounty"
   }
 ]
