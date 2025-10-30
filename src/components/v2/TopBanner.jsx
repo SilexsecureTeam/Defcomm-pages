@@ -58,7 +58,8 @@ const TopBanner = () => {
                 onClick={() => handleSlideClick(slide)}
               >
                 <span
-                  className={`${slide.color} font-semibold whitespace-nowrap text-xs md:text-sm`}
+                  className="font-semibold whitespace-nowrap text-xs md:text-sm"
+                  style={{ color: slide.color }}
                 >
                   {slide.label}
                 </span>
