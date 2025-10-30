@@ -377,7 +377,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         <button
           type="button"
           onClick={nextStep}
-          className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+          className="ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
         >
           Continue to Professional Info
         </button>
@@ -475,18 +475,18 @@ export const ProfessionalStep = ({ control, nextStep, prevStep }) => {
         }
       />
 
-      <div className="flex justify-between pt-6">
+      <div className="flex flex-wrap justify-between gap-2 pt-6 text-xs md:text-sm">
         <button
           type="button"
           onClick={prevStep}
-          className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
+          className="p-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
         >
           Back
         </button>
         <button
           type="button"
           onClick={nextStep}
-          className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+          className="ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
         >
           Continue to Volunteer Areas
         </button>

@@ -71,18 +71,18 @@ export const VolunteerAreasStep = ({ control, nextStep, prevStep }) => {
         />
       </div>
 
-      <div className="flex justify-between pt-6">
+      <div className="flex flex-wrap justify-between gap-2 pt-6 text-xs md:text-sm">
         <button
           type="button"
           onClick={prevStep}
-          className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
+          className="p-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
         >
           Back
         </button>
         <button
           type="button"
           onClick={nextStep}
-          className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+          className=" ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
         >
           Continue to Availability
         </button>
@@ -166,18 +166,18 @@ export const AvailabilityStep = ({ control, nextStep, prevStep }) => {
         />
       </div>
 
-      <div className="flex justify-between pt-6">
+      <div className="flex flex-wrap justify-between gap-2 pt-6 text-xs md:text-sm">
         <button
           type="button"
           onClick={prevStep}
-          className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
+          className="p-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
         >
           Back
         </button>
         <button
           type="button"
           onClick={nextStep}
-          className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+          className=" ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
         >
           Continue to Emergency Contact
         </button>
@@ -228,18 +228,18 @@ export const EmergencyContactStep = ({ control, nextStep, prevStep }) => (
       />
     </div>
 
-    <div className="flex justify-between pt-6">
+    <div className="flex flex-wrap justify-between gap-2 pt-6 text-xs md:text-sm">
       <button
         type="button"
         onClick={prevStep}
-        className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
+        className="p-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
       >
         Back
       </button>
       <button
         type="button"
         onClick={nextStep}
-        className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+        className=" ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
       >
         Continue to T-Shirt & ID
       </button>
@@ -288,18 +288,18 @@ export const TshirtIdStep = ({ control, nextStep, prevStep }) => (
       rules={{ required: "This field is required" }}
     />
 
-    <div className="flex justify-between pt-6">
+    <div className="flex flex-wrap justify-between gap-2 pt-6 text-xs md:text-sm">
       <button
         type="button"
         onClick={prevStep}
-        className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
+        className="p-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
       >
         Back
       </button>
       <button
         type="button"
         onClick={nextStep}
-        className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+        className=" ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
       >
         Continue to Declaration
       </button>
@@ -349,11 +349,11 @@ export const DeclarationStep = ({
       />
     </div>
 
-    <div className="flex justify-between pt-6">
+    <div className="flex justify-between pt-6 text-xs md:text-sm">
       <button
         type="button"
         onClick={prevStep}
-        className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
+        className="p-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-300"
       >
         Back
       </button>
@@ -361,7 +361,7 @@ export const DeclarationStep = ({
         type="button"
         onClick={submitForm}
         disabled={isSubmitting}
-        className="px-8 py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+        className="p-2 md:px-6 md:py-3 ml-auto bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
       >
         {isSubmitting ? "Submitting..." : "Submit Application"}
       </button>
