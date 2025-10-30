@@ -1,10 +1,5 @@
 import { Suspense, lazy } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FallBack from "./components/Fallback";
 import Blog1Page from "./pages/v3/Blog1Page";
 import Blog2Page from "./pages/v3/Blog2Page";
@@ -13,7 +8,7 @@ import Blog4Page from "./pages/v3/Blog4Page";
 import Hardware from "./pages/v3/Hardware";
 import Software from "./pages/v3/Software";
 import ScrollToTop from "./components/ScrollToTop";
-
+import eventRoutes from "./utils/data/eventRoutes.json";
 const MainLayout = lazy(() => import("./layout/MainLayout"));
 
 const HomePage = lazy(() => import("./pages/v2/HomePage"));
@@ -36,6 +31,7 @@ const SecurityPage = lazy(() => import("./pages/v3/SecurityPage"));
 const EventRegistrationForm = lazy(() =>
   import("./pages/EventRegistrationForm")
 );
+const FormRegistration = lazy(() => import("./pages/FormRegistration"));
 
 const App = () => {
   return (
@@ -69,53 +65,41 @@ const App = () => {
             <Route path="/book" element={<BookingWorkflow />} />
             <Route path="/blogs" element={<SecurityPage />} />
             <Route path="/bounty" element={<LiveFire />} />
-            <Route
-              path="/events/ged"
-              element={
-                <EventRegistrationForm
-                  eventDetails={{
-                    title: "GLOBAL ENCRYPTION DAY 2025",
-                    organizer: "DEFCOMM SOLUTIONS",
-                    slogan: "STRONG ENCRYPTION • STRONGER FUTURE",
-                    tagline: "DEFENDING TRUST IN A CONNECTED WORLD",
-                    date: "TUESDAY, 21 OCTOBER 2025",
-                    accentColor: "from-green-600 to-oliveDark",
-                  }}
-                  apiConfig={{}}
-                />
+            {/* Dynamically generate routes from JSON */}
+            {eventRoutes.map((route, index) => {
+              if (route.type === "event") {
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={
+                      <EventRegistrationForm
+                        eventDetails={{
+                          ...route.eventDetails,
+                        }}
+                        apiConfig={route.apiConfig}
+                      />
+                    }
+                  />
+                );
+              } else if (route.type === "programme") {
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={
+                      <FormRegistration
+                        eventDetails={{
+                          ...route.eventDetails,
+                        }}
+                        apiConfig={route.apiConfig}
+                      />
+                    }
+                  />
+                );
               }
-            />
-
-            <Route
-              path="/events/ph-cybersecurity"
-              element={
-                <EventRegistrationForm
-                  eventDetails={{
-                    title: "PORT-HARCOURT CYBER SECURITY MEET & GREET",
-                    organizer: "DITS ACADEMY & KOCKA IT SERVICES",
-                    slogan: "Opportunities, Careers, and Growth Paths",
-                    tagline: "THE PORT-HARCOURT CYBER SECURITY LANDSCAPE",
-                    date: "SATURDAY, 25 OCTOBER 2025 | 12PM - 3PM",
-                    venue:
-                      "DITS Academy, Suite 15, DDS Shopping Mall, Rukpokwu",
-                    accentColor: "from-cyan-600 to-blue-700",
-                    socialLinks: {
-                      instagram: "https://www.instagram.com/ditsacademyph/",
-                      twitter: "https://x.com/ditsacademyph",
-                      linkedin: "https://www.linkedin.com/company/ditsacademy/",
-                    },
-                    contact: {
-                      email: "info@ditsacademy.com",
-                      website: "https://www.ditsacademy.com",
-                    },
-                  }}
-                  apiConfig={{
-                    form_id:
-                      "eyJpdiI6ImRPRTVzM3JRNzYrVFZNVGp6NGFTYUE9PSIsInZhbHVlIjoiZ1lEZ2xuYTVHc1RTSXVXV1VRWTJ3Zz09IiwibWFjIjoiOGU3MzVkY2EzODBhNzEzZGVlZGVkODdlODljYWIyZGU1MTJlYWU5NjI5MjQ3NjE0ZDdmMWJmMzFhMjE3NWZhYSIsInRhZyI6IiJ9",
-                  }}
-                />
-              }
-            />
+              return null;
+            })}
 
             {/* Catch-all redirect */}
             <Route path="*" element={<ComingSoon />} />

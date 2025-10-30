@@ -234,3 +234,43 @@ export const professionalFields = [
   "Digital Transformation",
   "Other",
 ];
+
+export const STEPS = [
+  { key: "personal", title: "Personal Info", icon: "👤" },
+  { key: "professional", title: "Professional", icon: "💼" },
+  { key: "areas", title: "Volunteer Areas", icon: "🎯" },
+  { key: "availability", title: "Availability", icon: "📅" },
+  { key: "emergency", title: "Emergency Contact", icon: "🚨" },
+  { key: "logistics", title: "Logistics", icon: "👕" },
+  { key: "declaration", title: "Declaration", icon: "📝" },
+];
+
+export const stepValidations = {
+  1: [
+    "firstName",
+    "lastName",
+    "gender",
+    "dateOfBirth",
+    "phoneNumber",
+    "email",
+    "cityState",
+    "nationality",
+    "hasDisability",
+  ],
+  2: ["occupation", "skills"],
+  3: [], // Volunteer areas are optional
+  4: [], // Availability is optional
+  5: ["emergencyFullName", "emergencyRelationship", "emergencyPhone"],
+  6: ["tshirtSize", "hasVolunteerId"],
+  7: ["agreeToTerms"],
+};
+
+export const occupations = [
+  { value: "student", label: "Student" },
+  { value: "tech", label: "Tech Professional" },
+  { value: "educator", label: "Educator / Trainer" },
+  { value: "media", label: "Media / Communications" },
+  { value: "legal", label: "Legal / Policy" },
+  { value: "logistics", label: "Logistics / Operations" },
+  { value: "other", label: "Other" },
+];

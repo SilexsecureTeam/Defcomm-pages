@@ -1,0 +1,71 @@
+[
+  {
+    "path": "/events/ged",
+    "type": "event",
+    "eventDetails": {
+      "title": "GLOBAL ENCRYPTION DAY 2025",
+      "organizer": "DEFCOMM SOLUTIONS",
+      "slogan": "STRONG ENCRYPTION • STRONGER FUTURE",
+      "tagline": "DEFENDING TRUST IN A CONNECTED WORLD",
+      "date": "TUESDAY, 21 OCTOBER 2025",
+      "accentColor": "from-green-600 to-oliveDark"
+    },
+    "apiConfig": {}
+  },
+  {
+    "path": "/events/ph-cybersecurity",
+    "type": "event",
+    "eventDetails": {
+      "title": "PORT-HARCOURT CYBER SECURITY MEET & GREET",
+      "organizer": "DITS ACADEMY & KOCKA IT SERVICES",
+      "slogan": "Opportunities, Careers, and Growth Paths",
+      "tagline": "THE PORT-HARCOURT CYBER SECURITY LANDSCAPE",
+      "date": "SATURDAY, 25 OCTOBER 2025 | 12PM - 3PM",
+      "venue": "DITS Academy, Suite 15, DDS Shopping Mall, Rukpokwu",
+      "accentColor": "from-cyan-600 to-blue-700",
+      "socialLinks": {
+        "instagram": "https://www.instagram.com/ditsacademyph/",
+        "twitter": "https://x.com/ditsacademyph",
+        "linkedin": "https://www.linkedin.com/company/ditsacademy/"
+      },
+      "contact": {
+        "email": "info@ditsacademy.com",
+        "website": "https://www.ditsacademy.com"
+      }
+    },
+    "apiConfig": {
+      "form_id": "eyJpdiI6ImRPRTVzM3JRNzYrVFZNVGp6NGFTYUE9PSIsInZhbHVlIjoiZ1lEZ2xuYTVHc1RTSXVXV1VRWTJ3Zz09..."
+    }
+  },
+  {
+    "path": "/programmes/bug-bounty",
+    "type": "programme",
+    "eventDetails": {
+      "title": "DefComm Bug Bounty Programme",
+      "organizer": "DefComm Solutions Ltd.",
+      "slogan": "Operation Iron Shield",
+      "tagline": "Strengthening Africa’s Digital Defense",
+      "date": "December 4–5, 2025",
+      "duration": "2 Days",
+      "venue": "Hybrid (Virtual + Physical)",
+      "accentColor": "from-lime-600 to-green-900",
+      "banner": "/assets/bug-bounty-banner.jpg",
+      "description": "Operation Iron Shield is the official Bug Bounty Programme of DefComm Solutions, bringing together ethical hackers, cybersecurity experts, academia, and government representatives to identify vulnerabilities and strengthen Africa’s cyber infrastructure.",
+      "socialLinks": {
+        "website": "https://www.defcomm.ng"
+      },
+      "contact": {
+        "email": "business@defcomm.ng",
+        "phone": "+234 803 507 5198"
+      }
+    },
+    "apiConfig": {
+      "form_id": "eyJpdiI6ImRPRTVzM3JRNzYrVFZNVGp6NGFTYUE9PSIsInZhbHVlIjoiZ1lEZ2xuYTVHc1RTSXVXV1VRWTJ3Zz09..."
+    }
+  },
+  {
+    "path": "/form",
+    "type": "form",
+    "component": "MultiStepForm"
+  }
+]
