@@ -21,7 +21,7 @@ import {
 import parsePhoneNumberFromString from "libphonenumber-js";
 
 const useVolunteerForm = () => {
-  const [currentStep, setCurrentStep] = React.useState(3);
+  const [currentStep, setCurrentStep] = React.useState(1);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
