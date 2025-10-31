@@ -274,3 +274,48 @@ export const occupations = [
   { value: "logistics", label: "Logistics / Operations" },
   { value: "other", label: "Other" },
 ];
+
+export const exhibitionFields = [
+  {
+    name: "name",
+    label: "Full Name",
+    rules: { required: "Full name is required" },
+    type: "text",
+  },
+  {
+    name: "organization",
+    label: "Organization / Company",
+    rules: { required: "Organization is required" },
+    type: "text",
+  },
+  {
+    name: "designation",
+    label: "Designation / Role",
+    rules: { required: "Designation is required" },
+    type: "text",
+  },
+  {
+    name: "email",
+    label: "Email Address",
+    rules: {
+      required: "Email is required",
+      pattern: {
+        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+        message: "Please enter a valid email address",
+      },
+    },
+    type: "email",
+  },
+  {
+    name: "phone",
+    label: "Phone Number",
+    rules: { required: "Phone number is required" },
+    type: "tel",
+  },
+  {
+    name: "website",
+    label: "Website (if applicable)",
+    rules: {},
+    type: "url",
+  },
+];

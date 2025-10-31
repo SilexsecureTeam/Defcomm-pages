@@ -3,6 +3,9 @@ import { useForm, Controller } from "react-hook-form";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import { exhibitionFields } from "../utils/fields";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const ExhibitionRegistrationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,7 +18,7 @@ const ExhibitionRegistrationForm = () => {
     formState: { isSubmitting, errors },
   } = useForm({
     defaultValues: {
-      fullName: "",
+      name: "",
       organization: "",
       designation: "",
       email: "",
@@ -27,7 +30,11 @@ const ExhibitionRegistrationForm = () => {
   const onSubmit = async (data) => {
     setSubmitError("");
     try {
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/eventform`, data);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/eventform`, {
+        ...data,
+        form_id: import.meta.env.VITE_EXHIBITION_FORM_ID,
+        plan_id: "",
+      });
       setIsSubmitted(true);
       reset();
     } catch (err) {
@@ -38,51 +45,6 @@ const ExhibitionRegistrationForm = () => {
       );
     }
   };
-
-  const formFields = [
-    {
-      name: "fullName",
-      label: "Full Name",
-      rules: { required: "Full name is required" },
-      type: "text",
-    },
-    {
-      name: "organization",
-      label: "Organization / Company",
-      rules: { required: "Organization is required" },
-      type: "text",
-    },
-    {
-      name: "designation",
-      label: "Designation / Role",
-      rules: { required: "Designation is required" },
-      type: "text",
-    },
-    {
-      name: "email",
-      label: "Email Address",
-      rules: {
-        required: "Email is required",
-        pattern: {
-          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-          message: "Please enter a valid email address",
-        },
-      },
-      type: "email",
-    },
-    {
-      name: "phone",
-      label: "Phone Number",
-      rules: { required: "Phone number is required" },
-      type: "tel",
-    },
-    {
-      name: "website",
-      label: "Website (if applicable)",
-      rules: {},
-      type: "url",
-    },
-  ];
 
   if (isSubmitted) {
     return (
@@ -183,21 +145,8 @@ const ExhibitionRegistrationForm = () => {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <AnimatePresence>
-              {submitError && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="bg-red-900/30 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-sm"
-                >
-                  ⚠️ {submitError}
-                </motion.div>
-              )}
-            </AnimatePresence>
-
             <div className="space-y-4">
-              {formFields.map((field, index) => (
+              {exhibitionFields.map((field, index) => (
                 <Controller
                   key={field.name}
                   name={field.name}
@@ -216,16 +165,45 @@ const ExhibitionRegistrationForm = () => {
                         )}
                       </label>
 
-                      <input
-                        {...input}
-                        type={field.type}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition bg-gray-700 text-white placeholder-gray-500 ${
-                          errors[field.name]
-                            ? "border-red-500"
-                            : "border-gray-600"
-                        }`}
-                        placeholder={`Enter your ${field.label.toLowerCase()}`}
-                      />
+                      {field.name === "phone" ? (
+                        <div className="relative">
+                          <Controller
+                            name="phone"
+                            control={control}
+                            rules={{
+                              required: "Phone number is required",
+                              minLength: {
+                                value: 7,
+                                message: "Phone number is too short",
+                              },
+                            }}
+                            render={({ field: { onChange, value } }) => (
+                              <div className="bg-gray-700 rounded-lg border border-gray-600 focus-within:border-amber-500 transition">
+                                <PhoneInput
+                                  country={"ng"}
+                                  value={value}
+                                  onChange={(phone) => onChange("+" + phone)}
+                                  inputClass="!w-full !bg-gray-800 !text-white !border-none !py-3 !pl-12 !text-sm"
+                                  buttonClass="!bg-gray-700 !border-none"
+                                  dropdownClass="!bg-gray-800 !text-gray-400"
+                                  enableSearch
+                                />
+                              </div>
+                            )}
+                          />
+                        </div>
+                      ) : (
+                        <input
+                          {...input}
+                          type={field.type}
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition bg-gray-700 text-white placeholder-gray-500 ${
+                            errors[field.name]
+                              ? "border-red-500"
+                              : "border-gray-600"
+                          }`}
+                          placeholder={`Enter your ${field.label.toLowerCase()}`}
+                        />
+                      )}
 
                       {errors[field.name] && (
                         <motion.p
@@ -242,6 +220,18 @@ const ExhibitionRegistrationForm = () => {
               ))}
             </div>
 
+            <AnimatePresence>
+              {submitError && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="bg-red-900/30 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-sm mt-4"
+                >
+                  ⚠️ {submitError}
+                </motion.div>
+              )}
+            </AnimatePresence>
             <div className="pt-4">
               <motion.button
                 type="submit"
