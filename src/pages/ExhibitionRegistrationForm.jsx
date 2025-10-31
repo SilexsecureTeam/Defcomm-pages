@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 
@@ -26,7 +27,7 @@ const ExhibitionRegistrationForm = () => {
   const onSubmit = async (data) => {
     setSubmitError("");
     try {
-      await axios.post("https://backend.defcomm.ng/api/web/eventform", data);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/eventform`, data);
       setIsSubmitted(true);
       reset();
     } catch (err) {

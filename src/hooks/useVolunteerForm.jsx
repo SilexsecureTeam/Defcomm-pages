@@ -193,7 +193,7 @@ const useVolunteerForm = () => {
       };
 
       const response = await axios.post(
-        "https://backend.defcomm.ng/api/web/eventform",
+        `${import.meta.env.VITE_BASE_URL}/eventform`,
         payload,
         { headers: { "Content-Type": "application/json" } }
       );
