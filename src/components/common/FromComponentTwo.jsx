@@ -6,6 +6,9 @@ import {
   RadioGroup,
   SelectField,
 } from "./FormComponents";
+import { Controller } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export const VolunteerAreasStep = ({ control, nextStep, prevStep }) => {
   return (
@@ -193,6 +196,7 @@ export const EmergencyContactStep = ({ control, nextStep, prevStep }) => (
     exit={{ opacity: 0, x: -20 }}
     className="space-y-6"
   >
+    {/* Header */}
     <div className="bg-gradient-to-r from-green-800 to-green-900 px-6 py-5 rounded-xl text-white shadow-lg border border-green-700">
       <h3 className="text-xl font-bold">Emergency Contact</h3>
       <p className="text-green-100 text-sm mt-1">
@@ -200,25 +204,55 @@ export const EmergencyContactStep = ({ control, nextStep, prevStep }) => (
       </p>
     </div>
 
+    {/* Fields */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <InputField
         label="Full Name"
         name="emergencyFullName"
         control={control}
-        rules={{ required: "Required" }}
+        rules={{ required: "Full name is required" }}
       />
+
       <InputField
         label="Relationship"
         name="emergencyRelationship"
         control={control}
-        rules={{ required: "Required" }}
+        rules={{ required: "Relationship is required" }}
       />
-      <InputField
-        label="Phone Number"
+
+      {/* Upgraded Phone Input with Country Code */}
+      <Controller
         name="emergencyPhone"
         control={control}
-        rules={{ required: "Required" }}
+        rules={{ required: "Phone number is required" }}
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Emergency Phone Number *
+            </label>
+            <div
+              className={`w-full rounded-lg border ${
+                error ? "border-red-500" : "border-gray-300"
+              } focus-within:ring-2 focus-within:ring-green-500 focus-within:border-green-500`}
+            >
+              <PhoneInput
+                country={"ng"} // default to Nigeria
+                value={value}
+                onChange={(phone) => onChange(`+${phone}`)}
+                containerClass="!w-full"
+                inputClass="!w-full !h-12 !pl-14 !border-0 !rounded-lg"
+                buttonClass="!border-0 !bg-transparent !rounded-l-lg !w-12"
+                dropdownClass="!rounded-xl !min-w-[280px]"
+                enableSearch
+              />
+            </div>
+            {error && (
+              <p className="text-red-500 text-sm mt-1">{error.message}</p>
+            )}
+          </div>
+        )}
       />
+
       <InputField
         label="Email Address"
         name="emergencyEmail"
@@ -228,6 +262,7 @@ export const EmergencyContactStep = ({ control, nextStep, prevStep }) => (
       />
     </div>
 
+    {/* Navigation Buttons */}
     <div className="flex flex-wrap justify-between gap-2 pt-6 text-xs md:text-sm">
       <button
         type="button"
@@ -239,7 +274,7 @@ export const EmergencyContactStep = ({ control, nextStep, prevStep }) => (
       <button
         type="button"
         onClick={nextStep}
-        className=" ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
+        className="ml-auto p-2 md:px-6 md:py-3 bg-gradient-to-r from-green-700 to-green-800 text-white font-semibold rounded-lg hover:from-green-800 hover:to-green-900 transition-all duration-300 shadow-lg border border-green-600"
       >
         Continue to T-Shirt & ID
       </button>

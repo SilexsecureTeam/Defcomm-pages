@@ -3,6 +3,9 @@ import { Controller } from "react-hook-form";
 import { occupations, STEPS } from "../../utils/fields";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import countryList from "react-select-country-list";
 
 export const InputField = ({
   label,
@@ -161,7 +164,7 @@ export const SuccessScreen = ({ onReset }) => (
     <h2 className="text-2xl font-bold text-gray-800 mb-2">
       Application Submitted!
     </h2>
-    <p className="text-gray-600 mb-6">
+    <p className="text-gray-600 mb-6 max-w-96 mx-auto text-center">
       Thank you for your interest in volunteering with DEFCOMM. We've received
       your application and will be in touch soon.
     </p>
@@ -230,6 +233,8 @@ export const ProgressBar = ({ currentStep }) => (
 
 // ---------- Step Components ----------
 export const PersonalStep = ({ control, nextStep }) => {
+  const countries = countryList().getData();
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -237,6 +242,7 @@ export const PersonalStep = ({ control, nextStep }) => {
       exit={{ opacity: 0, x: -20 }}
       className="space-y-6"
     >
+      {/* Header */}
       <div className="bg-gradient-to-r from-green-800 to-green-900 px-6 py-5 rounded-xl text-white shadow-lg border border-green-700">
         <h3 className="text-xl font-bold">Personal Information</h3>
         <p className="text-green-100 text-sm mt-1">
@@ -244,6 +250,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         </p>
       </div>
 
+      {/* Name Fields */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <InputField
           label="First Name"
@@ -260,6 +267,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         />
       </div>
 
+      {/* Gender + Preferred Name */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <InputField
           label="Preferred Name"
@@ -275,12 +283,11 @@ export const PersonalStep = ({ control, nextStep }) => {
           options={[
             { value: "male", label: "Male" },
             { value: "female", label: "Female" },
-            // { value: "prefer_not", label: "Prefer not to say" },
-            // { value: "other", label: "Other" },
           ]}
         />
       </div>
 
+      {/* Conditional Gender Field */}
       <Controller
         name="gender"
         control={control}
@@ -296,6 +303,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         }
       />
 
+      {/* DOB + Phone + Email */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <InputField
           label="Date of Birth"
@@ -304,19 +312,40 @@ export const PersonalStep = ({ control, nextStep }) => {
           type="date"
           rules={{ required: "Date of birth is required" }}
         />
-        <InputField
-          label="Phone Number"
+
+        {/* ✅ Updated Phone Input */}
+        <Controller
           name="phoneNumber"
           control={control}
-          placeholder="+234..."
-          rules={{
-            required: "Phone number is required",
-            pattern: {
-              value: /^\+?[\d\s-()]+$/,
-              message: "Please enter a valid phone number",
-            },
-          }}
+          rules={{ required: "Phone number is required" }}
+          render={({ field: { onChange, value }, fieldState: { error } }) => (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Phone Number *
+              </label>
+              <div
+                className={`w-full rounded-lg border ${
+                  error ? "border-red-500" : "border-gray-300"
+                } focus-within:ring-2 focus-within:ring-green-500 focus-within:border-green-500`}
+              >
+                <PhoneInput
+                  country={"ng"} // default to Nigeria
+                  value={value}
+                  onChange={(phone) => onChange(`+${phone}`)}
+                  containerClass="!w-full"
+                  inputClass="!w-full !h-12 !pl-14 !border-0 !rounded-lg"
+                  buttonClass="!border-0 !bg-transparent !rounded-l-lg !w-12"
+                  dropdownClass="!rounded-xl !min-w-[280px]"
+                  enableSearch
+                />
+              </div>
+              {error && (
+                <p className="text-red-500 text-sm mt-1">{error.message}</p>
+              )}
+            </div>
+          )}
         />
+
         <InputField
           label="Email Address"
           name="email"
@@ -332,6 +361,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         />
       </div>
 
+      {/* City / Nationality / Disability */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <InputField
           label="City / State"
@@ -339,12 +369,38 @@ export const PersonalStep = ({ control, nextStep }) => {
           control={control}
           rules={{ required: "City/State is required" }}
         />
-        <InputField
-          label="Nationality"
+
+        {/* ✅ Nationality Dropdown */}
+        <Controller
           name="nationality"
           control={control}
           rules={{ required: "Nationality is required" }}
+          render={({ field: { onChange, value }, fieldState: { error } }) => (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Nationality *
+              </label>
+              <select
+                className={`w-full h-12 px-4 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 ${
+                  error ? "border-red-500" : "border-gray-300"
+                }`}
+                value={value || ""}
+                onChange={(e) => onChange(e.target.value)}
+              >
+                <option value="">Select your nationality</option>
+                {countries.map((country) => (
+                  <option key={country.value} value={country.label}>
+                    {country.label}
+                  </option>
+                ))}
+              </select>
+              {error && (
+                <p className="text-red-500 text-sm mt-1">{error.message}</p>
+              )}
+            </div>
+          )}
         />
+
         <RadioGroup
           label="Do you have any disability or medical condition?"
           name="hasDisability"
@@ -357,6 +413,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         />
       </div>
 
+      {/* Conditional Disability Field */}
       <Controller
         name="hasDisability"
         control={control}
@@ -372,6 +429,7 @@ export const PersonalStep = ({ control, nextStep }) => {
         }
       />
 
+      {/* Navigation */}
       <div className="flex justify-between pt-6">
         <div />
         <button
