@@ -196,7 +196,7 @@ export const ProgressBar = ({ currentStep }) => (
     </div>
     <div className="flex justify-between items-start mt-4 overflow-x-auto">
       {STEPS.map((step, index) => (
-        <React.Fragment>
+        <React.Fragment key={step.key}>
           <div key={step.key} className="flex flex-col items-center">
             <div
               className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 border-2 ${

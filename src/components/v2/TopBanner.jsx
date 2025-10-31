@@ -130,7 +130,7 @@ const TopBanner = () => {
       </div>
 
       {/* Custom Swiper Styles */}
-      <style jsx>{`
+      <style>{`
         .banner-swiper {
           border-radius: 9999px;
         }

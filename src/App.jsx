@@ -8,7 +8,7 @@ import Blog4Page from "./pages/v3/Blog4Page";
 import Hardware from "./pages/v3/Hardware";
 import Software from "./pages/v3/Software";
 import ScrollToTop from "./components/ScrollToTop";
-import eventRoutes from "./utils/data/eventRoutes.json";
+import { routesConfig } from "./utils/data/routeConfig";
 const MainLayout = lazy(() => import("./layout/MainLayout"));
 
 const HomePage = lazy(() => import("./pages/v2/HomePage"));
@@ -31,8 +31,6 @@ const SecurityPage = lazy(() => import("./pages/v3/SecurityPage"));
 const EventRegistrationForm = lazy(() =>
   import("./pages/EventRegistrationForm")
 );
-const FormRegistration = lazy(() => import("./pages/FormRegistration"));
-
 const App = () => {
   return (
     <Suspense fallback={<FallBack />}>
@@ -66,7 +64,7 @@ const App = () => {
             <Route path="/blogs" element={<SecurityPage />} />
             <Route path="/bounty" element={<LiveFire />} />
             {/* Dynamically generate routes from JSON */}
-            {eventRoutes.map((route, index) => {
+            {routesConfig.map((route, index) => {
               if (route.type === "event") {
                 return (
                   <Route
@@ -85,16 +83,9 @@ const App = () => {
               } else if (route.type === "programme") {
                 return (
                   <Route
-                    key={index}
+                    key={route.path}
                     path={route.path}
-                    element={
-                      <FormRegistration
-                        eventDetails={{
-                          ...route.eventDetails,
-                        }}
-                        apiConfig={route.apiConfig}
-                      />
-                    }
+                    element={<route.component {...route} />}
                   />
                 );
               }
