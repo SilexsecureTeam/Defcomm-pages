@@ -28,6 +28,7 @@ const MainLayout = () => {
   const isForm = location.pathname === "/form";
   const isBook = location.pathname === "/book";
   const isBlogs = location.pathname === "/blogs";
+  const isBrowserHome = location.pathname === "/browser/home";
 
   return (
     <div
@@ -58,13 +59,14 @@ const MainLayout = () => {
         !isVideo &&
         !isForm &&
         !isBook &&
+        !isBrowserHome &&
         !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware || isBlogs) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 
       <main className="w-full mx-auto">
         <Outlet />
       </main>
-      <Footer />
+      {!isBrowserHome && <Footer />}
       <BackToTopButton />
     </div>
   );

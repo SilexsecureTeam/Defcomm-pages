@@ -20,6 +20,7 @@ const AboutPage = lazy(() => import("./pages/v3/AboutPage"));
 const Products = lazy(() => import("./pages/v1/Products"));
 const ProductsFeatures = lazy(() => import("./pages/v1/ProductsFeatures"));
 const LiveFire = lazy(() => import("./pages/v1/LiveFire"));
+const BrowserHome = lazy(() => import("./pages/BrowserHome"));
 const VideoPage = lazy(() => import("./pages/v1/VideoPage"));
 const AndriodPage = lazy(() => import("./pages/v1/AndriodPage"));
 const ManagerPage = lazy(() => import("./pages/v1/ManagerPage"));
@@ -63,6 +64,7 @@ const App = () => {
             <Route path="/book" element={<BookingWorkflow />} />
             <Route path="/blogs" element={<SecurityPage />} />
             <Route path="/bounty" element={<LiveFire />} />
+            <Route path="/browser/home" element={<BrowserHome />} />
             {/* Dynamically generate routes from JSON */}
             {routesConfig.map((route, index) => {
               if (route.type === "event") {
