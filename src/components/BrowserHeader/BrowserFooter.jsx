@@ -3,7 +3,7 @@ import logo from "../../assets/logo-icon.png";
 
 const BrowserFooter = () => {
   return (
-    <footer className="w-full bg-[#2a4101] text-white border-t border-[#3a5101]">
+    <footer className="w-full bg-[#3D3D3D] text-white border-t border-[#3a5101]">
       {/* Newsletter Section */}
       <div className="border-b border-[#3a5101]">
         <div className="max-w-6xl mx-auto px-6 py-12">
