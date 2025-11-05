@@ -13,7 +13,7 @@ const Card = ({ img, title, description }) => (
     <img src={img} alt={title} className="w-20 h-20 object-contain" />
     <h4 className="text-white text-xl font-semibold mt-2">{title}</h4>
     <p className="text-[#cfd9c1] text-sm flex-1">{description}</p>
-    <button className="bg-[#89AF20] text-black px-6 py-2 rounded-md font-medium">Download Defcomm</button>
+    <button className="bg-[#89AF20] text-white px-6 py-2 rounded-md font-semibold">Download Defcomm</button>
   </div>
 );
 

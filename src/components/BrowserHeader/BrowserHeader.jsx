@@ -43,7 +43,7 @@ const BrowserHeader = () => {
         </div>
 
         <nav className="hidden md:flex !ml-20 items-center gap-6 bg-[#22300c]/60 rounded-full px-8 py-3">
-          <a href="#" className="px-4 py-1.5 rounded-full bg-[#89AF20] text-black font-semibold text-sm hover:bg-[#7a9518] transition">Home</a>
+          <a href="#" className="px-4 py-1.5 rounded-full bg-[#89AF20] text-white font-semibold text-sm hover:bg-[#7a9518] transition">Home</a>
           <a href="#" className="text-white text-sm opacity-90 hover:opacity-100 transition">Community</a>
           <a href="#" className="text-white text-sm opacity-90 hover:opacity-100 transition">Blog</a>
           <a href="#" className="text-white text-sm opacity-90 hover:opacity-100 transition">Pricing</a>
