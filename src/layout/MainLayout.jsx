@@ -28,7 +28,9 @@ const MainLayout = () => {
   const isForm = location.pathname === "/form";
   const isBook = location.pathname === "/book";
   const isBlogs = location.pathname === "/blogs";
-  const isBrowserHome = location.pathname === "/browser/home";
+  const isBrowserHome =
+    location.pathname === "/browser" ||
+    location.pathname.startsWith("/browser/");
 
   return (
     <div
