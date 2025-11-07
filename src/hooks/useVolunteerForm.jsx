@@ -14,11 +14,7 @@ const useVolunteerForm = () => {
   // 1️⃣ Load saved data from localStorage
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
 
-  const methods = useForm({
-    mode: "onChange",
-    defaultValues: {
-      // Merge saved data with default values
-      ...{
+const emptyDefaultValues = {
         firstName: "",
         middleName: "",
         lastName: "",
@@ -72,7 +68,13 @@ const useVolunteerForm = () => {
         agreeToTerms: false,
         signature: "",
         signatureDate: "",
-      },
+      }
+
+  const methods = useForm({
+    mode: "onChange",
+    defaultValues: {
+      // Merge saved data with default values
+      ...emptyDefaultValues,
       ...savedData?.formValues,
     },
   });
@@ -201,6 +203,9 @@ const useVolunteerForm = () => {
       if (response.data.success) {
         setIsSubmitted(true);
         localStorage.removeItem(STORAGE_KEY); // ✅ Clear saved data after success
+
+reset(emptyDefaultValues);
+    setCurrentStep(1);
         console.log(response.data.message || "Registration successful!");
       } else {
         throw new Error(response.data.message || "Registration failed");
