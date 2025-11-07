@@ -7,6 +7,7 @@ import axios from "axios";
 const STORAGE_KEY = "volunteer_form_progress";
 
 const emptyDefaultValues = {
+  currentStep: 1,
   firstName: "",
   middleName: "",
   lastName: "",
@@ -109,7 +110,7 @@ const useVolunteerForm = () => {
     }
   }, [savedData, isSubmitted]);
 
-  // ✅ Validate per-step fields
+  // Validate per-step fields
   const validateStep = async (step) => {
     const fields = stepValidations[step];
     if (!fields || fields.length === 0) return true;
@@ -208,7 +209,7 @@ const useVolunteerForm = () => {
       );
 
       if (response.data.success) {
-        // ✅ Success: clear everything
+        // Success: clear everything
         setIsSubmitted(true);
         localStorage.removeItem(STORAGE_KEY);
         reset(emptyDefaultValues);
