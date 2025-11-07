@@ -86,6 +86,8 @@ const VolunteerRegistrationForm = () => {
     reset();
     resetStep();
     setIsSubmitted(false);
+    localStorage.removeItem("volunteer_form_progress");
+    
   };
 
   if (isSubmitted) {
