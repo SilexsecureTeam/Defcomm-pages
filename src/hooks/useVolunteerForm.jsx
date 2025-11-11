@@ -148,7 +148,7 @@ const useVolunteerForm = () => {
         phone: phoneNumber ? phoneNumber.format("E.164") : formData.phoneNumber,
         form_id: import.meta.env.VITE_BOUNTY_FORM_ID,
         plan_id: import.meta.env.VITE_BOUNTY_PLAN_ID,
-        fields: {
+        data: {
           personal_information: {
             firstName: formData.firstName,
             middleName: formData.middleName,
