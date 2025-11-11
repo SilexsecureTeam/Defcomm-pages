@@ -31,7 +31,14 @@ const ExhibitionRegistrationForm = () => {
     setSubmitError("");
     try {
       await axios.post(`${import.meta.env.VITE_BASE_URL}/eventform`, {
-        ...data,
+        name: data?.name,
+        email: data?.email,
+        phone: data?.phone,
+        data: {
+          organization: data?.organization,
+          designation: data?.designation,
+          website: data?.website,
+        },
         form_id: import.meta.env.VITE_EXHIBITION_FORM_ID,
       });
       setIsSubmitted(true);
