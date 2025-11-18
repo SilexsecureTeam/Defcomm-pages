@@ -13,10 +13,10 @@ const navItems = [
 ];
 
 const featureLinks = [
-  { name: "Secure Messaging", link="/" },
-  { name: "File Encryption", link="/" },
-  { name: "Video Conferencing", link="/" },
-  { name: "Defcomm Browser", link="/browser" },
+  { name: "Secure Messaging", link:"/" },
+  { name: "File Encryption", link:"/" },
+  { name: "Video Conferencing", link:"/" },
+  { name: "Defcomm Browser", link:"/browser" },
 ];
 
 const Footer = () => {
