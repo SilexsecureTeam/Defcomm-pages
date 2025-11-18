@@ -13,10 +13,10 @@ const navItems = [
 ];
 
 const featureLinks = [
-  { name: "Secure Messaging" },
-  { name: "File Encryption" },
-  { name: "Video Conferencing" },
-  { name: "Enterprise Suite" },
+  { name: "Secure Messaging", link="/" },
+  { name: "File Encryption", link="/" },
+  { name: "Video Conferencing", link="/" },
+  { name: "Defcomm Browser", link="/browser" },
 ];
 
 const Footer = () => {
@@ -85,7 +85,7 @@ const Footer = () => {
                 {featureLinks.map((item, idx) => (
                   <li key={idx}>
                     <Link
-                      to={item.route}
+                      to={item?.link}
                       className="hover:underline transition-colors"
                     >
                       {item.name}
