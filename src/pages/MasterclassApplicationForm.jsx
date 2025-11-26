@@ -195,7 +195,7 @@ export default function MasterclassApplicationForm() {
               transition={{ delay: 0.25, duration: 0.35 }}
               className="mb-8 rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-3 text-xs md:text-sm text-slate-800 flex gap-3 items-start"
             >
-              <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white border border-emerald-300 text-[0.7rem] font-semibold text-emerald-700 shadow-sm">
+              <span className="shrink-0 mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white border border-emerald-300 text-[0.7rem] font-semibold text-emerald-700 shadow-sm">
                 i
               </span>
               <p>
