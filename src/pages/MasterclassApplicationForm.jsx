@@ -7,7 +7,7 @@ import SocialLinksInput from "../components/common/SocialLinksInput";
 import MasterclassFooter from "../components/eventForm/MasterclassFooter";
 import MasterclassSuccess from "../components/eventForm/MasterclassSuccess";
 import usEmbassy from '../assets/events/us-embassy.svg'
-import skitLab from '../assets/assets/events/spoke-wise.png'
+import skitLab from '../assets/events/spoke-wise.png'
 const containerVariant = {
   hidden: { opacity: 0, y: 24 },
   visible: {
