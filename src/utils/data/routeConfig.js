@@ -1,5 +1,5 @@
 import ExhibitionRegistrationForm from "../../pages/ExhibitionRegistrationForm";
-import MasterclassApplicationForm from "../../pages/MasterClassApplicationForm";
+import MasterclassApplicationForm from "../../pages/MasterclassApplicationForm";
 import VolunteerRegistrationForm from "../../pages/VolunteerRegistrationForm";
 
 export const routesConfig = [
