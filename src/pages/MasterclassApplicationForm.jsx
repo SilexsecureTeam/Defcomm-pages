@@ -8,6 +8,8 @@ import MasterclassFooter from "../components/eventForm/MasterclassFooter";
 import MasterclassSuccess from "../components/eventForm/MasterclassSuccess";
 import usEmbassy from '../assets/events/us-embassy.svg'
 import skitLab from '../assets/events/spoke-wise.png'
+import usLogo from '../assets/events/us.svg'
+
 const containerVariant = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -116,6 +118,11 @@ export default function MasterclassApplicationForm() {
             {/* Logos + title strip */}
             <div className="mb-6 flex flex-wrap items-center justify-between">
               <div className="flex items-center gap-3">
+                <img
+                  src={usLogo}
+                  alt="U.S. Flag"
+                  className="h-14 w-auto object-contain"
+                />
                 <img
                   src={usEmbassy}
                   alt="U.S. Mission Nigeria"
