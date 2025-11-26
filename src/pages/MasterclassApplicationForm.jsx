@@ -6,7 +6,8 @@ import StateSelect from "../components/common/StateSelect";
 import SocialLinksInput from "../components/common/SocialLinksInput";
 import MasterclassFooter from "../components/eventForm/MasterclassFooter";
 import MasterclassSuccess from "../components/eventForm/MasterclassSuccess";
-
+import usEmbassy from '../assets/events/us-embassy.svg'
+import skitLab from '../assets/assets/events/spoke-wise.png'
 const containerVariant = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -116,7 +117,7 @@ export default function MasterclassApplicationForm() {
             <div className="mb-6 flex flex-wrap items-center justify-between">
               <div className="flex items-center gap-3">
                 <img
-                  src="/src/assets/events/us-embassy.svg"
+                  src={usEmbassy}
                   alt="U.S. Mission Nigeria"
                   className="h-14 w-auto object-contain"
                 />
@@ -124,7 +125,7 @@ export default function MasterclassApplicationForm() {
 
               <div className="flex items-center gap-3 justify-end ml-auto">
                 <img
-                  src="/src/assets/events/spoke-wise.png"
+                  src={skitLab}
                   alt="Spoke-Wise Media and PR"
                   className="h-9 w-auto object-contain"
                 />
