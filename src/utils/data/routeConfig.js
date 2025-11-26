@@ -1,4 +1,5 @@
 import ExhibitionRegistrationForm from "../../pages/ExhibitionRegistrationForm";
+import MasterclassApplicationForm from "../../pages/MasterClassApplicationFom";
 import VolunteerRegistrationForm from "../../pages/VolunteerRegistrationForm";
 
 export const routesConfig = [
@@ -74,5 +75,45 @@ export const routesConfig = [
         "eyJpdiI6IkdIbFJvY0thOEJUSFZld2J4U2VvVnc9PSIsInZhbHVlIjoiU1ZMQ3gzQkREbUt5V0pCb1puSU5yUT09IiwibWFjIjoiZDdhYzA1MjQ5ZjFiNzljYzA3YzlmMjYzMDE3OWY5ZDM5ZTc3NTM5NWRmYmMyZjhlNTI3NTk0MWM5NmE3YjZmNyIsInRhZyI6IiJ9",
     },
     component: ExhibitionRegistrationForm,
+  },
+  {
+    path: "/programme/skitlab/masterclass",
+    type: "programme",
+
+    eventDetails: {
+      title: "The Skit Lab Masterclass",
+      organizer: "Spoke-Wise Media & PR x U.S. Mission Nigeria",
+      slogan: "Advanced Techniques in Ideation, Timing & Editing",
+      tagline: "A Master Class Designed to Foster U.S.–Nigeria Trade Relations",
+      date: "8th – 9th December, 2025",
+      venue: "Novare Training Hall, Zone 5, Abuja",
+
+      // elegant warm gradient matching the flyer
+      accentColor: "from-amber-500 to-orange-600",
+
+      // official social handles
+      socialLinks: {
+        us_mission_instagram: "https://instagram.com/usinnigeria",
+        us_mission_twitter: "https://x.com/USinNigeria",
+        us_mission_facebook: "https://facebook.com/usinnigeria",
+
+        spokewise_instagram: "https://instagram.com/spokewise_media",
+      },
+
+      // optional: used in success screen / meta descriptions
+      description:
+        "A U.S. Mission Nigeria–supported masterclass for emerging Nigerian content creators featuring expert training, a special Independence 250 skit challenge, and exclusive in-person engagement in Abuja.",
+    },
+
+    contact: {
+      email: "info@spokewise.com",
+      phone: "+234 803 507 5198", // change if needed
+    },
+
+    apiConfig: {
+      form_id: import.meta.env.VITE_SKITLAB_FORM_ID, // or your encrypted key
+    },
+
+    component: MasterclassApplicationForm,
   },
 ];

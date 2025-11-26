@@ -26,5 +26,12 @@
     "text": "Port-Harcourt Cyber Security Meet & Greet: Opportunities, Careers, and Growth Paths - Oct 25th",
     "color": "#22d3ee",
     "link": "/events/ph-cybersecurity"
+  },
+  {
+    "id": 5,
+    "label": "MASTERCLASS",
+    "text": "The Skit Lab Masterclass: Advanced Ideation, Timing & Editing – Apply Now!",
+    "color": "#fb923c",
+    "link": "/programme/skitlab/masterclass"
   }
 ]
