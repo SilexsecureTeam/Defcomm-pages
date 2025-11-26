@@ -24,7 +24,6 @@ const fieldVariant = {
     transition: { delay: 0.05 * i + 0.2, duration: 0.35, ease: "easeOut" },
   }),
 };
-
 export default function MasterclassApplicationForm() {
   const [submitError, setSubmitError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
