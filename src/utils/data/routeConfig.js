@@ -16,7 +16,7 @@ export const routesConfig = [
     },
     apiConfig: {},
   },
-  {
+  /*{
     path: "/events/ph-cybersecurity",
     type: "event",
     eventDetails: {
@@ -41,7 +41,7 @@ export const routesConfig = [
       form_id:
         "eyJpdiI6ImRPRTVzM3JRNzYrVFZNVGp6NGFTYUE9PSIsInZhbHVlIjoiZ1lEZ2xuYTVHc1RTSXVXV1VRWTJ3Zz09...",
     },
-  },
+  },*/
   {
     path: "/programme/bug-bounty",
     type: "programme",
@@ -76,7 +76,7 @@ export const routesConfig = [
     },
     component: ExhibitionRegistrationForm,
   },
-  {
+ /* {
     path: "/programme/skitlab/masterclass",
     type: "programme",
 
@@ -115,5 +115,5 @@ export const routesConfig = [
     },
 
     component: MasterclassApplicationForm,
-  },
+  },*/
 ];
