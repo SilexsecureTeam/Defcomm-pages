@@ -61,11 +61,11 @@ const App = () => {
             <Route path="/software" element={<Software />} />
             <Route path="/watch" element={<VideoPage />} />
             <Route path="/form" element={<MultiStepForm />} />
-            <Route path="/book" element={<BookingWorkflow />} />
+            {/*<Route path="/book" element={<BookingWorkflow />} />*}
             <Route path="/blogs" element={<SecurityPage />} />
             <Route path="/bounty" element={<LiveFire />} />
             <Route path="/browser" element={<BrowserHome />} />
-            {/* Dynamically generate routes from JSON */}
+            {/* Dynamically generate routes from JSON 
             {routesConfig.map((route, index) => {
               if (route.type === "event") {
                 return (
@@ -92,7 +92,7 @@ const App = () => {
                 );
               }
               return null;
-            })}
+            })}*/}
 
             {/* Catch-all redirect */}
             <Route path="*" element={<ComingSoon />} />
