@@ -73,23 +73,22 @@ export const faqs = [
 ];
 
 export const teamMembers = [
-  { id: 1, name: "Nsikak Joseph Nelson", position: "CEO", img: team1 },
+  { id: 1, name: "Nsikak Joseph Nelson", position: "Founder/CEO/CTO", img: team1 },
   {
     id: 2,
     name: "Nike Nsikak Nelson",
-    position: "Co-founder /CIO",
+    position: "co-Founder/CIO",
     img: team4,
   },
-  { id: 3, name: "Nuno Seidi", position: "COO", img: team2 },
-  { id: 4, name: "Opeyemi T Obayan", position: "CBO", img: team3 },
-
+  { id: 3, name: "Nuno Seidi", position: "coFounder/COO", img: team2 },
   {
     id: 5,
 
     name: "Dr. Moses Enokela",
-    position: "Head - Digital Health Strategy and Innovation",
+    position: "co-Founder/CSHO",
     img: team5,
   },
+  { id: 4, name: "Opeyemi T Obayan", position: "CBO", img: team3 },
   {
     id: 6,
     name: "Maurice Idorenyin",
