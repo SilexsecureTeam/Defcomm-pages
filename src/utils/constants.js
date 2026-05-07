@@ -106,13 +106,20 @@ export const teamMembers = [
 export const videos = [
   {
     id: 1,
+    title: "DefComm Video",
+    duration: "0:00", // update with actual duration
+    thumbnail: "https://img.youtube.com/vi/uoxj4mwMRo4/hqdefault.jpg",
+    embedId: "uoxj4mwMRo4",
+  },
+  {
+    id: 2,
     title: "Defcomm's latest innovation in military technology",
     duration: "2:57",
     thumbnail: "https://img.youtube.com/vi/aAljC9JNVlE/hqdefault.jpg",
     embedId: "aAljC9JNVlE",
   },
   {
-    id: 2,
+    id: 3,
     title:
       "Nigeria's First End-to-End Secure Communication Platform & Privacy Solution",
     duration: "43:50",
@@ -121,7 +128,7 @@ export const videos = [
   },
 
   {
-    id: 3,
+    id: 4,
     title:
       "Because privacy isn't a privilege—it's your right, we don't store or track a single byte.",
     duration: "1:41",
@@ -129,14 +136,14 @@ export const videos = [
     embedId: "RfaZMz_u5O8",
   },
   {
-    id: 4,
+    id: 5,
     title: "DefComm: Privacy. Security. Freedom. Take back control today",
     duration: "1:44",
     thumbnail: "https://img.youtube.com/vi/HrJgQTLG5Pw/hqdefault.jpg",
     embedId: "HrJgQTLG5Pw",
   },
   {
-    id: 5,
+    id: 6,
     title:
       "In an era where communication defines success and security, one name stands above",
     duration: "1:00",
