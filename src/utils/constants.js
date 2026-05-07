@@ -107,7 +107,7 @@ export const videos = [
   {
     id: 1,
     title: "DefComm Video",
-    duration: "0:00", // update with actual duration
+    duration: "3:05", 
     thumbnail: "https://img.youtube.com/vi/uoxj4mwMRo4/hqdefault.jpg",
     embedId: "uoxj4mwMRo4",
   },
