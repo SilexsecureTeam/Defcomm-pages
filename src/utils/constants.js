@@ -106,7 +106,7 @@ export const teamMembers = [
 export const videos = [
   {
     id: 1,
-    title: "DefComm Video",
+    title: "Securing Africa’s Skies & Networks | Operation Iron Shield Defence Tech Conference Highlights",
     duration: "3:05", 
     thumbnail: "https://img.youtube.com/vi/uoxj4mwMRo4/hqdefault.jpg",
     embedId: "uoxj4mwMRo4",
