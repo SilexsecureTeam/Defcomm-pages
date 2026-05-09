@@ -32,9 +32,8 @@ export default function NewNav() {
 
       {/* Main Nav */}
       <nav
-        className={`py-2 md:py-4 px-4 md:px-6 transition-colors duration-300 ${
-          mobileMenuOpen ? "bg-white lg:bg-transparent" : "bg-transparent"
-        }`}
+        className={`py-2 md:py-4 px-4 md:px-6 transition-colors duration-300 ${mobileMenuOpen ? "bg-white lg:bg-transparent" : "bg-transparent"
+          }`}
       >
         <div className="max-w-peak mx-auto flex items-center justify-between">
           {/* Logo */}

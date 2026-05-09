@@ -1,10 +1,6 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FallBack from "./components/Fallback";
-import Blog1Page from "./pages/v3/Blog1Page";
-import Blog2Page from "./pages/v3/Blog2Page";
-import Blog3Page from "./pages/v3/Blog3Page";
-import Blog4Page from "./pages/v3/Blog4Page";
 import Hardware from "./pages/v3/Hardware";
 import Software from "./pages/v3/Software";
 import ScrollToTop from "./components/ScrollToTop";
@@ -29,6 +25,7 @@ const Career = lazy(() => import("./pages/v1/Career"));
 const MultiStepForm = lazy(() => import("./pages/v1/MultiStepForm"));
 const BookingWorkflow = lazy(() => import("./pages/v1/BookingWorkflow"));
 const SecurityPage = lazy(() => import("./pages/v3/SecurityPage"));
+const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
 const EventRegistrationForm = lazy(() =>
   import("./pages/EventRegistrationForm")
 );
@@ -53,20 +50,17 @@ const App = () => {
               element={<OperatingPage />}
             />
             <Route path="/technology" element={<ProductsFeatures />} />
-            <Route path="/launches-defcomm" element={<Blog1Page />} />
-            <Route path="/defcomm-attend" element={<Blog2Page />} />
-            <Route path="/defcomm-unveil" element={<Blog3Page />} />
-            <Route path="/defcomm-solution" element={<Blog4Page />} />
             <Route path="/hardware" element={<Hardware />} />
             <Route path="/software" element={<Software />} />
             <Route path="/watch" element={<VideoPage />} />
             <Route path="/form" element={<MultiStepForm />} />
             <Route path="/book" element={<BookingWorkflow />} />
             <Route path="/blogs" element={<SecurityPage />} />
+            <Route path="/blogs/:slug" element={<BlogDetailsPage />} />
             <Route path="/bounty" element={<LiveFire />} />
             <Route path="/browser" element={<BrowserHome />} />
             {/* Dynamically generate routes from JSON */}
-            {routesConfig.map((route, index) => {
+            {/* {routesConfig.map((route, index) => {
               if (route.type === "event") {
                 return (
                   <Route
@@ -92,7 +86,7 @@ const App = () => {
                 );
               }
               return null;
-            })}
+            })} */}
 
             {/* Catch-all redirect */}
             <Route path="*" element={<ComingSoon />} />

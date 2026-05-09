@@ -13,9 +13,6 @@ const MainLayout = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
-  const isBlogPage1 = location.pathname === "/launches-defcomm";
-  const isBlogPage2 = location.pathname === "/defcomm-attend";
-  const isBlogPage3 = location.pathname === "/defcomm-unveil";
   const isProduct = location.pathname === "/products";
   const isSoftware = location.pathname === "/software";
   const isBountyPage = location.pathname.startsWith("/bounty");
@@ -47,9 +44,6 @@ const MainLayout = () => {
         />
       </Helmet>
       {(isHomePage ||
-        isBlogPage1 ||
-        isBlogPage2 ||
-        isBlogPage3 ||
         isBlogs ||
         isSoftware) && <TopNav />}
       {!isHomePage &&
@@ -62,7 +56,7 @@ const MainLayout = () => {
         !isForm &&
         !isBook &&
         !isBrowserHome &&
-        !(isBlogPage1 || isBlogPage2 || isBlogPage3 || isSoftware || isBlogs) &&
+        !(isSoftware || isBlogs) &&
         (isBountyPage ? <LiveFireHeader /> : isProduct ? <NewNav /> : <Nav />)}
 
       <main className="w-full mx-auto">

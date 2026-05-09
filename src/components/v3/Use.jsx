@@ -100,32 +100,28 @@ const Use = () => {
                     }
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className={`group relative cursor-pointer overflow-hidden shadow-xl border border-gray-700/30 flex flex-col transition-all duration-300 ${
-                    isActive
-                      ? "bg-black text-white max-h-[750px] overflow-y-auto"
-                      : "bg-[#2F2F2F] text-white max-h-[550px] overflow-hidden"
-                  } transition-[max-height] duration-500 ease-in-out scrollbar-thin scrollbar-thumb-white/40 hover:scrollbar-thumb-white/60`}
+                  className={`group relative cursor-pointer overflow-hidden shadow-xl border border-gray-700/30 flex flex-col transition-all duration-300 ${isActive
+                      ? "bg-black text-white"
+                      : "bg-[#2F2F2F] text-white"
+                    }`}
                 >
-                  {/* Top Half */}
+                  {/* TOP HALF (UNCHANGED) */}
                   <div className="relative h-[250px] flex justify-center items-center">
                     <div
-                      className={`absolute inset-0 bg-cover bg-center transition-opacity duration-300 ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0 group-hover:opacity-100"
-                      }`}
+                      className={`absolute inset-0 bg-cover bg-center transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}
                       style={{ backgroundImage: `url(${container.img})` }}
                     />
+
                     <div className="relative inline-block z-10">
                       <div
-                        className={`absolute inset-0 rounded-full backdrop-blur-md bg-black/30 transition-all duration-300 ${
-                          isActive
-                            ? "opacity-100"
-                            : "opacity-0 group-hover:opacity-100"
-                        }`}
+                        className={`absolute inset-0 rounded-full backdrop-blur-md bg-black/30 transition-all duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                          }`}
                       />
+
                       <h2 className="relative z-10 text-white text-center py-3 px-6 rounded-full border border-white text-[12px] font-bold tracking-wide uppercase bg-transparent flex items-center gap-2">
                         {container.title}
+
                         {isActive ? (
                           <ChevronUp size={14} className="ml-1" />
                         ) : (
@@ -135,46 +131,42 @@ const Use = () => {
                     </div>
                   </div>
 
-                  {/* Bottom Half */}
+                  {/* BOTTOM HALF (FIXED UX) */}
                   <div className="flex flex-col justify-start border-t-white border-t p-4 space-y-3">
-                    <motion.p
-                      className="text-[14px] font-normal h-[158px] leading-relaxed"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
-                    >
-                      {container.paragraph}
-                    </motion.p>
 
-                    {isActive && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: 0.3 }}
-                      >
+                    {/* Always visible paragraph (no re-mount jitter) */}
+                    <p className="text-[14px] font-normal h-[158px] leading-relaxed">
+                      {container.paragraph}
+                    </p>
+
+                    {/* Smooth reveal section (NO scroll, NO unmount) */}
+                    <div
+                      className={`transition-all duration-500 ease-in-out overflow-hidden ${isActive
+                          ? "max-h-[300px] opacity-100"
+                          : "max-h-0 opacity-0"
+                        }`}
+                    >
+                      <div className="pt-2">
                         <h4 className="text-sm font-semibold mb-3">
                           {container.subtitle}
                         </h4>
+
                         {container.id === 1 ? (
                           <p className="text-[14px]">
                             {container.subtitleContent}
                           </p>
                         ) : (
-                          <motion.ul
-                            className="list-disc list-inside space-y-1 text-[14px]"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.4, delay: 0.4 }}
-                          >
+                          <ul className="list-disc list-inside space-y-1 text-[14px]">
                             {container.subtitleContent
                               .split("\n")
                               .map((item, index) => (
                                 <li key={index}>{item.trim()}</li>
                               ))}
-                          </motion.ul>
+                          </ul>
                         )}
-                      </motion.div>
-                    )}
+                      </div>
+                    </div>
+
                   </div>
                 </motion.div>
               </motion.div>

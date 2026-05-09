@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
-import { uniqueNewsItems } from "../../utils/dummies";
+import { blogs } from "../../utils/data/blog";
+import BlogCard from "../blog/BlogCard";
 
 export default function NewsEventsSection() {
   SwiperCore.use([Autoplay]);
@@ -64,29 +65,9 @@ export default function NewsEventsSection() {
             1024: { slidesPerView: 3 },
           }}
         >
-          {uniqueNewsItems?.map((item, index) => (
+          {blogs?.map((item, index) => (
             <SwiperSlide key={index}>
-              <Link to={item.link}>
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: false, amount: 0.2 }}
-                  className="border border-white rounded-2xl shadow-xl pt-4 h-full flex flex-col justify-between"
-                >
-                  <h3 className="text-white text-xl px-4 font-bold mb-4 line-clamp-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-white text-sm px-4 h-[100px] mb-4">
-                    {item.description}
-                  </p>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-52 px-1 pb-2 object-cover rounded-lg"
-                  />
-                </motion.div>
-              </Link>
+              <BlogCard blog={item} />
             </SwiperSlide>
           ))}
         </Swiper>

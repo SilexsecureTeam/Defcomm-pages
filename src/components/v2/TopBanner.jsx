@@ -5,11 +5,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import notifications from "../../utils/data/notifications.json";
+import { blogs } from "../../utils/data/blog";
 
 const TopBanner = () => {
   const [bannerDisabled, setBannerDisabled] = useState(false);
   const navigate = useNavigate();
+  const bannerSlides = blogs.map((blog) => ({
+    id: blog.id,
+    label: "LATEST NEWS",
+    text: blog.shortDescription || blog.title,
+    link: `/blogs/${blog.slug}`,
+    color: "#A3E635",
+  }));
 
   const handleSlideClick = (slide) => {
     if (slide.link) {
@@ -51,7 +58,7 @@ const TopBanner = () => {
           speed={500}
           className="banner-swiper"
         >
-          {notifications.map((slide) => (
+          {bannerSlides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div
                 className="text-white text-sm md:text-base px-6 py-3 flex justify-center items-center gap-2 md:gap-6 text-center cursor-pointer transition-all duration-300 hover:bg-[#3a4f1a] rounded-full"
