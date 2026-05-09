@@ -4,8 +4,7 @@ import FallBack from "./components/Fallback";
 import Hardware from "./pages/v3/Hardware";
 import Software from "./pages/v3/Software";
 import ScrollToTop from "./components/ScrollToTop";
-import { routesConfig } from "./utils/data/routeConfig";
-const MainLayout = lazy(() => import("./layout/MainLayout"));
+import MainLayout from "./layout/MainLayout";
 
 const HomePage = lazy(() => import("./pages/v2/HomePage"));
 const ComingSoon = lazy(() => import("./pages/v1/ComingSoon"));
@@ -29,38 +28,42 @@ const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
 const EventRegistrationForm = lazy(() =>
   import("./pages/EventRegistrationForm")
 );
+const LazyPage = (Component) => (
+  <Suspense fallback={<FallBack />}>
+    <Component />
+  </Suspense>
+);
 const App = () => {
   return (
-    <Suspense fallback={<FallBack />}>
-      <Router>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<MainLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="contact" element={<Contact />} />
-            {/* <Route path="/services" element={<Services />} /> */}
-            <Route path="/services" element={<Services2 />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/career" element={<Career />} />
-            <Route path="/career/andriod-dev" element={<AndriodPage />} />
-            <Route path="/career/product-manager" element={<ManagerPage />} />
-            <Route
-              path="/career/operating-system"
-              element={<OperatingPage />}
-            />
-            <Route path="/technology" element={<ProductsFeatures />} />
-            <Route path="/hardware" element={<Hardware />} />
-            <Route path="/software" element={<Software />} />
-            <Route path="/watch" element={<VideoPage />} />
-            <Route path="/form" element={<MultiStepForm />} />
-            {/*<Route path="/book" element={<BookingWorkflow />} />*}
-            <Route path="/blogs" element={<SecurityPage />} />
-            <Route path="/blogs/:slug" element={<BlogDetailsPage />} />
-            <Route path="/bounty" element={<LiveFire />} />
-            <Route path="/browser" element={<BrowserHome />} />
-            {/* Dynamically generate routes from JSON */}
-            {/* {routesConfig.map((route, index) => {
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={LazyPage(HomePage)} />
+          <Route path="contact" element={LazyPage(Contact)} />
+          {/* <Route path="/services" element={<Services />} /> */}
+          <Route path="/services" element={LazyPage(Services2)} />
+          <Route path="/about" element={LazyPage(AboutPage)} />
+          <Route path="/products" element={LazyPage(Products)} />
+          <Route path="/career" element={LazyPage(Career)} />
+          <Route path="/career/andriod-dev" element={LazyPage(AndriodPage)} />
+          <Route path="/career/product-manager" element={LazyPage(ManagerPage)} />
+          <Route
+            path="/career/operating-system"
+            element={LazyPage(OperatingPage)}
+          />
+          <Route path="/technology" element={LazyPage(ProductsFeatures)} />
+          <Route path="/hardware" element={LazyPage(Hardware)} />
+          <Route path="/software" element={LazyPage(Software)} />
+          <Route path="/watch" element={LazyPage(VideoPage)} />
+          <Route path="/form" element={LazyPage(MultiStepForm)} />
+          <Route path="/book" element={LazyPage(BookingWorkflow)} />
+          <Route path="/blogs" element={LazyPage(SecurityPage)} />
+          <Route path="/blogs/:slug" element={LazyPage(BlogDetailsPage)} />
+          <Route path="/bounty" element={LazyPage(LiveFire)} />
+          <Route path="/browser" element={LazyPage(BrowserHome)} />
+          {/* Dynamically generate routes from JSON */}
+          {/* {routesConfig.map((route, index) => {
               if (route.type === "event") {
                 return (
                   <Route
@@ -81,19 +84,18 @@ const App = () => {
                   <Route
                     key={route.path}
                     path={route.path}
-                    element={<route.component {...route} />}
+                    element={LazyPage(route.component)}
                   />
                 );
               }
               return null;
             })} */}
 
-            {/* Catch-all redirect */}
-            <Route path="*" element={<ComingSoon />} />
-          </Route>
-        </Routes>
-      </Router>
-    </Suspense>
+          {/* Catch-all redirect */}
+          <Route path="*" element={LazyPage(ComingSoon)} />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 export default App;

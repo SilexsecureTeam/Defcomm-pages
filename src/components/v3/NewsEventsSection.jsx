@@ -65,11 +65,14 @@ export default function NewsEventsSection() {
             1024: { slidesPerView: 3 },
           }}
         >
-          {blogs?.map((item, index) => (
-            <SwiperSlide key={index}>
-              <BlogCard blog={item} />
-            </SwiperSlide>
-          ))}
+          {blogs
+            ?.slice()
+            ?.reverse()
+            ?.map((item, index) => (
+              <SwiperSlide key={index}>
+                <BlogCard blog={item} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>

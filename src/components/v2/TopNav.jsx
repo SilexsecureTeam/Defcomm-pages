@@ -5,6 +5,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo-black.png";
 import { navItems } from "../../utils/constants";
 import TopBanner from "./TopBanner";
+import { motion } from "framer-motion";
 
 export default function TopNav() {
   const navigate = useNavigate();
@@ -31,11 +32,12 @@ export default function TopNav() {
 
       {/* Main Nav */}
       <nav
-        className={`py-2 md:py-4 px-4 md:px-6 transition-colors duration-300 ${
-          mobileMenuOpen ? "bg-white lg:bg-transparent" : "bg-transparent"
-        }`}
+        className={`py-2 md:py-4 px-4 md:px-6 transition-colors duration-300 ${mobileMenuOpen ? "bg-white lg:bg-transparent" : "bg-transparent"
+          }`}
       >
-        <div className="max-w-peak mx-auto flex items-center justify-between">
+        <motion.div initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }} className="max-w-peak mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Link to="/">
@@ -50,13 +52,13 @@ export default function TopNav() {
 
           {/* Desktop Nav Links */}
           <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-gray-700 font-medium text-sm md:text-base">
-            {navItems.map(({ name, path, external }) =>
+            {navItems.map(({ name, path, external }, index) =>
               name === "Products" ? (
-                <li
-                  key={name}
-                  className="relative"
+                <motion.li
+                  key={`${name}-${index}`}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
+                  className="relative"
                 >
                   <NavLink
                     to={path}
@@ -70,10 +72,11 @@ export default function TopNav() {
                   </NavLink>
 
                   {/* Desktop Dropdown */}
+                  {/* 
                   {productDropdownOpen && (
                     <div className="absolute -left-[280px] mt-2 w-[620px]  bg-gradient-to-r from-[#1f2e12] to-[#3d5d1c] shadow-lg rounded-md py-5 z-50">
                       <div className="grid grid-cols-3 gap-8 px-4">
-                        {/* PRODUCTS Column */}
+                        
                         <div>
                           <h3 className="text-xs font-light mb-2 tracking-wider text-white">
                             PRODUCTS
@@ -106,7 +109,6 @@ export default function TopNav() {
                           </ul>
                         </div>
 
-                        {/* APPS Column */}
                         <div>
                           <h3 className="text-xs font-light mb-2 tracking-wider text-white">
                             APPS
@@ -139,7 +141,6 @@ export default function TopNav() {
                           </ul>
                         </div>
 
-                        {/* DEVICES Column */}
                         <div>
                           <h3 className="text-xs font-light mb-2 tracking-wider text-white">
                             DEVICES
@@ -173,10 +174,16 @@ export default function TopNav() {
                         </div>
                       </div>
                     </div>
-                  )}
-                </li>
+                  )} */}
+                </motion.li>
               ) : (
-                <li key={name}>
+                <motion.li
+                  key={`${name}-${index}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
                   {external ? (
                     <a
                       href={path}
@@ -198,7 +205,7 @@ export default function TopNav() {
                       {name}
                     </NavLink>
                   )}
-                </li>
+                </motion.li>
               )
             )}
           </ul>
@@ -219,14 +226,19 @@ export default function TopNav() {
           >
             {mobileMenuOpen ? <IoClose size={28} /> : <IoMenu size={28} />}
           </button>
-        </div>
+        </motion.div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <ul className="lg:hidden mt-4 space-y-4 px-4 text-gray-700 font-medium text-base">
             {navItems.map(({ name, path, external }) =>
               name === "Products" ? (
-                <li key={name}>
+                <motion.li
+                  key={Math.random()}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                >
                   <button
                     className="w-full flex justify-between items-center text-left"
                     onClick={() => setMobileProductOpen(!mobileProductOpen)}
@@ -345,7 +357,7 @@ export default function TopNav() {
                       </div>
                     </div>
                   )}
-                </li>
+                </motion.li>
               ) : (
                 <li key={name}>
                   {external ? (

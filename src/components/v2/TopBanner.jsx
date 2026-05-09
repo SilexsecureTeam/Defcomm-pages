@@ -10,13 +10,16 @@ import { blogs } from "../../utils/data/blog";
 const TopBanner = () => {
   const [bannerDisabled, setBannerDisabled] = useState(false);
   const navigate = useNavigate();
-  const bannerSlides = blogs.map((blog) => ({
-    id: blog.id,
-    label: "LATEST NEWS",
-    text: blog.shortDescription || blog.title,
-    link: `/blogs/${blog.slug}`,
-    color: "#A3E635",
-  }));
+  const bannerSlides = blogs
+    ?.slice()
+    ?.reverse()
+    ?.map((blog) => ({
+      id: blog.id,
+      label: "LATEST NEWS",
+      text: blog.shortDescription || blog.title,
+      link: `/blogs/${blog.slug}`,
+      color: "#A3E635",
+    }));
 
   const handleSlideClick = (slide) => {
     if (slide.link) {

@@ -67,10 +67,10 @@ const BlogDetailsPage = () => {
     };
 
     return (
-        <div>
+        <div className="w-full">
             {/* HERO SECTION */}
             <section className="bg-limeAccent w-full">
-                <div className="max-w-peak mx-auto py-10 md:py-20">
+                <div className="w-full max-w-peak mx-auto py-10 md:py-20">
                     <div className="w-full px-4 sm:px-6 md:px-10 lg:px-14">
                         <motion.h2
                             initial={{ opacity: 0, y: 40 }}
@@ -94,7 +94,6 @@ const BlogDetailsPage = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.4 }}
                             viewport={{ once: false, amount: 0.1 }}
@@ -126,8 +125,8 @@ const BlogDetailsPage = () => {
                     </motion.div>
                 </div>
             </section> */}
-            <section className="bg-white">
-                <div className="max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14 py-10">
+            <section className="bg-white w-full">
+                <div className="w-full max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14 py-10">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -147,8 +146,8 @@ const BlogDetailsPage = () => {
             </section>
 
             {/* BLOG CONTENT */}
-            <section className="bg-white">
-                <div className="max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-sm md:text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
+            <section className="bg-white w-full">
+                <div className="w-full max-w-peak mx-auto flex flex-col space-y-6 text-[#3D3D3D] text-sm md:text-lg px-4 sm:px-6 md:px-10 lg:px-14 py-10">
                     {blog.content.map((block, index) => {
                         if (block.type === "heading") {
                             return (
@@ -220,7 +219,7 @@ const BlogDetailsPage = () => {
             {/* GALLERY */}
             {galleryImages?.length > 0 && (
                 <section className="bg-white py-10">
-                    <div className="max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
+                    <div className="w-full max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {galleryImages.map((image, index) => (
                                 <motion.div
@@ -311,7 +310,7 @@ const BlogDetailsPage = () => {
 
             {/* RELATED NEWS */}
             <section className="bg-white pb-16 py-6">
-                <div className="max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
+                <div className="w-full max-w-peak mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
                     <motion.p
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -322,7 +321,7 @@ const BlogDetailsPage = () => {
                         Related News
                     </motion.p>
 
-                    <div className="max-w-4xl mx-auto">
+                    <div className="w-full max-w-4xl mx-auto">
                         <Swiper
                             loop={true}
                             spaceBetween={20}
