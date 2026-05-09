@@ -54,7 +54,7 @@ const App = () => {
             <Route path="/software" element={<Software />} />
             <Route path="/watch" element={<VideoPage />} />
             <Route path="/form" element={<MultiStepForm />} />
-            <Route path="/book" element={<BookingWorkflow />} />
+            {/*<Route path="/book" element={<BookingWorkflow />} />*}
             <Route path="/blogs" element={<SecurityPage />} />
             <Route path="/blogs/:slug" element={<BlogDetailsPage />} />
             <Route path="/bounty" element={<LiveFire />} />

@@ -6,6 +6,9 @@ import StateSelect from "../components/common/StateSelect";
 import SocialLinksInput from "../components/common/SocialLinksInput";
 import MasterclassFooter from "../components/eventForm/MasterclassFooter";
 import MasterclassSuccess from "../components/eventForm/MasterclassSuccess";
+import usEmbassy from '../assets/events/us-embassy.svg'
+import skitLab from '../assets/events/spoke-wise.png'
+import usLogo from '../assets/events/us.svg'
 
 const containerVariant = {
   hidden: { opacity: 0, y: 24 },
@@ -24,7 +27,6 @@ const fieldVariant = {
     transition: { delay: 0.05 * i + 0.2, duration: 0.35, ease: "easeOut" },
   }),
 };
-
 export default function MasterclassApplicationForm() {
   const [submitError, setSubmitError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -117,7 +119,12 @@ export default function MasterclassApplicationForm() {
             <div className="mb-6 flex flex-wrap items-center justify-between">
               <div className="flex items-center gap-3">
                 <img
-                  src="/src/assets/events/us-embassy.svg"
+                  src={usLogo}
+                  alt="U.S. Flag"
+                  className="h-14 w-auto object-contain"
+                />
+                <img
+                  src={usEmbassy}
                   alt="U.S. Mission Nigeria"
                   className="h-14 w-auto object-contain"
                 />
@@ -125,7 +132,7 @@ export default function MasterclassApplicationForm() {
 
               <div className="flex items-center gap-3 justify-end ml-auto">
                 <img
-                  src="/src/assets/events/spoke-wise.png"
+                  src={skitLab}
                   alt="Spoke-Wise Media and PR"
                   className="h-9 w-auto object-contain"
                 />
@@ -196,7 +203,7 @@ export default function MasterclassApplicationForm() {
               transition={{ delay: 0.25, duration: 0.35 }}
               className="mb-8 rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-3 text-xs md:text-sm text-slate-800 flex gap-3 items-start"
             >
-              <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white border border-emerald-300 text-[0.7rem] font-semibold text-emerald-700 shadow-sm">
+              <span className="shrink-0 mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white border border-emerald-300 text-[0.7rem] font-semibold text-emerald-700 shadow-sm">
                 i
               </span>
               <p>
