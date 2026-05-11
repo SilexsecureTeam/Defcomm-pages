@@ -25,7 +25,7 @@ export default function VideoPage() {
   const heroPlayerRef = useRef(null);
   const [userInteracted, setUserInteracted] = useState(false);
 
-  // ✅ Centralized volume logic
+  // Centralized volume logic
   const applyVolume = () => {
     if (heroPlayerRef.current && playerReady) {
       if (isMuted || heroVolume === 0) {
@@ -57,7 +57,7 @@ export default function VideoPage() {
 
         setIsHeroPlaying(true);
 
-        // ✅ always reapply volume
+        // always reapply volume
         applyVolume();
       }
     }
@@ -144,11 +144,11 @@ export default function VideoPage() {
     heroPlayerRef.current = event.target;
     setPlayerReady(true);
 
-    // ✅ start muted (required by autoplay)
+    // start muted (required by autoplay)
     event.target.mute();
     event.target.playVideo();
 
-    // ✅ but also sync slider volume
+    // but also sync slider volume
     applyVolume();
 
     setIsLoading(false);
@@ -158,7 +158,7 @@ export default function VideoPage() {
     if (event.data === YouTube.PlayerState.PLAYING) {
       setIsHeroPlaying(true);
       setIsLoading(false);
-      applyVolume(); // ✅ enforce volume once playback starts
+      applyVolume(); // enforce volume once playback starts
     } else if (event.data === YouTube.PlayerState.PAUSED) {
       setIsHeroPlaying(false);
     } else if (event.data === YouTube.PlayerState.BUFFERING) {
@@ -168,7 +168,7 @@ export default function VideoPage() {
     } else if (event.data === YouTube.PlayerState.CUED) {
       setIsLoading(false);
       heroPlayerRef.current?.playVideo();
-      applyVolume(); // ✅ reapply here too
+      applyVolume(); // reapply here too
     }
   };
 
@@ -218,11 +218,11 @@ export default function VideoPage() {
           />
         </div>
 
-<div
-  className="absolute bottom-0 left-0 w-full h-[20%] 
+        <div
+          className="absolute bottom-0 left-0 w-full h-[20%] 
              bg-gradient-to-b from-transparent to-black/90 
              z-10 pointer-events-none"
-/>
+        />
 
         {/* Video Controls */}
         <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 z-20 w-full px-4">

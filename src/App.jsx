@@ -55,7 +55,7 @@ const App = () => {
           <Route path="/technology" element={LazyPage(ProductsFeatures)} />
           <Route path="/hardware" element={LazyPage(Hardware)} />
           <Route path="/software" element={LazyPage(Software)} />
-          <Route path="/watch" element={LazyPage(VideoPage)} />
+          <Route path="/videos" element={LazyPage(VideoPage)} />
           <Route path="/form" element={LazyPage(MultiStepForm)} />
           <Route path="/book" element={LazyPage(BookingWorkflow)} />
           <Route path="/blogs" element={LazyPage(SecurityPage)} />
