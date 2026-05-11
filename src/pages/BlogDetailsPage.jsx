@@ -235,7 +235,7 @@ const BlogDetailsPage = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5 }}
                                     viewport={{ once: false, amount: 0.1 }}
-                                    className="border-l-4 border-lime-500 pl-6 italic text-lg text-[#2f2f2f] py-2"
+                                    className=" italic text-lg text-[#2f2f2f] py-2"
                                 >
                                     {block.children ? (
                                         <RichText children={block.children} />
@@ -251,7 +251,7 @@ const BlogDetailsPage = () => {
                             return (
                                 <ul
                                     key={index}
-                                    className="list-disc pl-6 space-y-3"
+                                    className="list-disc pl-6 space-y-3 text-sm"
                                 >
                                     {block.items.map((item, i) => (
                                         <motion.li

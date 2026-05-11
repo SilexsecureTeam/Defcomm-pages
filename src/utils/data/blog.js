@@ -857,42 +857,6 @@ export const blogs = [
           ],
           [
             {
-              text: "#AutonomousSystems",
-              color: "#008000",
-            },
-          ],
-          [
-            {
-              text: "#AfricaTech",
-              color: "#008000",
-            },
-          ],
-          [
-            {
-              text: "#NigeriaDefence",
-              color: "#008000",
-            },
-          ],
-          [
-            {
-              text: "#DualUseTechnology",
-              color: "#008000",
-            },
-          ],
-          [
-            {
-              text: "#NationalSecurity",
-              color: "#008000",
-            },
-          ],
-          [
-            {
-              text: "#DefenceIndustry",
-              color: "#008000",
-            },
-          ],
-          [
-            {
               text: "#CyberSecurity",
               color: "#008000",
             },
