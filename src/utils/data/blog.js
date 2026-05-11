@@ -35,6 +35,11 @@ import gals4 from "../../assets/gals4.png";
 import gals5 from "../../assets/gals5.png";
 import gals6 from "../../assets/gals6.png";
 
+//gal 8
+import gal15 from "../../assets/new8-gal1.jpg";
+import gal16 from "../../assets/new8-gal2.jpg";
+import gal17 from "../../assets/new8-gal3.jpg";
+
 import gallery1 from "../../assets/gallery1.png";
 import gallery2 from "../../assets/gallery2.png";
 import gallery3 from "../../assets/gallery3.png";
@@ -298,7 +303,8 @@ export const blogs = [
 
     slug: "driving-africas-defence-technology-evolution",
 
-    title: "Driving Africa’s Defence Technology Evolution",
+    title:
+      "Africa Defence Conference – Operation Iron Shield Sets New Agenda for Cybersecurity and Defence Technology in Africa",
 
     shortDescription:
       "Exploring how Africa is advancing its defence capabilities through indigenous innovation, secure communications, and technology transfer.",
@@ -314,77 +320,187 @@ export const blogs = [
     content: [
       {
         type: "paragraph",
-        text: `Africa’s defence landscape is undergoing a significant transformation driven by rapid technological adoption, local innovation, and a growing focus on sovereignty in security systems.`,
+        children: [
+          {
+            text: "Abuja, Nigeria – ",
+            bold: true,
+          },
+          {
+            text: "The inaugural Africa Defence Conference – Operation Iron Shield",
+            bold: true,
+          },
+          {
+            text: " successfully convened key stakeholders from across government, national security, law enforcement, regulatory institutions, and the technology ecosystem in a landmark effort to strengthen Africa’s cybersecurity and defence technology landscape.",
+          },
+        ],
       },
 
       {
         type: "paragraph",
-        text: `Across the continent, governments and defence institutions are increasingly prioritising indigenous solutions that reduce reliance on external systems while strengthening operational resilience and intelligence capabilities.`,
-      },
-
-      {
-        type: "heading",
-        text: "The Shift Toward Indigenous Defence Technology",
-      },
-
-      {
-        type: "paragraph",
-        text: `One of the most important shifts is the move toward locally developed defence technologies. This includes secure communication systems, intelligence platforms, and digital infrastructure tailored specifically for African operational environments.`,
-      },
-
-      {
-        type: "paragraph",
-        text: `These solutions are designed to address real-world challenges such as low-bandwidth environments, hybrid warfare threats, and cross-border intelligence coordination.`,
-      },
-
-      {
-        type: "heading",
-        text: "Secure Communications as a Strategic Priority",
-      },
-
-      {
-        type: "paragraph",
-        text: `Secure and encrypted communication systems are now considered critical infrastructure in modern defence strategy. Military and security agencies require platforms that guarantee confidentiality, integrity, and resistance to interception.`,
-      },
-
-      {
-        type: "paragraph",
-        text: `Modern systems are evolving beyond basic encryption to include dynamic key management, offline resilience, and multi-layer authentication mechanisms.`,
-      },
-
-      {
-        type: "heading",
-        text: "Technology Transfer and Collaboration",
-      },
-
-      {
-        type: "paragraph",
-        text: `Partnerships between African nations and global technology providers are increasingly focused on technology transfer rather than dependency. This enables local engineers and institutions to build capacity and maintain systems independently.`,
+        children: [
+          {
+            text: "Hosted by ",
+          },
+          {
+            text: "DefComm Solutions",
+            bold: true,
+            color: "#111827",
+            link: "https://defcomm.ng",
+          },
+          {
+            text: ", the conference brought together leading voices and institutions committed to advancing ",
+          },
+          {
+            text: "secure communications",
+            bold: true,
+          },
+          {
+            text: ", ",
+          },
+          {
+            text: "cyber defence",
+            bold: true,
+          },
+          {
+            text: ", and ",
+          },
+          {
+            text: "digital sovereignty",
+            bold: true,
+          },
+          {
+            text: " across the continent.",
+          },
+        ],
       },
 
       {
         type: "paragraph",
-        text: `This approach strengthens national security while also fostering long-term industrial and technological growth across the defence sector.`,
+        text: "The event attracted participation from prominent national and international organizations, including:",
       },
 
       {
-        type: "heading",
-        text: "The Future of African Defence Systems",
+        type: "list",
+        items: [
+          [
+            {
+              text: "Nigerian Army",
+              link: "https://army.mil.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Nigerian Air Force",
+              link: "https://airforce.mil.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "National Drug Law Enforcement Agency (NDLEA)",
+              link: "https://ndleahelpline.com.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Nigeria Data Protection Commission (NDPC)",
+              link: "https://www.ndpc.gov.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Galaxy Backbone",
+              link: "https://galaxybackbone.com.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Nigerian Communications Satellite Limited (NIGCOMSAT)",
+              link: "https://www.nigcomsat.gov.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Global Anti-Scam Alliance (GASA)",
+              link: "https://gasa.org",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "National Information Technology Development Agency (NITDA)",
+              link: "https://nitda.gov.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Office for Nigerian Digital Innovation (ONDI)",
+              link: "https://ondi.nitda.gov.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Nigeria Police Force",
+              link: "https://nccc.npf.gov.ng",
+              color: "#DC2626",
+            },
+          ],
+
+          [
+            {
+              text: "Nigerian Communications Commission (NCC)",
+              link: "https://ncc.gov.ng",
+              color: "#DC2626",
+            },
+          ],
+        ],
       },
 
       {
         type: "paragraph",
-        text: `The future of defence in Africa lies in integrated, intelligent, and locally controlled systems. Artificial intelligence, cybersecurity, and real-time intelligence platforms will define the next phase of evolution.`,
+        children: [
+          {
+            text: "Distinguished experts, including ",
+          },
+          {
+            text: "Uche Ifeanyi, Ph.D",
+            bold: true,
+          },
+          {
+            text: " also contributed valuable insights that shaped strategic discussions throughout the conference.",
+          },
+        ],
       },
 
       {
-        type: "paragraph",
-        text: `As threats become more complex, Africa’s ability to build adaptive, sovereign, and secure defence technologies will be central to its stability and growth.`,
+        type: "quote",
+        children: [
+          {
+            text: "Africa’s cybersecurity future depends on indigenous innovation, resilient infrastructure, and sovereign digital capabilities.",
+            italic: true,
+          },
+        ],
       },
     ],
   },
   {
-    id: 6,
+    id: 7,
 
     slug: "defcomm-dess-force-partnership-mou",
 
@@ -453,5 +569,342 @@ export const blogs = [
         text: "Together, we move forward in strengthening secure and resilient communication infrastructure for modern security operations.",
       },
     ],
+  },
+
+  {
+    id: 8,
+
+    slug: "defcomm-argus-robotics-partnership",
+
+    title:
+      "Defcomm Solutions and Argus Robotics Announce Strategic $400k Partnership to Revolutionise Indigenous Defence Technology",
+
+    shortDescription:
+      "DefComm Solutions and Argus Robotics enter a strategic $400,000 partnership to strengthen sovereign defence technology, secure communications, and autonomous systems across Africa.",
+
+    coverImage: gal15,
+
+    bannerImage: gal15,
+
+    date: "May 11, 2026",
+
+    content: [
+      {
+        type: "heading",
+        text: "FOR IMMEDIATE RELEASE",
+      },
+
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "LONDON — ",
+            bold: true,
+          },
+          {
+            text: "Following a successful high-level meeting between leadership teams in London, ",
+          },
+          {
+            text: "DEFCOMM SOLUTIONS AND TECHNOLOGIES LIMITED",
+            bold: true,
+            color: "#111827",
+            link: "https://defcomm.ng",
+          },
+          {
+            text: ' ("DefComm") and ',
+          },
+          {
+            text: "ARGUS ROBOTICS LIMITED",
+            bold: true,
+          },
+          {
+            text: ' ("Argus") are proud to announce a strategic partnership valued at ',
+          },
+          {
+            text: "$400,000",
+            bold: true,
+            color: "#DC2626",
+          },
+          {
+            text: ". This collaboration marks a significant milestone in strengthening the indigenous defence-technology ecosystem in Nigeria and across Africa.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "A Unified Vision for Sovereign Defence",
+      },
+
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "The partnership combines ",
+          },
+          {
+            text: "DefComm’s",
+            bold: true,
+          },
+          {
+            text: " expertise in military-grade, end-to-end encrypted communication platforms with ",
+          },
+          {
+            text: "Argus Robotics’",
+            bold: true,
+          },
+          {
+            text: " cutting-edge autonomous aerial systems and low-earth observation infrastructure.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: 'Together, the companies will develop integrated "',
+          },
+          {
+            text: "Argus + DefComm",
+            bold: true,
+            color: "#111827",
+          },
+          {
+            text: '" capabilities designed for the Nigerian Defence, the Armed Forces of Nigeria, and other critical infrastructure operators.',
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Key Strategic Work-Streams",
+      },
+
+      {
+        type: "paragraph",
+        text: "Under the terms of the Memorandum of Understanding (MOU), the two entities will cooperate on several high-impact initiatives:",
+      },
+
+      {
+        type: "list",
+        items: [
+          [
+            {
+              text: "Integrated Technology Sharing: ",
+              bold: true,
+            },
+            {
+              text: "Joint engineering exchanges and reference architectures to merge secure communication protocols with autonomous drone platforms.",
+            },
+          ],
+
+          [
+            {
+              text: "Defence Tech Innovation: ",
+              bold: true,
+            },
+            {
+              text: "Co-hosting the Nigerian edition of the European Defense Tech Hackathon.",
+            },
+          ],
+
+          [
+            {
+              text: "Global Exhibition: ",
+              bold: true,
+            },
+            {
+              text: "Joint representation at major Nigerian, African, and international defence trade shows.",
+            },
+          ],
+
+          [
+            {
+              text: "Institutional Engagement: ",
+              bold: true,
+            },
+            {
+              text: "Collaborative pursuit of procurement opportunities with the Office of the National Security Adviser and other sovereign agencies.",
+            },
+          ],
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Leadership Perspectives",
+      },
+
+      {
+        type: "quote",
+        children: [
+          {
+            text: '"This partnership is more than a technical integration; it is a commitment to sovereign security," ',
+            italic: true,
+          },
+          {
+            text: "said Nsikak Joseph, Co-Founder/CEO of Defcomm Solutions.",
+            bold: true,
+          },
+          {
+            text: ' "By bridging our secure communication layers with Argus’s aerial intelligence, we are providing an unparalleled, integrated capability for those on the front lines."',
+            italic: true,
+          },
+        ],
+      },
+
+      {
+        type: "quote",
+        children: [
+          {
+            text: '"Our meeting in London solidified a shared vision for African-led innovation. This $400k investment in our joint roadmap ensures that Nigeria remains at the forefront of dual-use defence and commercial technology."',
+            italic: true,
+          },
+          {
+            text: " — Saminu Salisu, Founder/CEO of Argus Robotics",
+            bold: true,
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "The collaboration was facilitated by ",
+          },
+          {
+            text: "Dr Salisu Uba, FCIPS",
+            bold: true,
+          },
+          {
+            text: " of ",
+          },
+          {
+            text: "NatQuest™",
+            bold: true,
+          },
+          {
+            text: ", whose role was pivotal in aligning the strategic interests of both parties.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "About the Companies",
+      },
+
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "DefComm Solutions and Technologies Limited: ",
+            bold: true,
+          },
+          {
+            text: "A Nigerian-based leader in developing military-grade secure communication and collaboration platforms for law enforcement and emergency response.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "Argus Robotics Limited: ",
+            bold: true,
+          },
+          {
+            text: "A Nigerian-British firm specialising in drone technology, remote sensing, and sovereign defence applications.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Tags",
+      },
+
+      {
+        type: "list",
+        items: [
+          [
+            {
+              text: "#DefenceTechnology",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#SovereignSecurity",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#MilitaryInnovation",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#SecureCommunications",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#DroneTechnology",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#AutonomousSystems",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#AfricaTech",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#NigeriaDefence",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#DualUseTechnology",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#NationalSecurity",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#DefenceIndustry",
+              color: "#DC2626",
+            },
+          ],
+          [
+            {
+              text: "#CyberSecurity",
+              color: "#DC2626",
+            },
+          ],
+        ],
+      },
+    ],
+    gallery: [gal15, gal16, gal17],
   },
 ];
