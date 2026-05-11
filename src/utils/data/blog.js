@@ -386,7 +386,7 @@ export const blogs = [
             {
               text: "Nigerian Army",
               link: "https://army.mil.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -394,7 +394,7 @@ export const blogs = [
             {
               text: "Nigerian Air Force",
               link: "https://airforce.mil.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -402,7 +402,7 @@ export const blogs = [
             {
               text: "National Drug Law Enforcement Agency (NDLEA)",
               link: "https://ndleahelpline.com.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -410,7 +410,7 @@ export const blogs = [
             {
               text: "Nigeria Data Protection Commission (NDPC)",
               link: "https://www.ndpc.gov.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -418,7 +418,7 @@ export const blogs = [
             {
               text: "Galaxy Backbone",
               link: "https://galaxybackbone.com.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -426,7 +426,7 @@ export const blogs = [
             {
               text: "Nigerian Communications Satellite Limited (NIGCOMSAT)",
               link: "https://www.nigcomsat.gov.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -434,7 +434,7 @@ export const blogs = [
             {
               text: "Global Anti-Scam Alliance (GASA)",
               link: "https://gasa.org",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -442,7 +442,7 @@ export const blogs = [
             {
               text: "National Information Technology Development Agency (NITDA)",
               link: "https://nitda.gov.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -450,7 +450,7 @@ export const blogs = [
             {
               text: "Office for Nigerian Digital Innovation (ONDI)",
               link: "https://ondi.nitda.gov.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -458,7 +458,7 @@ export const blogs = [
             {
               text: "Nigeria Police Force",
               link: "https://nccc.npf.gov.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
 
@@ -466,7 +466,7 @@ export const blogs = [
             {
               text: "Nigerian Communications Commission (NCC)",
               link: "https://ncc.gov.ng",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
         ],
@@ -590,11 +590,6 @@ export const blogs = [
 
     content: [
       {
-        type: "heading",
-        text: "FOR IMMEDIATE RELEASE",
-      },
-
-      {
         type: "paragraph",
         children: [
           {
@@ -623,7 +618,7 @@ export const blogs = [
           {
             text: "$400,000",
             bold: true,
-            color: "#DC2626",
+            color: "#000000",
           },
           {
             text: ". This collaboration marks a significant milestone in strengthening the indigenous defence-technology ecosystem in Nigeria and across Africa.",
@@ -833,73 +828,73 @@ export const blogs = [
           [
             {
               text: "#DefenceTechnology",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#SovereignSecurity",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#MilitaryInnovation",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#SecureCommunications",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#DroneTechnology",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#AutonomousSystems",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#AfricaTech",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#NigeriaDefence",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#DualUseTechnology",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#NationalSecurity",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#DefenceIndustry",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
           [
             {
               text: "#CyberSecurity",
-              color: "#DC2626",
+              color: "#008000",
             },
           ],
         ],
