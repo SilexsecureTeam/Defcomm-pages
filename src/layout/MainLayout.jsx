@@ -21,7 +21,7 @@ const MainLayout = () => {
   const isAndriod = location.pathname === "/career/andriod-dev";
   const isManager = location.pathname === "/career/product-manager";
   const isOperating = location.pathname === "/career/operating-system";
-  const isVideo = location.pathname === "/watch";
+  const isVideo = location.pathname === "/videos";
   const isForm = location.pathname === "/form";
   const isBook = location.pathname === "/book";
   const isBlogs = location.pathname === "/blogs";

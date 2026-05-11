@@ -9,7 +9,6 @@ import MainLayout from "./layout/MainLayout";
 const HomePage = lazy(() => import("./pages/v2/HomePage"));
 const ComingSoon = lazy(() => import("./pages/v1/ComingSoon"));
 const Contact = lazy(() => import("./pages/v1/Contact"));
-// const Services = lazy(() => import("./pages/v1/Services"));
 const Services2 = lazy(() => import("./pages/v1/ServicesV2"));
 const AboutPage = lazy(() => import("./pages/v3/AboutPage"));
 const Products = lazy(() => import("./pages/v1/Products"));
@@ -25,45 +24,42 @@ const MultiStepForm = lazy(() => import("./pages/v1/MultiStepForm"));
 const BookingWorkflow = lazy(() => import("./pages/v1/BookingWorkflow"));
 const SecurityPage = lazy(() => import("./pages/v3/SecurityPage"));
 const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
-const EventRegistrationForm = lazy(() =>
-  import("./pages/EventRegistrationForm")
-);
-const LazyPage = (Component) => (
-  <Suspense fallback={<FallBack />}>
-    <Component />
-  </Suspense>
-);
+
 const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={LazyPage(HomePage)} />
-          <Route path="contact" element={LazyPage(Contact)} />
-          {/* <Route path="/services" element={<Services />} /> */}
-          <Route path="/services" element={LazyPage(Services2)} />
-          <Route path="/about" element={LazyPage(AboutPage)} />
-          <Route path="/products" element={LazyPage(Products)} />
-          <Route path="/career" element={LazyPage(Career)} />
-          <Route path="/career/andriod-dev" element={LazyPage(AndriodPage)} />
-          <Route path="/career/product-manager" element={LazyPage(ManagerPage)} />
-          <Route
-            path="/career/operating-system"
-            element={LazyPage(OperatingPage)}
-          />
-          <Route path="/technology" element={LazyPage(ProductsFeatures)} />
-          <Route path="/hardware" element={LazyPage(Hardware)} />
-          <Route path="/software" element={LazyPage(Software)} />
-          <Route path="/videos" element={LazyPage(VideoPage)} />
-          <Route path="/form" element={LazyPage(MultiStepForm)} />
-          <Route path="/book" element={LazyPage(BookingWorkflow)} />
-          <Route path="/blogs" element={LazyPage(SecurityPage)} />
-          <Route path="/blogs/:slug" element={LazyPage(BlogDetailsPage)} />
-          <Route path="/bounty" element={LazyPage(LiveFire)} />
-          <Route path="/browser" element={LazyPage(BrowserHome)} />
-          {/* Dynamically generate routes from JSON */}
-          {/* {routesConfig.map((route, index) => {
+
+      <Suspense fallback={<FallBack />}>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="services" element={<Services2 />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="products" element={<Products />} />
+            <Route path="career" element={<Career />} />
+            <Route path="career/andriod-dev" element={<AndriodPage />} />
+            <Route
+              path="career/product-manager"
+              element={<ManagerPage />}
+            />
+            <Route
+              path="career/operating-system"
+              element={<OperatingPage />}
+            />
+            <Route path="technology" element={<ProductsFeatures />} />
+            <Route path="hardware" element={<Hardware />} />
+            <Route path="software" element={<Software />} />
+            <Route path="videos" element={<VideoPage />} />
+            <Route path="form" element={<MultiStepForm />} />
+            <Route path="book" element={<BookingWorkflow />} />
+            <Route path="blogs" element={<SecurityPage />} />
+            <Route path="blogs/:slug" element={<BlogDetailsPage />} />
+            <Route path="bounty" element={<LiveFire />} />
+            <Route path="browser" element={<BrowserHome />} />
+            {/* Dynamically generate routes from JSON */}
+            {/* {routesConfig.map((route, index) => {
               if (route.type === "event") {
                 return (
                   <Route
@@ -91,11 +87,14 @@ const App = () => {
               return null;
             })} */}
 
-          {/* Catch-all redirect */}
-          <Route path="*" element={LazyPage(ComingSoon)} />
-        </Route>
-      </Routes>
+            {/* Catch-all redirect */}
+
+            <Route path="*" element={<ComingSoon />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Router>
   );
 };
+
 export default App;
