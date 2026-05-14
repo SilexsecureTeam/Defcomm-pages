@@ -577,7 +577,7 @@ export const blogs = [
     slug: "defcomm-argus-robotics-partnership",
 
     title:
-      "Defcomm Solutions and Argus Robotics Announce Strategic $400k Partnership to Revolutionise Indigenous Defence Technology",
+      "Defcomm Solutions and Argus Robotics Announce Strategic Partnership to Revolutionise Indigenous Defence Technology",
 
     shortDescription:
       "DefComm Solutions and Argus Robotics enter a strategic $400,000 partnership to strengthen sovereign defence technology, secure communications, and autonomous systems across Africa.",
@@ -613,12 +613,7 @@ export const blogs = [
             bold: true,
           },
           {
-            text: ' ("Argus") are proud to announce a strategic partnership valued at ',
-          },
-          {
-            text: "$400,000",
-            bold: true,
-            color: "#000000",
+            text: ' ("Argus") are proud to announce their partnership.',
           },
           {
             text: ". This collaboration marks a significant milestone in strengthening the indigenous defence-technology ecosystem in Nigeria and across Africa.",
