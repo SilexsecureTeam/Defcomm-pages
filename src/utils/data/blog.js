@@ -613,7 +613,7 @@ export const blogs = [
             bold: true,
           },
           {
-            text: ' ("Argus") are proud to announce their partnership.',
+            text: ' ("Argus") are proud to announce their partnership',
           },
           {
             text: ". This collaboration marks a significant milestone in strengthening the indigenous defence-technology ecosystem in Nigeria and across Africa.",
